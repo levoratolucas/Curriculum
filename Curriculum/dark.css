@@ -162,3 +162,40 @@ section.sobre p {
 #sun{
     opacity: 0.3;
 }
+/* Estilos responsivos para celular */
+@media screen and (max-width: 768px) {
+    /* Outros estilos para dispositivos móveis aqui... */
+
+    /* Estilos para replicar o lateral quando estiver em um celular */
+    .lateral {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        border: solid 1px #333;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        background-color: #1f1f1f;
+    }
+
+    .principal {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        padding: 30px 20px;
+        background-color: #1f1f1f;
+        border-radius: 10px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .contact-info a {
+        color: #eee;
+    }
+
+    .contact-info a:hover {
+        color: #00adb5;
+    }
+
+    .skills li::before,
+    .interpessoais li::before {
+        color: #00adb5;
+    }
+}

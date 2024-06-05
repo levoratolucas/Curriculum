@@ -1,0 +1,70 @@
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header,
+footer {
+    background-color: #eee;
+    color: #333;
+}
+
+header h1,
+footer {
+    color: #007acc;
+}
+
+.lateral {
+    background-color: #fff;
+    border: solid 1px #ccc;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.principal {
+    background-color: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+    border-color: #007acc;
+}
+
+.contact-info a {
+    color: #333;
+}
+
+.contact-info a:hover {
+    color: #007acc;
+}
+
+.skills li::before,
+.interpessoais li::before {
+    color: #007acc;
+}
+@keyframes RGBA {
+    0% {
+        color: #00adb5;
+    }
+
+    25% {
+        color: #00023e;
+    }
+
+    50% {
+        color: #00adb5;
+    }
+
+    75% {
+        color: #00023e;
+    }
+
+    100% {
+        color: #00adb5;
+    }
+}
+#sun{
+    opacity: 1;
+}
+#moon{
+    opacity: 0.1;
+}

@@ -104,8 +104,10 @@
             }
 
             .lateral {
+                margin-top: 5px;
                 width: 100%;
                 max-width: 100%;
+                padding: 10px;
             }
 
             .dados {
@@ -120,9 +122,8 @@
             .dados section {
                 width: 300px;
                 margin: auto;
-                margin-top: 10px;
                 margin-left: 10px;
-                padding: 10px;
+                margin-top: 10px;
                 text-align: left;
             }
 
@@ -131,12 +132,23 @@
                 color: black;
             }
 
+            .sobre div {
+                min-height: 50px;
+            }
+
             .sobre {
-                margin-top: 50px;
+                margin-top: -10px;
             }
 
             * {
                 color: black;
+            }
+
+            .Profissional {
+                margin-top: 100px;
+            }
+            .Projetos{
+                margin-top: -60px;
             }
         }
 
@@ -365,87 +377,19 @@
 </div>
 <style>
     .sobre div {
-        min-height: 100px;
+        min-height: 50px;
     }
 
     .Projetos div,
-    .Educação div,
-    .Profissional div {
+    .Educação div {
+        min-height: 100px;
+    }
 
-min-height: 100px;    }
+    .Profissional div {
+        min-height: 200px;
+    }
 </style>
 <div class="principal">
-
-    <section class="Profissional">
-        <div>
-            <h2>Experiência Profissional</h2>
-            <h3>Desenvolvedor Web - Empresa ABC</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae est consequat, fermentum
-                lectus eu, mollis libero.</p><br>
-
-        </div>
-        <div>
-            <h3>Estagiário em Programação - Empresa XYZ</h3>
-            <p>Nullam sit amet elit in lectus aliquet fringilla. Vestibulum ante ipsum primis in faucibus orci
-                luctus et ultrices posuere cubilia Curae; In non ex in nulla posuere viverra vel non tortor.</p>
-        </div>
-
-    </section>
-    <section class="Educação">
-        <div>
-            <h2>Educação</h2>
-            <h3>Graduação em Ciência da Computação - Universidade ABC</h3>
-            <p>2017 - 2021</p>
-        </div>
-    </section>
-    <section class="Projetos">
-        <h2>Projetos</h2>
-        <br>
-        <div>
-            <h3>Easy Grid: HTML CSS JS</h3>
-            <br>
-            <p>O Easy Grid é uma plataforma inovadora desenvolvida para acelerar o processo de aprendizado em HTML e
-                CSS.
-                Utilizando tecnologias como HTML5, CSS3 e JavaScript, este projeto proporciona uma experiência
-                interativa e
-                dinâmica, permitindo aos usuários explorar e praticar conceitos fundamentais de design web.</p>
-            <br>
-        </div>
-
-        <div>
-            <h3>Dashboard Levoratech-Yoobe: PHP</h3>
-            <br>
-            <p>O Dashboard Levoratech-Yoobe é uma solução robusta e abrangente projetada para atender às demandas
-                complexas
-                de análise e gerenciamento de dados empresariais. Desenvolvido em PHP, este painel oferece recursos
-                avançados para monitoramento de envios, controle de estoque, análise de desempenho de produtos, além de
-                facilitar a tomada de decisões estratégicas baseadas em dados precisos e atualizados.</p>
-            <br>
-        </div>
-
-        <div>
-            <h3>Automação de Preços e Rastreio: Phyton</h3>
-            <br>
-            <p>A Automação de Preços e Rastreio é uma solução inteligente criada para otimizar o processo de testes em
-                sites
-                de envio e contratos. Por meio de técnicas avançadas de automação, esta ferramenta simplifica e agiliza
-                a
-                verificação de preços, rastreio de produtos e análise de contratos, permitindo uma execução eficiente e
-                precisa de testes em ambientes variados.</p>
-            <br>
-        </div>
-        <div>
-            <h3>API de Verificação de Valores de Moedas: C# PHP</h3>
-            <br>
-            <p>A API de Verificação de Valores de Moedas oferece uma solução completa e confiável para monitoramento e
-                análise das taxas de câmbio globais. Integrando dados de fontes confiáveis e atualizados, esta API
-                fornece
-                informações precisas sobre os valores das moedas em todo o mundo, permitindo uma análise detalhada e a
-                geração de gráficos dinâmicos para acompanhamento das tendências de mercado.</p>
-            <br>
-        </div>
-    </section>
-
     <section class="sobre">
         <h2>Sobre</h2>
         <div>
@@ -497,10 +441,120 @@ min-height: 100px;    }
             </p>
         </div>
     </section>
+    <section class="Profissional">
+        <h2>Experiência Profissional</h2>
+        <div>
+            <h3>Desenvolvedor e Suporte Interno - Yoobe</h3>
+            <p>Desde 12 de janeiro 2024</p>
+            <p>Atuo como desenvolvedor e suporte para questões internas, contribuindo significativamente para a
+                eficiência e automação dos processos na empresa. Desenvolvi um dashboard abrangente que gerencia toda a
+                parte de envios e cobrança de frete, além de automação de processos. Dou treinamentos regulares para a
+                equipe de logística e cuido diariamente do banco de dados, garantindo que todas as operações funcionem
+                de maneira eficiente e sem interrupções.</p>
+        </div><br>
+        <div>
+            <h3>Instalador e Reparador de Linhas Aéreas (IRLA) - TLSV Engeharia</h3>
+            <p>Janeiro de 2020 - Dezembro de 2022</p>
+            <p>Atuei como instalador e reparador de linhas aéreas, instalando fibra ótica e cuidando de redes internas,
+                roteadores e controladores. Utilizando uma metodologia ágil e diferenciada, minha produtividade era em
+                média 60% maior que a dos demais. A equipe em que estava inserido produzia mais, pois eu ensinava minhas
+                técnicas aos colegas. Identificava falhas antes mesmo de ocorrerem e potencializava os clientes que
+                precisavam de uma mão de obra mais qualificada.</p>
+        </div><br>
+        <div>
+            <h3>Monitor de Turma - Universidade Positivo</h3>
+            <p>Ensinei disciplinas básicas de web, SQL e algoritmos. Mantive um grupo de ensino e um canal no YouTube
+                dedicado ao aprendizado dos colegas. Durante todos os períodos da faculdade, fui e sou representante de
+                turma, contribuindo para uma taxa de aprovação elevada em comparação com turmas anteriores.</p>
+        </div>
+
+    </section>
+    <section class="Projetos">
+        <h2>Projetos</h2>
+        <br>
+        <div>
+            <h3>Easy Grid: HTML CSS JS</h3>
+            <br>
+            <p>O Easy Grid é uma plataforma inovadora desenvolvida para acelerar o processo de aprendizado em HTML e
+                CSS.
+                Utilizando tecnologias como HTML5, CSS3 e JavaScript, este projeto proporciona uma experiência
+                interativa e
+                dinâmica, permitindo aos usuários explorar e praticar conceitos fundamentais de design web.</p>
+            <br>
+        </div>
+
+        <div>
+            <h3>Dashboard Levoratech-Yoobe: PHP</h3>
+            <br>
+            <p>O Dashboard Levoratech-Yoobe é uma solução robusta e abrangente projetada para atender às demandas
+                complexas
+                de análise e gerenciamento de dados empresariais. Desenvolvido em PHP, este painel oferece recursos
+                avançados para monitoramento de envios, controle de estoque, análise de desempenho de produtos, além de
+                facilitar a tomada de decisões estratégicas baseadas em dados precisos e atualizados.</p>
+            <br>
+        </div>
+
+        <div>
+            <h3>Automação de Preços e Rastreio: Phyton</h3>
+            <br>
+            <p>A Automação de Preços e Rastreio é uma solução inteligente criada para otimizar o processo de testes em
+                sites
+                de envio e contratos. Por meio de técnicas avançadas de automação, esta ferramenta simplifica e agiliza
+                a
+                verificação de preços, rastreio de produtos e análise de contratos, permitindo uma execução eficiente e
+                precisa de testes em ambientes variados.</p>
+            <br>
+        </div>
+        <div>
+            <h3>API de Verificação de Valores de Moedas: C# PHP</h3>
+            <br>
+            <p>A API de Verificação de Valores de Moedas oferece uma solução completa e confiável para monitoramento e
+                análise das taxas de câmbio globais. Integrando dados de fontes confiáveis e atualizados, esta API
+                fornece
+                informações precisas sobre os valores das moedas em todo o mundo, permitindo uma análise detalhada e a
+                geração de gráficos dinâmicos para acompanhamento das tendências de mercado.</p>
+            <br>
+        </div>
+    </section>
+    <section class="Educação">
+        <div>
+            <h2>Cursos</h2>
+            <h3>Análise e Desenvolvimento de Sistemas - Universidade Positivo</h3>
+            <p>2023 - 2024</p><br>
+            <h3>Power BI Desktop: Construindo Meu Primeiro Dashboard</h3>
+            <p>02/08/2023</p><br>
+            <h3>MS Project: Planejando Cronogramas de Projeto</h3>
+            <p>22/11/2023</p><br>
+            <h3>Lógica de Programação: Laços e Listas com JavaScript</h3>
+            <p>10/10/2023</p><br>
+            <h3>Lógica de Programação: Comece em Lógica com o Jogo Pong e JavaScript</h3>
+            <p>10/10/2023</p><br>
+            <h3>JavaScript: Tipos, Variáveis e Funções</h3>
+            <p>15/01/2024</p><br>
+            <h3>JavaScript e HTML: Desenvolva um Jogo e Pratique Lógica de Programação</h3>
+            <p>07/02/2024</p><br>
+            <h3>JavaScript e HTML: Pratique Lógica com Desenhos, Animações e um Jogo</h3>
+            <p>11/04/2024</p><br>
+            <h3>JavaScript: Arrays</h3>
+            <p>16/01/2024</p><br>
+            <h3>JavaScript: Explorando a Linguagem</h3>
+            <p>26/05/2023</p><br>
+            <h3>Java JRE e JDK: Compile e Execute o Seu Programa</h3>
+            <p>15/05/2023</p><br>
+            <h3>Dashboard com Power BI: Visualizando Dados</h3>
+            <p>02/08/2023</p><br>
+            <h3>Blender: Criando um Modelo 3D</h3>
+            <p>30/06/2023</p><br>
+
+        </div>
+    </section>
+   
+
+
 </div>
 </main>
 <footer>
-   by Levoratech &copy; 2024 
+    &copy;2024 LEVORATECH. Todos os direitos reservados.
 </footer>
 
 <script src="./Curriculum/engine.js">

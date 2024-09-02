@@ -150,32 +150,28 @@
             // Soma das probabilidades
             const somaProbs = prob1 + prob2 + prob3;
             
-            // Calcular apostas mínimas
-            const aposta1 = total * prob1 / somaProbs;
-            const aposta2 = total * prob2 / somaProbs;
-            const aposta3 = total * prob3 / somaProbs;
-
-            // Calcular apostas para empatar
-            const empate1 = total / (odd1 - 1);
-            const empate2 = total / (odd2 - 1);
-            const empate3 = total / (odd3 - 1);
-            
+            // Verificar se há lucro garantido
             if (somaProbs < 1) {
-                const lucro = total / somaProbs - total;
+                // Calcular apostas
+                const aposta1 = total * prob1 / somaProbs;
+                const aposta2 = total * prob2 / somaProbs;
+                const aposta3 = total * prob3 / somaProbs;
                 
+                // Calcular lucro
+                const retorno = total / somaProbs;
+                const lucro = retorno - total;
+                
+                // Mostrar resultado
                 document.getElementById('result-text').innerHTML = `
                     Aposte R$${aposta1.toFixed(2)} na Odd 1 <br>
                     Aposte R$${aposta2.toFixed(2)} na Odd 2 <br>
                     Aposte R$${aposta3.toFixed(2)} na Odd 3 <br><br>
-                    <strong>Empatar (0x0):</strong><br>
-                    Aposte R$${empate1.toFixed(2)} na Odd 1 para empatar <br>
-                    Aposte R$${empate2.toFixed(2)} na Odd 2 para empatar <br>
-                    Aposte R$${empate3.toFixed(2)} na Odd 3 para empatar<br><br>
                     Lucro garantido: R$${lucro.toFixed(2)}
                 `;
                 document.getElementById('result').style.display = 'block';
                 document.getElementById('error').style.display = 'none';
             } else {
+                // Mostrar erro
                 document.getElementById('error-text').innerHTML = 'Não é possível garantir lucro com essas odds.';
                 document.getElementById('result').style.display = 'none';
                 document.getElementById('error').style.display = 'block';

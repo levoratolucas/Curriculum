@@ -125,6 +125,7 @@ button:hover {
 .error {
     background-color: #330000;
     border-left-color: #ff3333;
+    color: white;
 }
 
 @media (max-width: 600px) {
@@ -146,6 +147,7 @@ button:hover {
     .result,
     .error {
         font-size: 0.9rem;
+        
     }
 }
 

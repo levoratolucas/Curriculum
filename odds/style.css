@@ -1,0 +1,184 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e5e5e5; /* Cinza claro para o fundo */
+    color: #333; /* Cor do texto padrão */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #2b2b2b; /* Cinza escuro para a calculadora */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px; /* Espaçamento entre os ícones */
+}
+
+.icons i {
+    color: #ffffff; /* Cor dos ícones */
+    font-size: 1.5rem;
+    cursor: pointer; /* Cursor em forma de mão ao passar o mouse */
+    transition: color 0.3s ease;
+}
+
+.icons i:hover {
+    color: #00ff26; /* Cor dos ícones ao passar o mouse */
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff; /* Branco para o título */
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.odds-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.odds-group label,
+.odds-group input {
+    width: 30%;
+}
+
+.odds-group label {
+    display: block;
+    color: #b0b0b0; /* Cinza claro para o texto */
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #444; /* Fundo dos inputs mais escuro */
+    color: #ffffff; /* Cor dos textos */
+    border: 1px solid #00ff26; /* Borda verde */
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.bet-value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input#total {
+    width: 70%;
+    background-color: #444; /* Fundo dos inputs mais escuro */
+    color: #ffffff; /* Cor dos textos */
+    border: 1px solid #00ff26; /* Borda verde */
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+button {
+    width: 28%;
+    padding: 10px;
+    background-color: #00ff26; /* Botão verde */
+    color: #2b2b2b; /* Texto escuro para contraste */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #00cc1a; /* Verde mais escuro ao passar o mouse */
+}
+
+.result,
+.error {
+    padding: 15px;
+    margin-top: 20px;
+    border-left: 5px solid;
+    display: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.result {
+    background-color: #00ff0d4b;
+    border-left-color: #00ff0d;
+    color: white;
+}
+
+.error {
+    background-color: #330000;
+    border-left-color: #ff3333;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    input[type="number"],
+    button {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .result,
+    .error {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .container {
+        padding: 10px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+
+    input[type="number"],
+    button {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    .result,
+    .error {
+        font-size: 0.8rem;
+    }
+}
+
+.odds-group label[for="odd1"] {
+    color: #008000; /* Verde para Vitória */
+}
+
+.odds-group label[for="odd2"] {
+    color: #FFA500; /* Amarelo para Empate */
+}
+
+.odds-group label[for="odd3"] {
+    color: #FF4500; /* Vermelho para Derrota */
+}

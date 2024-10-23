@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuração de Interfaces</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            background-color: #6D3189;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #6D3189;
+        }
+        nav {
+            display: flex;
+        }
+        nav a {
+            color: #6D3189;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-row {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .ip-group {
+            display: flex;
+            align-items: center;
+        }
+        input[type="number"], select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 60px; /* Largura fixa para os campos de IP */
+            margin-right: 5px;
+        }
+        select {
+            width: 80px; /* Largura fixa para o campo de máscara */
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #6D3189;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #5C2474; /* Tom um pouco mais escuro */
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 4px;
+            overflow: auto;
+            font-family: monospace;
+        }
+        footer {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            text-align: center;
+            color: #6D3189;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Configuração de Interfaces</h1>
+        <nav>
+            <a href="#">Aligera</a>
+            <a href="#">Router</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="input-container">
+            <div class="input-row">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" placeholder="Ex: SAPATARIA-ALMEIDA">
+            </div>
+            <div class="input-row">
+                <label for="ord">Ordem:</label>
+                <input type="text" id="ord" placeholder="Ex: 123456789">
+            </div>
+
+            <h2>Configuração LAN</h2>
+            <div class="input-row">
+                <label>LAN:</label>
+                <div class="ip-group">
+                    <input type="number" id="lan-ip1" placeholder="192" value="192">
+                    <input type="number" id="lan-ip2" placeholder="168" value="168">
+                    <input type="number" id="lan-ip3" placeholder="15" value="15">
+                    <input type="number" id="lan-ip4" placeholder="3" value="3">
+                    <select id="lan-mask">
+                        <option value="30">/30</option>
+                        <option value="29">/29</option>
+                        <option value="28">/28</option>
+                        <option value="27">/27</option>
+                        <option value="31">/31</option>
+                        <option value="32">/32</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-row">
+                <label for="svlan">SVLAN:</label>
+                <input type="text" id="svlan" placeholder="Ex: 123">
+            </div>
+
+            <h2>Configuração WAN</h2>
+            <div class="input-row">
+                <label>WAN:</label>
+                <div class="ip-group">
+                    <input type="number" id="wan-ip1" placeholder="192" value="192">
+                    <input type="number" id="wan-ip2" placeholder="168" value="168">
+                    <input type="number" id="wan-ip3" placeholder="15" value="15">
+                    <input type="number" id="wan-ip4" placeholder="1" value="1">
+                    <select id="wan-mask">
+                        <option value="30">/30</option>
+                        <option value="29">/29</option>
+                        <option value="28">/28</option>
+                        <option value="27">/27</option>
+                        <option value="31">/31</option>
+                        <option value="32">/32</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="generate-command">Gerar Comando</button>
+        </div>
+
+        <h2>Comando Modificado:</h2>
+        <pre id="output"></pre>
+    </div>
+
+    <footer>
+        © 2024 Sua Empresa. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        document.getElementById('generate-command').addEventListener('click', function () {
+            const name = document.getElementById('name').value;
+            const ord = document.getElementById('ord').value;
+
+            // Captura os endereços LAN
+            const lanIp1 = parseInt(document.getElementById('lan-ip1').value);
+            const lanIp2 = parseInt(document.getElementById('lan-ip2').value);
+            const lanIp3 = parseInt(document.getElementById('lan-ip3').value);
+            let lanIp4 = parseInt(document.getElementById('lan-ip4').value);
+            const lanMask = parseInt(document.getElementById('lan-mask').value);
+
+            // Captura os endereços WAN
+            const wanIp1 = parseInt(document.getElementById('wan-ip1').value);
+            const wanIp2 = parseInt(document.getElementById('wan-ip2').value);
+            const wanIp3 = parseInt(document.getElementById('wan-ip3').value);
+            let wanIp4 = parseInt(document.getElementById('wan-ip4').value);
+            const wanMask = parseInt(document.getElementById('wan-mask').value);
+
+            // Cálculo dos novos IPs
+            const newLanIp4 = lanIp4 + 2;  // dois acima
+            const newWanIp4 = wanIp4 + 1;  // um acima
+            const nextHop = newLanIp4 - 1; // próximo salto
+
+            const command = `
+delete interfaces ethernet eth1
+
+set interfaces ethernet eth1 description WAN_VIVO
+
+set interfaces ethernet eth1 duplex auto
+
+set interfaces ethernet eth1 speed auto
+
+set interfaces ethernet eth1 vif ${document.getElementById('svlan').value} address ${lanIp1}.${lanIp2}.${lanIp3}.${newLanIp4}/${lanMask}
+
+set interfaces ethernet eth2 address ${wanIp1}.${wanIp2}.${wanIp3}.${newWanIp4}/${wanMask}
+
+set interfaces ethernet eth2 description LAN_CLIENTE
+
+set interfaces ethernet eth2 duplex auto
+
+set interfaces ethernet eth2 speed auto
+
+set protocols memory-limit 100
+
+set protocols static route 0.0.0.0/0 next-hop ${wanIp1}.${wanIp2}.${wanIp3}.${nextHop}
+
+set system host-name ${name}-ORD-${ord}
+
+set system login user admin authentication plaintext-password admin
+
+commit
+
+save
+            `;
+
+            document.getElementById('output').textContent = command.trim();
+        });
+    </script>
+</body>
+
+</html>

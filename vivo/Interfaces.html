@@ -160,6 +160,7 @@
             </div>
 
             <button id="generate-command">Gerar Comando</button>
+            <button id="copy-command" style="margin-top: 10px;">Copiar Comando</button>
         </div>
 
         <h2>Comando Modificado:</h2>
@@ -227,6 +228,17 @@ save
             `;
 
             document.getElementById('output').textContent = command.trim();
+        });
+
+        document.getElementById('copy-command').addEventListener('click', function () {
+            const output = document.getElementById('output').textContent;
+            navigator.clipboard.writeText(output)
+                .then(() => {
+                    alert('Comando copiado para a área de transferência!');
+                })
+                .catch(err => {
+                    console.error('Erro ao copiar: ', err);
+                });
         });
     </script>
 </body>

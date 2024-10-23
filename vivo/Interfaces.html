@@ -10,9 +10,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
             background-color: #6D3189;
+            color: #333;
         }
         header {
             background-color: #ffffff;
@@ -43,6 +42,8 @@
         }
         .input-row {
             margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
         }
         label {
             display: block;
@@ -53,15 +54,18 @@
             display: flex;
             align-items: center;
         }
-        input[type="number"], select {
-            padding: 8px;
-            border: 1px solid #ccc;
+        input, select {
+            padding: 2px;
+            border: 1px solid rgba(0, 0, 0, 0.327);
             border-radius: 4px;
-            width: 60px; /* Largura fixa para os campos de IP */
-            margin-right: 5px;
+            width: 40px;
+            margin-right: 2px;
+        }
+        input[type="text"] {
+            width: 300px;
         }
         select {
-            width: 80px; /* Largura fixa para o campo de máscara */
+            width: 50px;
         }
         button {
             margin-top: 10px;
@@ -74,7 +78,8 @@
             width: 100%;
         }
         button:hover {
-            background-color: #5C2474; /* Tom um pouco mais escuro */
+            background-color: #000000;
+            color: white;
         }
         h1, h2 {
             text-align: center;
@@ -115,52 +120,57 @@
                 <label for="ord">Ordem:</label>
                 <input type="text" id="ord" placeholder="Ex: 123456789">
             </div>
-
-            <h2>Configuração LAN</h2>
             <div class="input-row">
                 <label>LAN:</label>
                 <div class="ip-group">
-                    <input type="number" id="lan-ip1" placeholder="192" value="192">
-                    <input type="number" id="lan-ip2" placeholder="168" value="168">
-                    <input type="number" id="lan-ip3" placeholder="15" value="15">
-                    <input type="number" id="lan-ip4" placeholder="3" value="3">
+                    <input required type="number" id="lan-ip1" placeholder="192" value="172">
+                    <span>.</span>
+                    <input required type="number" id="lan-ip2" placeholder="168" value="16">
+                    <span>.</span>
+                    <input required type="number" id="lan-ip3" placeholder="15" value="">
+                    <span>.</span>
+                    <input required type="number" id="lan-ip4" placeholder="3" value="">
+                    <span>/</span>
                     <select id="lan-mask">
-                        <option value="30">/30</option>
-                        <option value="29">/29</option>
-                        <option value="28">/28</option>
-                        <option value="27">/27</option>
-                        <option value="31">/31</option>
-                        <option value="32">/32</option>
+                        <option value="30">30</option>
+                        <option value="29" selected >29</option>
+                        <option value="28">28</option>
+                        <option value="27">27</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
                     </select>
                 </div>
             </div>
 
             <div class="input-row">
                 <label for="svlan">SVLAN:</label>
-                <input type="text" id="svlan" placeholder="Ex: 123">
+                <input required type="text" id="svlan" placeholder="Ex: 123">
             </div>
 
-            <h2>Configuração WAN</h2>
             <div class="input-row">
                 <label>WAN:</label>
                 <div class="ip-group">
-                    <input type="number" id="wan-ip1" placeholder="192" value="192">
-                    <input type="number" id="wan-ip2" placeholder="168" value="168">
-                    <input type="number" id="wan-ip3" placeholder="15" value="15">
-                    <input type="number" id="wan-ip4" placeholder="1" value="1">
+                    <input required type="number" id="wan-ip1" placeholder="192" value="172">
+                    <span>.</span>
+                    <input required type="number" id="wan-ip2" placeholder="168" value="16">
+                    <span>.</span>
+                    <input required type="number" id="wan-ip3" placeholder="15" value="">
+                    <span>.</span>
+                    <input required type="number" id="wan-ip4" placeholder="1" value="">
+                    <span>/</span>
                     <select id="wan-mask">
-                        <option value="30">/30</option>
-                        <option value="29">/29</option>
-                        <option value="28">/28</option>
-                        <option value="27">/27</option>
-                        <option value="31">/31</option>
-                        <option value="32">/32</option>
+                        <option value="30" selected>30</option>
+                        <option value="29">29</option>
+                        <option value="28">28</option>
+                        <option value="27">27</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
                     </select>
                 </div>
             </div>
 
             <button id="generate-command">Gerar Comando</button>
-            <button id="copy-command" style="margin-top: 10px;">Copiar Comando</button>
+            <button id="copy-command" style="margin-top: 10px; display: none;">Copiar Comando</button>
         </div>
 
         <h2>Comando Modificado:</h2>
@@ -173,8 +183,23 @@
 
     <script>
         document.getElementById('generate-command').addEventListener('click', function () {
-            const name = document.getElementById('name').value;
+            const name = document.getElementById('name').value.replace(/ /g, '-').toUpperCase();
             const ord = document.getElementById('ord').value;
+
+            // Verifica se todos os campos obrigatórios estão preenchidos
+            if (!name || !ord || 
+                !document.getElementById('lan-ip1').value || 
+                !document.getElementById('lan-ip2').value || 
+                !document.getElementById('lan-ip3').value || 
+                !document.getElementById('lan-ip4').value || 
+                !document.getElementById('svlan').value || 
+                !document.getElementById('wan-ip1').value || 
+                !document.getElementById('wan-ip2').value || 
+                !document.getElementById('wan-ip3').value || 
+                !document.getElementById('wan-ip4').value) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
 
             // Captura os endereços LAN
             const lanIp1 = parseInt(document.getElementById('lan-ip1').value);
@@ -228,7 +253,10 @@ save
             `;
 
             document.getElementById('output').textContent = command.trim();
+            document.getElementById('copy-command').style.display = 'block'; // Mostra o botão de copiar
         });
+
+        document.getElementById('copy-command').style.display = 'none'; // Inicializa o botão de copiar como oculto
 
         document.getElementById('copy-command').addEventListener('click', function () {
             const output = document.getElementById('output').textContent;

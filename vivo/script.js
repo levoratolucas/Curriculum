@@ -100,7 +100,7 @@ config network ip type static
 config network ip address ${lanIp1}.${lanIp2}.${lanIp3}.${lanIp4 + 2}
 config network ip netmask 255.255.255.248
 config network ip defaultgw ${lanIp1}.${lanIp2}.${lanIp3}.${lanIp4 + 1}
-config network hostname ${name}-ORD-${ord}
+config network hostname ${name}-OS-${ord}
 config network mtu 1400
 config network dns 
 
@@ -223,7 +223,7 @@ config network ip type static
 config network ip address ${lanIp1}.${lanIp2}.${lanIp3}.${lanIp4}
 config network ip netmask 255.255.255.248
 config network ip defaultgw ${lanIp1}.${lanIp2}.${lanIp3}.${lanIp4 - 1}
-config network hostname ${name}-ORD-${ord}
+config network hostname ${name}-OS-${ord}
 config network mtu 1400
 config network dns 
 config save
@@ -339,7 +339,7 @@ config network ip type static
 config network ip address ${lanIp1}.${lanIp2}.${lanIp3}.${lanIp4 +2}
 config network ip netmask 255.255.255.248
 config network ip defaultgw ${lanIp1}.${lanIp2}.${lanIp3}.${lanIp4 + 1}
-config network hostname ${name}-ORD-${ord}
+config network hostname ${name}-OS-${ord}
 config network mtu 1400
 config network dns 
 config save
@@ -452,7 +452,7 @@ config network ip type static
 config network ip address ${lanIp1}.${lanIp2}.${lanIp3}.${lanIp4 + 2}
 config network ip netmask 255.255.255.248
 config network ip defaultgw ${lanIp1}.${lanIp2}.${lanIp3}.${lanIp4 + 1}
-config network hostname ${name}-ORD-${ord}
+config network hostname ${name}-OS-${ord}
 config network mtu 1400
 config network dns 
     
@@ -547,7 +547,7 @@ set interfaces ethernet eth2 speed auto
 
 set protocols memory-limit 100
 
-set protocols static route 0.0.0.0/0 next-hop ${wanIp1}.${wanIp2}.${wanIp3}.${newWanIp4+2}
+set protocols static route 0.0.0.0/0 next-hop ${wanIp1}.${wanIp2}.${wanIp3}.${newWanIp4+1}
 
 set system host-name ${name}-OS-${ord}
 

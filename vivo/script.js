@@ -535,9 +535,9 @@ set interfaces ethernet eth1 duplex auto
 
 set interfaces ethernet eth1 speed auto
 
-set interfaces ethernet eth1 vif ${svlan} address ${lanIp1}.${lanIp2}.${lanIp3}.${newLanIp4}/${newLanMask}
+set interfaces ethernet eth1 vif ${svlan} address ${lanIp1}.${lanIp2}.${lanIp3}.${newWanIp4+2}/${newLanMask}
 
-set interfaces ethernet eth2 address ${wanIp1}.${wanIp2}.${wanIp3}.${newWanIp4}/${newWanMask}
+set interfaces ethernet eth2 address ${wanIp1}.${wanIp2}.${wanIp3}.${newLanIp4+1}/${newWanMask}
 
 set interfaces ethernet eth2 description LAN_CLIENTE
 
@@ -547,9 +547,9 @@ set interfaces ethernet eth2 speed auto
 
 set protocols memory-limit 100
 
-set protocols static route 0.0.0.0/0 next-hop ${wanIp1}.${wanIp2}.${wanIp3}.${newWanIp4}
+set protocols static route 0.0.0.0/0 next-hop ${wanIp1}.${wanIp2}.${wanIp3}.${newWanIp4+2}
 
-set system host-name ${name}-ORD-${ord}
+set system host-name ${name}-OS-${ord}
 
 set system login user admin authentication plaintext-password admin
 

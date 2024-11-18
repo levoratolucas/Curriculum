@@ -535,9 +535,9 @@ set interfaces ethernet eth1 duplex auto
 
 set interfaces ethernet eth1 speed auto
 
-set interfaces ethernet eth1 vif ${svlan} address ${lanIp1}.${lanIp2}.${lanIp3}.${newWanIp4+2}/${newLanMask}
+set interfaces ethernet eth1 vif ${svwan} address ${wanIp1}.${wanIp2}.${wanIp3}.${newWanIp4+2}/${newWanMask}
 
-set interfaces ethernet eth2 address ${wanIp1}.${wanIp2}.${wanIp3}.${newLanIp4+1}/${newWanMask}
+set interfaces ethernet eth2 address ${lanIp1}.${lanIp2}.${lanIp3}.${newLanIp4+1}/${newLanMask}
 
 set interfaces ethernet eth2 description LAN_CLIENTE
 

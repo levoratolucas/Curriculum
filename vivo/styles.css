@@ -52,12 +52,14 @@ input, select {
     border-radius: 4px;
     width: 40px;
     margin-right: 2px;
+    border-color: #000000;
 }
 input[type="text"] {
     width: 300px;
+    border-color: #000000;
 }
 input:hover, select:hover {
-    border-color: #000000;
+    border-color: #ff0000;
 }
 select {
     width: 50px;

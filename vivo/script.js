@@ -2,6 +2,9 @@
 function toggleForms() {
     const scriptType = document.querySelector('input[name="script-type"]:checked').value;
     const gt6gt4Form = document.getElementById('gt6gt4-form');
+    const edd24_fust = document.getElementById('fust');
+    const edd24_fust1 = document.getElementById('fust1');
+    const edd24_fust2 = document.getElementById('fust2');
     const maintenanceMessage = document.getElementById('maintenance-message');
     const channelsContainer = document.getElementById('channels-container');
 
@@ -9,11 +12,30 @@ function toggleForms() {
         gt6gt4Form.style.display = 'block';
         maintenanceMessage.style.display = 'none';
         channelsContainer.style.display = 'none';
-    } else if (scriptType === 'aligera-piloto' || scriptType === 'aligera-ramal' || scriptType === 'aligera-ramal-isdn' || scriptType === 'aligera-piloto-isdn') {
+        edd24_fust.style.display = 'block';
+        edd24_fust2.style.display = 'block';
+        edd24_fust1.style.display = 'block';
+    } 
+    else if (scriptType === 'aligera-piloto' || scriptType === 'aligera-ramal' || scriptType === 'aligera-ramal-isdn' || scriptType === 'aligera-piloto-isdn') {
         gt6gt4Form.style.display = 'block';
         maintenanceMessage.style.display = 'none';
         channelsContainer.style.display = 'block';
-    } else {
+        edd24_fust.style.display = 'block';
+        edd24_fust2.style.display = 'block';
+        edd24_fust1.style.display = 'block';
+    } 
+    else if (scriptType === 'edd24_fust') {
+        gt6gt4Form.style.display = 'block';
+        maintenanceMessage.style.display = 'none';
+        channelsContainer.style.display = 'none';
+        edd24_fust.style.display = 'none';
+        edd24_fust2.style.display = 'none';
+        edd24_fust1.style.display = 'none';
+    } 
+    else {
+        edd24_fust.style.display = 'block';
+        edd24_fust2.style.display = 'block';
+        edd24_fust1.style.display = 'block';
         gt6gt4Form.style.display = 'none';
         maintenanceMessage.style.display = 'block';
         channelsContainer.style.display = 'none';
@@ -32,7 +54,7 @@ document.getElementById('generate-command').addEventListener('click', function (
     const ord = document.getElementById('ord').value;
 
     // Verifica se todos os campos obrigatórios estão preenchidos
-    if (!name || !ord ||
+    if ((!name || !ord ||
         !document.getElementById('lan-ip1').value ||
         !document.getElementById('lan-ip2').value ||
         !document.getElementById('lan-ip3').value ||
@@ -41,7 +63,7 @@ document.getElementById('generate-command').addEventListener('click', function (
         !document.getElementById('wan-ip1').value ||
         !document.getElementById('wan-ip2').value ||
         !document.getElementById('wan-ip3').value ||
-        !document.getElementById('wan-ip4').value) {
+        !document.getElementById('wan-ip4').value )&& scriptType != 'edd24_fust' ) {
         alert('Por favor, preencha todos os campos obrigatórios.');
         return;
     }
@@ -413,6 +435,106 @@ config login user ${username} password ${password}
 config save
 config apply
         `;
+    }
+    else if(scriptType === 'edd24_fust'){
+        command = `banner login 
+~
+           ####                             ###
+         ########                        #########
+       ############                    ##############
+       ####    ####                   ################
+       ###      ###                 ###################
+       ####    ####                 ###################
+        ##########                 ####################
+          ######                   ###################
+                                   ##################
+       ####                         ################
+       ########                       #############
+         #########           #######    #########       ######
+             ######         ###################################
+            #######        ####################################
+        #########          ####################################
+       #######             ###################################
+       ###                 ##################################
+                                ########################
+  ###   ###########                   ##############
+#####  ############                   ###############
+####   ###########                   ################
+                                    ####################
+       ###                         ######################
+       ######                    ##########################
+        #########               ###########  ###############
+            #######           ############    ###############
+             ######          ###########        #############
+          ########           ##########          ###########
+       ########              #########             ########
+       ####                     ####                 ###
+~
+!
+vlan qinq
+!
+interface vlan 1
+ name DefaultVlan
+ ip address 192.168.0.25/24
+ set-member untagged ethernet all
+!
+interface vlan ${svlan}
+ name VLAN_1063_1909338
+ set-member tagged ethernet 1/5
+ set-member untagged ethernet 1/8
+!
+vlan-group 1
+vlan-group 1 vlan all
+!
+interface ethernet 1/5
+ description CONN_TO_UPLINK_VIVO_ONT_1/1
+ switchport qinq internal
+ no switchport storm-control broadcast
+ no switchport storm-control multicast
+ no switchport storm-control dlf
+!
+interface ethernet 1/8
+ description TELEFONICA
+ l2protocol-tunnel cdp
+ l2protocol-tunnel stp
+ l2protocol-tunnel vtp
+ l2protocol-tunnel pvst
+ l2protocol-tunnel udld
+ l2protocol-tunnel pagp
+ l2protocol-tunnel lacp
+ l2protocol-tunnel dot1x
+ l2protocol-tunnel oam
+ l2protocol-tunnel marker
+ l2protocol-tunnel gvrp
+ switchport native vlan 2694
+ switchport qinq internal
+ no switchport storm-control broadcast
+ no switchport storm-control multicast
+ no switchport storm-control dlf
+!
+no remote-devices enable
+remote-devices enable ethernet range 1/1 1/4
+!
+ip default-gateway ${wanIp1}.${wanIp2}.${wanIp3}.${wanIp4}
+!
+ip telnet server
+ip http server
+no ip http secure-server
+no ip ssh server
+!
+ip snmp-server
+ip snmp-server community public ro
+!
+spanning-tree 1
+spanning-tree 1 vlan-group 1
+!
+sync-source hierarchy 1 transmit-clock-source internal
+sync-source hierarchy 1 enable
+!
+interface bundle range 1/2 1/8
+ tdm-channel 1
+!`;
+
     }
     else if (scriptType === 'aligera-ramal') {
         command = `

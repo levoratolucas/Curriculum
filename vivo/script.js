@@ -220,9 +220,9 @@ config network switch port2 vlan_policy none
 config network switch vlan_mode disable
 config network switch monitor_port none
 config network ip type static
-config network ip address ${lanIp1}.${lanIp2}.${lanIp3}.${lanIp4}
+config network ip address ${lanIp1}.${lanIp2}.${lanIp3}.${lanIp4 + 2}
 config network ip netmask 255.255.255.248
-config network ip defaultgw ${lanIp1}.${lanIp2}.${lanIp3}.${lanIp4 - 1}
+config network ip defaultgw ${lanIp1}.${lanIp2}.${lanIp3}.${lanIp4 + 1}
 config network hostname ${name}-OS-${ord}
 config network mtu 1400
 config network dns 
@@ -390,7 +390,7 @@ config dialplan rule sip_trunk1_default destination_peer tdm group1
 config dialplan rule sip_trunk1_default called_pattern X.
 config dialplan rule sip_trunk1_default callerid_pattern 
 config dialplan rule sip_trunk1_default outgoing_called {:-4}
-config dialplan rule sip_trunk1_default outgoing_callerid {}
+config dialplan rule sip_trunk1_default outgoing_callerid {:3}
 config dialplan rule sip_trunk1_default answer_timeout 90
 config dialplan rule sip_trunk1_default sip_pas_info_sc yes
 config dialplan rule sip_trunk2_default source_peer tdm group1
@@ -495,7 +495,7 @@ config dialplan rule sip_trunk1_default destination_peer tdm group1
 config dialplan rule sip_trunk1_default called_pattern X.
 config dialplan rule sip_trunk1_default callerid_pattern 
 config dialplan rule sip_trunk1_default outgoing_called {:-4}
-config dialplan rule sip_trunk1_default outgoing_callerid {}
+config dialplan rule sip_trunk1_default outgoing_callerid {:3}
 config dialplan rule sip_trunk1_default answer_timeout 90
 config dialplan rule sip_trunk1_default sip_pas_info_sc yes
 config dialplan rule sip_trunk2_default source_peer tdm group1

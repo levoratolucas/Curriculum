@@ -130,9 +130,60 @@ Sul;detrator;17
 Sul;neutro;34
 Sul;promotor;78
 `;
-const csvDataNps9 = `região;nps;Contagem`;
-const csvDataNps10 = `região;nps;Contagem`;
-const csvDataNps11 = `região;nps;Contagem`;
+const grupo6 = `região;nps;Contagem
+Centro-Oeste;detrator;21
+Centro-Oeste;neutro;42
+Centro-Oeste;promotor;168
+Nordeste;detrator;1
+Nordeste;neutro;14
+Nordeste;promotor;23
+Norte;neutro;15
+Norte;promotor;26
+Outro;detrator;6
+Outro;neutro;8
+Outro;promotor;19
+Sudeste;detrator;5
+Sudeste;neutro;10
+Sudeste;promotor;42
+Sul;detrator;9
+Sul;neutro;10
+Sul;promotor;38
+`;
+const grupo7 = `região;nps;Contagem
+Centro-Oeste;detrator;13
+Centro-Oeste;neutro;48
+Centro-Oeste;promotor;153
+Nordeste;detrator;1
+Nordeste;neutro;3
+Nordeste;promotor;21
+Norte;detrator;1
+Norte;neutro;9
+Norte;promotor;24
+Outro;detrator;3
+Outro;neutro;7
+Outro;promotor;27
+Sudeste;detrator;4
+Sudeste;neutro;22
+Sudeste;promotor;43
+Sul;neutro;12
+Sul;promotor;27
+`;
+const grupo8 = `região;nps;Contagem
+Centro-Oeste;detrator;29
+Centro-Oeste;neutro;47
+Centro-Oeste;promotor;78
+Nordeste;detrator;2
+Nordeste;neutro;10
+Nordeste;promotor;21
+Norte;detrator;2
+Norte;neutro;1
+Norte;promotor;8
+Outro;detrator;1
+Outro;neutro;5
+Outro;promotor;20
+Sudeste;detrator;3
+Sudeste;promotor;3
+Sul;promotor;2`;
 
 let npsChart = null; // Definir o gráfico como variável global
 
@@ -173,7 +224,7 @@ function generateBarChart(regions) {
     if (npsChart) {
         npsChart.destroy();
     }
-    
+
     // Criar um novo gráfico
     npsChart = new Chart(ctx, {
         type: 'bar',
@@ -240,8 +291,35 @@ document.getElementById('csvSelect').addEventListener('change', (event) => {
         case 'csv2':
             updateCSVNps(csvDataNps2);
             break;
-            case 'csv3':
-            updateCSVNps(csvDataNps2);
+        case 'grupo1':
+            updateCSVNps(grupo1);
+            break;
+        case 'grupo1':
+            updateCSVNps(grupo2);
+            break;
+        case 'grupo2':
+            updateCSVNps(grupo2);
+            break;
+        case 'grupo3':
+            updateCSVNps(grupo3);
+            break;
+        case 'grupo4':
+            updateCSVNps(grupo4);
+            break;
+        case 'grupo5':
+            updateCSVNps(grupo5);
+            break;
+        case 'grupo6':
+            updateCSVNps(grupo6);
+            break;
+        case 'grupo7':
+            updateCSVNps(grupo7);
+            break;
+        case 'grupo8':
+            updateCSVNps(grupo8);
+            break;
+        case 'grupo9_10':
+            updateCSVNps(grupo9_10);
             break;
         default:
             console.log('Opção inválida');

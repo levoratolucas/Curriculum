@@ -46,58 +46,29 @@ function processCSV(csvData) {
     return { labels, dataValues, backgroundColors };
 }
 
-// Função para limitar o texto dos checkboxes a 100 caracteres
-function limitText(text) {
-    return text.length > 100 ? text.substring(0, 100) + '...' : text;
-}
+// Função para atualizar o gráfico com o CSV selecionado
+function updateCSV(csvData) {
+    const { labels, dataValues, backgroundColors } = processCSV(csvData);
 
-// Função para gerar os checkboxes dinamicamente
-function generateCheckboxes(labels) {
-    const checkboxContainer = document.getElementById('checkboxContainer');
-    checkboxContainer.innerHTML = ''; // Limpar antes de adicionar novos checkboxes
-    labels.forEach((label, index) => {
-        const labelText = limitText(label);
-        const checkboxHTML = `
-          <label>
-            <input type="checkbox" class="remove-checkbox" data-index="${index}">
-            ${labelText}
-          </label>
-        `;
-        checkboxContainer.innerHTML += checkboxHTML;
-    });
-}
-
-// Função para atualizar o gráfico com base nas checkboxes
-function updateChartData(labels, dataValues, backgroundColors) {
     const dataWithLabels = labels.map((label, index) => ({
         label: label,
         value: dataValues[index],
         backgroundColor: backgroundColors[index]
     }));
 
-    const checkedIndexes = Array.from(document.querySelectorAll('.remove-checkbox:checked'))
-        .map(checkbox => parseInt(checkbox.dataset.index));
+    dataWithLabels.sort((a, b) => b.value - a.value);
 
-    const filteredData = dataWithLabels.filter((_, index) => !checkedIndexes.includes(index));
+    const newLabels = dataWithLabels.map(item => item.label);
+    const newDataValues = dataWithLabels.map(item => item.value);
+    const newBackgroundColors = dataWithLabels.map(item => item.backgroundColor);
 
-    filteredData.sort((a, b) => b.value - a.value);
-
-    const newLabels = filteredData.map(item => item.label);
-    const newDataValues = filteredData.map(item => item.value);
-    const newBackgroundColors = filteredData.map(item => item.backgroundColor);
-
+    // Atualizar os dados do gráfico
     csatChart.data.labels = newLabels;
     csatChart.data.datasets[0].data = newDataValues;
     csatChart.data.datasets[0].backgroundColor = newBackgroundColors;
 
+    // Atualizar o gráfico
     csatChart.update();
-}
-
-// Função para atualizar o gráfico com o CSV selecionado
-function updateCSV(csvData) {
-    const { labels, dataValues, backgroundColors } = processCSV(csvData);
-    generateCheckboxes(labels);
-    updateChartData(labels, dataValues, backgroundColors);
 }
 
 // Inicializa o gráfico
@@ -146,9 +117,4 @@ document.getElementById('csvSelect').addEventListener('change', (event) => {
     } else {
         updateCSV(csvData2);
     }
-});
-
-// Atualiza o gráfico sempre que o estado dos checkboxes mudar
-document.querySelectorAll('.remove-checkbox').forEach((checkbox) => {
-    checkbox.addEventListener('change', () => updateChartData(csatChart.data.labels, csatChart.data.datasets[0].data, csatChart.data.datasets[0].backgroundColor));
 });

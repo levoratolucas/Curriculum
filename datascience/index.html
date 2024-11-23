@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráfico de Variáveis com XGBoost (Detrator)</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Gráfico de Variáveis com XGBoost (Detrator)</h1>
+
+  <div class="container">
+    <!-- Select para escolher o CSV -->
+    <div>
+      <label for="csvSelect">Escolha o CSV:</label>
+      <select id="csvSelect">
+        <option value="csv1">CSV 1</option>
+        <option value="csv2">CSV 2</option>
+      </select>
+    </div>
+
+    <!-- Checkboxes -->
+    <div class="checkbox-container" id="checkboxContainer">
+      <h3>Selecione as perguntas para excluir:</h3>
+      <!-- Os checkboxes serão adicionados aqui dinamicamente -->
+    </div>
+
+    <!-- Gráfico -->
+    <div class="chart-container">
+      <canvas id="csatChart"></canvas>
+    </div>
+  </div>
+
+  <script src="js/horizontal.js"></script>
+</body>
+</html>

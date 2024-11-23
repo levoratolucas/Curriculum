@@ -111,10 +111,26 @@ const csatChart = new Chart(ctx, {
 updateCSV(csvData1);
 
 // Atualiza o gráfico quando o usuário mudar a seleção
-document.getElementById('csvSelect').addEventListener('change', (event) => {
-    if (event.target.value === 'csv1') {
-        updateCSV(csvData1);
-    } else {
-        updateCSV(csvData2);
+document.getElementsByClassName('csss')[0].addEventListener('change', (event) => {
+    switch (event.target.value) {
+        case 'csv1':
+            updateCSV(csvData1);
+            break;
+        case 'csv2':
+            updateCSV(csvData2);
+            break;
+        case 'csv3':
+            updateCSV(csvData3);
+            break;
+        case 'csv4':
+            updateCSV(csvData4);
+            break;
+        case 'csv5':
+            updateCSV(csvData5);
+            break;
+        default:
+            console.log('Opção inválida');
+            break;
     }
 });
+

@@ -8,26 +8,32 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <h1>Gráfico de Variáveis com XGBoost (Detrator)</h1>
+  <h1>Gráficos de Variáveis com XGBoost (Detrator)</h1>
 
   <div class="container">
     <!-- Select para escolher o CSV -->
     <div>
       <label for="csvSelect">Escolha o CSV:</label>
-      <select id="csvSelect">
+      <select id="csvSelect" class="csss">
         <option value="csv1">CSV 1</option>
         <option value="csv2">CSV 2</option>
       </select>
     </div>
 
-    
-
-    <!-- Gráfico -->
+    <!-- Gráfico 1 -->
     <div class="chart-container">
-      <canvas id="csatChart"></canvas>
+      <h2>Gráfico NPS</h2>
+      <canvas id="npsChart"  width="400" height="200"></canvas>
+    </div>
+
+    <!-- Gráfico 2 -->
+    <div class="chart-container">
+      <h2>Gráfico CSAT</h2>
+      <canvas id="csatChart" width="400" height="200"></canvas>
     </div>
   </div>
 
-  <script src="js/horizontal.js"></script>
+  <script src="js/script.js"></script>
+  <script src="./js/nps.js"></script>
 </body>
 </html>

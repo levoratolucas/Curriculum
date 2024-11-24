@@ -76,26 +76,21 @@ h1 {
 }
 
 /* Estilo de cada gráfico/tabela */
-.chart-container, .chart-container20p {
+.chart-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 30px;
-    width: calc(30% - 20px);
+    width: calc(45% - 20px);
     padding: 10px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.chart-container20p {
-    width: calc(45% - 20px);
-}
-/* Responsividade */
 
-
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .chart-container {
         width: 100%; /* 1 por linha */
     }
@@ -169,12 +164,12 @@ canvas {
     <!-- Select para escolher o CSV -->
 
     <!-- Gráfico 1 -->
-    <div class="chart-container20p">
+    <div class="chart-container">
       <h2>Gráfico NPS</h2>
       <canvas id="npsChart" width="400" height="200"></canvas>
     </div>
 
-    <div class="chart-container20p">
+    <div class="chart-container">
       <h2 id="tituloTabela"></h2>
       <table id="tabelaSafra">
         <!-- A tabela será gerada dinamicamente aqui -->
@@ -182,13 +177,13 @@ canvas {
     </div>
 
     <!-- Gráfico 2 -->
-    <div class="chart-container20p">
+    <div class="chart-container">
       <h2>Gráfico Spearman</h2>
       <canvas id="csatChart" width="400" height="200"></canvas>
     </div>
 
     <!-- Gráfico 3: XGBoost - Detrator -->
-    <div class="chart-container20p">
+    <div class="chart-container">
       <h2>Gráfico XGBoost - Detrator</h2>
       <canvas id="xgbDetrator" width="400" height="200"></canvas>
     </div>

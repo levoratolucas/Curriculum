@@ -1,27 +1,167 @@
 // Dados simulados dos dois CSVs
-const csvData1 = `Variável;XGBoost (Detrator)
-Disponibilidade e confiabilidade mecânica;0.4226497
-Adequação às diversas operações e implementos;0.109258726
-Adaptabilidade às mais diversas condições de trabalho;0.095814064
-Conforto e ergonomia;0.082228996
-Facilidade de operação;0.0502939
-Facilidade para realização de manutenções;0.04864706
-Capacidade operacional (hectares por hora);0.048640095
-Custo de manutenção;0.044471357
-Consumo de combustível (litros por hectare);0.026491044
-Geração e transmissão de dados para gestão da frota;0.024934202`;
+const csvData1 = `feature;value
+disponibilidade e confiabilidade mecânica  (csat);0.6589723614647454
+adequação as diversas operações e implementos (csat);0.6341150005190309
+adaptabilidade as mais diversas condições de trabalho (csat);0.627401052132904
+capacidade operacional (hectares por hora) (csat);0.6244063351104361
+facilidade de operação (csat);0.6083120310409686
+geração e transmissão de dados para gestão agrícola (csat);0.6048903889140609
+facilidade para realização de manutenções (csat);0.6006593169646149
+geração e transmissão de dados para gestão da frota (csat);0.5994186247400497
+conforto e ergonomia (csat);0.5545290678010565
+facilidade de uso do piloto automático (csat);0.5358482924284513
+custo de manutenção (csat);0.47740827327980245
+consumo de combustível (litros por hectares) (csat);0.4695381961496609
+safra;0.0053643364434938666`;
 
-const csvData2 = `Variável;XGBoost (Detrator)
-Disponibilidade e confiabilidade mecânica;0.4226497
-Adequaçã;0.109258726
-Adaptabili;0.095814064
-Conforto ;0.082228996
-Facilidade;0.0502939
-Facilidade;0.04864706
-Capacidade;0.048640095
-Custo de ;0.044471357
-Consumo de ;0.026491044
-Geração e ;0.024934202`;
+const brasil = `feature;value
+disponibilidade e confiabilidade mecânica  (csat);0.6558163893872658
+adequação as diversas operações e implementos (csat);0.6321976253990529
+adaptabilidade as mais diversas condições de trabalho (csat);0.6258112179004556
+capacidade operacional (hectares por hora) (csat);0.6234204278853661
+facilidade de operação (csat);0.6083468064900486
+geração e transmissão de dados para gestão agrícola (csat);0.6036963595632717
+facilidade para realização de manutenções (csat);0.5983486113169727
+geração e transmissão de dados para gestão da frota (csat);0.5979753802213893
+conforto e ergonomia (csat);0.5527584056235967
+facilidade de uso do piloto automático (csat);0.5343771867106711
+custo de manutenção (csat);0.47599145725043346
+consumo de combustível (litros por hectares) (csat);0.4679462364649053
+safra;0.010478174825315769
+`;
+const grupo1 = `feature;value
+capacidade operacional (hectares por hora) (csat);0.643146206205076
+adequação as diversas operações e implementos (csat);0.6426357104023152
+disponibilidade e confiabilidade mecânica  (csat);0.6380756948068459
+adaptabilidade as mais diversas condições de trabalho (csat);0.6217714231134639
+facilidade de operação (csat);0.6110589780616479
+geração e transmissão de dados para gestão agrícola (csat);0.5973337136615723
+facilidade para realização de manutenções (csat);0.5972578963843188
+geração e transmissão de dados para gestão da frota (csat);0.5962648212624136
+conforto e ergonomia (csat);0.5598931651474428
+facilidade de uso do piloto automático (csat);0.49436169301269733
+consumo de combustível (litros por hectares) (csat);0.46540933955239777
+custo de manutenção (csat);0.4559393437671276
+safra;0.014308070372749143`;
+const grupo2 = `feature;value
+disponibilidade e confiabilidade mecânica  (csat);0.6875736123748266
+capacidade operacional (hectares por hora) (csat);0.6499634106969563
+facilidade de operação (csat);0.6344138907479079
+adequação as diversas operações e implementos (csat);0.6265068213167588
+adaptabilidade as mais diversas condições de trabalho (csat);0.6195716222595202
+facilidade para realização de manutenções (csat);0.6098015833394649
+geração e transmissão de dados para gestão da frota (csat);0.6069030241175111
+geração e transmissão de dados para gestão agrícola (csat);0.6028164892613546
+facilidade de uso do piloto automático (csat);0.5563746444682928
+conforto e ergonomia (csat);0.5446014253546987
+custo de manutenção (csat);0.47715627112433046
+consumo de combustível (litros por hectares) (csat);0.4635700892852815
+safra;0.1160070017626632
+`;
+const grupo3 = `feature;value
+disponibilidade e confiabilidade mecânica  (csat);0.6935213549708898
+facilidade para realização de manutenções (csat);0.6356601074892296
+geração e transmissão de dados para gestão agrícola (csat);0.6288575345333625
+adaptabilidade as mais diversas condições de trabalho (csat);0.6217205903690832
+adequação as diversas operações e implementos (csat);0.6211831959285267
+geração e transmissão de dados para gestão da frota (csat);0.6101664002841513
+facilidade de operação (csat);0.592918343648953
+facilidade de uso do piloto automático (csat);0.5911506393045003
+capacidade operacional (hectares por hora) (csat);0.5760998506694672
+conforto e ergonomia (csat);0.5460189365822847
+custo de manutenção (csat);0.5280134502283536
+consumo de combustível (litros por hectares) (csat);0.47551917551514533
+safra;0.01493665466275236
+`;
+const grupo4 = `feature;value
+disponibilidade e confiabilidade mecânica  (csat);0.6459228928767957
+adequação as diversas operações e implementos (csat);0.6274946908726177
+adaptabilidade as mais diversas condições de trabalho (csat);0.6263806788030586
+geração e transmissão de dados para gestão agrícola (csat);0.6224557891074022
+capacidade operacional (hectares por hora) (csat);0.6208506189738884
+facilidade de operação (csat);0.6113999372685184
+geração e transmissão de dados para gestão da frota (csat);0.6077139888954142
+facilidade para realização de manutenções (csat);0.6060890983861716
+conforto e ergonomia (csat);0.5622040232211963
+facilidade de uso do piloto automático (csat);0.5436527558271476
+consumo de combustível (litros por hectares) (csat);0.47160321654429366
+custo de manutenção (csat);0.46908797353039333
+safra;0.019409982375569932
+`;
+const grupo5 = `feature;value`;
+const grupo6 = `feature;value
+disponibilidade e confiabilidade mecânica  (csat);0.7312987464227193
+capacidade operacional (hectares por hora) (csat);0.6877485496189142
+adequação as diversas operações e implementos (csat);0.6594655070335111
+conforto e ergonomia (csat);0.652469906705851
+facilidade de operação (csat);0.6473864764929396
+adaptabilidade as mais diversas condições de trabalho (csat);0.6421070278714323
+facilidade para realização de manutenções (csat);0.6417245145107827
+facilidade de uso do piloto automático (csat);0.5945204277668481
+geração e transmissão de dados para gestão da frota (csat);0.5750916307098459
+geração e transmissão de dados para gestão agrícola (csat);0.5648602936198385
+custo de manutenção (csat);0.5579899311083514
+consumo de combustível (litros por hectares) (csat);0.5518188896741206
+safra;0.02504693887022175
+`;
+const grupo7 = `feature;value
+consumo de combustível (litros por hectares) (csat);1.0
+adequação as diversas operações e implementos (csat);0.8333333333333335
+adaptabilidade as mais diversas condições de trabalho (csat);0.6717229377096724
+geração e transmissão de dados para gestão da frota (csat);0.6413889981649106
+facilidade de operação (csat);0.6171138968832144
+capacidade operacional (hectares por hora) (csat);0.61484250039754
+disponibilidade e confiabilidade mecânica  (csat);0.58002441844803
+facilidade para realização de manutenções (csat);0.5695789496485559
+geração e transmissão de dados para gestão agrícola (csat);0.5384310145042395
+custo de manutenção (csat);0.49324832768216087
+safra;0.11453146694093808
+conforto e ergonomia (csat);
+facilidade de uso do piloto automático (csat);`;
+const grupo8 = `feature;value
+disponibilidade e confiabilidade mecânica  (csat);0.7378918499468972
+facilidade para realização de manutenções (csat);0.7253540840408099
+capacidade operacional (hectares por hora) (csat);0.7059640494620543
+facilidade de operação (csat);0.6122026226862847
+adaptabilidade as mais diversas condições de trabalho (csat);0.5821879038905754
+geração e transmissão de dados para gestão da frota (csat);0.5453035657674895
+geração e transmissão de dados para gestão agrícola (csat);0.5265641917174638
+custo de manutenção (csat);0.5115687856170917
+safra;0.09363220466885248
+adequação as diversas operações e implementos (csat);
+conforto e ergonomia (csat);
+consumo de combustível (litros por hectares) (csat);
+facilidade de uso do piloto automático (csat);
+`;
+const grupo9_10 = `feature;value
+facilidade de operação (csat);0.6429222491352587
+geração e transmissão de dados para gestão da frota (csat);0.6265142870582913
+geração e transmissão de dados para gestão agrícola (csat);0.6243604223202771
+capacidade operacional (hectares por hora) (csat);0.598642338353782
+adaptabilidade as mais diversas condições de trabalho (csat);0.5968130040806056
+conforto e ergonomia (csat);0.5789300684491947
+facilidade para realização de manutenções (csat);0.5716117282752629
+consumo de combustível (litros por hectares) (csat);0.5292539013136391
+disponibilidade e confiabilidade mecânica  (csat);0.5059183132466705
+custo de manutenção (csat);0.48905082030913233
+adequação as diversas operações e implementos (csat);0.3533870022152117
+facilidade de uso do piloto automático (csat);0.058281550515019605
+safra;0.0021400431369321756
+`;
+const grupo11 = `feature;value
+facilidade de operação (csat);0.5873847621108991
+facilidade para realização de manutenções (csat);0.5846703636434724
+geração e transmissão de dados para gestão agrícola (csat);0.5532615252031808
+geração e transmissão de dados para gestão da frota (csat);0.548094967694566
+custo de manutenção (csat);0.48019361093919816
+safra;0.06536684055592935
+capacidade operacional (hectares por hora) (csat);
+adequação as diversas operações e implementos (csat);
+conforto e ergonomia (csat);
+disponibilidade e confiabilidade mecânica  (csat);
+consumo de combustível (litros por hectares) (csat);
+adaptabilidade as mais diversas condições de trabalho (csat);
+facilidade de uso do piloto automático (csat);`;
 
 // Função para processar o CSV
 function processCSV(csvData) {
@@ -116,20 +256,35 @@ document.getElementsByClassName('csss')[0].addEventListener('change', (event) =>
         case 'csv1':
             updateCSV(csvData1);
             break;
-        case 'csv2':
-            updateCSV(csvData2);
+        case 'brasil':
+            updateCSV(brasil);
             break;
-        case 'csv3':
-            updateCSV(csvData3);
+        case 'grupo1':
+            updateCSV(grupo1);
             break;
-        case 'csv4':
-            updateCSV(csvData4);
+        case 'grupo1':
+            updateCSV(grupo1);
             break;
-        case 'csv5':
-            updateCSV(csvData5);
+        case 'grupo1':
+            updateCSV(grupo1);
             break;
-        default:
-            console.log('Opção inválida');
+        case 'grupo1':
+            updateCSV(grupo1);
+            break;
+        case 'grupo1':
+            updateCSV(grupo1);
+            break;
+        case 'grupo1':
+            updateCSV(grupo1);
+            break;
+        case 'grupo1':
+            updateCSV(grupo1);
+            break;
+        case 'grupo1':
+            updateCSV(grupo1);
+            break;
+        case 'grupo1':
+            updateCSV(grupo1);
             break;
     }
 });

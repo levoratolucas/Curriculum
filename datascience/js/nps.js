@@ -321,6 +321,9 @@ document.getElementById('csvSelect').addEventListener('change', (event) => {
         case 'grupo9_10':
             updateCSVNps(grupo9_10);
             break;
+        case 'grupo11':
+            updateCSVNps(grupo11);
+            break;
         default:
             console.log('Opção inválida');
             break;

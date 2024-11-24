@@ -1,6 +1,6 @@
 
 // A string fornecida
-const grupo4xr = `Random_Promotor_BRASIL;facilidade de operação (csat);0.15756461370804217
+const grupo4rd = `Random_Promotor_BRASIL;facilidade de operação (csat);0.15756461370804217
 Random_Promotor_BRASIL;facilidade para realização de manutenções (csat);0.1385576718560016
 Random_Promotor_BRASIL;capacidade operacional (hectares por hora) (csat);0.11081675111496583
 Random_Promotor_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.1096938675088258
@@ -55,7 +55,7 @@ function processData(input) {
 }
 
 // Processando os dados
-const datasets = processData(grupo4xr);
+const datasets = processData(grupo4rd);
 
 // Função para gerar gráfico de radar
 function generateRadarChart(datasets) {

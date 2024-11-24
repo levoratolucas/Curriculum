@@ -1,0 +1,241 @@
+modelo;variavel;importancia
+XGBoost_Detrator_3 a 6 M;facilidade de operação (csat);0.41499984
+XGBoost_Detrator_3 a 6 M;disponibilidade e confiabilidade mecânica  (csat);0.11840051
+XGBoost_Detrator_3 a 6 M;facilidade para realização de manutenções (csat);0.114138775
+XGBoost_Detrator_3 a 6 M;adaptabilidade as mais diversas condições de trabalho (csat);0.06049664
+XGBoost_Detrator_3 a 6 M;capacidade operacional (hectares por hora) (csat);0.051441304
+XGBoost_Detrator_3 a 6 M;geração e transmissão de dados para gestão agrícola (csat);0.049601275
+XGBoost_Detrator_3 a 6 M;conforto e ergonomia (csat);0.044944484
+XGBoost_Detrator_3 a 6 M;custo de manutenção (csat);0.044540636
+XGBoost_Detrator_3 a 6 M;adequação as diversas operações e implementos (csat);0.039133742
+XGBoost_Detrator_3 a 6 M;geração e transmissão de dados para gestão da frota (csat);0.03689034
+XGBoost_Neutro_3 a 6 M;capacidade operacional (hectares por hora) (csat);0.18389346
+XGBoost_Neutro_3 a 6 M;adequação as diversas operações e implementos (csat);0.11473194
+XGBoost_Neutro_3 a 6 M;adaptabilidade as mais diversas condições de trabalho (csat);0.11414262
+XGBoost_Neutro_3 a 6 M;disponibilidade e confiabilidade mecânica  (csat);0.10287842
+XGBoost_Neutro_3 a 6 M;facilidade de operação (csat);0.102667995
+XGBoost_Neutro_3 a 6 M;facilidade para realização de manutenções (csat);0.09862459
+XGBoost_Neutro_3 a 6 M;conforto e ergonomia (csat);0.05943238
+XGBoost_Neutro_3 a 6 M;geração e transmissão de dados para gestão da frota (csat);0.058123592
+XGBoost_Neutro_3 a 6 M;custo de manutenção (csat);0.057541873
+XGBoost_Neutro_3 a 6 M;consumo de combustível (litros por hectares) (csat);0.05496695
+XGBoost_Promotor_3 a 6 M;facilidade de operação (csat);0.3299056
+XGBoost_Promotor_3 a 6 M;facilidade para realização de manutenções (csat);0.1567814
+XGBoost_Promotor_3 a 6 M;disponibilidade e confiabilidade mecânica  (csat);0.08998142
+XGBoost_Promotor_3 a 6 M;capacidade operacional (hectares por hora) (csat);0.08927539
+XGBoost_Promotor_3 a 6 M;adaptabilidade as mais diversas condições de trabalho (csat);0.073280744
+XGBoost_Promotor_3 a 6 M;adequação as diversas operações e implementos (csat);0.057701886
+XGBoost_Promotor_3 a 6 M;geração e transmissão de dados para gestão da frota (csat);0.04769059
+XGBoost_Promotor_3 a 6 M;geração e transmissão de dados para gestão agrícola (csat);0.042736452
+XGBoost_Promotor_3 a 6 M;conforto e ergonomia (csat);0.040093534
+XGBoost_Promotor_3 a 6 M;custo de manutenção (csat);0.037420236
+XGBoost_Detrator_6 a 12 M;disponibilidade e confiabilidade mecânica  (csat);0.33323893
+XGBoost_Detrator_6 a 12 M;facilidade de operação (csat);0.15900448
+XGBoost_Detrator_6 a 12 M;facilidade para realização de manutenções (csat);0.09912261
+XGBoost_Detrator_6 a 12 M;adequação as diversas operações e implementos (csat);0.08372681
+XGBoost_Detrator_6 a 12 M;capacidade operacional (hectares por hora) (csat);0.06271901
+XGBoost_Detrator_6 a 12 M;adaptabilidade as mais diversas condições de trabalho (csat);0.060596224
+XGBoost_Detrator_6 a 12 M;custo de manutenção (csat);0.044754565
+XGBoost_Detrator_6 a 12 M;geração e transmissão de dados para gestão da frota (csat);0.044427678
+XGBoost_Detrator_6 a 12 M;geração e transmissão de dados para gestão agrícola (csat);0.042475183
+XGBoost_Detrator_6 a 12 M;conforto e ergonomia (csat);0.035625584
+XGBoost_Neutro_6 a 12 M;facilidade de operação (csat);0.15344884
+XGBoost_Neutro_6 a 12 M;capacidade operacional (hectares por hora) (csat);0.14775418
+XGBoost_Neutro_6 a 12 M;facilidade para realização de manutenções (csat);0.14361632
+XGBoost_Neutro_6 a 12 M;disponibilidade e confiabilidade mecânica  (csat);0.10823174
+XGBoost_Neutro_6 a 12 M;adequação as diversas operações e implementos (csat);0.08820758
+XGBoost_Neutro_6 a 12 M;adaptabilidade as mais diversas condições de trabalho (csat);0.07729148
+XGBoost_Neutro_6 a 12 M;geração e transmissão de dados para gestão da frota (csat);0.060101893
+XGBoost_Neutro_6 a 12 M;conforto e ergonomia (csat);0.058014788
+XGBoost_Neutro_6 a 12 M;geração e transmissão de dados para gestão agrícola (csat);0.057482712
+XGBoost_Neutro_6 a 12 M;custo de manutenção (csat);0.0548312
+XGBoost_Promotor_6 a 12 M;facilidade de operação (csat);0.3533697
+XGBoost_Promotor_6 a 12 M;facilidade para realização de manutenções (csat);0.16978133
+XGBoost_Promotor_6 a 12 M;capacidade operacional (hectares por hora) (csat);0.103585795
+XGBoost_Promotor_6 a 12 M;disponibilidade e confiabilidade mecânica  (csat);0.08143086
+XGBoost_Promotor_6 a 12 M;adequação as diversas operações e implementos (csat);0.06338552
+XGBoost_Promotor_6 a 12 M;geração e transmissão de dados para gestão da frota (csat);0.04489634
+XGBoost_Promotor_6 a 12 M;adaptabilidade as mais diversas condições de trabalho (csat);0.04447643
+XGBoost_Promotor_6 a 12 M;consumo de combustível (litros por hectares) (csat);0.036277026
+XGBoost_Promotor_6 a 12 M;conforto e ergonomia (csat);0.0353816
+XGBoost_Promotor_6 a 12 M;geração e transmissão de dados para gestão agrícola (csat);0.033791106
+XGBoost_Detrator_12 a 18 M;disponibilidade e confiabilidade mecânica  (csat);0.30060902
+XGBoost_Detrator_12 a 18 M;facilidade de operação (csat);0.15992925
+XGBoost_Detrator_12 a 18 M;capacidade operacional (hectares por hora) (csat);0.11798996
+XGBoost_Detrator_12 a 18 M;adaptabilidade as mais diversas condições de trabalho (csat);0.080699414
+XGBoost_Detrator_12 a 18 M;facilidade para realização de manutenções (csat);0.078038305
+XGBoost_Detrator_12 a 18 M;adequação as diversas operações e implementos (csat);0.06962258
+XGBoost_Detrator_12 a 18 M;conforto e ergonomia (csat);0.046628706
+XGBoost_Detrator_12 a 18 M;geração e transmissão de dados para gestão agrícola (csat);0.039879736
+XGBoost_Detrator_12 a 18 M;consumo de combustível (litros por hectares) (csat);0.03608691
+XGBoost_Detrator_12 a 18 M;geração e transmissão de dados para gestão da frota (csat);0.03537658
+XGBoost_Neutro_12 a 18 M;disponibilidade e confiabilidade mecânica  (csat);0.22720882
+XGBoost_Neutro_12 a 18 M;capacidade operacional (hectares por hora) (csat);0.17558481
+XGBoost_Neutro_12 a 18 M;adaptabilidade as mais diversas condições de trabalho (csat);0.091251366
+XGBoost_Neutro_12 a 18 M;facilidade de operação (csat);0.0721388
+XGBoost_Neutro_12 a 18 M;adequação as diversas operações e implementos (csat);0.07129715
+XGBoost_Neutro_12 a 18 M;custo de manutenção (csat);0.07057947
+XGBoost_Neutro_12 a 18 M;facilidade para realização de manutenções (csat);0.068566285
+XGBoost_Neutro_12 a 18 M;conforto e ergonomia (csat);0.064664386
+XGBoost_Neutro_12 a 18 M;geração e transmissão de dados para gestão da frota (csat);0.057884376
+XGBoost_Neutro_12 a 18 M;consumo de combustível (litros por hectares) (csat);0.052907944
+XGBoost_Promotor_12 a 18 M;facilidade de operação (csat);0.27278036
+XGBoost_Promotor_12 a 18 M;disponibilidade e confiabilidade mecânica  (csat);0.1951208
+XGBoost_Promotor_12 a 18 M;capacidade operacional (hectares por hora) (csat);0.15575941
+XGBoost_Promotor_12 a 18 M;adaptabilidade as mais diversas condições de trabalho (csat);0.062342815
+XGBoost_Promotor_12 a 18 M;facilidade para realização de manutenções (csat);0.058171626
+XGBoost_Promotor_12 a 18 M;custo de manutenção (csat);0.05369893
+XGBoost_Promotor_12 a 18 M;adequação as diversas operações e implementos (csat);0.046796344
+XGBoost_Promotor_12 a 18 M;conforto e ergonomia (csat);0.045895167
+XGBoost_Promotor_12 a 18 M;geração e transmissão de dados para gestão da frota (csat);0.038550828
+XGBoost_Promotor_12 a 18 M;consumo de combustível (litros por hectares) (csat);0.03802968
+XGBoost_Detrator_18 a 30 M;facilidade para realização de manutenções (csat);0.33755535
+XGBoost_Detrator_18 a 30 M;facilidade de operação (csat);0.16106798
+XGBoost_Detrator_18 a 30 M;disponibilidade e confiabilidade mecânica  (csat);0.14236839
+XGBoost_Detrator_18 a 30 M;adequação as diversas operações e implementos (csat);0.08113621
+XGBoost_Detrator_18 a 30 M;capacidade operacional (hectares por hora) (csat);0.07576681
+XGBoost_Detrator_18 a 30 M;adaptabilidade as mais diversas condições de trabalho (csat);0.04649525
+XGBoost_Detrator_18 a 30 M;geração e transmissão de dados para gestão da frota (csat);0.034121256
+XGBoost_Detrator_18 a 30 M;geração e transmissão de dados para gestão agrícola (csat);0.033375617
+XGBoost_Detrator_18 a 30 M;custo de manutenção (csat);0.031784277
+XGBoost_Detrator_18 a 30 M;conforto e ergonomia (csat);0.029148124
+XGBoost_Neutro_18 a 30 M;facilidade de operação (csat);0.24387304
+XGBoost_Neutro_18 a 30 M;facilidade para realização de manutenções (csat);0.1330147
+XGBoost_Neutro_18 a 30 M;disponibilidade e confiabilidade mecânica  (csat);0.12852323
+XGBoost_Neutro_18 a 30 M;capacidade operacional (hectares por hora) (csat);0.10444698
+XGBoost_Neutro_18 a 30 M;adaptabilidade as mais diversas condições de trabalho (csat);0.0670389
+XGBoost_Neutro_18 a 30 M;geração e transmissão de dados para gestão agrícola (csat);0.057317514
+XGBoost_Neutro_18 a 30 M;geração e transmissão de dados para gestão da frota (csat);0.056012254
+XGBoost_Neutro_18 a 30 M;adequação as diversas operações e implementos (csat);0.054515153
+XGBoost_Neutro_18 a 30 M;conforto e ergonomia (csat);0.053645853
+XGBoost_Neutro_18 a 30 M;consumo de combustível (litros por hectares) (csat);0.05099218
+XGBoost_Promotor_18 a 30 M;facilidade de operação (csat);0.41674444
+XGBoost_Promotor_18 a 30 M;facilidade para realização de manutenções (csat);0.12807341
+XGBoost_Promotor_18 a 30 M;disponibilidade e confiabilidade mecânica  (csat);0.12054883
+XGBoost_Promotor_18 a 30 M;capacidade operacional (hectares por hora) (csat);0.07309661
+XGBoost_Promotor_18 a 30 M;adequação as diversas operações e implementos (csat);0.055994324
+XGBoost_Promotor_18 a 30 M;geração e transmissão de dados para gestão agrícola (csat);0.037532352
+XGBoost_Promotor_18 a 30 M;adaptabilidade as mais diversas condições de trabalho (csat);0.03568338
+XGBoost_Promotor_18 a 30 M;conforto e ergonomia (csat);0.034710083
+XGBoost_Promotor_18 a 30 M;geração e transmissão de dados para gestão da frota (csat);0.03403411
+XGBoost_Promotor_18 a 30 M;custo de manutenção (csat);0.033880018
+XGBoost_Detrator_ 6 a 12 M;adaptabilidade as mais diversas condições de trabalho (csat);0.38936353
+XGBoost_Detrator_ 6 a 12 M;disponibilidade e confiabilidade mecânica  (csat);0.3149499
+XGBoost_Detrator_ 6 a 12 M;capacidade operacional (hectares por hora) (csat);0.15599523
+XGBoost_Detrator_ 6 a 12 M;consumo de combustível (litros por hectares) (csat);0.060346417
+XGBoost_Detrator_ 6 a 12 M;custo de manutenção (csat);0.03649847
+XGBoost_Detrator_ 6 a 12 M;facilidade de operação (csat);0.02413056
+XGBoost_Detrator_ 6 a 12 M;conforto e ergonomia (csat);0.0064093214
+XGBoost_Detrator_ 6 a 12 M;geração e transmissão de dados para gestão da frota (csat);0.0063266573
+XGBoost_Detrator_ 6 a 12 M;adequação as diversas operações e implementos (csat);0.0051971613
+XGBoost_Detrator_ 6 a 12 M;facilidade para realização de manutenções (csat);0.0007827144
+XGBoost_Neutro_ 6 a 12 M;capacidade operacional (hectares por hora) (csat);0.29376462
+XGBoost_Neutro_ 6 a 12 M;disponibilidade e confiabilidade mecânica  (csat);0.1109129
+XGBoost_Neutro_ 6 a 12 M;custo de manutenção (csat);0.10712584
+XGBoost_Neutro_ 6 a 12 M;adaptabilidade as mais diversas condições de trabalho (csat);0.0957453
+XGBoost_Neutro_ 6 a 12 M;adequação as diversas operações e implementos (csat);0.070219286
+XGBoost_Neutro_ 6 a 12 M;geração e transmissão de dados para gestão agrícola (csat);0.06146766
+XGBoost_Neutro_ 6 a 12 M;facilidade para realização de manutenções (csat);0.059693
+XGBoost_Neutro_ 6 a 12 M;conforto e ergonomia (csat);0.055311307
+XGBoost_Neutro_ 6 a 12 M;geração e transmissão de dados para gestão da frota (csat);0.054242004
+XGBoost_Neutro_ 6 a 12 M;consumo de combustível (litros por hectares) (csat);0.049107816
+XGBoost_Promotor_ 6 a 12 M;capacidade operacional (hectares por hora) (csat);0.43421537
+XGBoost_Promotor_ 6 a 12 M;adaptabilidade as mais diversas condições de trabalho (csat);0.13503768
+XGBoost_Promotor_ 6 a 12 M;conforto e ergonomia (csat);0.0655175
+XGBoost_Promotor_ 6 a 12 M;geração e transmissão de dados para gestão da frota (csat);0.062484246
+XGBoost_Promotor_ 6 a 12 M;custo de manutenção (csat);0.055991467
+XGBoost_Promotor_ 6 a 12 M;disponibilidade e confiabilidade mecânica  (csat);0.05330532
+XGBoost_Promotor_ 6 a 12 M;adequação as diversas operações e implementos (csat);0.049697466
+XGBoost_Promotor_ 6 a 12 M;facilidade para realização de manutenções (csat);0.048797134
+XGBoost_Promotor_ 6 a 12 M;geração e transmissão de dados para gestão agrícola (csat);0.041694056
+XGBoost_Promotor_ 6 a 12 M;consumo de combustível (litros por hectares) (csat);0.029468808
+XGBoost_Detrator_ 18 a 30 M;adequação as diversas operações e implementos (csat);0.46328908
+XGBoost_Detrator_ 18 a 30 M;disponibilidade e confiabilidade mecânica  (csat);0.21778756
+XGBoost_Detrator_ 18 a 30 M;facilidade de operação (csat);0.10854804
+XGBoost_Detrator_ 18 a 30 M;capacidade operacional (hectares por hora) (csat);0.06479794
+XGBoost_Detrator_ 18 a 30 M;geração e transmissão de dados para gestão da frota (csat);0.03866966
+XGBoost_Detrator_ 18 a 30 M;facilidade para realização de manutenções (csat);0.03646098
+XGBoost_Detrator_ 18 a 30 M;geração e transmissão de dados para gestão agrícola (csat);0.027029647
+XGBoost_Detrator_ 18 a 30 M;custo de manutenção (csat);0.02431645
+XGBoost_Detrator_ 18 a 30 M;consumo de combustível (litros por hectares) (csat);0.019100685
+XGBoost_Detrator_ 18 a 30 M;conforto e ergonomia (csat);0.0
+XGBoost_Neutro_ 18 a 30 M;facilidade de operação (csat);0.3060995
+XGBoost_Neutro_ 18 a 30 M;adequação as diversas operações e implementos (csat);0.15724677
+XGBoost_Neutro_ 18 a 30 M;adaptabilidade as mais diversas condições de trabalho (csat);0.08404805
+XGBoost_Neutro_ 18 a 30 M;capacidade operacional (hectares por hora) (csat);0.073701434
+XGBoost_Neutro_ 18 a 30 M;conforto e ergonomia (csat);0.06298254
+XGBoost_Neutro_ 18 a 30 M;geração e transmissão de dados para gestão da frota (csat);0.060097545
+XGBoost_Neutro_ 18 a 30 M;geração e transmissão de dados para gestão agrícola (csat);0.058977198
+XGBoost_Neutro_ 18 a 30 M;custo de manutenção (csat);0.0576383
+XGBoost_Neutro_ 18 a 30 M;consumo de combustível (litros por hectares) (csat);0.05036416
+XGBoost_Neutro_ 18 a 30 M;facilidade para realização de manutenções (csat);0.046279836
+XGBoost_Promotor_ 18 a 30 M;facilidade de operação (csat);0.24249959
+XGBoost_Promotor_ 18 a 30 M;disponibilidade e confiabilidade mecânica  (csat);0.177066
+XGBoost_Promotor_ 18 a 30 M;adequação as diversas operações e implementos (csat);0.17050351
+XGBoost_Promotor_ 18 a 30 M;adaptabilidade as mais diversas condições de trabalho (csat);0.08437172
+XGBoost_Promotor_ 18 a 30 M;capacidade operacional (hectares por hora) (csat);0.06804279
+XGBoost_Promotor_ 18 a 30 M;geração e transmissão de dados para gestão da frota (csat);0.054593377
+XGBoost_Promotor_ 18 a 30 M;facilidade para realização de manutenções (csat);0.04590594
+XGBoost_Promotor_ 18 a 30 M;conforto e ergonomia (csat);0.043165427
+XGBoost_Promotor_ 18 a 30 M;geração e transmissão de dados para gestão agrícola (csat);0.042427663
+XGBoost_Promotor_ 18 a 30 M;consumo de combustível (litros por hectares) (csat);0.039770957
+XGBoost_Detrator_ 12 a 18 M;capacidade operacional (hectares por hora) (csat);0.0
+XGBoost_Detrator_ 12 a 18 M;adequação as diversas operações e implementos (csat);0.0
+XGBoost_Detrator_ 12 a 18 M;facilidade de operação (csat);0.0
+XGBoost_Detrator_ 12 a 18 M;conforto e ergonomia (csat);0.0
+XGBoost_Detrator_ 12 a 18 M;disponibilidade e confiabilidade mecânica  (csat);0.0
+XGBoost_Detrator_ 12 a 18 M;facilidade para realização de manutenções (csat);0.0
+XGBoost_Detrator_ 12 a 18 M;custo de manutenção (csat);0.0
+XGBoost_Detrator_ 12 a 18 M;consumo de combustível (litros por hectares) (csat);0.0
+XGBoost_Detrator_ 12 a 18 M;adaptabilidade as mais diversas condições de trabalho (csat);0.0
+XGBoost_Detrator_ 12 a 18 M;geração e transmissão de dados para gestão da frota (csat);0.0
+XGBoost_Neutro_ 12 a 18 M;capacidade operacional (hectares por hora) (csat);0.0
+XGBoost_Neutro_ 12 a 18 M;adequação as diversas operações e implementos (csat);0.0
+XGBoost_Neutro_ 12 a 18 M;facilidade de operação (csat);0.0
+XGBoost_Neutro_ 12 a 18 M;conforto e ergonomia (csat);0.0
+XGBoost_Neutro_ 12 a 18 M;disponibilidade e confiabilidade mecânica  (csat);0.0
+XGBoost_Neutro_ 12 a 18 M;facilidade para realização de manutenções (csat);0.0
+XGBoost_Neutro_ 12 a 18 M;custo de manutenção (csat);0.0
+XGBoost_Neutro_ 12 a 18 M;consumo de combustível (litros por hectares) (csat);0.0
+XGBoost_Neutro_ 12 a 18 M;adaptabilidade as mais diversas condições de trabalho (csat);0.0
+XGBoost_Neutro_ 12 a 18 M;geração e transmissão de dados para gestão da frota (csat);0.0
+XGBoost_Promotor_ 12 a 18 M;capacidade operacional (hectares por hora) (csat);0.0
+XGBoost_Promotor_ 12 a 18 M;adequação as diversas operações e implementos (csat);0.0
+XGBoost_Promotor_ 12 a 18 M;facilidade de operação (csat);0.0
+XGBoost_Promotor_ 12 a 18 M;conforto e ergonomia (csat);0.0
+XGBoost_Promotor_ 12 a 18 M;disponibilidade e confiabilidade mecânica  (csat);0.0
+XGBoost_Promotor_ 12 a 18 M;facilidade para realização de manutenções (csat);0.0
+XGBoost_Promotor_ 12 a 18 M;custo de manutenção (csat);0.0
+XGBoost_Promotor_ 12 a 18 M;consumo de combustível (litros por hectares) (csat);0.0
+XGBoost_Promotor_ 12 a 18 M;adaptabilidade as mais diversas condições de trabalho (csat);0.0
+XGBoost_Promotor_ 12 a 18 M;geração e transmissão de dados para gestão da frota (csat);0.0
+XGBoost_Detrator_ 3 a 6 M;adequação as diversas operações e implementos (csat);0.19881865
+XGBoost_Detrator_ 3 a 6 M;disponibilidade e confiabilidade mecânica  (csat);0.19438243
+XGBoost_Detrator_ 3 a 6 M;facilidade para realização de manutenções (csat);0.18678491
+XGBoost_Detrator_ 3 a 6 M;conforto e ergonomia (csat);0.16563338
+XGBoost_Detrator_ 3 a 6 M;custo de manutenção (csat);0.12967373
+XGBoost_Detrator_ 3 a 6 M;facilidade de operação (csat);0.124706954
+XGBoost_Detrator_ 3 a 6 M;capacidade operacional (hectares por hora) (csat);0.0
+XGBoost_Detrator_ 3 a 6 M;consumo de combustível (litros por hectares) (csat);0.0
+XGBoost_Detrator_ 3 a 6 M;adaptabilidade as mais diversas condições de trabalho (csat);0.0
+XGBoost_Detrator_ 3 a 6 M;geração e transmissão de dados para gestão da frota (csat);0.0
+XGBoost_Neutro_ 3 a 6 M;consumo de combustível (litros por hectares) (csat);0.38094768
+XGBoost_Neutro_ 3 a 6 M;adequação as diversas operações e implementos (csat);0.19005702
+XGBoost_Neutro_ 3 a 6 M;adaptabilidade as mais diversas condições de trabalho (csat);0.118832424
+XGBoost_Neutro_ 3 a 6 M;disponibilidade e confiabilidade mecânica  (csat);0.08839732
+XGBoost_Neutro_ 3 a 6 M;custo de manutenção (csat);0.08452511
+XGBoost_Neutro_ 3 a 6 M;facilidade de operação (csat);0.07091934
+XGBoost_Neutro_ 3 a 6 M;geração e transmissão de dados para gestão da frota (csat);0.0663211
+XGBoost_Neutro_ 3 a 6 M;capacidade operacional (hectares por hora) (csat);0.0
+XGBoost_Neutro_ 3 a 6 M;conforto e ergonomia (csat);0.0
+XGBoost_Neutro_ 3 a 6 M;facilidade para realização de manutenções (csat);0.0
+XGBoost_Promotor_ 3 a 6 M;capacidade operacional (hectares por hora) (csat);0.48962697
+XGBoost_Promotor_ 3 a 6 M;adequação as diversas operações e implementos (csat);0.21749176
+XGBoost_Promotor_ 3 a 6 M;facilidade de operação (csat);0.080089375
+XGBoost_Promotor_ 3 a 6 M;adaptabilidade as mais diversas condições de trabalho (csat);0.062222634
+XGBoost_Promotor_ 3 a 6 M;custo de manutenção (csat);0.044175748
+XGBoost_Promotor_ 3 a 6 M;geração e transmissão de dados para gestão da frota (csat);0.04305394
+XGBoost_Promotor_ 3 a 6 M;consumo de combustível (litros por hectares) (csat);0.035684783
+XGBoost_Promotor_ 3 a 6 M;disponibilidade e confiabilidade mecânica  (csat);0.02765474
+XGBoost_Promotor_ 3 a 6 M;conforto e ergonomia (csat);0.0
+XGBoost_Promotor_ 3 a 6 M;facilidade para realização de manutenções (csat);0.0

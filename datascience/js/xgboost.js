@@ -1,36 +1,4 @@
-// A string fornecida
-const dados = `XGBoost_Detrator_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.27945417
-XGBoost_Detrator_BRASIL;facilidade de operação (csat);0.18375741
-XGBoost_Detrator_BRASIL;facilidade para realização de manutenções (csat);0.17542207
-XGBoost_Detrator_BRASIL;capacidade operacional (hectares por hora) (csat);0.08613092
-XGBoost_Detrator_BRASIL;adequação as diversas operações e implementos (csat);0.05344875
-XGBoost_Detrator_BRASIL;custo de manutenção (csat);0.042951062
-XGBoost_Detrator_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.0387706
-XGBoost_Detrator_BRASIL;conforto e ergonomia (csat);0.03214221
-XGBoost_Detrator_BRASIL;geração e transmissão de dados para gestão agrícola (csat);0.029979581
-XGBoost_Detrator_BRASIL;geração e transmissão de dados para gestão da frota (csat);0.029180322
-XGBoost_Neutro_BRASIL;capacidade operacional (hectares por hora) (csat);0.23239039
-XGBoost_Neutro_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.17708378
-XGBoost_Neutro_BRASIL;facilidade para realização de manutenções (csat);0.14970835
-XGBoost_Neutro_BRASIL;facilidade de operação (csat);0.11503503
-XGBoost_Neutro_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.056255434
-XGBoost_Neutro_BRASIL;adequação as diversas operações e implementos (csat);0.04591634
-XGBoost_Neutro_BRASIL;geração e transmissão de dados para gestão da frota (csat);0.04032155
-XGBoost_Neutro_BRASIL;conforto e ergonomia (csat);0.039574705
-XGBoost_Neutro_BRASIL;custo de manutenção (csat);0.039375093
-XGBoost_Neutro_BRASIL;facilidade de uso do piloto automático (csat);0.035113927
-XGBoost_Promotor_BRASIL;facilidade de operação (csat);0.4433135
-XGBoost_Promotor_BRASIL;facilidade para realização de manutenções (csat);0.119210474
-XGBoost_Promotor_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.11777223
-XGBoost_Promotor_BRASIL;capacidade operacional (hectares por hora) (csat);0.09786024
-XGBoost_Promotor_BRASIL;adequação as diversas operações e implementos (csat);0.043290626
-XGBoost_Promotor_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.030720685
-XGBoost_Promotor_BRASIL;geração e transmissão de dados para gestão da frota (csat);0.028084185
-XGBoost_Promotor_BRASIL;conforto e ergonomia (csat);0.026360322
-XGBoost_Promotor_BRASIL;geração e transmissão de dados para gestão agrícola (csat);0.026302315
-XGBoost_Promotor_BRASIL;custo de manutenção (csat);0.023882715`;
-
-// Função para processar a string
+// Função para processar os dados do CSV
 function processarDados(input) {
     const linhas = input.split("\n");
     const dadosProcessados = {};
@@ -53,12 +21,19 @@ function processarDados(input) {
     return dadosProcessados;
 }
 
-// Processando os dados
-const dadosProcessados = processarDados(dados);
+// Função para carregar o CSV via URL e retornar os dados processados
+async function carregarCSV(caminhoCSV) {
+    const resposta = await fetch(caminhoCSV); // Carrega o arquivo CSV via URL
+    const csvText = await resposta.text();   // Converte o conteúdo em texto
+    return processarDados(csvText);          // Processa o CSV e retorna os dados processados
+}
 
-// Função para gerar gráfico de radar
+// Função para gerar o gráfico de radar com os dados processados
 function gerarGraficoRadar(dadosProcessados) {
     const container = document.getElementById('chartsContainer2');
+
+    // Remover qualquer gráfico existente antes de adicionar o novo
+    container.innerHTML = '';
 
     // Cores vibrantes para diferentes modelos
     const coresVibrantes = [
@@ -133,5 +108,33 @@ function gerarGraficoRadar(dadosProcessados) {
     });
 }
 
-// Gerar o gráfico de radar
-gerarGraficoRadar(dadosProcessados);
+// Função para carregar os dados e gerar o gráfico
+async function carregarEGerarGrafico(caminhoCSV) {
+    const dadosProcessados = await carregarCSV(caminhoCSV);
+    gerarGraficoRadar(dadosProcessados);
+}
+
+document.querySelector('.csss').addEventListener('change', async (evento) => {
+    const valorSelecionado = evento.target.value;
+
+    const opcoesCSV2 = {
+        csv1: 'data/Grupo 4_XGBOOST.csv',
+        csv2: 'data/Grupo 4_XGBOOST.csv',
+        grupo1: 'data/Grupo 1_XGBOOST.csv',
+        grupo2: 'data/Grupo 2_XGBOOST.csv',
+        grupo3: 'data/Grupo 3_XGBOOST.csv',
+        grupo4: 'data/Grupo 4_XGBOOST.csv',
+        grupo5: 'data/Grupo 5_XGBOOST.csv',
+        grupo6: 'data/Grupo 6_XGBOOST.csv',
+        grupo7: 'data/Grupo 7_XGBOOST.csv',
+        grupo8: 'data/Grupo 8_XGBOOST.csv',
+        grupo9_10: 'data/Grupo 9_10_XGBOOST.csv',
+        grupo11: 'data/Grupo 11_XGBOOST.csv',
+    };
+
+    if (opcoesCSV2[valorSelecionado]) {
+        await carregarEGerarGrafico(opcoesCSV2[valorSelecionado]);
+    } else {
+        console.log('Opção inválida');
+    }
+});

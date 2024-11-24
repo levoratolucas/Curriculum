@@ -1,135 +1,143 @@
-// A string fornecida
-const dadosOriginais = `
-xgboost;disponibilidade e confiabilidade mecânica  (csat);0.7378918499468972
-xgboost;facilidade para realização de manutenções (csat);0.7253540840408099
-xgboost;capacidade operacional (hectares por hora) (csat);0.7059640494620543
-xgboost;facilidade de operação (csat);0.6122026226862847
-xgboost;adaptabilidade as mais diversas condições de trabalho (csat);0.5821879038905754
-xgboost;geração e transmissão de dados para gestão da frota (csat);0.5453035657674895
-xgboost;geração e transmissão de dados para gestão agrícola (csat);0.5265641917174638
-xgboost;custo de manutenção (csat);0.5115687856170917
-xgboost;safra;0.09363220466885248
-xgboost;adequação as diversas operações e implementos (csat);
-xgboost;conforto e ergonomia (csat);
-xgboost;consumo de combustível (litros por hectares) (csat);
-xgboost;facilidade de uso do piloto automático (csat);
-random;consumo de combustível (litros por hectares) (csat);1.0
-random;adequação as diversas operações e implementos (csat);0.8333333333333335
-random;adaptabilidade as mais diversas condições de trabalho (csat);0.6717229377096724
-random;geração e transmissão de dados para gestão da frota (csat);0.6413889981649106
-random;facilidade de operação (csat);0.6171138968832144
-random;capacidade operacional (hectares por hora) (csat);0.61484250039754
-random;disponibilidade e confiabilidade mecânica  (csat);0.58002441844803
-random;facilidade para realização de manutenções (csat);0.5695789496485559
-random;geração e transmissão de dados para gestão agrícola (csat);0.5384310145042395
-random;custo de manutenção (csat);0.49324832768216087
-random;safra;0.11453146694093808
-random;conforto e ergonomia (csat);
-random;facilidade de uso do piloto automático (csat);`;
+// Caminho do arquivo CSV (por padrão, 'Grupo 11')
+let caminhoCSV = 'data/Grupo 11_spearman.csv';
 
-// Função para processar a string
-function processarDadosNovos(input) {
+// Armazenando o gráfico para atualização
+let grafico;
+
+// Função para processar o CSV
+function processarCSV(input) {
     const linhas = input.split("\n");
-    const dadosMapeados = {};
+    const dadosMapeados = {
+        labels: [], // Variáveis
+        valores: []  // Correlação
+    };
 
     linhas.forEach(linha => {
         const colunas = linha.split(";");
-        if (colunas.length === 3) {
-            const tipoModelo = colunas[0];
-            const atributo = colunas[1];
-            const valorImportancia = parseFloat(colunas[2]);
+        if (colunas.length === 2) {
+            const variavel = colunas[0].trim();
+            const correlacao = parseFloat(colunas[1].trim());
 
-            // Se o tipoModelo ainda não existir, cria um novo objeto
-            if (!dadosMapeados[tipoModelo]) {
-                dadosMapeados[tipoModelo] = {};
-            }
-
-            dadosMapeados[tipoModelo][atributo] = valorImportancia;
+            dadosMapeados.labels.push(variavel);
+            dadosMapeados.valores.push(correlacao);
         }
     });
+
     return dadosMapeados;
 }
 
-// Processando os dados
-const dadosMapeados = processarDadosNovos(dadosOriginais);
+// Array com 10 cores para as barras
+const coresBarras = [
+    'rgba(54, 162, 235, 0.6)',    // Azul
+    'rgba(255, 99, 132, 0.6)',    // Vermelho
+    'rgba(75, 192, 192, 0.6)',    // Verde
+    'rgba(153, 102, 255, 0.6)',   // Roxo
+    'rgba(255, 159, 64, 0.6)',    // Laranja
+    'rgba(255, 99, 71, 0.6)',     // Tomate
+    'rgba(255, 165, 0, 0.6)',     // Laranja escuro
+    'rgba(0, 128, 0, 0.6)',       // Verde escuro
+    'rgba(128, 0, 128, 0.6)',     // Roxo escuro
+    'rgba(0, 191, 255, 0.6)'      // Azul claro
+];
 
-// Função para gerar gráfico de radar
-function criarGraficoRadar(dadosMapeados) {
+// Função para criar ou atualizar o gráfico de barras
+function criarGraficoBarras(dadosMapeados) {
     const containerGrafico = document.getElementById('graficoCSAT');
 
-    // Cores para diferentes modelos
-    const coresGrafico = [
-        'rgba(54, 162, 235, 0.6)',    // Azul
-        'rgba(255, 99, 132, 0.6)',    // Vermelho
-        'rgba(75, 192, 192, 0.6)',    // Verde
-    ];
+    // Verificar se já existe um gráfico
+    if (grafico) {
+        grafico.destroy();  // Destruir o gráfico existente
+    }
 
     // Preparando os dados para o gráfico
-    const labelsGrafico = [];
-    const dadosRadar = {
-        labels: [], // Variáveis (facilidade de operação, capacidade operacional, ...)
-        datasets: [] // Dados de cada modelo (Promotor, Detrator, Neutro)
+    const dadosBarras = {
+        labels: dadosMapeados.labels, // Variáveis
+        datasets: [{
+            label: 'Correlação',
+            data: dadosMapeados.valores, // Correlação
+            backgroundColor: dadosMapeados.labels.map((_, index) => coresBarras[index % coresBarras.length]),  // Cores cíclicas
+            borderColor: dadosMapeados.labels.map((_, index) => coresBarras[index % coresBarras.length]),
+            borderWidth: 1
+        }]
     };
 
-    // Coletando as variáveis (labels)
-    Object.keys(dadosMapeados).forEach((tipoModelo, index) => {
-        const dadosModelo = dadosMapeados[tipoModelo];
-        Object.keys(dadosModelo).forEach(atributo => {
-            if (!dadosRadar.labels.includes(atributo)) {
-                dadosRadar.labels.push(atributo);
-            }
-        });
-    });
-
-    // Preenchendo os datasets para cada modelo
-    Object.keys(dadosMapeados).forEach((tipoModelo, index) => {
-        const dadosModelo = dadosMapeados[tipoModelo];
-        const dadosPorModelo = dadosRadar.labels.map(atributo => dadosModelo[atributo] || 0); // Garantir que todas as variáveis estão no gráfico
-
-        dadosRadar.datasets.push({
-            label: tipoModelo,
-            data: dadosPorModelo,
-            backgroundColor: coresGrafico[index % coresGrafico.length],
-            borderColor: coresGrafico[index % coresGrafico.length],
-            borderWidth: 1,
-            borderRadius: 0 // Remover bordas arredondadas
-        });
-    });
-
-    // Criando o elemento canvas para o gráfico
-    const canvasGrafico = document.createElement('canvas');
-    containerGrafico.appendChild(canvasGrafico);
+    // Obter o canvas para o gráfico
+    const canvasGrafico = document.getElementById('graficoCanvas');
+    if (!canvasGrafico) {
+        // Criar um novo canvas se não existir
+        const newCanvas = document.createElement('canvas');
+        newCanvas.id = 'graficoCanvas';
+        containerGrafico.appendChild(newCanvas);
+    }
 
     const ctx = canvasGrafico.getContext('2d');
 
-    // Criando o gráfico de radar com Chart.js
-    new Chart(ctx, {
-        type: 'bar',
-        data: dadosRadar,
+    // Criar ou atualizar o gráfico de barras com Chart.js
+    grafico = new Chart(ctx, {
+        type: 'bar',  // Tipo de gráfico
+        data: dadosBarras,
         options: {
-            responsive: true,
+            responsive: true,            
             indexAxis: 'y',
-            scale: {
-                ticks: {
-                    beginAtZero: true,
-                    max: 1,
-                    stepSize: 0.02
+            scales: {
+                x: {
+                    beginAtZero: true
                 },
-                pointLabels: {
-                    fontSize: 14
+                y: {
+                    ticks: {
+                        beginAtZero: true,
+                        max: 1,
+                        stepSize: 0.1
+                    }
                 }
             },
             elements: {
-                line: {
-                    tension: 0.1, // Deixa as linhas mais suaves
-                    borderWidth: 2, // Define a largura da borda da linha
-                    borderColor: coresGrafico[0], // Define a cor da linha
-                    fill: true // Permite o preenchimento abaixo da linha
+                bar: {
+                    borderRadius: 5 // Bordas arredondadas nas barras
                 }
             }
         }
     });
 }
 
-// Gerar o gráfico de radar
-criarGraficoRadar(dadosMapeados);
+// Função para buscar e processar o CSV
+function buscarCSV(caminho) {
+    fetch(caminho)
+        .then(response => response.text())  // Lê o arquivo como texto
+        .then(dadosCSV => {
+            const dadosMapeados = processarCSV(dadosCSV);
+            criarGraficoBarras(dadosMapeados);
+        })
+        .catch(error => {
+            console.error('Erro ao carregar o arquivo CSV:', error);
+        });
+}
+
+// Adicionar event listener para o select
+document.querySelector('.csss').addEventListener('change', async (evento) => {
+    const valorSelecionado = evento.target.value;
+
+    // Mapeamento das opções de CSV
+    const opcoesCSV = {
+        'csv1': 'data/Completo_spearman.csv',
+        'csv2': 'data/Brasil_spearman.csv',
+        'grupo1': 'data/Grupo 1_spearman.csv',
+        'grupo2': 'data/Grupo 2_spearman.csv',
+        'grupo3': 'data/Grupo 3_spearman.csv',
+        'grupo4': 'data/Grupo 4_spearman.csv',
+        'grupo6': 'data/Grupo 6_spearman.csv',
+        'grupo7': 'data/Grupo 7_spearman.csv',
+        'grupo8': 'data/Grupo 8_spearman.csv',
+        'grupo9_10': 'data/Grupo 9_10_spearman.csv',
+        'grupo11': 'data/Grupo 11_spearman.csv'
+    };
+
+    // Verifica se a opção selecionada existe no mapeamento
+    if (opcoesCSV[valorSelecionado]) {
+        caminhoCSV = opcoesCSV[valorSelecionado];  // Atualiza o caminho do CSV
+        buscarCSV(caminhoCSV);  // Carrega o novo CSV
+    }
+});
+
+// Chama a função inicial para carregar o arquivo CSV padrão
+buscarCSV(caminhoCSV);

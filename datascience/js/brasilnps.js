@@ -10,10 +10,10 @@ async function carregarTabelaDeSafras(caminhoCSV) {
 
     // Atualizar o título da tabela
     const tituloTabela = `Tabela de Safras por ${caminhoCSV.split('_')[0]}`;
-    document.getElementById('tituloTabela').textContent = tituloTabela;
+    document.getElementById('tituloTabelabrasil').textContent = tituloTabela;
 
     // Selecionar a tabela
-    const tabela = document.getElementById('tabelaSafra');
+    const tabela = document.getElementById('tabelanpsbrasil');
 
     // Limpar a tabela existente
     tabela.innerHTML = '';
@@ -43,25 +43,22 @@ async function carregarTabelaDeSafras(caminhoCSV) {
     tabela.appendChild(tbody);
 }
 
-// Carregar e exibir a tabela para o arquivo "Grupo 1_safra.csv"
-carregarTabelaDeSafras('data/Grupo 1_safra.csv');
-
 
 document.querySelector('.csss').addEventListener('change', async (evento) => {
     const valorSelecionado = evento.target.value;
 
     const opcoesCSV2 = {
-        csv1: 'data/Grupo 1_safra.csv',
-        csv2: 'data/Grupo 1_safra.csv',
-        grupo1: 'data/Grupo 1_safra.csv',
-        grupo2: 'data/Grupo 2_safra.csv',
-        grupo3: 'data/Grupo 3_safra.csv',
-        grupo4: 'data/Grupo 4_safra.csv',
-        grupo6: 'data/Grupo 6_safra.csv',
-        grupo7: 'data/Grupo 7_safra.csv',
-        grupo8: 'data/Grupo 8_safra.csv',
-        grupo9_10: 'data/Grupo 9_10_safra.csv',
-        grupo11: 'data/Grupo 11_safra.csv',
+        csv1: 'data/Grupo 1_nps_brasil.csv',
+        csv2: 'data/Grupo 1_nps_brasil.csv',
+        grupo1: 'data/Grupo 1_nps_brasil.csv',
+        grupo2: 'data/Grupo 2_nps_brasil.csv',
+        grupo3: 'data/Grupo 3_nps_brasil.csv',
+        grupo4: 'data/Grupo 4_nps_brasil.csv',
+        grupo6: 'data/Grupo 6_nps_brasil.csv',
+        grupo7: 'data/Grupo 7_nps_brasil.csv',
+        grupo8: 'data/Grupo 8_nps_brasil.csv',
+        grupo9_10: 'data/Grupo 9_10_nps_brasil.csv',
+        grupo11: 'data/Grupo 11_nps_brasil.csv',
     };
 
     if (opcoesCSV2[valorSelecionado]) {

@@ -1,3 +1,5 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +16,7 @@
     <!-- Select para escolher o CSV -->
     <div>
       <label for="csvSelect">Escolha o CSV:</label>
-      <select id="csvSelect" class="csss">
+      <select id="csvSelect" class="csss x_n_promotor">
         <option value="csv1">Completo</option>
         <option value="csv2">Brasil</option>
         <option value="grupo1">Grupo 1</option>
@@ -26,24 +28,68 @@
         <option value="grupo8">Grupo 8</option>
         <option value="grupo9_10">Grupo 9_10</option>
         <option value="grupo11">Grupo 11</option>
-        
       </select>
     </div>
 
     <!-- Gráfico 1 -->
     <div class="chart-container">
       <h2>Gráfico NPS</h2>
-      <canvas id="npsChart"  width="400" height="200"></canvas>
+      <canvas id="npsChart" width="400" height="200"></canvas>
     </div>
 
     <!-- Gráfico 2 -->
     <div class="chart-container">
-      <h2>Gráfico CSAT</h2>
+      <h2>Gráfico Spearman</h2>
       <canvas id="csatChart" width="400" height="200"></canvas>
     </div>
+
+
+      <!-- ___________________________________________________ -->
+
+    <!-- Gráfico 1: XGBoost - Detrator -->
+    <!-- <div class="chart-container">
+      <h2>Gráfico XGBoost - Detrator</h2>
+      <canvas id="xgbDetrator" width="400" height="200"></canvas>
+    </div> -->
+
+    <!-- Gráfico 2: Random Forest - Detrator -->
+    <!-- <div class="chart-container">
+      <h2>Gráfico Random Forest - Detrator</h2>
+      <canvas id="rfDetrator" width="400" height="200"></canvas>
+    </div> -->
+
+    <!-- Gráfico 3: XGBoost - Neutro -->
+    <!-- <div class="chart-container">
+      <h2>Gráfico XGBoost - Neutro</h2>
+      <canvas id="xgbNeutro" width="400" height="200"></canvas>
+    </div> -->
+
+    <!-- Gráfico 4: Random Forest - Neutro -->
+    <!-- <div class="chart-container">
+      <h2>Gráfico Random Forest - Neutro</h2>
+      <canvas id="rfNeutro" width="400" height="200"></canvas>
+    </div> -->
+
+    <!-- Gráfico 5: XGBoost - Não Promotor -->
+    <div class="chart-container">
+      <h2>Gráfico XGBoost - Não Promotor</h2>
+      <canvas id="teste" width="400" height="200"></canvas>
+    </div>
+
+    <!-- Gráfico 6: Random Forest - Não Promotor -->
+    <!-- <div class="chart-container">
+      <h2>Gráfico Random Forest - Não Promotor</h2>
+      <canvas id="rfNaoPromotor" width="400" height="200"></canvas>
+    </div> -->
   </div>
 
   <script src="js/script.js"></script>
-  <script src="./js/nps.js"></script>
+  <script src="js/nps.js"></script>
+  <script src="js/x_n_promotor.js"></script>
+  <!-- <script src="js/r_detrator.js"></script>
+  <script src="js/r_n_promotor.js"></script>
+  <script src="js/r_neutro.js"></script>
+  <script src="js/x_detrator.js"></script>
+  <script src="js/x_neutro.js"></script> -->
 </body>
 </html>

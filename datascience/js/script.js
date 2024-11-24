@@ -1,3 +1,5 @@
+// script.js
+
 // Dados simulados dos dois CSVs
 const csvData1 = `feature;value
 disponibilidade e confiabilidade mecânica  (csat);0.6589723614647454

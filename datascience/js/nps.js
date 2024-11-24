@@ -1,4 +1,4 @@
-
+// nps.js
 // Dados simulados dos CSVs
 const csvDataNps1 = `região;nps;Contagem
 completo;promotor;18251

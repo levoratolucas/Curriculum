@@ -2,94 +2,239 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gráfico de Variáveis com XGBoost (Detrator)</title>
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Estilo do corpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #6D3189;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+h1 {
+    margin: 20px;
+    color: #ffffff;
+}
+
+/* Seletor */
+.seletor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 30px;
+    width: calc(95% - 20px);
+    max-width: 1200px;
+    height: 50px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.seletor label {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.seletor select {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 30px;
+    width: calc(95% - 20px);
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de cada gráfico/tabela */
+.chart-container, .chart-container20p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    width: calc(30% - 20px);
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.chart-container20p {
+    width: calc(45% - 20px);
+}
+/* Responsividade */
+
+
+@media (max-width: 768px) {
+    .chart-container {
+        width: 100%; /* 1 por linha */
+    }
+}
+
+/* Hover interativo */
+.chart-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Títulos dos gráficos */
+.chart-container h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #0078D7;
+}
+
+/* Tabela */
+#tabelaSafra {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#tabelaSafra th,
+#tabelaSafra td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#tabelaSafra th {
+    background-color: #0078D7;
+    color: white;
+    font-weight: bold;
+}
+
+/* Canvas */
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+  </style>
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
   <h1>Gráficos de Variáveis com XGBoost (Detrator)</h1>
+  <div class="seletor">
+    <label for="csvSelect">Escolha o CSV:</label>
+    <select id="csvSelect" class="csss x_n_promotor">
+      <option value="csv1">Completo</option>
+      <option value="csv2">Brasil</option>
+      <option value="grupo1">Grupo 1</option>
+      <option value="grupo2">Grupo 2</option>
+      <option value="grupo3">Grupo 3</option>
+      <option value="grupo4">Grupo 4</option>
+      <option value="grupo6">Grupo 6</option>
+      <option value="grupo7">Grupo 7</option>
+      <option value="grupo8">Grupo 8</option>
+      <option value="grupo9_10">Grupo 9_10</option>
+      <option value="grupo11">Grupo 11</option>
+    </select>
+  </div>
 
   <div class="container">
     <!-- Select para escolher o CSV -->
-    <div>
-      <label for="csvSelect">Escolha o CSV:</label>
-      <select id="csvSelect" class="csss x_n_promotor">
-        <option value="csv1">Completo</option>
-        <option value="csv2">Brasil</option>
-        <option value="grupo1">Grupo 1</option>
-        <option value="grupo2">Grupo 2</option>
-        <option value="grupo3">Grupo 3</option>
-        <option value="grupo4">Grupo 4</option>
-        <option value="grupo6">Grupo 6</option>
-        <option value="grupo7">Grupo 7</option>
-        <option value="grupo8">Grupo 8</option>
-        <option value="grupo9_10">Grupo 9_10</option>
-        <option value="grupo11">Grupo 11</option>
-      </select>
-    </div>
 
     <!-- Gráfico 1 -->
-    <div class="chart-container">
+    <div class="chart-container20p">
       <h2>Gráfico NPS</h2>
       <canvas id="npsChart" width="400" height="200"></canvas>
     </div>
 
+    <div class="chart-container20p">
+      <h2 id="tituloTabela"></h2>
+      <table id="tabelaSafra">
+        <!-- A tabela será gerada dinamicamente aqui -->
+      </table>
+    </div>
+
     <!-- Gráfico 2 -->
-    <div class="chart-container">
+    <div class="chart-container20p">
       <h2>Gráfico Spearman</h2>
       <canvas id="csatChart" width="400" height="200"></canvas>
     </div>
 
-
-      <!-- ___________________________________________________ -->
-
-    <!-- Gráfico 1: XGBoost - Detrator -->
-    <!-- <div class="chart-container">
+    <!-- Gráfico 3: XGBoost - Detrator -->
+    <div class="chart-container20p">
       <h2>Gráfico XGBoost - Detrator</h2>
       <canvas id="xgbDetrator" width="400" height="200"></canvas>
-    </div> -->
+    </div>
 
-    <!-- Gráfico 2: Random Forest - Detrator -->
-    <!-- <div class="chart-container">
+    <!-- Gráfico 4: Random Forest - Detrator -->
+    <div class="chart-container">
       <h2>Gráfico Random Forest - Detrator</h2>
       <canvas id="rfDetrator" width="400" height="200"></canvas>
-    </div> -->
+    </div>
 
-    <!-- Gráfico 3: XGBoost - Neutro -->
-    <!-- <div class="chart-container">
+    <!-- Gráfico 5: XGBoost - Neutro -->
+    <div class="chart-container">
       <h2>Gráfico XGBoost - Neutro</h2>
       <canvas id="xgbNeutro" width="400" height="200"></canvas>
-    </div> -->
+    </div>
 
-    <!-- Gráfico 4: Random Forest - Neutro -->
-    <!-- <div class="chart-container">
+    <!-- Gráfico 6: Random Forest - Neutro -->
+    <div class="chart-container">
       <h2>Gráfico Random Forest - Neutro</h2>
       <canvas id="rfNeutro" width="400" height="200"></canvas>
-    </div> -->
+    </div>
 
-    <!-- Gráfico 5: XGBoost - Não Promotor -->
+    <!-- Gráfico 7: XGBoost - Não Promotor -->
     <div class="chart-container">
       <h2>Gráfico XGBoost - Não Promotor</h2>
       <canvas id="teste" width="400" height="200"></canvas>
     </div>
 
-    <!-- Gráfico 6: Random Forest - Não Promotor -->
-    <!-- <div class="chart-container">
+    <!-- Gráfico 8: Random Forest - Não Promotor -->
+    <div class="chart-container">
       <h2>Gráfico Random Forest - Não Promotor</h2>
       <canvas id="rfNaoPromotor" width="400" height="200"></canvas>
-    </div> -->
+    </div>
   </div>
 
+  <!-- Inclusão dos scripts existentes -->
+  <script src="js/safra.js"></script>
   <script src="js/script.js"></script>
   <script src="js/nps.js"></script>
   <script src="js/x_n_promotor.js"></script>
-  <!-- <script src="js/r_detrator.js"></script>
+  <script src="js/r_detrator.js"></script>
   <script src="js/r_n_promotor.js"></script>
   <script src="js/r_neutro.js"></script>
   <script src="js/x_detrator.js"></script>
-  <script src="js/x_neutro.js"></script> -->
+  <script src="js/x_neutro.js"></script>
 </body>
+
+
 </html>

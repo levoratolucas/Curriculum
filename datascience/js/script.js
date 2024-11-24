@@ -88,7 +88,6 @@ consumo de combustível (litros por hectares) (csat);0.47160321654429366
 custo de manutenção (csat);0.46908797353039333
 safra;0.019409982375569932
 `;
-const grupo5 = `feature;value`;
 const grupo6 = `feature;value
 disponibilidade e confiabilidade mecânica  (csat);0.7312987464227193
 capacidade operacional (hectares por hora) (csat);0.6877485496189142
@@ -231,7 +230,7 @@ const csatChart = new Chart(ctx, {
         scales: {
             x: {
                 beginAtZero: true,
-                max: 0.5
+                max: 1
             },
             y: {
                 ticks: {
@@ -262,29 +261,30 @@ document.getElementsByClassName('csss')[0].addEventListener('change', (event) =>
         case 'grupo1':
             updateCSV(grupo1);
             break;
-        case 'grupo1':
-            updateCSV(grupo1);
+        case 'grupo2':
+            updateCSV(grupo2);
             break;
-        case 'grupo1':
-            updateCSV(grupo1);
+        case 'grupo3':
+            updateCSV(grupo3);
             break;
-        case 'grupo1':
-            updateCSV(grupo1);
+        case 'grupo4':
+            updateCSV(grupo4);
             break;
-        case 'grupo1':
-            updateCSV(grupo1);
+        
+        case 'grupo6':
+            updateCSV(grupo6);
             break;
-        case 'grupo1':
-            updateCSV(grupo1);
+        case 'grupo7':
+            updateCSV(grupo7);
             break;
-        case 'grupo1':
-            updateCSV(grupo1);
+        case 'grupo8':
+            updateCSV(grupo8);
             break;
-        case 'grupo1':
-            updateCSV(grupo1);
+        case 'grupo9_10':
+            updateCSV(grupo9_10);
             break;
-        case 'grupo1':
-            updateCSV(grupo1);
+        case 'grupo11':
+            updateCSV(grupo11);
             break;
     }
 });

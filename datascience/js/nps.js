@@ -9,7 +9,7 @@ Brasil;promotor;17416
 Brasil;neutro;4820
 Brasil;detrator;1653
 `;
-const grupo1 = `região;nps;Contagem
+const npsgrupo1 = `região;nps;Contagem
 Centro-Oeste;detrator;58
 Centro-Oeste;neutro;197
 Centro-Oeste;promotor;764
@@ -30,7 +30,7 @@ Sul;neutro;236
 Sul;promotor;1045
 `;
 
-const grupo2 = `região;nps;Contagem
+const npsgrupo2 = `região;nps;Contagem
 Centro-Oeste;detrator;41
 Centro-Oeste;neutro;69
 Centro-Oeste;promotor;301
@@ -50,7 +50,7 @@ Sul;detrator;76
 Sul;neutro;207
 Sul;promotor;564
 `;
-const grupo3 = `região;nps;Contagem
+const npsgrupo3 = `região;nps;Contagem
 Centro-Oeste;detrator;15
 Centro-Oeste;neutro;26
 Centro-Oeste;promotor;99
@@ -70,7 +70,7 @@ Sul;detrator;31
 Sul;neutro;81
 Sul;promotor;260
 `;
-const grupo4 = `região;nps;Contagem
+const npsgrupo4 = `região;nps;Contagem
 Centro-Oeste;detrator;39
 Centro-Oeste;neutro;97
 Centro-Oeste;promotor;457
@@ -90,7 +90,7 @@ Sul;detrator;149
 Sul;neutro;559
 Sul;promotor;2154
 `;
-const grupo11 = `região;nps;Contagem
+const npsgrupo11 = `região;nps;Contagem
 Centro-Oeste;detrator;29
 Centro-Oeste;neutro;60
 Centro-Oeste;promotor;133
@@ -110,7 +110,7 @@ Sul;detrator;95
 Sul;neutro;244
 Sul;promotor;696
 `;
-const grupo9_10 = `região;nps;Contagem
+const npsgrupo9_10 = `região;nps;Contagem
 Centro-Oeste;detrator;32
 Centro-Oeste;neutro;67
 Centro-Oeste;promotor;173
@@ -130,7 +130,7 @@ Sul;detrator;17
 Sul;neutro;34
 Sul;promotor;78
 `;
-const grupo6 = `região;nps;Contagem
+const npsgrupo6 = `região;nps;Contagem
 Centro-Oeste;detrator;21
 Centro-Oeste;neutro;42
 Centro-Oeste;promotor;168
@@ -149,7 +149,7 @@ Sul;detrator;9
 Sul;neutro;10
 Sul;promotor;38
 `;
-const grupo7 = `região;nps;Contagem
+const npsgrupo7 = `região;nps;Contagem
 Centro-Oeste;detrator;13
 Centro-Oeste;neutro;48
 Centro-Oeste;promotor;153
@@ -168,7 +168,7 @@ Sudeste;promotor;43
 Sul;neutro;12
 Sul;promotor;27
 `;
-const grupo8 = `região;nps;Contagem
+const npsgrupo8 = `região;nps;Contagem
 Centro-Oeste;detrator;29
 Centro-Oeste;neutro;47
 Centro-Oeste;promotor;78
@@ -292,37 +292,37 @@ document.getElementById('csvSelect').addEventListener('change', (event) => {
             updateCSVNps(csvDataNps2);
             break;
         case 'grupo1':
-            updateCSVNps(grupo1);
+            updateCSVNps(npsgrupo1);
             break;
         case 'grupo1':
-            updateCSVNps(grupo2);
+            updateCSVNps(npsgrupo2);
             break;
         case 'grupo2':
-            updateCSVNps(grupo2);
+            updateCSVNps(npsgrupo2);
             break;
         case 'grupo3':
-            updateCSVNps(grupo3);
+            updateCSVNps(npsgrupo3);
             break;
         case 'grupo4':
-            updateCSVNps(grupo4);
+            updateCSVNps(npsgrupo4);
             break;
         case 'grupo5':
-            updateCSVNps(grupo5);
+            updateCSVNps(npsgrupo5);
             break;
         case 'grupo6':
-            updateCSVNps(grupo6);
+            updateCSVNps(npsgrupo6);
             break;
         case 'grupo7':
-            updateCSVNps(grupo7);
+            updateCSVNps(npsgrupo7);
             break;
         case 'grupo8':
-            updateCSVNps(grupo8);
+            updateCSVNps(npsgrupo8);
             break;
         case 'grupo9_10':
-            updateCSVNps(grupo9_10);
+            updateCSVNps(npsgrupo9_10);
             break;
         case 'grupo11':
-            updateCSVNps(grupo11);
+            updateCSVNps(npsgrupo11);
             break;
         default:
             console.log('Opção inválida');

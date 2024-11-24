@@ -61,14 +61,14 @@ h1 {
 }
 
 /* Container principal */
-.container {
+.container,#chartsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     margin: 10px 0;
     padding: 10px;
-    border: 1px solid #000;
+   
     border-radius: 30px;
     width: calc(95% - 20px);
     background-color: #ffffff;
@@ -88,6 +88,20 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
+
+.chart-title{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    width: calc(45% - 20px);
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
 
 
 @media (max-width: 1000px) {
@@ -136,6 +150,8 @@ canvas {
     height: auto;
 }
 
+
+
   </style>
   <!-- <link rel="stylesheet" href="css/style.css"> -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -183,52 +199,19 @@ canvas {
     </div>
 
     <!-- Gráfico 3: XGBoost - Detrator -->
-    <div class="chart-container">
-      <h2>Gráfico XGBoost - Detrator</h2>
-      <canvas id="xgbDetrator" width="400" height="200"></canvas>
-    </div>
-
-    <!-- Gráfico 4: Random Forest - Detrator -->
-    <div class="chart-container">
-      <h2>Gráfico Random Forest - Detrator</h2>
-      <canvas id="rfDetrator" width="400" height="200"></canvas>
-    </div>
-
-    <!-- Gráfico 5: XGBoost - Neutro -->
-    <div class="chart-container">
-      <h2>Gráfico XGBoost - Neutro</h2>
-      <canvas id="xgbNeutro" width="400" height="200"></canvas>
-    </div>
-
-    <!-- Gráfico 6: Random Forest - Neutro -->
-    <div class="chart-container">
-      <h2>Gráfico Random Forest - Neutro</h2>
-      <canvas id="rfNeutro" width="400" height="200"></canvas>
-    </div>
-
-    <!-- Gráfico 7: XGBoost - Não Promotor -->
-    <div class="chart-container">
-      <h2>Gráfico XGBoost - Não Promotor</h2>
-      <canvas id="teste" width="400" height="200"></canvas>
-    </div>
-
-    <!-- Gráfico 8: Random Forest - Não Promotor -->
-    <div class="chart-container">
-      <h2>Gráfico Random Forest - Não Promotor</h2>
-      <canvas id="rfNaoPromotor" width="400" height="200"></canvas>
-    </div>
+   
+    <div id="chartsContainer">
+      <!-- Gráficos serão inseridos aqui dinamicamente -->
+  </div>
   </div>
 
   <!-- Inclusão dos scripts existentes -->
   <script src="js/safra.js"></script>
   <script src="js/script.js"></script>
   <script src="js/nps.js"></script>
+  
   <script src="js/x_n_promotor.js"></script>
-  <script src="js/r_detrator.js"></script>
-  <script src="js/r_n_promotor.js"></script>
-  <script src="js/r_neutro.js"></script>
-  <script src="js/x_detrator.js"></script>
-  <script src="js/x_neutro.js"></script>
+  
 </body>
 
 

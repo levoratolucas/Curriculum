@@ -297,7 +297,8 @@ function generateCharts(datasets) {
                 indexAxis: 'y', // Configuração para barras horizontais
                 scales: {
                     x: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        max: 0.3
                     }
                 }
             }

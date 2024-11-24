@@ -1,6 +1,6 @@
 
 // A string fornecida
-const inputString = `
+const grupo4xr = `
 Random_Detrator_Sudeste;disponibilidade e confiabilidade mecânica  (csat);0.21456974683766483
 Random_Detrator_Sudeste;facilidade de operação (csat);0.15163441291479443
 Random_Detrator_Sudeste;facilidade para realização de manutenções (csat);0.1317966379370723
@@ -240,7 +240,7 @@ function processData(input) {
 }
 
 // Processando os dados
-const datasets = processData(inputString);
+const datasets = processData(grupo4xr);
 
 // Função para gerar gráficos dinamicamente
 function generateCharts(datasets) {

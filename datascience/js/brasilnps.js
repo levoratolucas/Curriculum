@@ -9,7 +9,7 @@ async function carregarTabelaDeSafras(caminhoCSV) {
     const linhasDados = linhas.slice(1).map(linha => linha.split(';'));
 
     // Atualizar o título da tabela
-    const tituloTabela = `Tabela de Safras por ${caminhoCSV.split('_')[0]}`;
+    const tituloTabela = `NPS  ${caminhoCSV.split('_')[0].split('/')[1]}`;
     document.getElementById('tituloTabelabrasil').textContent = tituloTabela;
 
     // Selecionar a tabela

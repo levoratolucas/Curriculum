@@ -479,7 +479,7 @@ interface vlan 1
  set-member untagged ethernet all
 !
 interface vlan ${svlan}
- name VLAN_1063_1909338
+ name VLAN_1063
  set-member tagged ethernet 1/5
  set-member untagged ethernet 1/8
 !
@@ -506,7 +506,7 @@ interface ethernet 1/8
  l2protocol-tunnel oam
  l2protocol-tunnel marker
  l2protocol-tunnel gvrp
- switchport native vlan 2694
+ switchport native vlan ${svlan}
  switchport qinq internal
  no switchport storm-control broadcast
  no switchport storm-control multicast

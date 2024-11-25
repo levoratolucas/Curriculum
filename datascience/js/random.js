@@ -84,7 +84,8 @@ function criarGraficoRadar(dadosRadar) {
         type: 'radar',
         data: configuracaoGrafico,
         options: {
-            responsive: true,
+            responsive: true,                       
+            // indexAxis: 'y',
             scale: {
                 ticks: {
                     beginAtZero: true,

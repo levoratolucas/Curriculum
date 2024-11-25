@@ -85,7 +85,8 @@ function gerarGraficoRadar(dadosProcessados) {
         type: 'radar',
         data: dadosGrafico,
         options: {
-            responsive: true,
+            responsive: true,                       
+            indexAxis: 'y',
             scale: {
                 ticks: {
                     beginAtZero: true,

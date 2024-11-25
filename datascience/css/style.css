@@ -192,7 +192,7 @@ canvas {
 }
 
 #bora {
-    width: calc(95% - 20px);
+    width: calc(100% - 20px);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -222,5 +222,24 @@ canvas {
         border: solid 1px #ccc;
         height: auto;
         object-fit: contain;
+    }
+}
+@media (max-width: 768px) {
+    table {
+        display: block; /* Permitir scroll horizontal */
+         /* Ativar o scroll horizontal */
+        white-space: nowrap; /* Evitar quebra de linhas no conteúdo */
+    }
+
+    table th, table td {
+        font-size: 12px; /* Ajustar tamanho da fonte */
+        padding: 6px; /* Reduzir espaçamento */
+    }
+    #tableee_perg{
+        width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+    overflow-x: auto;
     }
 }

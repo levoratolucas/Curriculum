@@ -109,6 +109,9 @@ h1 {
         width: 100%;
         /* 1 por linha */
     }
+    header{
+        height: 60px;
+    }
 }
 
 /* Hover interativo */

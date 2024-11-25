@@ -1,0 +1,162 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard CNH</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Dashboard CNH</h1>
+
+  </header>
+  <div class="seletor">
+    <label for="csvSelect">Escolha o CSV:</label>
+    <select id="csvSelect" class="csss x_n_promotor">
+      <option value="">Selecione o grupo</option>
+      <option value="1">Grupo 1</option>
+      <option value="3">Grupo 3</option>
+      <option value="4">Grupo 4</option>
+      <option value="6">Grupo 6</option>
+      <option value="7">Grupo 7</option>
+      <option value="8">Grupo 8</option>
+    </select>
+  </div>
+
+  <div class="container">
+    <!-- Select para escolher o CSV -->
+
+    <!-- Gráfico 1 -->
+    <div class="chart-container">
+      <h2>Gráfico NPS</h2>
+      <canvas id="npsChart" width="400" height="200"></canvas>
+    </div>
+    <!-- Gráfico 3: XGBoost - Detrator -->
+
+    <div id="graficoCSAT" class="chart-container">
+      <h2>Gráfico Spearman</h2>
+      <!-- Gráficos serão inseridos aqui dinamicamente -->
+    </div>
+
+    <div id="chartsContainer" class="chart-container">
+      <h2>Random Forest importancia de variaveis</h2>
+      <!-- Gráficos serão inseridos aqui dinamicamente -->
+    </div>
+    <div id="chartsContainer2" class="chart-container">
+      <h2>XGBoost importancia de variaveis</h2>
+      <!-- Gráficos serão inseridos aqui dinamicamente -->
+    </div>
+    <div class="chart-container">
+      <h2 id="tituloTabelabrasil"></h2>
+      <table id="tabelanpsbrasil">
+        <!-- A tabela será gerada dinamicamente aqui -->
+      </table>
+    </div>
+
+    <div class="chart-container">
+      <h2>desbalanceamento por ano</h2>
+      <table id="tableee"></table>
+    </div>
+    <div class="chart-container" id="sap">
+      <div id="images-container">
+        <div class="group-images" style="display: none;" data-group="1">
+          <img src="./diretorio/Grupo 1_shap_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 1_partial_dependence1_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 1_partial_dependence2_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 1_partial_dependence3_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 1_partial_dependence4_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 1_partial_dependence5_promotores_XGBBRASIL.png" alt="">
+        </div>
+        <div class="group-images" style="display: none;" data-group="3">
+          <img src="./diretorio/Grupo 3_shap_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 3_partial_dependence1_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 3_partial_dependence2_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 3_partial_dependence3_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 3_partial_dependence4_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 3_partial_dependence5_promotores_XGBBRASIL.png" alt="">
+        </div>
+        <div class="group-images" style="display: none;" data-group="4">
+          <img src="./diretorio/Grupo 4_shap_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 4_partial_dependence1_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 4_partial_dependence2_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 4_partial_dependence3_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 4_partial_dependence4_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 4_partial_dependence5_promotores_XGBBRASIL.png" alt="">
+        </div>
+
+        <div class="group-images" style="display: none;" data-group="6">
+          <img src="./diretorio/Grupo 6_shap_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 6_partial_dependence1_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 6_partial_dependence2_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 6_partial_dependence3_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 6_partial_dependence4_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 6_partial_dependence5_promotores_XGBBRASIL.png" alt="">
+        </div>
+
+        <div class="group-images" style="display: none;" data-group="7">
+          <img src="./diretorio/Grupo 7_shap_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 7_partial_dependence1_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 7_partial_dependence2_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 7_partial_dependence3_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 7_partial_dependence4_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 7_partial_dependence5_promotores_XGBBRASIL.png" alt="">
+        </div>
+
+        <div class="group-images" style="display: none;" data-group="8">
+          <img src="./diretorio/Grupo 8_shap_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 8_partial_dependence1_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 8_partial_dependence2_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 8_partial_dependence3_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 8_partial_dependence4_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 8_partial_dependence5_promotores_XGBBRASIL.png" alt="">
+        </div>
+      </div>
+      <div class="chart-container" id="bora">
+        <h2>Taxa de Resposta</h2>
+        <table id="tableee_perg"></table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Inclusão dos scripts existentes -->
+  <script src="js/safra.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/nps.js"></script>
+  <script src="js/brasilnps.js"></script>
+  <script src="js/random.js"></script>
+  <script src="js/xgboost.js"></script>
+  <script src="js/table.js"></script>
+  <script src="js/table_perguntas.js"></script>
+
+  <script>
+    document.getElementById('csvSelect').addEventListener('change', function () {
+      var grupoSelecionado = this.value; // Obtém o valor do grupo selecionado
+      var grupos = document.querySelectorAll('.group-images'); // Seleciona todos os divs de grupo de imagens
+
+      // Para cada grupo de imagens, mostramos apenas o grupo selecionado
+      grupos.forEach(function (grupo) {
+        if (grupo.getAttribute('data-group') === grupoSelecionado) {
+          grupo.style.display = 'block'; // Exibe o grupo selecionado
+        } else {
+          grupo.style.display = 'none'; // Oculta os outros grupos
+        }
+      });
+    });
+
+  </script>
+
+
+
+
+</body>
+
+
+</html>

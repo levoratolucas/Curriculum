@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #6D3189;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+header{
+
+    background-color: #ffffff;
+    background-image: url('https://istoedinheiro.com.br/wp-content/uploads/sites/17/2023/04/filv8ysxmaekk9j-e1681992366579.jpg');
+    /* background-size: cover; */
+    width: 100%;
+    height: 200px;
+    background-size: 30% ;
+    background-position: center;
+}
+
+/* Cabeçalho */
+h1 {
+    margin: 20px;
+    color: #ffffff;
+}
+
+/* Seletor */
+.seletor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 30px;
+    width: calc(95% - 20px);
+    max-width: 1200px;
+    height: 50px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.seletor label {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.seletor select {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px 0;
+    padding: 10px;
+
+    border-radius: 30px;
+    width: calc(95% - 20px);
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de cada gráfico/tabela */
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    width: calc(45% - 20px);
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.chart-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    width: calc(45% - 20px);
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+
+@media (max-width: 1000px) {
+    .chart-container {
+        width: 100%;
+        /* 1 por linha */
+    }
+}
+
+/* Hover interativo */
+.chart-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Títulos dos gráficos */
+.chart-container h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #0078D7;
+}
+
+/* Tabela */
+#tableee,
+#tableee_perg,
+#tabelanpsbrasil {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#tabelanpsbrasil th,
+#tableee_perg th,
+#tableee th,
+#tabelanpsbrasil td,
+#tableee_perg td,
+#tableee td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#tableee th,
+#tableee_perg th,
+#tabelanpsbrasil th {
+    background-color: #0078D7;
+    color: white;
+    font-weight: bold;
+}
+
+/* Canvas */
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+#sap {
+    width: calc(95% - 20px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+#sap img {
+    margin: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Primeira imagem maior */
+#sap img:first-of-type {
+    width: 45%;
+    border-radius: 30px;
+    border: solid 1px #ccc;
+    /* A primeira imagem será maior */
+}
+
+/* Outras imagens menores */
+#sap img:not(:first-of-type) {
+    width: 35%;
+    border-radius: 30px;
+    border: solid 1px #ccc;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Hover interativo para as imagens */
+#sap img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#bora {
+    width: calc(95% - 20px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}

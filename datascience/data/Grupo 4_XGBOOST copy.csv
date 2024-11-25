@@ -1,0 +1,211 @@
+
+XGBoost_Detrator_Nordeste;adaptabilidade as mais diversas condições de trabalho (csat);0.31351104
+XGBoost_Detrator_Nordeste;disponibilidade e confiabilidade mecânica  (csat);0.23089433
+XGBoost_Detrator_Nordeste;facilidade de operação (csat);0.09680993
+XGBoost_Detrator_Nordeste;adequação as diversas operações e implementos (csat);0.091567755
+XGBoost_Detrator_Nordeste;facilidade de uso do piloto automático (csat);0.06979754
+XGBoost_Detrator_Nordeste;custo de manutenção (csat);0.062415708
+XGBoost_Detrator_Nordeste;consumo de combustível (litros por hectares) (csat);0.040950917
+XGBoost_Detrator_Nordeste;geração e transmissão de dados para gestão agrícola (csat);0.03859287
+XGBoost_Detrator_Nordeste;capacidade operacional (hectares por hora) (csat);0.016681487
+XGBoost_Detrator_Nordeste;conforto e ergonomia (csat);0.015856886
+XGBoost_Neutro_Nordeste;capacidade operacional (hectares por hora) (csat);0.4697093
+XGBoost_Neutro_Nordeste;facilidade para realização de manutenções (csat);0.06741766
+XGBoost_Neutro_Nordeste;conforto e ergonomia (csat);0.06573044
+XGBoost_Neutro_Nordeste;adaptabilidade as mais diversas condições de trabalho (csat);0.06284593
+XGBoost_Neutro_Nordeste;facilidade de operação (csat);0.05985011
+XGBoost_Neutro_Nordeste;adequação as diversas operações e implementos (csat);0.05645326
+XGBoost_Neutro_Nordeste;disponibilidade e confiabilidade mecânica  (csat);0.049657755
+XGBoost_Neutro_Nordeste;consumo de combustível (litros por hectares) (csat);0.04337551
+XGBoost_Neutro_Nordeste;geração e transmissão de dados para gestão agrícola (csat);0.042165264
+XGBoost_Neutro_Nordeste;geração e transmissão de dados para gestão da frota (csat);0.0398995
+XGBoost_Não_Promotor_Nordeste;adaptabilidade as mais diversas condições de trabalho (csat);0.31809247
+XGBoost_Não_Promotor_Nordeste;capacidade operacional (hectares por hora) (csat);0.2226818
+XGBoost_Não_Promotor_Nordeste;disponibilidade e confiabilidade mecânica  (csat);0.07904079
+XGBoost_Não_Promotor_Nordeste;facilidade para realização de manutenções (csat);0.079031214
+XGBoost_Não_Promotor_Nordeste;adequação as diversas operações e implementos (csat);0.070302635
+XGBoost_Não_Promotor_Nordeste;facilidade de operação (csat);0.06372758
+XGBoost_Não_Promotor_Nordeste;geração e transmissão de dados para gestão da frota (csat);0.05047509
+XGBoost_Não_Promotor_Nordeste;consumo de combustível (litros por hectares) (csat);0.034237094
+XGBoost_Não_Promotor_Nordeste;custo de manutenção (csat);0.027186021
+XGBoost_Não_Promotor_Nordeste;conforto e ergonomia (csat);0.023320116
+XGBoost_Detrator_Sudeste;disponibilidade e confiabilidade mecânica  (csat);0.41329357
+XGBoost_Detrator_Sudeste;capacidade operacional (hectares por hora) (csat);0.1681746
+XGBoost_Detrator_Sudeste;adaptabilidade as mais diversas condições de trabalho (csat);0.07401738
+XGBoost_Detrator_Sudeste;adequação as diversas operações e implementos (csat);0.050126802
+XGBoost_Detrator_Sudeste;facilidade para realização de manutenções (csat);0.049749784
+XGBoost_Detrator_Sudeste;facilidade de uso do piloto automático (csat);0.044423874
+XGBoost_Detrator_Sudeste;geração e transmissão de dados para gestão da frota (csat);0.041297343
+XGBoost_Detrator_Sudeste;consumo de combustível (litros por hectares) (csat);0.037372615
+XGBoost_Detrator_Sudeste;facilidade de operação (csat);0.03592118
+XGBoost_Detrator_Sudeste;geração e transmissão de dados para gestão agrícola (csat);0.034195315
+XGBoost_Neutro_Sudeste;capacidade operacional (hectares por hora) (csat);0.26276183
+XGBoost_Neutro_Sudeste;adaptabilidade as mais diversas condições de trabalho (csat);0.13506784
+XGBoost_Neutro_Sudeste;disponibilidade e confiabilidade mecânica  (csat);0.096024044
+XGBoost_Neutro_Sudeste;facilidade de operação (csat);0.08604614
+XGBoost_Neutro_Sudeste;facilidade para realização de manutenções (csat);0.062959656
+XGBoost_Neutro_Sudeste;conforto e ergonomia (csat);0.058056284
+XGBoost_Neutro_Sudeste;adequação as diversas operações e implementos (csat);0.05433149
+XGBoost_Neutro_Sudeste;custo de manutenção (csat);0.05251558
+XGBoost_Neutro_Sudeste;geração e transmissão de dados para gestão agrícola (csat);0.050830115
+XGBoost_Neutro_Sudeste;geração e transmissão de dados para gestão da frota (csat);0.04858362
+XGBoost_Não_Promotor_Sudeste;capacidade operacional (hectares por hora) (csat);0.2975624
+XGBoost_Não_Promotor_Sudeste;adequação as diversas operações e implementos (csat);0.15580653
+XGBoost_Não_Promotor_Sudeste;facilidade de operação (csat);0.10399544
+XGBoost_Não_Promotor_Sudeste;disponibilidade e confiabilidade mecânica  (csat);0.093987584
+XGBoost_Não_Promotor_Sudeste;adaptabilidade as mais diversas condições de trabalho (csat);0.08522942
+XGBoost_Não_Promotor_Sudeste;facilidade para realização de manutenções (csat);0.05093572
+XGBoost_Não_Promotor_Sudeste;geração e transmissão de dados para gestão da frota (csat);0.039003383
+XGBoost_Não_Promotor_Sudeste;conforto e ergonomia (csat);0.038732238
+XGBoost_Não_Promotor_Sudeste;facilidade de uso do piloto automático (csat);0.037773326
+XGBoost_Não_Promotor_Sudeste;consumo de combustível (litros por hectares) (csat);0.0351904
+XGBoost_Detrator_Outro;facilidade para realização de manutenções (csat);0.3840915
+XGBoost_Detrator_Outro;adequação as diversas operações e implementos (csat);0.2600345
+XGBoost_Detrator_Outro;disponibilidade e confiabilidade mecânica  (csat);0.07251691
+XGBoost_Detrator_Outro;adaptabilidade as mais diversas condições de trabalho (csat);0.065501
+XGBoost_Detrator_Outro;custo de manutenção (csat);0.057304814
+XGBoost_Detrator_Outro;facilidade de operação (csat);0.048707455
+XGBoost_Detrator_Outro;capacidade operacional (hectares por hora) (csat);0.023630649
+XGBoost_Detrator_Outro;facilidade de uso do piloto automático (csat);0.02004096
+XGBoost_Detrator_Outro;geração e transmissão de dados para gestão da frota (csat);0.019365264
+XGBoost_Detrator_Outro;consumo de combustível (litros por hectares) (csat);0.018076763
+XGBoost_Neutro_Outro;disponibilidade e confiabilidade mecânica  (csat);0.2215964
+XGBoost_Neutro_Outro;adaptabilidade as mais diversas condições de trabalho (csat);0.15179126
+XGBoost_Neutro_Outro;adequação as diversas operações e implementos (csat);0.113811426
+XGBoost_Neutro_Outro;facilidade para realização de manutenções (csat);0.112161696
+XGBoost_Neutro_Outro;conforto e ergonomia (csat);0.065755844
+XGBoost_Neutro_Outro;custo de manutenção (csat);0.061098717
+XGBoost_Neutro_Outro;capacidade operacional (hectares por hora) (csat);0.05410154
+XGBoost_Neutro_Outro;facilidade de operação (csat);0.05239795
+XGBoost_Neutro_Outro;geração e transmissão de dados para gestão agrícola (csat);0.052362338
+XGBoost_Neutro_Outro;geração e transmissão de dados para gestão da frota (csat);0.045775704
+XGBoost_Não_Promotor_Outro;disponibilidade e confiabilidade mecânica  (csat);0.37168404
+XGBoost_Não_Promotor_Outro;facilidade de operação (csat);0.15076926
+XGBoost_Não_Promotor_Outro;adequação as diversas operações e implementos (csat);0.10072741
+XGBoost_Não_Promotor_Outro;adaptabilidade as mais diversas condições de trabalho (csat);0.06948661
+XGBoost_Não_Promotor_Outro;facilidade para realização de manutenções (csat);0.061343238
+XGBoost_Não_Promotor_Outro;conforto e ergonomia (csat);0.048174676
+XGBoost_Não_Promotor_Outro;geração e transmissão de dados para gestão agrícola (csat);0.042329222
+XGBoost_Não_Promotor_Outro;capacidade operacional (hectares por hora) (csat);0.036745243
+XGBoost_Não_Promotor_Outro;custo de manutenção (csat);0.03305739
+XGBoost_Não_Promotor_Outro;consumo de combustível (litros por hectares) (csat);0.030918889
+XGBoost_Detrator_Sul;disponibilidade e confiabilidade mecânica  (csat);0.45641926
+XGBoost_Detrator_Sul;adequação as diversas operações e implementos (csat);0.116109625
+XGBoost_Detrator_Sul;conforto e ergonomia (csat);0.09062219
+XGBoost_Detrator_Sul;capacidade operacional (hectares por hora) (csat);0.05788595
+XGBoost_Detrator_Sul;geração e transmissão de dados para gestão agrícola (csat);0.050797395
+XGBoost_Detrator_Sul;facilidade de operação (csat);0.05010723
+XGBoost_Detrator_Sul;facilidade para realização de manutenções (csat);0.038078774
+XGBoost_Detrator_Sul;facilidade de uso do piloto automático (csat);0.037119348
+XGBoost_Detrator_Sul;consumo de combustível (litros por hectares) (csat);0.031560604
+XGBoost_Detrator_Sul;geração e transmissão de dados para gestão da frota (csat);0.027288757
+XGBoost_Neutro_Sul;capacidade operacional (hectares por hora) (csat);0.2589175
+XGBoost_Neutro_Sul;facilidade de operação (csat);0.10343985
+XGBoost_Neutro_Sul;adequação as diversas operações e implementos (csat);0.10090903
+XGBoost_Neutro_Sul;disponibilidade e confiabilidade mecânica  (csat);0.100660965
+XGBoost_Neutro_Sul;facilidade para realização de manutenções (csat);0.0835761
+XGBoost_Neutro_Sul;conforto e ergonomia (csat);0.06647514
+XGBoost_Neutro_Sul;adaptabilidade as mais diversas condições de trabalho (csat);0.052277025
+XGBoost_Neutro_Sul;consumo de combustível (litros por hectares) (csat);0.05048996
+XGBoost_Neutro_Sul;custo de manutenção (csat);0.04786072
+XGBoost_Neutro_Sul;facilidade de uso do piloto automático (csat);0.046031628
+XGBoost_Não_Promotor_Sul;capacidade operacional (hectares por hora) (csat);0.32695672
+XGBoost_Não_Promotor_Sul;adequação as diversas operações e implementos (csat);0.12872021
+XGBoost_Não_Promotor_Sul;facilidade de operação (csat);0.120753355
+XGBoost_Não_Promotor_Sul;disponibilidade e confiabilidade mecânica  (csat);0.10674772
+XGBoost_Não_Promotor_Sul;facilidade para realização de manutenções (csat);0.0492168
+XGBoost_Não_Promotor_Sul;conforto e ergonomia (csat);0.048699293
+XGBoost_Não_Promotor_Sul;adaptabilidade as mais diversas condições de trabalho (csat);0.047441103
+XGBoost_Não_Promotor_Sul;geração e transmissão de dados para gestão da frota (csat);0.03734964
+XGBoost_Não_Promotor_Sul;geração e transmissão de dados para gestão agrícola (csat);0.037304044
+XGBoost_Não_Promotor_Sul;consumo de combustível (litros por hectares) (csat);0.035130363
+XGBoost_Detrator_Centro-Oeste;disponibilidade e confiabilidade mecânica  (csat);0.41098177
+XGBoost_Detrator_Centro-Oeste;adequação as diversas operações e implementos (csat);0.10596887
+XGBoost_Detrator_Centro-Oeste;facilidade para realização de manutenções (csat);0.0771493
+XGBoost_Detrator_Centro-Oeste;capacidade operacional (hectares por hora) (csat);0.07297797
+XGBoost_Detrator_Centro-Oeste;facilidade de operação (csat);0.06306711
+XGBoost_Detrator_Centro-Oeste;geração e transmissão de dados para gestão da frota (csat);0.059466038
+XGBoost_Detrator_Centro-Oeste;adaptabilidade as mais diversas condições de trabalho (csat);0.057429858
+XGBoost_Detrator_Centro-Oeste;custo de manutenção (csat);0.041519724
+XGBoost_Detrator_Centro-Oeste;facilidade de uso do piloto automático (csat);0.03956862
+XGBoost_Detrator_Centro-Oeste;conforto e ergonomia (csat);0.030151442
+XGBoost_Neutro_Centro-Oeste;capacidade operacional (hectares por hora) (csat);0.2752058
+XGBoost_Neutro_Centro-Oeste;adequação as diversas operações e implementos (csat);0.16417223
+XGBoost_Neutro_Centro-Oeste;consumo de combustível (litros por hectares) (csat);0.07536704
+XGBoost_Neutro_Centro-Oeste;disponibilidade e confiabilidade mecânica  (csat);0.065689765
+XGBoost_Neutro_Centro-Oeste;custo de manutenção (csat);0.06493898
+XGBoost_Neutro_Centro-Oeste;geração e transmissão de dados para gestão da frota (csat);0.058709458
+XGBoost_Neutro_Centro-Oeste;geração e transmissão de dados para gestão agrícola (csat);0.05842926
+XGBoost_Neutro_Centro-Oeste;adaptabilidade as mais diversas condições de trabalho (csat);0.056734603
+XGBoost_Neutro_Centro-Oeste;facilidade de operação (csat);0.048058845
+XGBoost_Neutro_Centro-Oeste;conforto e ergonomia (csat);0.047607716
+XGBoost_Não_Promotor_Centro-Oeste;capacidade operacional (hectares por hora) (csat);0.3423122
+XGBoost_Não_Promotor_Centro-Oeste;disponibilidade e confiabilidade mecânica  (csat);0.13676721
+XGBoost_Não_Promotor_Centro-Oeste;adequação as diversas operações e implementos (csat);0.0850277
+XGBoost_Não_Promotor_Centro-Oeste;consumo de combustível (litros por hectares) (csat);0.08285207
+XGBoost_Não_Promotor_Centro-Oeste;facilidade de operação (csat);0.053455647
+XGBoost_Não_Promotor_Centro-Oeste;custo de manutenção (csat);0.05132798
+XGBoost_Não_Promotor_Centro-Oeste;geração e transmissão de dados para gestão da frota (csat);0.047235712
+XGBoost_Não_Promotor_Centro-Oeste;adaptabilidade as mais diversas condições de trabalho (csat);0.043334767
+XGBoost_Não_Promotor_Centro-Oeste;conforto e ergonomia (csat);0.040255442
+XGBoost_Não_Promotor_Centro-Oeste;facilidade de uso do piloto automático (csat);0.039653394
+XGBoost_Detrator_Norte;adequação as diversas operações e implementos (csat);0.39129534
+XGBoost_Detrator_Norte;facilidade de operação (csat);0.18457322
+XGBoost_Detrator_Norte;disponibilidade e confiabilidade mecânica  (csat);0.104823954
+XGBoost_Detrator_Norte;facilidade de uso do piloto automático (csat);0.0837304
+XGBoost_Detrator_Norte;consumo de combustível (litros por hectares) (csat);0.08234226
+XGBoost_Detrator_Norte;adaptabilidade as mais diversas condições de trabalho (csat);0.04951596
+XGBoost_Detrator_Norte;conforto e ergonomia (csat);0.039079167
+XGBoost_Detrator_Norte;capacidade operacional (hectares por hora) (csat);0.023804197
+XGBoost_Detrator_Norte;custo de manutenção (csat);0.023097198
+XGBoost_Detrator_Norte;facilidade para realização de manutenções (csat);0.016184619
+XGBoost_Neutro_Norte;disponibilidade e confiabilidade mecânica  (csat);0.22527575
+XGBoost_Neutro_Norte;geração e transmissão de dados para gestão agrícola (csat);0.15387586
+XGBoost_Neutro_Norte;consumo de combustível (litros por hectares) (csat);0.118226655
+XGBoost_Neutro_Norte;capacidade operacional (hectares por hora) (csat);0.11725523
+XGBoost_Neutro_Norte;conforto e ergonomia (csat);0.09453081
+XGBoost_Neutro_Norte;custo de manutenção (csat);0.08781894
+XGBoost_Neutro_Norte;adaptabilidade as mais diversas condições de trabalho (csat);0.07074589
+XGBoost_Neutro_Norte;facilidade de uso do piloto automático (csat);0.046819467
+XGBoost_Neutro_Norte;facilidade para realização de manutenções (csat);0.03504773
+XGBoost_Neutro_Norte;geração e transmissão de dados para gestão da frota (csat);0.025111094
+XGBoost_Não_Promotor_Norte;capacidade operacional (hectares por hora) (csat);0.2663913
+XGBoost_Não_Promotor_Norte;disponibilidade e confiabilidade mecânica  (csat);0.22961847
+XGBoost_Não_Promotor_Norte;conforto e ergonomia (csat);0.10353356
+XGBoost_Não_Promotor_Norte;geração e transmissão de dados para gestão agrícola (csat);0.08021043
+XGBoost_Não_Promotor_Norte;custo de manutenção (csat);0.06147331
+XGBoost_Não_Promotor_Norte;adaptabilidade as mais diversas condições de trabalho (csat);0.052190837
+XGBoost_Não_Promotor_Norte;consumo de combustível (litros por hectares) (csat);0.05071371
+XGBoost_Não_Promotor_Norte;adequação as diversas operações e implementos (csat);0.04923634
+XGBoost_Não_Promotor_Norte;facilidade de uso do piloto automático (csat);0.041830044
+XGBoost_Não_Promotor_Norte;facilidade para realização de manutenções (csat);0.03432005
+XGBoost_Detrator_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.4126714
+XGBoost_Detrator_BRASIL;capacidade operacional (hectares por hora) (csat);0.13779914
+XGBoost_Detrator_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.07419689
+XGBoost_Detrator_BRASIL;facilidade de operação (csat);0.072971985
+XGBoost_Detrator_BRASIL;adequação as diversas operações e implementos (csat);0.07176921
+XGBoost_Detrator_BRASIL;conforto e ergonomia (csat);0.049923852
+XGBoost_Detrator_BRASIL;facilidade para realização de manutenções (csat);0.03684958
+XGBoost_Detrator_BRASIL;geração e transmissão de dados para gestão agrícola (csat);0.033961773
+XGBoost_Detrator_BRASIL;geração e transmissão de dados para gestão da frota (csat);0.03235225
+XGBoost_Detrator_BRASIL;custo de manutenção (csat);0.027754303
+XGBoost_Neutro_BRASIL;capacidade operacional (hectares por hora) (csat);0.26952937
+XGBoost_Neutro_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.144659
+XGBoost_Neutro_BRASIL;adequação as diversas operações e implementos (csat);0.077546105
+XGBoost_Neutro_BRASIL;facilidade de operação (csat);0.076685384
+XGBoost_Neutro_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.075144164
+XGBoost_Neutro_BRASIL;conforto e ergonomia (csat);0.063032605
+XGBoost_Neutro_BRASIL;facilidade para realização de manutenções (csat);0.057035916
+XGBoost_Neutro_BRASIL;geração e transmissão de dados para gestão da frota (csat);0.05178323
+XGBoost_Neutro_BRASIL;geração e transmissão de dados para gestão agrícola (csat);0.048711337
+XGBoost_Neutro_BRASIL;consumo de combustível (litros por hectares) (csat);0.04794719
+XGBoost_Não_Promotor_BRASIL;capacidade operacional (hectares por hora) (csat);0.311167
+XGBoost_Não_Promotor_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.18187562
+XGBoost_Não_Promotor_BRASIL;facilidade de operação (csat);0.10463904
+XGBoost_Não_Promotor_BRASIL;adequação as diversas operações e implementos (csat);0.101991676
+XGBoost_Não_Promotor_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.053991813
+XGBoost_Não_Promotor_BRASIL;geração e transmissão de dados para gestão da frota (csat);0.03957488
+XGBoost_Não_Promotor_BRASIL;conforto e ergonomia (csat);0.038973782
+XGBoost_Não_Promotor_BRASIL;geração e transmissão de dados para gestão agrícola (csat);0.03641344
+XGBoost_Não_Promotor_BRASIL;facilidade para realização de manutenções (csat);0.03565607
+XGBoost_Não_Promotor_BRASIL;custo de manutenção (csat);0.034099534

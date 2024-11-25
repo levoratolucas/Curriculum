@@ -1,0 +1,211 @@
+
+XGBoost_Detrator_Outro;capacidade operacional (hectares por hora) (csat);1.0
+XGBoost_Detrator_Outro;compatibilidade com diversos modelos de tratores (csat);0.0
+XGBoost_Detrator_Outro;desempenho do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Detrator_Outro;facilidade do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Detrator_Outro;opcionais disponíveis (csat);0.0
+XGBoost_Detrator_Outro;facilidade de transporte (csat);0.0
+XGBoost_Detrator_Outro;nível de tecnologia em agricultura digital (csat);0.0
+XGBoost_Detrator_Outro;segurança na operação e manutenção da máquina (csat);0.0
+XGBoost_Detrator_Outro;adaptabilidade as mais diversas condições de plantio (csat);0.0
+XGBoost_Detrator_Outro;vida útil dos materiais de desgaste (csat);0.0
+XGBoost_Neutro_Outro;qualidade de plantio (csat);0.4258235
+XGBoost_Neutro_Outro;geração e transmissão de dados para gestão agrícola (csat);0.25006256
+XGBoost_Neutro_Outro;facilidade de transporte (csat);0.18156153
+XGBoost_Neutro_Outro;compatibilidade com diversos modelos de tratores (csat);0.07533248
+XGBoost_Neutro_Outro;facilidade de operação (csat);0.060225647
+XGBoost_Neutro_Outro;autonomia de plantio (capacidade das caixas de fertilizantes) (csat);0.0069942274
+XGBoost_Neutro_Outro;adaptabilidade as mais diversas condições de plantio (csat);0.0
+XGBoost_Neutro_Outro;desempenho do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Neutro_Outro;facilidade do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Neutro_Outro;opcionais disponíveis (csat);0.0
+XGBoost_Não_Promotor_Outro;qualidade de plantio (csat);0.633218
+XGBoost_Não_Promotor_Outro;facilidade de transporte (csat);0.11232576
+XGBoost_Não_Promotor_Outro;acompanhamento do relevo (csat);0.105868585
+XGBoost_Não_Promotor_Outro;compatibilidade com diversos modelos de tratores (csat);0.07115032
+XGBoost_Não_Promotor_Outro;facilidade de operação (csat);0.029643236
+XGBoost_Não_Promotor_Outro;capacidade operacional (hectares por hora) (csat);0.019753328
+XGBoost_Não_Promotor_Outro;adaptabilidade as mais diversas condições de trabalho (csat);0.01165169
+XGBoost_Não_Promotor_Outro;custo de manutenção (csat);0.00999996
+XGBoost_Não_Promotor_Outro;autonomia de plantio (capacidade das caixas de fertilizantes) (csat);0.006389181
+XGBoost_Não_Promotor_Outro;nível de tecnologia em agricultura digital (csat);0.0
+XGBoost_Detrator_Nordeste;capacidade operacional (hectares por hora) (csat);0.0
+XGBoost_Detrator_Nordeste;compatibilidade com diversos modelos de tratores (csat);0.0
+XGBoost_Detrator_Nordeste;desempenho do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Detrator_Nordeste;facilidade do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Detrator_Nordeste;opcionais disponíveis (csat);0.0
+XGBoost_Detrator_Nordeste;facilidade de transporte (csat);0.0
+XGBoost_Detrator_Nordeste;nível de tecnologia em agricultura digital (csat);0.0
+XGBoost_Detrator_Nordeste;segurança na operação e manutenção da máquina (csat);0.0
+XGBoost_Detrator_Nordeste;adaptabilidade as mais diversas condições de plantio (csat);0.0
+XGBoost_Detrator_Nordeste;vida útil dos materiais de desgaste (csat);0.0
+XGBoost_Neutro_Nordeste;adaptabilidade as mais diversas condições de trabalho (csat);0.26146942
+XGBoost_Neutro_Nordeste;autonomia de plantio (capacidade das caixas de sementes) (csat);0.26135072
+XGBoost_Neutro_Nordeste;acompanhamento do relevo (csat);0.25599897
+XGBoost_Neutro_Nordeste;facilidade de transporte (csat);0.22118089
+XGBoost_Neutro_Nordeste;vida útil dos materiais de desgaste (csat);0.0
+XGBoost_Neutro_Nordeste;desempenho do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Neutro_Nordeste;facilidade do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Neutro_Nordeste;opcionais disponíveis (csat);0.0
+XGBoost_Neutro_Nordeste;nível de tecnologia em agricultura digital (csat);0.0
+XGBoost_Neutro_Nordeste;segurança na operação e manutenção da máquina (csat);0.0
+XGBoost_Não_Promotor_Nordeste;adaptabilidade as mais diversas condições de trabalho (csat);0.26146942
+XGBoost_Não_Promotor_Nordeste;autonomia de plantio (capacidade das caixas de sementes) (csat);0.26135072
+XGBoost_Não_Promotor_Nordeste;acompanhamento do relevo (csat);0.25599897
+XGBoost_Não_Promotor_Nordeste;facilidade de transporte (csat);0.22118089
+XGBoost_Não_Promotor_Nordeste;vida útil dos materiais de desgaste (csat);0.0
+XGBoost_Não_Promotor_Nordeste;desempenho do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Não_Promotor_Nordeste;facilidade do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Não_Promotor_Nordeste;opcionais disponíveis (csat);0.0
+XGBoost_Não_Promotor_Nordeste;nível de tecnologia em agricultura digital (csat);0.0
+XGBoost_Não_Promotor_Nordeste;segurança na operação e manutenção da máquina (csat);0.0
+XGBoost_Detrator_Centro-Oeste;adaptabilidade as mais diversas condições de trabalho (csat);0.292151
+XGBoost_Detrator_Centro-Oeste;adaptabilidade as mais diversas condições de plantio (csat);0.23878284
+XGBoost_Detrator_Centro-Oeste;qualidade de plantio (csat);0.159726
+XGBoost_Detrator_Centro-Oeste;geração e transmissão de dados para gestão agrícola (csat);0.047409136
+XGBoost_Detrator_Centro-Oeste;opcionais disponíveis (csat);0.03928385
+XGBoost_Detrator_Centro-Oeste;capacidade operacional (hectares por hora) (csat);0.037684698
+XGBoost_Detrator_Centro-Oeste;geração e transmissão de dados para gestão da frota (csat);0.03398932
+XGBoost_Detrator_Centro-Oeste;facilidade de transporte (csat);0.03252995
+XGBoost_Detrator_Centro-Oeste;nível de tecnologia em agricultura digital (csat);0.032214794
+XGBoost_Detrator_Centro-Oeste;autonomia de plantio (capacidade das caixas de fertilizantes) (csat);0.028283233
+XGBoost_Neutro_Centro-Oeste;adaptabilidade as mais diversas condições de trabalho (csat);0.14009015
+XGBoost_Neutro_Centro-Oeste;adaptabilidade as mais diversas condições de plantio (csat);0.13586006
+XGBoost_Neutro_Centro-Oeste;facilidade de operação (csat);0.105539955
+XGBoost_Neutro_Centro-Oeste;geração e transmissão de dados para gestão da frota (csat);0.090441555
+XGBoost_Neutro_Centro-Oeste;desempenho do sistema de corte e/ou taxa (csat);0.083564125
+XGBoost_Neutro_Centro-Oeste;compatibilidade com diversos modelos de tratores (csat);0.08052589
+XGBoost_Neutro_Centro-Oeste;capacidade operacional (hectares por hora) (csat);0.073776975
+XGBoost_Neutro_Centro-Oeste;geração e transmissão de dados para gestão agrícola (csat);0.041829325
+XGBoost_Neutro_Centro-Oeste;acompanhamento do relevo (csat);0.04022827
+XGBoost_Neutro_Centro-Oeste;qualidade de plantio (csat);0.039210252
+XGBoost_Não_Promotor_Centro-Oeste;adaptabilidade as mais diversas condições de trabalho (csat);0.31648505
+XGBoost_Não_Promotor_Centro-Oeste;facilidade de operação (csat);0.09315082
+XGBoost_Não_Promotor_Centro-Oeste;compatibilidade com diversos modelos de tratores (csat);0.08794012
+XGBoost_Não_Promotor_Centro-Oeste;qualidade de plantio (csat);0.07295047
+XGBoost_Não_Promotor_Centro-Oeste;opcionais disponíveis (csat);0.06195299
+XGBoost_Não_Promotor_Centro-Oeste;segurança na operação e manutenção da máquina (csat);0.04152838
+XGBoost_Não_Promotor_Centro-Oeste;capacidade operacional (hectares por hora) (csat);0.03759416
+XGBoost_Não_Promotor_Centro-Oeste;geração e transmissão de dados para gestão agrícola (csat);0.03628312
+XGBoost_Não_Promotor_Centro-Oeste;geração e transmissão de dados para gestão da frota (csat);0.035789914
+XGBoost_Não_Promotor_Centro-Oeste;facilidade para realização de manutenções (csat);0.02878732
+XGBoost_Detrator_Sudeste;facilidade para realização de manutenções (csat);0.28730497
+XGBoost_Detrator_Sudeste;vida útil dos materiais de desgaste (csat);0.20469105
+XGBoost_Detrator_Sudeste;adaptabilidade as mais diversas condições de plantio (csat);0.18090843
+XGBoost_Detrator_Sudeste;qualidade de plantio (csat);0.17258564
+XGBoost_Detrator_Sudeste;disponibilidade e confiabilidade mecânica  (csat);0.1015104
+XGBoost_Detrator_Sudeste;geração e transmissão de dados para gestão da frota (csat);0.015134734
+XGBoost_Detrator_Sudeste;custo de manutenção (csat);0.013644518
+XGBoost_Detrator_Sudeste;adaptabilidade as mais diversas condições de trabalho (csat);0.01243584
+XGBoost_Detrator_Sudeste;facilidade de transporte (csat);0.01178447
+XGBoost_Detrator_Sudeste;segurança na operação e manutenção da máquina (csat);0.0
+XGBoost_Neutro_Sudeste;adaptabilidade as mais diversas condições de plantio (csat);0.15752308
+XGBoost_Neutro_Sudeste;facilidade de operação (csat);0.13970794
+XGBoost_Neutro_Sudeste;adaptabilidade as mais diversas condições de trabalho (csat);0.13131878
+XGBoost_Neutro_Sudeste;nível de tecnologia em agricultura digital (csat);0.091908656
+XGBoost_Neutro_Sudeste;desempenho do sistema de corte e/ou taxa (csat);0.06491412
+XGBoost_Neutro_Sudeste;segurança na operação e manutenção da máquina (csat);0.059833907
+XGBoost_Neutro_Sudeste;autonomia de plantio (capacidade das caixas de fertilizantes) (csat);0.057291653
+XGBoost_Neutro_Sudeste;acompanhamento do relevo (csat);0.05072695
+XGBoost_Neutro_Sudeste;facilidade do sistema de corte e/ou taxa (csat);0.04683493
+XGBoost_Neutro_Sudeste;compatibilidade com diversos modelos de tratores (csat);0.033876613
+XGBoost_Não_Promotor_Sudeste;capacidade operacional (hectares por hora) (csat);0.24955653
+XGBoost_Não_Promotor_Sudeste;qualidade de plantio (csat);0.11951014
+XGBoost_Não_Promotor_Sudeste;adaptabilidade as mais diversas condições de trabalho (csat);0.1130653
+XGBoost_Não_Promotor_Sudeste;adaptabilidade as mais diversas condições de plantio (csat);0.11040426
+XGBoost_Não_Promotor_Sudeste;vida útil dos materiais de desgaste (csat);0.07950583
+XGBoost_Não_Promotor_Sudeste;nível de tecnologia em agricultura digital (csat);0.058054943
+XGBoost_Não_Promotor_Sudeste;facilidade de operação (csat);0.05206055
+XGBoost_Não_Promotor_Sudeste;autonomia de plantio (capacidade das caixas de fertilizantes) (csat);0.034455705
+XGBoost_Não_Promotor_Sudeste;desempenho do sistema de corte e/ou taxa (csat);0.03277387
+XGBoost_Não_Promotor_Sudeste;custo de manutenção (csat);0.023180762
+XGBoost_Detrator_Sul;capacidade operacional (hectares por hora) (csat);0.0
+XGBoost_Detrator_Sul;compatibilidade com diversos modelos de tratores (csat);0.0
+XGBoost_Detrator_Sul;desempenho do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Detrator_Sul;facilidade do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Detrator_Sul;opcionais disponíveis (csat);0.0
+XGBoost_Detrator_Sul;facilidade de transporte (csat);0.0
+XGBoost_Detrator_Sul;nível de tecnologia em agricultura digital (csat);0.0
+XGBoost_Detrator_Sul;segurança na operação e manutenção da máquina (csat);0.0
+XGBoost_Detrator_Sul;adaptabilidade as mais diversas condições de plantio (csat);0.0
+XGBoost_Detrator_Sul;vida útil dos materiais de desgaste (csat);0.0
+XGBoost_Neutro_Sul;acompanhamento do relevo (csat);0.27151242
+XGBoost_Neutro_Sul;geração e transmissão de dados para gestão agrícola (csat);0.20754363
+XGBoost_Neutro_Sul;facilidade para realização de manutenções (csat);0.13337876
+XGBoost_Neutro_Sul;facilidade de operação (csat);0.08629562
+XGBoost_Neutro_Sul;adaptabilidade as mais diversas condições de trabalho (csat);0.06581911
+XGBoost_Neutro_Sul;autonomia de plantio (capacidade das caixas de sementes) (csat);0.047523648
+XGBoost_Neutro_Sul;facilidade do sistema de corte e/ou taxa (csat);0.04115488
+XGBoost_Neutro_Sul;disponibilidade e confiabilidade mecânica  (csat);0.033831477
+XGBoost_Neutro_Sul;custo de manutenção (csat);0.02998803
+XGBoost_Neutro_Sul;vida útil dos materiais de desgaste (csat);0.02654496
+XGBoost_Não_Promotor_Sul;acompanhamento do relevo (csat);0.27151242
+XGBoost_Não_Promotor_Sul;geração e transmissão de dados para gestão agrícola (csat);0.20754363
+XGBoost_Não_Promotor_Sul;facilidade para realização de manutenções (csat);0.13337876
+XGBoost_Não_Promotor_Sul;facilidade de operação (csat);0.08629562
+XGBoost_Não_Promotor_Sul;adaptabilidade as mais diversas condições de trabalho (csat);0.06581911
+XGBoost_Não_Promotor_Sul;autonomia de plantio (capacidade das caixas de sementes) (csat);0.047523648
+XGBoost_Não_Promotor_Sul;facilidade do sistema de corte e/ou taxa (csat);0.04115488
+XGBoost_Não_Promotor_Sul;disponibilidade e confiabilidade mecânica  (csat);0.033831477
+XGBoost_Não_Promotor_Sul;custo de manutenção (csat);0.02998803
+XGBoost_Não_Promotor_Sul;vida útil dos materiais de desgaste (csat);0.02654496
+XGBoost_Detrator_Norte;compatibilidade com diversos modelos de tratores (csat);0.28020933
+XGBoost_Detrator_Norte;capacidade operacional (hectares por hora) (csat);0.27621898
+XGBoost_Detrator_Norte;vida útil dos materiais de desgaste (csat);0.24430953
+XGBoost_Detrator_Norte;adaptabilidade as mais diversas condições de trabalho (csat);0.19926214
+XGBoost_Detrator_Norte;desempenho do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Detrator_Norte;facilidade do sistema de corte e/ou taxa (csat);0.0
+XGBoost_Detrator_Norte;opcionais disponíveis (csat);0.0
+XGBoost_Detrator_Norte;facilidade de transporte (csat);0.0
+XGBoost_Detrator_Norte;nível de tecnologia em agricultura digital (csat);0.0
+XGBoost_Detrator_Norte;segurança na operação e manutenção da máquina (csat);0.0
+XGBoost_Neutro_Norte;facilidade de operação (csat);0.3587215
+XGBoost_Neutro_Norte;capacidade operacional (hectares por hora) (csat);0.17569989
+XGBoost_Neutro_Norte;geração e transmissão de dados para gestão agrícola (csat);0.10662
+XGBoost_Neutro_Norte;segurança na operação e manutenção da máquina (csat);0.083018474
+XGBoost_Neutro_Norte;facilidade de transporte (csat);0.050519112
+XGBoost_Neutro_Norte;compatibilidade com diversos modelos de tratores (csat);0.049240585
+XGBoost_Neutro_Norte;adaptabilidade as mais diversas condições de trabalho (csat);0.040994797
+XGBoost_Neutro_Norte;custo de manutenção (csat);0.039964277
+XGBoost_Neutro_Norte;adaptabilidade as mais diversas condições de plantio (csat);0.034015514
+XGBoost_Neutro_Norte;autonomia de plantio (capacidade das caixas de sementes) (csat);0.022790039
+XGBoost_Não_Promotor_Norte;facilidade de operação (csat);0.5293522
+XGBoost_Não_Promotor_Norte;autonomia de plantio (capacidade das caixas de sementes) (csat);0.11879815
+XGBoost_Não_Promotor_Norte;segurança na operação e manutenção da máquina (csat);0.089372486
+XGBoost_Não_Promotor_Norte;compatibilidade com diversos modelos de tratores (csat);0.06255419
+XGBoost_Não_Promotor_Norte;adaptabilidade as mais diversas condições de trabalho (csat);0.051370967
+XGBoost_Não_Promotor_Norte;adaptabilidade as mais diversas condições de plantio (csat);0.03573266
+XGBoost_Não_Promotor_Norte;facilidade de transporte (csat);0.028971097
+XGBoost_Não_Promotor_Norte;capacidade operacional (hectares por hora) (csat);0.027949013
+XGBoost_Não_Promotor_Norte;acompanhamento do relevo (csat);0.027547415
+XGBoost_Não_Promotor_Norte;disponibilidade e confiabilidade mecânica  (csat);0.024153009
+XGBoost_Detrator_BRASIL;adaptabilidade as mais diversas condições de plantio (csat);0.21789022
+XGBoost_Detrator_BRASIL;qualidade de plantio (csat);0.13643129
+XGBoost_Detrator_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.092892796
+XGBoost_Detrator_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.09232913
+XGBoost_Detrator_BRASIL;vida útil dos materiais de desgaste (csat);0.08279742
+XGBoost_Detrator_BRASIL;segurança na operação e manutenção da máquina (csat);0.07055481
+XGBoost_Detrator_BRASIL;custo de manutenção (csat);0.06034304
+XGBoost_Detrator_BRASIL;nível de tecnologia em agricultura digital (csat);0.035381638
+XGBoost_Detrator_BRASIL;autonomia de plantio (capacidade das caixas de sementes) (csat);0.03067574
+XGBoost_Detrator_BRASIL;acompanhamento do relevo (csat);0.026898053
+XGBoost_Neutro_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.23232661
+XGBoost_Neutro_BRASIL;capacidade operacional (hectares por hora) (csat);0.07361502
+XGBoost_Neutro_BRASIL;opcionais disponíveis (csat);0.06785775
+XGBoost_Neutro_BRASIL;facilidade de operação (csat);0.06590891
+XGBoost_Neutro_BRASIL;adaptabilidade as mais diversas condições de plantio (csat);0.061840925
+XGBoost_Neutro_BRASIL;compatibilidade com diversos modelos de tratores (csat);0.04550183
+XGBoost_Neutro_BRASIL;autonomia de plantio (capacidade das caixas de sementes) (csat);0.045133427
+XGBoost_Neutro_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.04302564
+XGBoost_Neutro_BRASIL;segurança na operação e manutenção da máquina (csat);0.0389236
+XGBoost_Neutro_BRASIL;vida útil dos materiais de desgaste (csat);0.03571234
+XGBoost_Não_Promotor_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.29899874
+XGBoost_Não_Promotor_BRASIL;capacidade operacional (hectares por hora) (csat);0.075212136
+XGBoost_Não_Promotor_BRASIL;qualidade de plantio (csat);0.0564066
+XGBoost_Não_Promotor_BRASIL;segurança na operação e manutenção da máquina (csat);0.05534181
+XGBoost_Não_Promotor_BRASIL;facilidade de operação (csat);0.043296233
+XGBoost_Não_Promotor_BRASIL;desempenho do sistema de corte e/ou taxa (csat);0.041864283
+XGBoost_Não_Promotor_BRASIL;facilidade para realização de manutenções (csat);0.041749828
+XGBoost_Não_Promotor_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.04130148
+XGBoost_Não_Promotor_BRASIL;opcionais disponíveis (csat);0.04066161
+XGBoost_Não_Promotor_BRASIL;compatibilidade com diversos modelos de tratores (csat);0.040325344

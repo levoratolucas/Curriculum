@@ -1,5 +1,5 @@
 // Caminho do arquivo CSV (por padrão, 'Grupo 11')
-let caminhoCSV = 'data/Grupo 11_spearman.csv';
+let caminhoCSV = 'data/Grupo 4_spearman.csv';
 
 // Armazenando o gráfico para atualização
 let grafico;
@@ -121,15 +121,13 @@ document.querySelector('.csss').addEventListener('change', async (evento) => {
     const opcoesCSV = {
         'csv1': 'data/Completo_spearman.csv',
         'csv2': 'data/Brasil_spearman.csv',
-        'grupo1': 'data/Grupo 1_spearman.csv',
-        'grupo2': 'data/Grupo 2_spearman.csv',
-        'grupo3': 'data/Grupo 3_spearman.csv',
-        'grupo4': 'data/Grupo 4_spearman.csv',
-        'grupo6': 'data/Grupo 6_spearman.csv',
-        'grupo7': 'data/Grupo 7_spearman.csv',
-        'grupo8': 'data/Grupo 8_spearman.csv',
-        'grupo9_10': 'data/Grupo 9_10_spearman.csv',
-        'grupo11': 'data/Grupo 11_spearman.csv'
+        '1': 'data/Grupo 1_spearman.csv',
+        '3': 'data/Grupo 3_spearman.csv',
+        '4': 'data/Grupo 4_spearman.csv',
+        '6': 'data/Grupo 6_spearman.csv',
+        '7': 'data/Grupo 7_spearman.csv',
+        '8': 'data/Grupo 8_spearman.csv',
+        '9_10': 'data/Grupo 9_10_spearman.csv',
     };
 
     // Verifica se a opção selecionada existe no mapeamento

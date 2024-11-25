@@ -118,18 +118,12 @@ document.querySelector('.csss').addEventListener('change', async (evento) => {
     const valorSelecionado = evento.target.value;
 
     const opcoesCSV = {
-        csv1: 'data/Grupo 4_XGBOOST.csv',
-        csv2: 'data/Grupo 4_XGBOOST.csv',
-        grupo1: 'data/Grupo 1_XGBOOST.csv',
-        grupo2: 'data/Grupo 2_XGBOOST.csv',
-        grupo3: 'data/Grupo 3_XGBOOST.csv',
-        grupo4: 'data/Grupo 1_RANDOM.csv',
-        grupo5: 'data/Grupo 5_XGBOOST.csv',
-        grupo6: 'data/Grupo 6_XGBOOST.csv',
-        grupo7: 'data/Grupo 7_XGBOOST.csv',
-        grupo8: 'data/Grupo 8_XGBOOST.csv',
-        grupo9_10: 'data/Grupo 9_10_XGBOOST.csv',
-        grupo11: 'data/Grupo 11_XGBOOST.csv',
+        1: 'data/Grupo 1_RANDOM.csv',
+        3: 'data/Grupo 3_RANDOM.csv',
+        4: 'data/Grupo 4_RANDOM.csv',
+        6: 'data/Grupo 6_RANDOM.csv',
+        7: 'data/Grupo 7_RANDOM.csv',
+        8: 'data/Grupo 8_RANDOM.csv',
     };
 
     if (opcoesCSV[valorSelecionado]) {

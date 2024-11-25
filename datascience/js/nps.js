@@ -2,22 +2,20 @@
 let npsChart = null;
 
 // Caminhos dos arquivos CSV
-const csvPathNps1 = 'data/Grupo 11_nps_regiao.csv';
-const csvPathNps2 = 'data/Grupo 11_nps_regiao.csv';
-const npsPathGrupo1 = 'data/Grupo 11_nps_regiao.csv';
-const npsPathGrupo2 = 'data/Grupo 11_nps_regiao.csv';
-const npsPathGrupo3 = 'data/Grupo 5_nps_regiao.csv';
-const npsPathGrupo4 = 'data/Grupo 6_nps_regiao.csv';
-const npsPathGrupo5 = 'data/Grupo 7_nps_regiao.csv';
-const npsPathGrupo6 = 'data/Grupo 8_nps_regiao.csv';
-const npsPathGrupo7 = 'data/Grupo 9_10_nps_regiao.csv';
-const npsPathGrupo8 = 'data/Grupo 11_nps_regiao.csv';
-const npsPathGrupo9_10 = 'data/Grupo 11_nps_regiao.csv';
-const npsPathGrupo11 = 'data/Grupo1 2_nps_regiao.csv';
+const csvPathNps1 = 'data/ALL_NPS.csv';
+const csvPathNps2 = 'data/BRASIL_NPS.csv';
+const npsPathGrupo1 = 'data/Grupo 1_nps_regiao.csv';
+const npsPathGrupo2 = 'data/Grupo 2_nps_regiao.csv'; // Adicionado
+const npsPathGrupo3 = 'data/Grupo 3_nps_regiao.csv';
+const npsPathGrupo4 = 'data/Grupo 4_nps_regiao.csv';
+const npsPathGrupo6 = 'data/Grupo 6_nps_regiao.csv';
+const npsPathGrupo7 = 'data/Grupo 7_nps_regiao.csv';
+const npsPathGrupo8 = 'data/Grupo 8_nps_regiao.csv';
+const npsPathGrupo9_10 = 'data/Grupo 9_10_nps_regiao.csv'; // Adicionado
+const npsPathGrupo11 = 'data/Grupo 11_nps_regiao.csv'; // Adicionado
 
 // Função para processar o CSV
 function processCSVNps(csvFilePath) {
-    // Lê o conteúdo do CSV no caminho fornecido
     fetch(csvFilePath)
         .then(response => response.text())
         .then(csvDataNps => {
@@ -25,7 +23,7 @@ function processCSVNps(csvFilePath) {
             const regions = {};
 
             rows.forEach((row, index) => {
-                if (index > 0) { // Ignorar o cabeçalho
+                if (index > 0) {
                     const cols = row.split(';');
                     if (cols.length === 3) {
                         const region = cols[0].trim();
@@ -54,12 +52,10 @@ function generateBarChart(regions) {
 
     const ctx = document.getElementById('npsChart').getContext('2d');
 
-    // Se já existir um gráfico, destruí-lo antes de criar um novo
     if (npsChart) {
         npsChart.destroy();
     }
 
-    // Criar um novo gráfico
     npsChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -112,50 +108,47 @@ function updateCSVNps(csvFilePath) {
     processCSVNps(csvFilePath);
 }
 
-// Inicializa o gráfico com o CSV 1
-updateCSVNps(csvPathNps1);
+// Evento de mudança para o select
+document.getElementsByClassName('csss')[0].addEventListener('change', (event) => {
+// document.getElementById('csvSelect').addEventListener('change', (event) => {
+    let selectedValue = event.target.value;
 
-// Atualiza o gráfico quando o usuário mudar a seleção
-document.getElementById('csvSelect').addEventListener('change', (event) => {
-    switch (event.target.value) {
+    switch (selectedValue) {
         case 'csv1':
             updateCSVNps(csvPathNps1);
             break;
         case 'csv2':
             updateCSVNps(csvPathNps2);
             break;
-        case 'grupo1':
+        case '1':
             updateCSVNps(npsPathGrupo1);
             break;
-        case 'grupo2':
+        case '2':
             updateCSVNps(npsPathGrupo2);
             break;
-        case 'grupo3':
+        case '3':
             updateCSVNps(npsPathGrupo3);
             break;
-        case 'grupo4':
+        case '4':
             updateCSVNps(npsPathGrupo4);
             break;
-        case 'grupo5':
-            updateCSVNps(npsPathGrupo5);
-            break;
-        case 'grupo6':
+        case '6':
             updateCSVNps(npsPathGrupo6);
             break;
-        case 'grupo7':
+        case '7':
             updateCSVNps(npsPathGrupo7);
             break;
-        case 'grupo8':
+        case '8':
             updateCSVNps(npsPathGrupo8);
             break;
-        case 'grupo9_10':
+        case '9_10':
             updateCSVNps(npsPathGrupo9_10);
             break;
-        case 'grupo11':
+        case '11':
             updateCSVNps(npsPathGrupo11);
             break;
         default:
-            console.log('Opção inválida');
+            console.log('Seleção inválida');
             break;
     }
 });

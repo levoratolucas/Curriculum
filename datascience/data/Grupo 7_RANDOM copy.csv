@@ -1,0 +1,211 @@
+
+Random_Detrator_Outro;acompanhamento do relevo (csat);0.11801803786624693
+Random_Detrator_Outro;nível de tecnologia em agricultura digital (csat);0.08993632117362775
+Random_Detrator_Outro;segurança na operação e manutenção da máquina (csat);0.0858727456737212
+Random_Detrator_Outro;qualidade de plantio (csat);0.07701524396279218
+Random_Detrator_Outro;opcionais disponíveis (csat);0.07496744639316816
+Random_Detrator_Outro;facilidade de operação (csat);0.06888848387424815
+Random_Detrator_Outro;adaptabilidade as mais diversas condições de plantio (csat);0.06282970015562107
+Random_Detrator_Outro;facilidade de transporte (csat);0.04995177113711105
+Random_Detrator_Outro;autonomia de plantio (capacidade das caixas de sementes) (csat);0.04930987116331943
+Random_Detrator_Outro;custo de manutenção (csat);0.043128777915796154
+Random_Neutro_Outro;qualidade de plantio (csat);0.11215861573763285
+Random_Neutro_Outro;facilidade de transporte (csat);0.09582128457298215
+Random_Neutro_Outro;desempenho do sistema de corte e/ou taxa (csat);0.08729737616258884
+Random_Neutro_Outro;nível de tecnologia em agricultura digital (csat);0.06270133771902381
+Random_Neutro_Outro;acompanhamento do relevo (csat);0.060283312949093434
+Random_Neutro_Outro;compatibilidade com diversos modelos de tratores (csat);0.053694020718017745
+Random_Neutro_Outro;segurança na operação e manutenção da máquina (csat);0.05232956548572306
+Random_Neutro_Outro;geração e transmissão de dados para gestão agrícola (csat);0.049847056276610124
+Random_Neutro_Outro;opcionais disponíveis (csat);0.04828615939173437
+Random_Neutro_Outro;vida útil dos materiais de desgaste (csat);0.048216179563413605
+Random_Não Promotor_Outro;qualidade de plantio (csat);0.10706249498334425
+Random_Não Promotor_Outro;acompanhamento do relevo (csat);0.07561510927279191
+Random_Não Promotor_Outro;nível de tecnologia em agricultura digital (csat);0.06975480593850929
+Random_Não Promotor_Outro;compatibilidade com diversos modelos de tratores (csat);0.0692013896547363
+Random_Não Promotor_Outro;vida útil dos materiais de desgaste (csat);0.06912764085124744
+Random_Não Promotor_Outro;facilidade de transporte (csat);0.06369577189610169
+Random_Não Promotor_Outro;segurança na operação e manutenção da máquina (csat);0.06283987949222598
+Random_Não Promotor_Outro;desempenho do sistema de corte e/ou taxa (csat);0.06150319513224567
+Random_Não Promotor_Outro;capacidade operacional (hectares por hora) (csat);0.05979387566928686
+Random_Não Promotor_Outro;opcionais disponíveis (csat);0.054661751883924116
+Random_Detrator_Nordeste;capacidade operacional (hectares por hora) (csat);0.0
+Random_Detrator_Nordeste;compatibilidade com diversos modelos de tratores (csat);0.0
+Random_Detrator_Nordeste;desempenho do sistema de corte e/ou taxa (csat);0.0
+Random_Detrator_Nordeste;facilidade do sistema de corte e/ou taxa (csat);0.0
+Random_Detrator_Nordeste;opcionais disponíveis (csat);0.0
+Random_Detrator_Nordeste;facilidade de transporte (csat);0.0
+Random_Detrator_Nordeste;nível de tecnologia em agricultura digital (csat);0.0
+Random_Detrator_Nordeste;segurança na operação e manutenção da máquina (csat);0.0
+Random_Detrator_Nordeste;adaptabilidade as mais diversas condições de plantio (csat);0.0
+Random_Detrator_Nordeste;vida útil dos materiais de desgaste (csat);0.0
+Random_Neutro_Nordeste;adaptabilidade as mais diversas condições de trabalho (csat);0.2708695978391357
+Random_Neutro_Nordeste;disponibilidade e confiabilidade mecânica  (csat);0.15985720490119126
+Random_Neutro_Nordeste;custo de manutenção (csat);0.1236366951719499
+Random_Neutro_Nordeste;segurança na operação e manutenção da máquina (csat);0.07184991063733186
+Random_Neutro_Nordeste;capacidade operacional (hectares por hora) (csat);0.051129201680672275
+Random_Neutro_Nordeste;vida útil dos materiais de desgaste (csat);0.04289691357312156
+Random_Neutro_Nordeste;facilidade do sistema de corte e/ou taxa (csat);0.04194004524886878
+Random_Neutro_Nordeste;facilidade de operação (csat);0.04149651687598117
+Random_Neutro_Nordeste;facilidade para realização de manutenções (csat);0.039994747899159674
+Random_Neutro_Nordeste;qualidade de plantio (csat);0.0357942057942058
+Random_Não Promotor_Nordeste;adaptabilidade as mais diversas condições de trabalho (csat);0.2708695978391357
+Random_Não Promotor_Nordeste;disponibilidade e confiabilidade mecânica  (csat);0.15985720490119126
+Random_Não Promotor_Nordeste;custo de manutenção (csat);0.1236366951719499
+Random_Não Promotor_Nordeste;segurança na operação e manutenção da máquina (csat);0.07184991063733186
+Random_Não Promotor_Nordeste;capacidade operacional (hectares por hora) (csat);0.051129201680672275
+Random_Não Promotor_Nordeste;vida útil dos materiais de desgaste (csat);0.04289691357312156
+Random_Não Promotor_Nordeste;facilidade do sistema de corte e/ou taxa (csat);0.04194004524886878
+Random_Não Promotor_Nordeste;facilidade de operação (csat);0.04149651687598117
+Random_Não Promotor_Nordeste;facilidade para realização de manutenções (csat);0.039994747899159674
+Random_Não Promotor_Nordeste;qualidade de plantio (csat);0.0357942057942058
+Random_Detrator_Centro-Oeste;adaptabilidade as mais diversas condições de trabalho (csat);0.2353322795980518
+Random_Detrator_Centro-Oeste;capacidade operacional (hectares por hora) (csat);0.08691664628901466
+Random_Detrator_Centro-Oeste;facilidade de operação (csat);0.08303747698975122
+Random_Detrator_Centro-Oeste;adaptabilidade as mais diversas condições de plantio (csat);0.07458898899503555
+Random_Detrator_Centro-Oeste;vida útil dos materiais de desgaste (csat);0.07143467051711434
+Random_Detrator_Centro-Oeste;qualidade de plantio (csat);0.06572523350759739
+Random_Detrator_Centro-Oeste;geração e transmissão de dados para gestão agrícola (csat);0.0470320567656463
+Random_Detrator_Centro-Oeste;facilidade para realização de manutenções (csat);0.04327208369151112
+Random_Detrator_Centro-Oeste;facilidade de transporte (csat);0.03669419730914585
+Random_Detrator_Centro-Oeste;disponibilidade e confiabilidade mecânica  (csat);0.034547982537434144
+Random_Neutro_Centro-Oeste;adaptabilidade as mais diversas condições de trabalho (csat);0.1417973422776028
+Random_Neutro_Centro-Oeste;adaptabilidade as mais diversas condições de plantio (csat);0.10543560710408033
+Random_Neutro_Centro-Oeste;facilidade de operação (csat);0.09130716987580692
+Random_Neutro_Centro-Oeste;capacidade operacional (hectares por hora) (csat);0.0690170140794657
+Random_Neutro_Centro-Oeste;desempenho do sistema de corte e/ou taxa (csat);0.06486946600368035
+Random_Neutro_Centro-Oeste;qualidade de plantio (csat);0.06304913514210767
+Random_Neutro_Centro-Oeste;disponibilidade e confiabilidade mecânica  (csat);0.04443639319187147
+Random_Neutro_Centro-Oeste;compatibilidade com diversos modelos de tratores (csat);0.04269931771097986
+Random_Neutro_Centro-Oeste;facilidade do sistema de corte e/ou taxa (csat);0.042439554638755025
+Random_Neutro_Centro-Oeste;facilidade para realização de manutenções (csat);0.039972845164066066
+Random_Não Promotor_Centro-Oeste;adaptabilidade as mais diversas condições de trabalho (csat);0.18608231648545615
+Random_Não Promotor_Centro-Oeste;qualidade de plantio (csat);0.0990678095414964
+Random_Não Promotor_Centro-Oeste;adaptabilidade as mais diversas condições de plantio (csat);0.0892614191203648
+Random_Não Promotor_Centro-Oeste;facilidade de operação (csat);0.08584522550787085
+Random_Não Promotor_Centro-Oeste;capacidade operacional (hectares por hora) (csat);0.0658930160775688
+Random_Não Promotor_Centro-Oeste;disponibilidade e confiabilidade mecânica  (csat);0.06387709186276451
+Random_Não Promotor_Centro-Oeste;desempenho do sistema de corte e/ou taxa (csat);0.05598126298553381
+Random_Não Promotor_Centro-Oeste;opcionais disponíveis (csat);0.035895511933018015
+Random_Não Promotor_Centro-Oeste;facilidade do sistema de corte e/ou taxa (csat);0.03332587921000592
+Random_Não Promotor_Centro-Oeste;geração e transmissão de dados para gestão da frota (csat);0.03248124717702676
+Random_Detrator_Sudeste;capacidade operacional (hectares por hora) (csat);0.16192247215246502
+Random_Detrator_Sudeste;custo de manutenção (csat);0.10643746353598113
+Random_Detrator_Sudeste;segurança na operação e manutenção da máquina (csat);0.097501310105768
+Random_Detrator_Sudeste;facilidade para realização de manutenções (csat);0.08742345073822808
+Random_Detrator_Sudeste;adaptabilidade as mais diversas condições de plantio (csat);0.08218478741158
+Random_Detrator_Sudeste;facilidade de operação (csat);0.0792380846322388
+Random_Detrator_Sudeste;disponibilidade e confiabilidade mecânica  (csat);0.07254157140914744
+Random_Detrator_Sudeste;qualidade de plantio (csat);0.05446011588782123
+Random_Detrator_Sudeste;facilidade de transporte (csat);0.04233853689114177
+Random_Detrator_Sudeste;adaptabilidade as mais diversas condições de trabalho (csat);0.04090071512910267
+Random_Neutro_Sudeste;segurança na operação e manutenção da máquina (csat);0.15441253461810797
+Random_Neutro_Sudeste;adaptabilidade as mais diversas condições de trabalho (csat);0.09357972309445539
+Random_Neutro_Sudeste;nível de tecnologia em agricultura digital (csat);0.07214178035960238
+Random_Neutro_Sudeste;custo de manutenção (csat);0.06895257618638369
+Random_Neutro_Sudeste;capacidade operacional (hectares por hora) (csat);0.061711925908834286
+Random_Neutro_Sudeste;adaptabilidade as mais diversas condições de plantio (csat);0.06153562432701592
+Random_Neutro_Sudeste;desempenho do sistema de corte e/ou taxa (csat);0.04719455715738202
+Random_Neutro_Sudeste;facilidade de transporte (csat);0.04512340006750823
+Random_Neutro_Sudeste;facilidade de operação (csat);0.04495644337078113
+Random_Neutro_Sudeste;geração e transmissão de dados para gestão da frota (csat);0.04049636113479423
+Random_Não Promotor_Sudeste;segurança na operação e manutenção da máquina (csat);0.1354748181617326
+Random_Não Promotor_Sudeste;capacidade operacional (hectares por hora) (csat);0.13392134193802346
+Random_Não Promotor_Sudeste;adaptabilidade as mais diversas condições de trabalho (csat);0.10450524596625249
+Random_Não Promotor_Sudeste;nível de tecnologia em agricultura digital (csat);0.0842045786567274
+Random_Não Promotor_Sudeste;qualidade de plantio (csat);0.07171863981286924
+Random_Não Promotor_Sudeste;vida útil dos materiais de desgaste (csat);0.06959928187329455
+Random_Não Promotor_Sudeste;custo de manutenção (csat);0.05614998544641673
+Random_Não Promotor_Sudeste;facilidade de transporte (csat);0.043499412451676774
+Random_Não Promotor_Sudeste;desempenho do sistema de corte e/ou taxa (csat);0.03465908240839421
+Random_Não Promotor_Sudeste;geração e transmissão de dados para gestão da frota (csat);0.03431341576534857
+Random_Detrator_Sul;capacidade operacional (hectares por hora) (csat);0.0
+Random_Detrator_Sul;compatibilidade com diversos modelos de tratores (csat);0.0
+Random_Detrator_Sul;desempenho do sistema de corte e/ou taxa (csat);0.0
+Random_Detrator_Sul;facilidade do sistema de corte e/ou taxa (csat);0.0
+Random_Detrator_Sul;opcionais disponíveis (csat);0.0
+Random_Detrator_Sul;facilidade de transporte (csat);0.0
+Random_Detrator_Sul;nível de tecnologia em agricultura digital (csat);0.0
+Random_Detrator_Sul;segurança na operação e manutenção da máquina (csat);0.0
+Random_Detrator_Sul;adaptabilidade as mais diversas condições de plantio (csat);0.0
+Random_Detrator_Sul;vida útil dos materiais de desgaste (csat);0.0
+Random_Neutro_Sul;adaptabilidade as mais diversas condições de trabalho (csat);0.1343346763874025
+Random_Neutro_Sul;adaptabilidade as mais diversas condições de plantio (csat);0.09656212602366228
+Random_Neutro_Sul;acompanhamento do relevo (csat);0.09098864780381416
+Random_Neutro_Sul;disponibilidade e confiabilidade mecânica  (csat);0.07491007018224363
+Random_Neutro_Sul;facilidade para realização de manutenções (csat);0.07153003001138186
+Random_Neutro_Sul;facilidade de operação (csat);0.05348316195382333
+Random_Neutro_Sul;facilidade de transporte (csat);0.04771204150668318
+Random_Neutro_Sul;desempenho do sistema de corte e/ou taxa (csat);0.04584866124203278
+Random_Neutro_Sul;opcionais disponíveis (csat);0.04228702235161649
+Random_Neutro_Sul;nível de tecnologia em agricultura digital (csat);0.04169646431880015
+Random_Não Promotor_Sul;adaptabilidade as mais diversas condições de trabalho (csat);0.1343346763874025
+Random_Não Promotor_Sul;adaptabilidade as mais diversas condições de plantio (csat);0.09656212602366228
+Random_Não Promotor_Sul;acompanhamento do relevo (csat);0.09098864780381416
+Random_Não Promotor_Sul;disponibilidade e confiabilidade mecânica  (csat);0.07491007018224363
+Random_Não Promotor_Sul;facilidade para realização de manutenções (csat);0.07153003001138186
+Random_Não Promotor_Sul;facilidade de operação (csat);0.05348316195382333
+Random_Não Promotor_Sul;facilidade de transporte (csat);0.04771204150668318
+Random_Não Promotor_Sul;desempenho do sistema de corte e/ou taxa (csat);0.04584866124203278
+Random_Não Promotor_Sul;opcionais disponíveis (csat);0.04228702235161649
+Random_Não Promotor_Sul;nível de tecnologia em agricultura digital (csat);0.04169646431880015
+Random_Detrator_Norte;adaptabilidade as mais diversas condições de trabalho (csat);0.2627338306686132
+Random_Detrator_Norte;geração e transmissão de dados para gestão agrícola (csat);0.1345506997680911
+Random_Detrator_Norte;autonomia de plantio (capacidade das caixas de sementes) (csat);0.10387734572517181
+Random_Detrator_Norte;desempenho do sistema de corte e/ou taxa (csat);0.09984984984984986
+Random_Detrator_Norte;facilidade do sistema de corte e/ou taxa (csat);0.08948010510510512
+Random_Detrator_Norte;opcionais disponíveis (csat);0.055845618345618346
+Random_Detrator_Norte;autonomia de plantio (capacidade das caixas de fertilizantes) (csat);0.0481418918918919
+Random_Detrator_Norte;compatibilidade com diversos modelos de tratores (csat);0.03986047736047736
+Random_Detrator_Norte;qualidade de plantio (csat);0.03810060060060059
+Random_Detrator_Norte;vida útil dos materiais de desgaste (csat);0.027120870870870856
+Random_Neutro_Norte;adaptabilidade as mais diversas condições de plantio (csat);0.09364452305755086
+Random_Neutro_Norte;facilidade de operação (csat);0.0757377222894554
+Random_Neutro_Norte;custo de manutenção (csat);0.07559760771172527
+Random_Neutro_Norte;disponibilidade e confiabilidade mecânica  (csat);0.07227586194049115
+Random_Neutro_Norte;adaptabilidade as mais diversas condições de trabalho (csat);0.07174190410101568
+Random_Neutro_Norte;facilidade de transporte (csat);0.0666766605390292
+Random_Neutro_Norte;desempenho do sistema de corte e/ou taxa (csat);0.06201328075038052
+Random_Neutro_Norte;autonomia de plantio (capacidade das caixas de sementes) (csat);0.061042179049558644
+Random_Neutro_Norte;segurança na operação e manutenção da máquina (csat);0.06076368826523817
+Random_Neutro_Norte;autonomia de plantio (capacidade das caixas de fertilizantes) (csat);0.053953953707266536
+Random_Não Promotor_Norte;facilidade de operação (csat);0.09339837008893838
+Random_Não Promotor_Norte;segurança na operação e manutenção da máquina (csat);0.09260457319017475
+Random_Não Promotor_Norte;autonomia de plantio (capacidade das caixas de sementes) (csat);0.08033396579908421
+Random_Não Promotor_Norte;disponibilidade e confiabilidade mecânica  (csat);0.07425452278199955
+Random_Não Promotor_Norte;adaptabilidade as mais diversas condições de trabalho (csat);0.0741415289596001
+Random_Não Promotor_Norte;adaptabilidade as mais diversas condições de plantio (csat);0.06708935823762373
+Random_Não Promotor_Norte;compatibilidade com diversos modelos de tratores (csat);0.06358704692489765
+Random_Não Promotor_Norte;custo de manutenção (csat);0.05697471942295249
+Random_Não Promotor_Norte;facilidade de transporte (csat);0.05062485008798736
+Random_Não Promotor_Norte;autonomia de plantio (capacidade das caixas de fertilizantes) (csat);0.046433377585522975
+Random_Detrator_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.1717389726264892
+Random_Detrator_BRASIL;custo de manutenção (csat);0.09819171294515461
+Random_Detrator_BRASIL;adaptabilidade as mais diversas condições de plantio (csat);0.084803599449743
+Random_Detrator_BRASIL;vida útil dos materiais de desgaste (csat);0.06413122700362808
+Random_Detrator_BRASIL;capacidade operacional (hectares por hora) (csat);0.05860432940263068
+Random_Detrator_BRASIL;facilidade para realização de manutenções (csat);0.05301326052170982
+Random_Detrator_BRASIL;acompanhamento do relevo (csat);0.05005113279286877
+Random_Detrator_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.04410562709332664
+Random_Detrator_BRASIL;facilidade de operação (csat);0.043179132961964
+Random_Detrator_BRASIL;segurança na operação e manutenção da máquina (csat);0.03872408928989435
+Random_Neutro_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.142981940364458
+Random_Neutro_BRASIL;adaptabilidade as mais diversas condições de plantio (csat);0.08387764936081596
+Random_Neutro_BRASIL;facilidade de operação (csat);0.07376694476201959
+Random_Neutro_BRASIL;capacidade operacional (hectares por hora) (csat);0.06641664755592885
+Random_Neutro_BRASIL;segurança na operação e manutenção da máquina (csat);0.05892764616944472
+Random_Neutro_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.05512418027227841
+Random_Neutro_BRASIL;nível de tecnologia em agricultura digital (csat);0.046666673988423474
+Random_Neutro_BRASIL;facilidade para realização de manutenções (csat);0.04637072808491656
+Random_Neutro_BRASIL;custo de manutenção (csat);0.04609292601672344
+Random_Neutro_BRASIL;qualidade de plantio (csat);0.04387678023456564
+Random_Não Promotor_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.15934245061694685
+Random_Não Promotor_BRASIL;adaptabilidade as mais diversas condições de plantio (csat);0.08599705814297083
+Random_Não Promotor_BRASIL;segurança na operação e manutenção da máquina (csat);0.08403986123372971
+Random_Não Promotor_BRASIL;capacidade operacional (hectares por hora) (csat);0.08004848093520608
+Random_Não Promotor_BRASIL;qualidade de plantio (csat);0.07044536622080931
+Random_Não Promotor_BRASIL;facilidade de operação (csat);0.058734540471815144
+Random_Não Promotor_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.05123435521353604
+Random_Não Promotor_BRASIL;geração e transmissão de dados para gestão da frota (csat);0.048988914865566904
+Random_Não Promotor_BRASIL;facilidade para realização de manutenções (csat);0.043603429773978
+Random_Não Promotor_BRASIL;custo de manutenção (csat);0.03841104517173318

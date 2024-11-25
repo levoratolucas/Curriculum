@@ -125,21 +125,25 @@
     }
 
     /* Tabela */
-    #tabelaSafra ,#tabelanpsbrasil{
+    #tabelaSafra,
+    #tabelanpsbrasil {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
       font-size: 14px;
     }
 
-    #tabelanpsbrasil th,#tabelaSafra th,
-    #tabelanpsbrasil td,#tabelaSafra td {
+    #tabelanpsbrasil th,
+    #tabelaSafra th,
+    #tabelanpsbrasil td,
+    #tabelaSafra td {
       border: 1px solid #ddd;
       padding: 8px;
       text-align: center;
     }
 
-    #tabelaSafra th ,#tabelanpsbrasil th{
+    #tabelaSafra th,
+    #tabelanpsbrasil th {
       background-color: #0078D7;
       color: white;
       font-weight: bold;
@@ -149,6 +153,43 @@
     canvas {
       max-width: 100%;
       height: auto;
+    }
+
+    #sap {
+      width: calc(95% - 20px);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+    }
+
+    #sap img {
+      margin: 5px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    /* Primeira imagem maior */
+    #sap img:first-of-type {
+      width: 45%;
+      border-radius: 30px;
+      border: solid 1px #ccc;
+      /* A primeira imagem será maior */
+    }
+
+    /* Outras imagens menores */
+    #sap img:not(:first-of-type) {
+      width: 35%;
+      border-radius: 30px;
+      border: solid 1px #ccc;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* Hover interativo para as imagens */
+    #sap img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
   </style>
   <!-- <link rel="stylesheet" href="css/style.css"> -->
@@ -160,17 +201,13 @@
   <div class="seletor">
     <label for="csvSelect">Escolha o CSV:</label>
     <select id="csvSelect" class="csss x_n_promotor">
-      <option value="csv1">Completo</option>
-      <option value="csv2">Brasil</option>
-      <option value="grupo1">Grupo 1</option>
-      <option value="grupo2">Grupo 2</option>
-      <option value="grupo3">Grupo 3</option>
-      <option value="grupo4">Grupo 4</option>
-      <option value="grupo6">Grupo 6</option>
-      <option value="grupo7">Grupo 7</option>
-      <option value="grupo8">Grupo 8</option>
-      <option value="grupo9_10">Grupo 9_10</option>
-      <option value="grupo11">Grupo 11</option>
+      <option value="2">Selecione o grupo</option>
+      <option value="1">Grupo 1</option>
+      <option value="3">Grupo 3</option>
+      <option value="4">Grupo 4</option>
+      <option value="6">Grupo 6</option>
+      <option value="7">Grupo 7</option>
+      <option value="8">Grupo 8</option>
     </select>
   </div>
 
@@ -188,18 +225,7 @@
       <h2>Gráfico Spearman</h2>
       <!-- Gráficos serão inseridos aqui dinamicamente -->
     </div>
-    <div class="chart-container">
-      <h2 id="tituloTabela"></h2>
-      <table id="tabelaSafra">
-        <!-- A tabela será gerada dinamicamente aqui -->
-      </table>
-    </div>
-    <div class="chart-container">
-      <h2 id="tituloTabelabrasil"></h2>
-      <table id="tabelanpsbrasil">
-        <!-- A tabela será gerada dinamicamente aqui -->
-      </table>
-    </div>
+
     <div id="chartsContainer" class="chart-container">
       <h2>Random Forest importancia de variaveis</h2>
       <!-- Gráficos serão inseridos aqui dinamicamente -->
@@ -208,7 +234,68 @@
       <h2>XGBoost importancia de variaveis</h2>
       <!-- Gráficos serão inseridos aqui dinamicamente -->
     </div>
-    
+    <div class="chart-container">
+      <h2 id="tituloTabelabrasil"></h2>
+      <table id="tabelanpsbrasil">
+        <!-- A tabela será gerada dinamicamente aqui -->
+      </table>
+    </div>
+    <div class="chart-container" id="sap">
+      <div id="images-container">
+        <div class="group-images"style="display: none;" data-group="1">
+          <img src="./diretorio/Grupo 1_shap_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 1_partial_dependence1_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 1_partial_dependence2_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 1_partial_dependence3_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 1_partial_dependence4_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 1_partial_dependence5_promotores_XGBBRASIL.png" alt="">
+        </div>
+        <div class="group-images"style="display: none;" data-group="3">
+          <img src="./diretorio/Grupo 3_shap_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 3_partial_dependence1_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 3_partial_dependence2_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 3_partial_dependence3_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 3_partial_dependence4_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 3_partial_dependence5_promotores_XGBBRASIL.png" alt="">
+        </div>
+        <div class="group-images"style="display: none;" data-group="4">
+          <img src="./diretorio/Grupo 4_shap_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 4_partial_dependence1_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 4_partial_dependence2_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 4_partial_dependence3_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 4_partial_dependence4_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 4_partial_dependence5_promotores_XGBBRASIL.png" alt="">
+        </div>
+
+        <div class="group-images"style="display: none;" data-group="6">
+          <img src="./diretorio/Grupo 6_shap_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 6_partial_dependence1_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 6_partial_dependence2_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 6_partial_dependence3_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 6_partial_dependence4_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 6_partial_dependence5_promotores_XGBBRASIL.png" alt="">
+        </div>
+
+        <div class="group-images"style="display: none;" data-group="7">
+          <img src="./diretorio/Grupo 7_shap_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 7_partial_dependence1_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 7_partial_dependence2_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 7_partial_dependence3_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 7_partial_dependence4_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 7_partial_dependence5_promotores_XGBBRASIL.png" alt="">
+        </div>
+
+        <div class="group-images"style="display: none;" data-group="8">
+          <img src="./diretorio/Grupo 8_shap_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 8_partial_dependence1_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 8_partial_dependence2_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 8_partial_dependence3_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 8_partial_dependence4_promotores_XGBBRASIL.png" alt="">
+          <img src="./diretorio/Grupo 8_partial_dependence5_promotores_XGBBRASIL.png" alt="">
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <!-- Inclusão dos scripts existentes -->
@@ -218,6 +305,25 @@
   <script src="js/brasilnps.js"></script>
   <script src="js/random.js"></script>
   <script src="js/xgboost.js"></script>
+
+  <script>
+    document.getElementById('csvSelect').addEventListener('change', function () {
+      var grupoSelecionado = this.value; // Obtém o valor do grupo selecionado
+      var grupos = document.querySelectorAll('.group-images'); // Seleciona todos os divs de grupo de imagens
+
+      // Para cada grupo de imagens, mostramos apenas o grupo selecionado
+      grupos.forEach(function (grupo) {
+        if (grupo.getAttribute('data-group') === grupoSelecionado) {
+          grupo.style.display = 'block'; // Exibe o grupo selecionado
+        } else {
+          grupo.style.display = 'none'; // Oculta os outros grupos
+        }
+      });
+    });
+
+  </script>
+
+
 
 
 </body>

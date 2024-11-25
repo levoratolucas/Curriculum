@@ -1,0 +1,211 @@
+
+Random_Detrator_Nordeste;adaptabilidade as mais diversas condições de trabalho (csat);0.24453174164335192
+Random_Detrator_Nordeste;disponibilidade e confiabilidade mecânica  (csat);0.20310273280274405
+Random_Detrator_Nordeste;consumo de combustível (litros por hectares) (csat);0.13033879716266072
+Random_Detrator_Nordeste;custo de manutenção (csat);0.08892640402929786
+Random_Detrator_Nordeste;adequação as diversas operações e implementos (csat);0.06813507604987705
+Random_Detrator_Nordeste;facilidade para realização de manutenções (csat);0.06806220549311907
+Random_Detrator_Nordeste;conforto e ergonomia (csat);0.04625611619470938
+Random_Detrator_Nordeste;geração e transmissão de dados para gestão agrícola (csat);0.036228732370132105
+Random_Detrator_Nordeste;capacidade operacional (hectares por hora) (csat);0.03193559262590122
+Random_Detrator_Nordeste;facilidade de operação (csat);0.02984460689729092
+Random_Neutro_Nordeste;capacidade operacional (hectares por hora) (csat);0.1501218218785261
+Random_Neutro_Nordeste;disponibilidade e confiabilidade mecânica  (csat);0.10015143826554622
+Random_Neutro_Nordeste;facilidade de operação (csat);0.09826774337466333
+Random_Neutro_Nordeste;facilidade para realização de manutenções (csat);0.09791509187701193
+Random_Neutro_Nordeste;adequação as diversas operações e implementos (csat);0.0968675824032113
+Random_Neutro_Nordeste;conforto e ergonomia (csat);0.09667634994379033
+Random_Neutro_Nordeste;custo de manutenção (csat);0.09431888319960001
+Random_Neutro_Nordeste;adaptabilidade as mais diversas condições de trabalho (csat);0.08400211109259868
+Random_Neutro_Nordeste;consumo de combustível (litros por hectares) (csat);0.07300800526410961
+Random_Neutro_Nordeste;geração e transmissão de dados para gestão da frota (csat);0.04654292035848175
+Random_Não Promotor_Nordeste;disponibilidade e confiabilidade mecânica  (csat);0.14170416378313513
+Random_Não Promotor_Nordeste;capacidade operacional (hectares por hora) (csat);0.13002481497023785
+Random_Não Promotor_Nordeste;adaptabilidade as mais diversas condições de trabalho (csat);0.12101774637722269
+Random_Não Promotor_Nordeste;facilidade de operação (csat);0.10979043975656946
+Random_Não Promotor_Nordeste;consumo de combustível (litros por hectares) (csat);0.10549901522933773
+Random_Não Promotor_Nordeste;adequação as diversas operações e implementos (csat);0.10528572618168336
+Random_Não Promotor_Nordeste;facilidade para realização de manutenções (csat);0.0861956579873224
+Random_Não Promotor_Nordeste;custo de manutenção (csat);0.07478752808410913
+Random_Não Promotor_Nordeste;conforto e ergonomia (csat);0.055436244567982726
+Random_Não Promotor_Nordeste;geração e transmissão de dados para gestão da frota (csat);0.028412057915216293
+Random_Detrator_Sudeste;disponibilidade e confiabilidade mecânica  (csat);0.22921730591558614
+Random_Detrator_Sudeste;facilidade de operação (csat);0.116809957943393
+Random_Detrator_Sudeste;facilidade para realização de manutenções (csat);0.11094069050340377
+Random_Detrator_Sudeste;capacidade operacional (hectares por hora) (csat);0.10772543223385807
+Random_Detrator_Sudeste;adequação as diversas operações e implementos (csat);0.08602671405135967
+Random_Detrator_Sudeste;conforto e ergonomia (csat);0.08436273921971833
+Random_Detrator_Sudeste;adaptabilidade as mais diversas condições de trabalho (csat);0.08326550468590595
+Random_Detrator_Sudeste;custo de manutenção (csat);0.07216340990761821
+Random_Detrator_Sudeste;consumo de combustível (litros por hectares) (csat);0.040700628480155904
+Random_Detrator_Sudeste;geração e transmissão de dados para gestão da frota (csat);0.025017375901418847
+Random_Neutro_Sudeste;disponibilidade e confiabilidade mecânica  (csat);0.11316097521836313
+Random_Neutro_Sudeste;facilidade de operação (csat);0.1130655510497346
+Random_Neutro_Sudeste;capacidade operacional (hectares por hora) (csat);0.10486538519413134
+Random_Neutro_Sudeste;facilidade para realização de manutenções (csat);0.10453178737167046
+Random_Neutro_Sudeste;adequação as diversas operações e implementos (csat);0.1028707047903479
+Random_Neutro_Sudeste;custo de manutenção (csat);0.09804970836411644
+Random_Neutro_Sudeste;conforto e ergonomia (csat);0.09449174686284263
+Random_Neutro_Sudeste;adaptabilidade as mais diversas condições de trabalho (csat);0.08655813729010989
+Random_Neutro_Sudeste;consumo de combustível (litros por hectares) (csat);0.07753118897869395
+Random_Neutro_Sudeste;geração e transmissão de dados para gestão da frota (csat);0.04033553253637025
+Random_Não Promotor_Sudeste;facilidade de operação (csat);0.1560415271018747
+Random_Não Promotor_Sudeste;adequação as diversas operações e implementos (csat);0.14274900496150864
+Random_Não Promotor_Sudeste;capacidade operacional (hectares por hora) (csat);0.12466484534761993
+Random_Não Promotor_Sudeste;disponibilidade e confiabilidade mecânica  (csat);0.11276945106766686
+Random_Não Promotor_Sudeste;facilidade para realização de manutenções (csat);0.09491854843035756
+Random_Não Promotor_Sudeste;adaptabilidade as mais diversas condições de trabalho (csat);0.07770107101544474
+Random_Não Promotor_Sudeste;custo de manutenção (csat);0.07265815933335612
+Random_Não Promotor_Sudeste;conforto e ergonomia (csat);0.06888609404113119
+Random_Não Promotor_Sudeste;consumo de combustível (litros por hectares) (csat);0.06068025205046023
+Random_Não Promotor_Sudeste;geração e transmissão de dados para gestão da frota (csat);0.03162445818826229
+Random_Detrator_Outro;facilidade para realização de manutenções (csat);0.16344109540363086
+Random_Detrator_Outro;facilidade de operação (csat);0.15430387645956778
+Random_Detrator_Outro;adequação as diversas operações e implementos (csat);0.1516703055711667
+Random_Detrator_Outro;custo de manutenção (csat);0.1413887172367274
+Random_Detrator_Outro;disponibilidade e confiabilidade mecânica  (csat);0.13729033289799758
+Random_Detrator_Outro;conforto e ergonomia (csat);0.07131762035382108
+Random_Detrator_Outro;adaptabilidade as mais diversas condições de trabalho (csat);0.06300005573599013
+Random_Detrator_Outro;capacidade operacional (hectares por hora) (csat);0.03526329559296945
+Random_Detrator_Outro;consumo de combustível (litros por hectares) (csat);0.027537303747608894
+Random_Detrator_Outro;facilidade de uso do piloto automático (csat);0.020144892158731487
+Random_Neutro_Outro;disponibilidade e confiabilidade mecânica  (csat);0.12134707775297149
+Random_Neutro_Outro;conforto e ergonomia (csat);0.1040996453585226
+Random_Neutro_Outro;adequação as diversas operações e implementos (csat);0.10097775623837625
+Random_Neutro_Outro;capacidade operacional (hectares por hora) (csat);0.09772563081700932
+Random_Neutro_Outro;adaptabilidade as mais diversas condições de trabalho (csat);0.09554099574716059
+Random_Neutro_Outro;facilidade de operação (csat);0.09441968801670562
+Random_Neutro_Outro;custo de manutenção (csat);0.09037474750750468
+Random_Neutro_Outro;facilidade para realização de manutenções (csat);0.0818441020399294
+Random_Neutro_Outro;consumo de combustível (litros por hectares) (csat);0.07303786407530775
+Random_Neutro_Outro;facilidade de uso do piloto automático (csat);0.05019443626129787
+Random_Não Promotor_Outro;facilidade de operação (csat);0.16329015281117
+Random_Não Promotor_Outro;disponibilidade e confiabilidade mecânica  (csat);0.16098518796769998
+Random_Não Promotor_Outro;adaptabilidade as mais diversas condições de trabalho (csat);0.10783255556118242
+Random_Não Promotor_Outro;facilidade para realização de manutenções (csat);0.09360123915353917
+Random_Não Promotor_Outro;adequação as diversas operações e implementos (csat);0.09274219604017857
+Random_Não Promotor_Outro;conforto e ergonomia (csat);0.07738961285342791
+Random_Não Promotor_Outro;capacidade operacional (hectares por hora) (csat);0.072571642383301
+Random_Não Promotor_Outro;custo de manutenção (csat);0.06415376107540317
+Random_Não Promotor_Outro;geração e transmissão de dados para gestão agrícola (csat);0.04791912672288453
+Random_Não Promotor_Outro;consumo de combustível (litros por hectares) (csat);0.0433155456496693
+Random_Detrator_Sul;disponibilidade e confiabilidade mecânica  (csat);0.28565730412803286
+Random_Detrator_Sul;facilidade de operação (csat);0.10727903826608438
+Random_Detrator_Sul;adequação as diversas operações e implementos (csat);0.10043042647711604
+Random_Detrator_Sul;conforto e ergonomia (csat);0.09209982321454802
+Random_Detrator_Sul;facilidade para realização de manutenções (csat);0.08837422614476206
+Random_Detrator_Sul;adaptabilidade as mais diversas condições de trabalho (csat);0.07740758259780219
+Random_Detrator_Sul;capacidade operacional (hectares por hora) (csat);0.06737071623685038
+Random_Detrator_Sul;custo de manutenção (csat);0.058996032991627555
+Random_Detrator_Sul;consumo de combustível (litros por hectares) (csat);0.04019460372329842
+Random_Detrator_Sul;geração e transmissão de dados para gestão agrícola (csat);0.03146047897311097
+Random_Neutro_Sul;capacidade operacional (hectares por hora) (csat);0.12947250769494714
+Random_Neutro_Sul;adequação as diversas operações e implementos (csat);0.11541119290888716
+Random_Neutro_Sul;facilidade de operação (csat);0.1071729794064488
+Random_Neutro_Sul;disponibilidade e confiabilidade mecânica  (csat);0.09910517030473164
+Random_Neutro_Sul;facilidade para realização de manutenções (csat);0.09122351941131045
+Random_Neutro_Sul;conforto e ergonomia (csat);0.08946921453811624
+Random_Neutro_Sul;consumo de combustível (litros por hectares) (csat);0.08668823387414032
+Random_Neutro_Sul;custo de manutenção (csat);0.08234264092776311
+Random_Neutro_Sul;adaptabilidade as mais diversas condições de trabalho (csat);0.07346191122763165
+Random_Neutro_Sul;geração e transmissão de dados para gestão agrícola (csat);0.04419877326152257
+Random_Não Promotor_Sul;facilidade de operação (csat);0.15849920205581292
+Random_Não Promotor_Sul;adequação as diversas operações e implementos (csat);0.14717978268668
+Random_Não Promotor_Sul;capacidade operacional (hectares por hora) (csat);0.14298665504007155
+Random_Não Promotor_Sul;disponibilidade e confiabilidade mecânica  (csat);0.10359027282566252
+Random_Não Promotor_Sul;facilidade para realização de manutenções (csat);0.07653761119182295
+Random_Não Promotor_Sul;custo de manutenção (csat);0.07176875686917608
+Random_Não Promotor_Sul;adaptabilidade as mais diversas condições de trabalho (csat);0.07034584883375093
+Random_Não Promotor_Sul;conforto e ergonomia (csat);0.06896135901475003
+Random_Não Promotor_Sul;consumo de combustível (litros por hectares) (csat);0.06598589941425108
+Random_Não Promotor_Sul;geração e transmissão de dados para gestão agrícola (csat);0.032964198689299846
+Random_Detrator_Centro-Oeste;disponibilidade e confiabilidade mecânica  (csat);0.2138704831366804
+Random_Detrator_Centro-Oeste;facilidade de operação (csat);0.1724609763524413
+Random_Detrator_Centro-Oeste;capacidade operacional (hectares por hora) (csat);0.10180836683462255
+Random_Detrator_Centro-Oeste;adequação as diversas operações e implementos (csat);0.1000687515135456
+Random_Detrator_Centro-Oeste;facilidade para realização de manutenções (csat);0.09960989539226772
+Random_Detrator_Centro-Oeste;custo de manutenção (csat);0.08187417285852666
+Random_Detrator_Centro-Oeste;adaptabilidade as mais diversas condições de trabalho (csat);0.061449995075336786
+Random_Detrator_Centro-Oeste;conforto e ergonomia (csat);0.05238589099708501
+Random_Detrator_Centro-Oeste;geração e transmissão de dados para gestão da frota (csat);0.038098306118131205
+Random_Detrator_Centro-Oeste;consumo de combustível (litros por hectares) (csat);0.031709310151057206
+Random_Neutro_Centro-Oeste;disponibilidade e confiabilidade mecânica  (csat);0.1306015988650123
+Random_Neutro_Centro-Oeste;capacidade operacional (hectares por hora) (csat);0.12033806846339029
+Random_Neutro_Centro-Oeste;adequação as diversas operações e implementos (csat);0.10797542875389773
+Random_Neutro_Centro-Oeste;custo de manutenção (csat);0.0991028982095408
+Random_Neutro_Centro-Oeste;consumo de combustível (litros por hectares) (csat);0.09217964219112845
+Random_Neutro_Centro-Oeste;facilidade para realização de manutenções (csat);0.09035220688676739
+Random_Neutro_Centro-Oeste;conforto e ergonomia (csat);0.08844169629366302
+Random_Neutro_Centro-Oeste;facilidade de operação (csat);0.08151559486651185
+Random_Neutro_Centro-Oeste;adaptabilidade as mais diversas condições de trabalho (csat);0.05995255519142857
+Random_Neutro_Centro-Oeste;facilidade de uso do piloto automático (csat);0.043903367980046716
+Random_Não Promotor_Centro-Oeste;disponibilidade e confiabilidade mecânica  (csat);0.1814825748630401
+Random_Não Promotor_Centro-Oeste;capacidade operacional (hectares por hora) (csat);0.13389344334735762
+Random_Não Promotor_Centro-Oeste;adequação as diversas operações e implementos (csat);0.1007285394803973
+Random_Não Promotor_Centro-Oeste;facilidade de operação (csat);0.09728213508010809
+Random_Não Promotor_Centro-Oeste;facilidade para realização de manutenções (csat);0.09369286438025728
+Random_Não Promotor_Centro-Oeste;custo de manutenção (csat);0.08705259747586376
+Random_Não Promotor_Centro-Oeste;conforto e ergonomia (csat);0.08079469360726105
+Random_Não Promotor_Centro-Oeste;consumo de combustível (litros por hectares) (csat);0.06866546116844721
+Random_Não Promotor_Centro-Oeste;adaptabilidade as mais diversas condições de trabalho (csat);0.059828955879265885
+Random_Não Promotor_Centro-Oeste;geração e transmissão de dados para gestão agrícola (csat);0.038963474712660665
+Random_Detrator_Norte;facilidade de operação (csat);0.22233357283087596
+Random_Detrator_Norte;disponibilidade e confiabilidade mecânica  (csat);0.1947159415674552
+Random_Detrator_Norte;adaptabilidade as mais diversas condições de trabalho (csat);0.11330545332633322
+Random_Detrator_Norte;adequação as diversas operações e implementos (csat);0.1048313807221653
+Random_Detrator_Norte;custo de manutenção (csat);0.0886900756455151
+Random_Detrator_Norte;capacidade operacional (hectares por hora) (csat);0.08073603243402667
+Random_Detrator_Norte;conforto e ergonomia (csat);0.06860057255969078
+Random_Detrator_Norte;consumo de combustível (litros por hectares) (csat);0.05474889136425939
+Random_Detrator_Norte;facilidade para realização de manutenções (csat);0.0459491409436175
+Random_Detrator_Norte;facilidade de uso do piloto automático (csat);0.014206200680615675
+Random_Neutro_Norte;disponibilidade e confiabilidade mecânica  (csat);0.12882639527327053
+Random_Neutro_Norte;conforto e ergonomia (csat);0.11694326121556911
+Random_Neutro_Norte;custo de manutenção (csat);0.10878161546947834
+Random_Neutro_Norte;capacidade operacional (hectares por hora) (csat);0.10424090539586826
+Random_Neutro_Norte;adaptabilidade as mais diversas condições de trabalho (csat);0.08989075872232528
+Random_Neutro_Norte;facilidade para realização de manutenções (csat);0.07849584132000224
+Random_Neutro_Norte;consumo de combustível (litros por hectares) (csat);0.07719210326874304
+Random_Neutro_Norte;geração e transmissão de dados para gestão da frota (csat);0.07110332963573099
+Random_Neutro_Norte;geração e transmissão de dados para gestão agrícola (csat);0.0646036438963831
+Random_Neutro_Norte;adequação as diversas operações e implementos (csat);0.061603400501207405
+Random_Não Promotor_Norte;conforto e ergonomia (csat);0.14821404703965815
+Random_Não Promotor_Norte;disponibilidade e confiabilidade mecânica  (csat);0.12701531039738292
+Random_Não Promotor_Norte;capacidade operacional (hectares por hora) (csat);0.11135425407337474
+Random_Não Promotor_Norte;custo de manutenção (csat);0.10256250414805533
+Random_Não Promotor_Norte;adequação as diversas operações e implementos (csat);0.08554384061020076
+Random_Não Promotor_Norte;adaptabilidade as mais diversas condições de trabalho (csat);0.07159524759964506
+Random_Não Promotor_Norte;geração e transmissão de dados para gestão agrícola (csat);0.06940571890422935
+Random_Não Promotor_Norte;facilidade de operação (csat);0.06887164648242546
+Random_Não Promotor_Norte;geração e transmissão de dados para gestão da frota (csat);0.06773717261003714
+Random_Não Promotor_Norte;facilidade para realização de manutenções (csat);0.05842538070618536
+Random_Detrator_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.2695922957037843
+Random_Detrator_BRASIL;facilidade de operação (csat);0.12242322375108941
+Random_Detrator_BRASIL;adequação as diversas operações e implementos (csat);0.10113006489611094
+Random_Detrator_BRASIL;capacidade operacional (hectares por hora) (csat);0.09086439626187943
+Random_Detrator_BRASIL;facilidade para realização de manutenções (csat);0.08756796251256348
+Random_Detrator_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.08003465834344425
+Random_Detrator_BRASIL;custo de manutenção (csat);0.06893101326148394
+Random_Detrator_BRASIL;conforto e ergonomia (csat);0.0645816519786931
+Random_Detrator_BRASIL;consumo de combustível (litros por hectares) (csat);0.043042462764100085
+Random_Detrator_BRASIL;geração e transmissão de dados para gestão da frota (csat);0.026303351345508562
+Random_Neutro_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.12415596790298894
+Random_Neutro_BRASIL;capacidade operacional (hectares por hora) (csat);0.11653130439725266
+Random_Neutro_BRASIL;adequação as diversas operações e implementos (csat);0.1006572981895824
+Random_Neutro_BRASIL;custo de manutenção (csat);0.09715453082300128
+Random_Neutro_BRASIL;facilidade para realização de manutenções (csat);0.09292693492089596
+Random_Neutro_BRASIL;conforto e ergonomia (csat);0.09143108930650021
+Random_Neutro_BRASIL;consumo de combustível (litros por hectares) (csat);0.09031677663476716
+Random_Neutro_BRASIL;facilidade de operação (csat);0.08816235058776542
+Random_Neutro_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.07810933747331027
+Random_Neutro_BRASIL;facilidade de uso do piloto automático (csat);0.0412956804997609
+Random_Não Promotor_BRASIL;disponibilidade e confiabilidade mecânica  (csat);0.14251042647009932
+Random_Não Promotor_BRASIL;facilidade de operação (csat);0.13935736383736427
+Random_Não Promotor_BRASIL;capacidade operacional (hectares por hora) (csat);0.12701132320702274
+Random_Não Promotor_BRASIL;adequação as diversas operações e implementos (csat);0.11004284820123969
+Random_Não Promotor_BRASIL;facilidade para realização de manutenções (csat);0.08994247093245934
+Random_Não Promotor_BRASIL;custo de manutenção (csat);0.07714507489267106
+Random_Não Promotor_BRASIL;adaptabilidade as mais diversas condições de trabalho (csat);0.07465826482595972
+Random_Não Promotor_BRASIL;conforto e ergonomia (csat);0.07213628344464293
+Random_Não Promotor_BRASIL;consumo de combustível (litros por hectares) (csat);0.06993299300054599
+Random_Não Promotor_BRASIL;geração e transmissão de dados para gestão agrícola (csat);0.034539826006570386

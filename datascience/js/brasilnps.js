@@ -43,27 +43,43 @@ async function carregarTabelaDeSafras(caminhoCSV) {
     tabela.appendChild(tbody);
 }
 
-
+// Event listener para a mudança de seleção e uso de switch-case
 document.querySelector('.csss').addEventListener('change', async (evento) => {
     const valorSelecionado = evento.target.value;
+    let caminhoCSV = '';
 
-    const opcoesCSV2 = {
-        csv1: 'data/Grupo 1_nps_brasil.csv',
-        csv2: 'data/Grupo 1_nps_brasil.csv',
-        grupo1: 'data/Grupo 1_nps_brasil.csv',
-        grupo2: 'data/Grupo 2_nps_brasil.csv',
-        grupo3: 'data/Grupo 3_nps_brasil.csv',
-        grupo4: 'data/Grupo 4_nps_brasil.csv',
-        grupo6: 'data/Grupo 6_nps_brasil.csv',
-        grupo7: 'data/Grupo 7_nps_brasil.csv',
-        grupo8: 'data/Grupo 8_nps_brasil.csv',
-        grupo9_10: 'data/Grupo 9_10_nps_brasil.csv',
-        grupo11: 'data/Grupo 11_nps_brasil.csv',
-    };
+    switch (valorSelecionado) {
+        case 'csv1':
+            caminhoCSV = 'data/ALL_NPS.csv';
+            break;
+        case 'csv2':
+            caminhoCSV = 'data/BRASIL_NPS.csv';
+            break;
+        case '1':
+            caminhoCSV = 'data/Grupo 1_nps_brasil.csv';
+            break;
+        case '3':
+            caminhoCSV = 'data/Grupo 3_nps_brasil.csv';
+            break;
+        case '4':
+            caminhoCSV = 'data/Grupo 4_nps_brasil.csv';
+            break;
+        case '6':
+            caminhoCSV = 'data/Grupo 6_nps_brasil.csv';
+            break;
+        case '7':
+            caminhoCSV = 'data/Grupo 7_nps_brasil.csv';
+            break;
+        case '8':
+            caminhoCSV = 'data/Grupo 8_nps_brasil.csv';
+            break;
+        default:
+            console.log('Opção inválida');
+            return; // Não faz nada se a opção for inválida
+    }
 
-    if (opcoesCSV2[valorSelecionado]) {
-        await carregarTabelaDeSafras(opcoesCSV2[valorSelecionado]);
-    } else {
-        console.log('Opção inválida');
+    // Carregar a tabela apenas se o caminho CSV foi encontrado
+    if (caminhoCSV) {
+        await carregarTabelaDeSafras(caminhoCSV);
     }
 });

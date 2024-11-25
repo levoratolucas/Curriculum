@@ -126,6 +126,7 @@
 
     /* Tabela */
     #tableee,
+    #tableee_perg,
     #tabelanpsbrasil {
       width: 100%;
       border-collapse: collapse;
@@ -134,8 +135,10 @@
     }
 
     #tabelanpsbrasil th,
+    #tableee_perg th,
     #tableee th,
     #tabelanpsbrasil td,
+    #tableee_perg td,
     #tableee td {
       border: 1px solid #ddd;
       padding: 8px;
@@ -143,6 +146,7 @@
     }
 
     #tableee th,
+    #tableee_perg th,
     #tabelanpsbrasil th {
       background-color: #0078D7;
       color: white;
@@ -190,6 +194,14 @@
     #sap img:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    #bora {
+      width: calc(95% - 20px);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
     }
   </style>
   <!-- <link rel="stylesheet" href="css/style.css"> -->
@@ -240,13 +252,14 @@
         <!-- A tabela será gerada dinamicamente aqui -->
       </table>
     </div>
+
     <div class="chart-container">
       <h2>Safrado</h2>
       <table id="tableee"></table>
     </div>
     <div class="chart-container" id="sap">
       <div id="images-container">
-        <div class="group-images"style="display: none;" data-group="1">
+        <div class="group-images" style="display: none;" data-group="1">
           <img src="./diretorio/Grupo 1_shap_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 1_partial_dependence1_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 1_partial_dependence2_promotores_XGBBRASIL.png" alt="">
@@ -254,7 +267,7 @@
           <img src="./diretorio/Grupo 1_partial_dependence4_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 1_partial_dependence5_promotores_XGBBRASIL.png" alt="">
         </div>
-        <div class="group-images"style="display: none;" data-group="3">
+        <div class="group-images" style="display: none;" data-group="3">
           <img src="./diretorio/Grupo 3_shap_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 3_partial_dependence1_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 3_partial_dependence2_promotores_XGBBRASIL.png" alt="">
@@ -262,7 +275,7 @@
           <img src="./diretorio/Grupo 3_partial_dependence4_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 3_partial_dependence5_promotores_XGBBRASIL.png" alt="">
         </div>
-        <div class="group-images"style="display: none;" data-group="4">
+        <div class="group-images" style="display: none;" data-group="4">
           <img src="./diretorio/Grupo 4_shap_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 4_partial_dependence1_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 4_partial_dependence2_promotores_XGBBRASIL.png" alt="">
@@ -271,7 +284,7 @@
           <img src="./diretorio/Grupo 4_partial_dependence5_promotores_XGBBRASIL.png" alt="">
         </div>
 
-        <div class="group-images"style="display: none;" data-group="6">
+        <div class="group-images" style="display: none;" data-group="6">
           <img src="./diretorio/Grupo 6_shap_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 6_partial_dependence1_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 6_partial_dependence2_promotores_XGBBRASIL.png" alt="">
@@ -280,7 +293,7 @@
           <img src="./diretorio/Grupo 6_partial_dependence5_promotores_XGBBRASIL.png" alt="">
         </div>
 
-        <div class="group-images"style="display: none;" data-group="7">
+        <div class="group-images" style="display: none;" data-group="7">
           <img src="./diretorio/Grupo 7_shap_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 7_partial_dependence1_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 7_partial_dependence2_promotores_XGBBRASIL.png" alt="">
@@ -289,7 +302,7 @@
           <img src="./diretorio/Grupo 7_partial_dependence5_promotores_XGBBRASIL.png" alt="">
         </div>
 
-        <div class="group-images"style="display: none;" data-group="8">
+        <div class="group-images" style="display: none;" data-group="8">
           <img src="./diretorio/Grupo 8_shap_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 8_partial_dependence1_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 8_partial_dependence2_promotores_XGBBRASIL.png" alt="">
@@ -297,6 +310,10 @@
           <img src="./diretorio/Grupo 8_partial_dependence4_promotores_XGBBRASIL.png" alt="">
           <img src="./diretorio/Grupo 8_partial_dependence5_promotores_XGBBRASIL.png" alt="">
         </div>
+      </div>
+      <div class="chart-container" id="bora">
+        <h2>Safrado</h2>
+        <table id="tableee_perg"></table>
       </div>
 
     </div>
@@ -310,6 +327,7 @@
   <script src="js/random.js"></script>
   <script src="js/xgboost.js"></script>
   <script src="js/table.js"></script>
+  <script src="js/table_perguntas.js"></script>
 
   <script>
     document.getElementById('csvSelect').addEventListener('change', function () {

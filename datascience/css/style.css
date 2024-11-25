@@ -104,15 +104,7 @@ h1 {
 
 
 
-@media (max-width: 1000px) {
-    .chart-container {
-        width: 100%;
-        /* 1 por linha */
-    }
-    header{
-        height: 60px;
-    }
-}
+
 
 /* Hover interativo */
 .chart-container:hover {
@@ -206,4 +198,29 @@ canvas {
     justify-content: center;
     gap: 10px;
     padding: 20px;
+}
+
+@media (max-width: 1000px) {
+    .chart-container {
+        width: 100%;
+        /* 1 por linha */
+    }
+    header{
+        height: 60px;
+    }
+    #sap img:first-of-type {
+        width: 80%;
+        border-radius: 10px;
+        border: solid 1px #ccc;
+        /* A primeira imagem será maior */
+    }
+    
+    /* Outras imagens menores */
+    #sap img:not(:first-of-type) {
+        width: 80%;
+        border-radius: 10px;
+        border: solid 1px #ccc;
+        height: auto;
+        object-fit: contain;
+    }
 }

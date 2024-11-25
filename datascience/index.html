@@ -125,7 +125,7 @@
     }
 
     /* Tabela */
-    #tabelaSafra,
+    #tableee,
     #tabelanpsbrasil {
       width: 100%;
       border-collapse: collapse;
@@ -134,15 +134,15 @@
     }
 
     #tabelanpsbrasil th,
-    #tabelaSafra th,
+    #tableee th,
     #tabelanpsbrasil td,
-    #tabelaSafra td {
+    #tableee td {
       border: 1px solid #ddd;
       padding: 8px;
       text-align: center;
     }
 
-    #tabelaSafra th,
+    #tableee th,
     #tabelanpsbrasil th {
       background-color: #0078D7;
       color: white;
@@ -240,6 +240,9 @@
         <!-- A tabela será gerada dinamicamente aqui -->
       </table>
     </div>
+    <div class="chart-container">
+      <table id="tableee"></table>
+    </div>
     <div class="chart-container" id="sap">
       <div id="images-container">
         <div class="group-images"style="display: none;" data-group="1">
@@ -305,6 +308,7 @@
   <script src="js/brasilnps.js"></script>
   <script src="js/random.js"></script>
   <script src="js/xgboost.js"></script>
+  <script src="js/table.js"></script>
 
   <script>
     document.getElementById('csvSelect').addEventListener('change', function () {

@@ -5,8 +5,8 @@ async function carregarTabelaDeSafras(caminhoCSV) {
 
     // Dividir a string em linhas e colunas
     const linhas = csvTexto.trim().split('\n');
-    const cabecalhos = linhas[0].split(',');
-    const linhasDados = linhas.slice(1).map(linha => linha.split(','));
+    const cabecalhos = linhas[0].split(';');
+    const linhasDados = linhas.slice(1).map(linha => linha.split(';'));
 
     // Atualizar o título da tabela
     const tituloTabela = `Tabela de Safras por ${caminhoCSV.split('_')[0]}`;

@@ -24,12 +24,12 @@ document.querySelectorAll('.sidebar a').forEach(anchor => {
 document.addEventListener("DOMContentLoaded", () => {
     const regionSelect = document.getElementById("region-select");
     const regionalGraph = document.getElementById("regional-graph");
-    const pdpsap = document.getElementById("Gráficos_PDP1");
-    const pdp1 = document.getElementById("Gráficos_PDP2");
-    const pdp2 = document.getElementById("Gráficos_PDP3");
-    const pdp3 = document.getElementById("Gráficos_PDP4");
-    const pdp4 = document.getElementById("Gráficos_PDP5");
-    const pdp5 = document.getElementById("Gráficos_PDP6");
+    const pdpsap = document.getElementById("graf_PDP1");
+    const pdp1 = document.getElementById("graf_PDP2");
+    const pdp2 = document.getElementById("graf_PDP3");
+    const pdp3 = document.getElementById("graf_PDP4");
+    const pdp4 = document.getElementById("graf_PDP5");
+    const pdp5 = document.getElementById("graf_PDP6");
 
     regionSelect.addEventListener("change", () => {
         const selectedRegion = regionSelect.value;
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         regionalGraph.src = `../imagens/grafico_barras_spearman_${selectedRegion}.png`;
         regionalGraph.alt = `Gráfico de Correlação - ${selectedRegion}`;
 
-        // Atualizar gráficos de SAP e PDP
+        // Atualizar graf de SAP e PDP
         pdpsap.src = `../imagens/_shap_detratores_XGB${selectedRegion}.png`;
         pdpsap.alt = `Gráfico de Sap e PDP - ${selectedRegion}`;
         document.getElementById("title1").innerHTML = `Gráfico SHAP - ${selectedRegion}`;

@@ -49,7 +49,7 @@ async function carregarTabelaDeSafras(caminhoCSV) {
 }
 
 // Carregar e exibir a tabela para o arquivo "Grupo 4_safra.csv"
-carregarTabelaDeSafras('data/Grupo 4_safra.csv');
+carregarTabelaDeSafras('../data/Grupo 4_safra.csv');
 
 // Adicionar event listener para a mudança de seleção
 document.querySelector('.csss').addEventListener('change', async (evento) => {
@@ -71,3 +71,6 @@ document.querySelector('.csss').addEventListener('change', async (evento) => {
         console.log('Opção inválida');
     }
 });
+
+
+

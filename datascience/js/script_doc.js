@@ -41,20 +41,26 @@ document.addEventListener("DOMContentLoaded", () => {
         // Atualizar gráficos de SAP e PDP
         pdpsap.src = `../imagens/_shap_detratores_XGB${selectedRegion}.png`;
         pdpsap.alt = `Gráfico de Sap e PDP - ${selectedRegion}`;
+        document.getElementById("title1").innerHTML = `Gráfico SHAP - ${selectedRegion}`;
 
         pdp1.src = `../imagens/revisao_partial_dependence1_neutros_XGB${selectedRegion}.png`;
         pdp1.alt = `Gráfico PDP 1 - ${selectedRegion}`;
+        document.getElementById("title2").innerHTML = `Gráfico PDP 1 - ${selectedRegion}`;
 
         pdp2.src = `../imagens/revisao_partial_dependence1_neutros_XGB${selectedRegion}.png`;
         pdp2.alt = `Gráfico PDP 2 - ${selectedRegion}`;
+        document.getElementById("title3").innerHTML = `Gráfico PDP 2 - ${selectedRegion}`;
 
         pdp3.src = `../imagens/revisao_partial_dependence1_neutros_XGB${selectedRegion}.png`;
         pdp3.alt = `Gráfico PDP 3 - ${selectedRegion}`;
+        document.getElementById("title4").innerHTML = `Gráfico PDP 3 - ${selectedRegion}`;
 
         pdp4.src = `../imagens/revisao_partial_dependence4_detratores_XGB${selectedRegion}.png`;
         pdp4.alt = `Gráfico PDP 4 - ${selectedRegion}`;
+        document.getElementById("title5").innerHTML = `Gráfico PDP 4 - ${selectedRegion}`;
 
         pdp5.src = `../imagens/revisao_partial_dependence5_detratores_XGB${selectedRegion}.png`;
         pdp5.alt = `Gráfico PDP 5 - ${selectedRegion}`;
+        document.getElementById("title6").innerHTML = `Gráfico PDP 5 - ${selectedRegion}`;
     });
 });

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de NPS</title>
+    <link rel="stylesheet" href="/css/styles_doc.css">
+</head>
+
+<body>
+    <!-- Sumário -->
+    <nav class="sidebar">
+        <h2>Sumário</h2>
+        <ul>
+            <li><a href="#introducao">1. Introdução</a></li>
+            <li><a href="#desbalanceamento">2. Desbalanceamento da Base de Dados</a></li>
+            <li><a href="#correlacao">3. Correlação de Spearman</a></li>
+            <li><a href="#regional">4. Representação Gráfica por Região</a></li>
+            <li><a href="#pdp">5. Gráficos PDP</a></li>
+            <li><a href="#frequencia">6. Tabela de Frequência de Respostas</a></li>
+            <li><a href="#conclusao">7. Conclusão</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seções -->
+    <div class="content">
+        <section id="introducao">
+            <h1>1. Introdução</h1>
+            <p>O objetivo deste documento é analisar quais perguntas do NPS (Net Promoter Score) mais influenciam a
+                classificação dos clientes como detratores, neutros ou promotores.
+            </p>
+            <p>
+                Esta análise ajudará a identificar os fatores determinantes para melhorar a experiência do cliente e
+                aprimorar estratégias de mercado.
+            </p>
+
+
+        </section>
+
+        <section id="desbalanceamento">
+            <h1>2. Desbalanceamento da Base de Dados</h1>
+            <p>
+                Para a análise, a base de dados foi desbalanceada em diferentes níveis:
+            </p>
+            <p>
+                Base Total: Dados gerais sem segmentação.
+            </p>
+            <p>
+                Base Brasil: Dados filtrados por território nacional.
+            </p>
+            <p>
+                Base Grupo 4: Dados filtrados por características específicas do grupo.
+            </p>
+            <p>
+                Base Grupo 4 por Regiões: Dados do Grupo 4 segmentados por localização geográfica.
+            </p>
+            <p>
+                Base Grupo 4 por Safra: Dados do Grupo 4 organizados por período de safra.
+            </p>
+            <p>
+                Tabela de Desbalanceamento
+            </p>
+
+
+
+
+
+        </section>
+
+        <section id="correlacao">
+            <h1>3. Correlação de Spearman</h1>
+            <p>
+
+                A correlação de Spearman foi utilizada para identificar quais perguntas do NPS têm maior relação com a
+                classificação dos clientes. Este método é ideal para detectar relações monótonas, independentemente de
+                linearidade.
+            </p>
+            <p>
+                Os resultados são apresentados em gráficos de barras, destacando as correlações para cada pergunta e sua
+                influência no NPS.
+            </p>
+            <p>
+                Gráfico de Correlação
+
+                (Incluir gráficos de barras com as correlações para cada base de dados mencionada anteriormente.)
+            </p>
+
+
+
+
+        </section>
+
+        <section id="regional">
+            <h1>4. Representação Gráfica por Região</h1>
+            <p>
+                Os gráficos de barras detalham as correlações específicas para cada região. Estes dados permitem
+                comparar os fatores mais relevantes entre diferentes áreas geográficas.
+            </p>
+            <p>
+
+                Exemplo de Gráfico
+
+                (Incluir espaço para gráficos de barras das correlações por região.)
+            </p>
+        </section>
+
+        <section id="pdp">
+            <h1>5. Gráficos PDP</h1>
+            <p>Os gráficos PDP mostram a relação entre as perguntas do NPS e a probabilidade de um cliente ser
+                classificado como detrator, neutro, ou promotor. Eles ajudam a visualizar o impacto individual de cada
+                variável na classificação.
+            </p>
+            <p>
+                Espaço para Gráficos PDP
+                (Incluir gráficos PDP para as perguntas mais relevantes em cada região e safra.)
+            </p>
+
+
+        </section>
+
+        <section id="frequencia">
+            <h1>6. Tabela de Frequência de Respostas</h1>
+            <p>
+                Esta tabela resume a quantidade de vezes que cada pergunta foi feita e respondida, destacando o
+                percentual de participação.
+            </p>
+            <p>
+                Observação: A frequência de respostas será analisada para evitar viés de resposta e garantir que
+                perguntas
+                pouco respondidas não sejam descartadas injustamente.
+            </p>
+
+
+        </section>
+
+        <section id="conclusao">
+            <h1>7. Conclusão</h1>
+            <p>
+                A análise revelou que as perguntas mais influentes no NPS foram:
+            </p>
+            <p>
+                [Pergunta A]: Principal fator para os promotores.
+            </p>
+            <p>
+                [Pergunta B]: Influência significativa em detratores.
+            </p>
+            <p>
+                [Pergunta C]: Fator neutro, mas relevante em safra X.
+            </p>
+            <p>
+                Recomenda-se reavaliar a ordem das perguntas no formulário, priorizando questões menos respondidas, como
+                conforto, para explorar novos insights. Estratégias de melhoria podem incluir:
+            </p>
+            <p>
+                Foco em confiabilidade mecânica e conforto, que se destacaram como fatores diferenciais.
+            </p>
+            <p>
+                Adoção de novas métricas para avaliar tendências regionais e sazonais.
+            </p>
+            <p>
+                Essa análise ajudará a refinar a coleta de dados e melhorar a experiência do cliente..</p>
+            </p>
+
+
+
+
+
+
+
+        </section>
+    </div>
+
+    <script src="/js/script_doc.js"></script>
+</body>
+
+</html>

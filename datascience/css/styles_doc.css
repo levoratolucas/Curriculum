@@ -1,37 +1,22 @@
-/* Estilo global */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     display: flex;
-    flex-direction: row; /* Permitir layout com sumário fixo e conteúdo fluido */
-    color: #333;
-}
-
-.sidebar-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    z-index: 1000;
 }
 
 .sidebar {
     width: 250px;
-    height: 100%;
-    background: #f4f4f4;
+    background-color: #f4f4f4;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    overflow-y: auto;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    border-right: 1px solid #ddd;
 }
 
 .sidebar h2 {
-    margin: 0;
-    font-size: 18px;
     margin-bottom: 20px;
+    font-size: 18px;
     color: #333;
 }
 
@@ -55,85 +40,9 @@ body {
     color: #0056b3;
 }
 
-.toggle-sidebar {
-    width: 30px;
-    height: 70px;
-    background: #3802596f;
-    color: white;
-    border: none;
-    font-size: 14px;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    cursor: pointer;
-    outline: none;
-    margin-left: -340px;
-    z-index: 1001;
-}
-
-.sidebar-container.open .sidebar {
-    transform: translateX(0);
-}
-
-.content {
-    margin-left: 30px;
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    height: 100vh;
-}
-
-
-.sidebar {
-    width: 300px; /* Ajuste para maior proporção em telas grandes */
-    background-color: #f8f9fa; /* Fundo mais claro */
-    padding: 20px;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    border-right: 1px solid #ddd;
-    overflow-y: auto;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Leve sombra para destacar */
-}
-
-.sidebar h2 {
-    margin-bottom: 20px;
-    font-size: 20px;
-    color: #0056b3; /* Azul acadêmico */
-    text-align: center;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 15px;
-}
-
-.sidebar ul li a {
-    text-decoration: none;
-    color: #007BFF;
-    font-size: 16px;
-    line-height: 1.5;
-    transition: all 0.3s ease;
-    padding: 5px;
-    display: block; /* Melhor área clicável */
-}
-
-.sidebar ul li a:hover {
-    color: #0056b3;
-    background-color: #e9ecef; /* Fundo claro ao passar o mouse */
-    border-radius: 5px;
-}
-
 .content {
     flex: 1;
-    padding: 30px; /* Mais espaçamento */
-    max-width: 1200px; /* Limite de largura para boa leitura */
-    margin: 0 auto;
-    overflow-x: hidden;
+    padding: 20px;
 }
 
 section {
@@ -141,84 +50,10 @@ section {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Leve sombra */
+    background: #f9f9f9;
 }
 
 section h1 {
-    font-size: 26px;
-    margin-bottom: 15px;
-    color: #333;
-    border-bottom: 2px solid #007BFF; /* Destaque no título */
-    padding-bottom: 5px;
-}
-
-section p {
-    line-height: 1.8; /* Melhor espaçamento entre linhas */
-    margin-bottom: 15px;
-    text-align: justify; /* Alinhamento justificado para formalidade */
-}
-
-/* Estilo responsivo */
-@media (max-width: 1024px) {
-    .sidebar {
-        width: 250px;
-    }
-
-    .content {
-        padding: 20px;
-    }
-
-    section h1 {
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: static;
-        border-right: none;
-        border-bottom: 1px solid #ddd;
-        box-shadow: none;
-    }
-
-    .content {
-        padding: 15px;
-    }
-
-    section {
-        padding: 15px;
-    }
-
-    section h1 {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .sidebar h2 {
-        font-size: 16px;
-    }
-
-    .sidebar ul li a {
-        font-size: 14px;
-    }
-
-    .content {
-        padding: 10px;
-    }
-
-    section {
-        padding: 10px;
-    }
-
-    section h1 {
-        font-size: 18px;
-    }
+    font-size: 24px;
+    margin-bottom: 10px;
 }

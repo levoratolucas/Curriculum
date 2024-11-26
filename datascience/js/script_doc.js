@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         regionalGraph.alt = `Gráfico de Correlação - ${selectedRegion}`;
 
         // Atualizar graf de SAP e PDP
-        pdpsap.src = `../imagens/_shap_detratores_XGB${selectedRegion}.png`;
+        pdpsap.src = `../imagens/shap_detratores_XGB${selectedRegion}.png`;
         pdpsap.alt = `Gráfico de Sap e PDP - ${selectedRegion}`;
         document.getElementById("title1").innerHTML = `Gráfico SHAP - ${selectedRegion}`;
 

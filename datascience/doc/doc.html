@@ -21,6 +21,14 @@
             <li><a href="#frequencia">6. Tabela de Frequência de Respostas</a></li>
             <li><a href="#conclusao">7. Conclusão</a></li>
         </ul>
+        <p>Selecione uma região para visualizar o gráfico:</p>
+        <select id="region-select">
+            <option value="Centro-Oeste">Centro-Oeste</option>
+            <option value="Norte">Norte</option>
+            <option value="Nordeste">Nordeste</option>
+            <option value="Sudeste">Sudeste</option>
+            <option value="Sul">Sul</option>
+        </select>
     </nav>
 
     <!-- Seções -->
@@ -71,7 +79,6 @@
         <section id="correlacao">
             <h1>3. Correlação de Spearman</h1>
             <p>
-
                 A correlação de Spearman foi utilizada para identificar quais perguntas do NPS têm maior relação com a
                 classificação dos clientes. Este método é ideal para detectar relações monótonas, independentemente de
                 linearidade.
@@ -80,14 +87,6 @@
                 Os resultados são apresentados em gráficos de barras, destacando as correlações para cada pergunta e sua
                 influência no NPS.
             </p>
-            <p>
-                Gráfico de Correlação
-
-                (Incluir gráficos de barras com as correlações para cada base de dados mencionada anteriormente.)
-            </p>
-
-
-
 
         </section>
 
@@ -103,20 +102,53 @@
 
                 (Incluir espaço para gráficos de barras das correlações por região.)
             </p>
+            <h2>Gráficos de Correlação</h2>
+
+            <figure>
+                <img id="regional-graph" src="../imagens/grafico_barras_spearman_Centro-Oeste.png"
+                    alt="Gráfico Regional">
+                <figcaption>Gráfico de Correlação</figcaption>
+            </figure>
         </section>
 
         <section id="pdp">
             <h1>5. Gráficos PDP</h1>
-            <p>Os gráficos PDP mostram a relação entre as perguntas do NPS e a probabilidade de um cliente ser
+            <p>
+                Os gráficos PDP mostram a relação entre as perguntas do NPS e a probabilidade de um cliente ser
                 classificado como detrator, neutro, ou promotor. Eles ajudam a visualizar o impacto individual de cada
                 variável na classificação.
             </p>
-            <p>
-                Espaço para Gráficos PDP
-                (Incluir gráficos PDP para as perguntas mais relevantes em cada região e safra.)
-            </p>
-
-
+            <h2>Gráficos PDP - Centro-Oeste</h2>
+            <figure>
+                <img id="Gráficos_PDP1" src="../imagens/_shap_detratores_XGBCentro-Oeste.png"
+                    alt="Gráfico PDP - SHAP Detratores">
+                <figcaption>SHAP Detratores - Centro-Oeste</figcaption>
+            </figure>
+            <figure>
+                <img id="Gráficos_PDP2" src="../imagens/revisao_partial_dependence1_detratores_XGBCentro-Oeste.png"
+                    alt="PDP Detratores - 1">
+                <figcaption>Partial Dependence 1 - Centro-Oeste</figcaption>
+            </figure>
+            <figure>
+                <img id="Gráficos_PDP3" src="../imagens/revisao_partial_dependence2_detratores_XGBCentro-Oeste.png"
+                    alt="PDP Detratores - 2">
+                <figcaption>Partial Dependence 2 - Centro-Oeste</figcaption>
+            </figure>
+            <figure>
+                <img id="Gráficos_PDP4" src="../imagens/revisao_partial_dependence3_detratores_XGBCentro-Oeste.png"
+                    alt="PDP Detratores - 3">
+                <figcaption>Partial Dependence 3 - Centro-Oeste</figcaption>
+            </figure>
+            <figure>
+                <img id="Gráficos_PDP5" src="../imagens/revisao_partial_dependence4_detratores_XGBCentro-Oeste.png"
+                    alt="PDP Detratores - 4">
+                <figcaption>Partial Dependence 4 - Centro-Oeste</figcaption>
+            </figure>
+            <figure>
+                <img id="Gráficos_PDP6" src="../imagens/revisao_partial_dependence5_detratores_XGBCentro-Oeste.png"
+                    alt="PDP Detratores - 5">
+                <figcaption>Partial Dependence 5 - Centro-Oeste</figcaption>
+            </figure>
         </section>
 
         <section id="frequencia">

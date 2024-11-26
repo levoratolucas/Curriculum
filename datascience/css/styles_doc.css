@@ -57,3 +57,21 @@ section h1 {
     font-size: 24px;
     margin-bottom: 10px;
 }
+figure {
+    margin: 20px 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 70%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+figure figcaption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555;
+}

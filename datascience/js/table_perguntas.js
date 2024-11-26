@@ -1,4 +1,3 @@
-
 async function carregarCSV1(caminho1) {
     try {
         if (!caminho1) {
@@ -13,6 +12,10 @@ async function carregarCSV1(caminho1) {
         // Converter CSV para tabela
         const linhas1 = texto1.trim().split("\n");
         const tabela1 = document.getElementById("tableee_perg");
+        if (!tabela1) {
+            console.error("Elemento 'tableee_perg' não encontrado.");
+            return;
+        }
         tabela1.innerHTML = ""; // Limpar tabela antes de carregar
 
         linhas1.forEach((linha, index) => {
@@ -33,7 +36,24 @@ async function carregarCSV1(caminho1) {
     }
 }
 
-document.getElementsByClassName("csss")[0].addEventListener("change", (event) => {
-    const caminho1 = 'data/Grupo '+event.target.value+'_perguntas_csat.csv';
-    carregarCSV1(caminho1);
-});
+// Adicionar event listener na classe 'csss'
+const elementosClasseCsss = document.getElementsByClassName("csss");
+if (elementosClasseCsss.length > 0) {
+    elementosClasseCsss[0].addEventListener("change", (event) => {
+        const caminho1 = `data/Grupo ${event.target.value}_perguntas_csat.csv`;
+        carregarCSV1(caminho1);
+    });
+} else {
+    console.warn("Elemento com classe 'csss' não encontrado.");
+}
+
+// Adicionar event listener no ID 'css'
+const elementoIdCss = document.getElementById("region-select");
+if (elementoIdCss) {
+    
+        const caminho1 = '../data/Grupo 4_perguntas_csat.csv';
+        carregarCSV1(caminho1);
+    ;
+} else {
+    console.warn("Elemento com ID 'css' não encontrado.");
+}

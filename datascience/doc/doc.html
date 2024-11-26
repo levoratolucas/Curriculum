@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Análise de NPS</title>
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
     <link rel="stylesheet" href="../css/styles_doc.css">
 </head>
 
@@ -22,7 +23,7 @@
             <li><a href="#conclusao">7. Conclusão</a></li>
         </ul>
         <p>Selecione uma região para visualizar o gráfico:</p>
-        <select id="region-select">
+        <select id="region-select" class="css">
             <option value="Centro-Oeste">Centro-Oeste</option>
             <option value="Norte">Norte</option>
             <option value="Nordeste">Nordeste</option>
@@ -122,37 +123,37 @@
             <figure>
                 <figcaption id="title1">SHAP Detratores - Centro-Oeste</figcaption>
                 <img id="Gráficos_PDP1" src="../imagens/shap_detratores_XGBCentro-Oeste.png"
-                alt="Gráfico SHAP Detratores">
+                    alt="Gráfico SHAP Detratores">
             </figure>
             <figure>
                 <figcaption id="title2">PDP Detratores - Centro-Oeste</figcaption>
                 <img id="Gráficos_PDP2" src="../imagens/revisao_partial_dependence1_detratores_XGBCentro-Oeste.png"
-                alt="PDP Detratores - 1">
-                
+                    alt="PDP Detratores - 1">
+
             </figure>
             <figure>
                 <figcaption id="title3">PDP Detratores - Centro-Oeste</figcaption>
                 <img id="Gráficos_PDP3" src="../imagens/revisao_partial_dependence2_detratores_XGBCentro-Oeste.png"
-                alt="PDP Detratores - 2">
-                
+                    alt="PDP Detratores - 2">
+
             </figure>
             <figure>
                 <figcaption id="title4">PDP Detratores - Centro-Oeste</figcaption>
                 <img id="Gráficos_PDP4" src="../imagens/revisao_partial_dependence3_detratores_XGBCentro-Oeste.png"
-                alt="PDP Detratores - 3">
-                
+                    alt="PDP Detratores - 3">
+
             </figure>
             <figure>
                 <figcaption id="title5">PDP Detratores - Centro-Oeste</figcaption>
                 <img id="Gráficos_PDP5" src="../imagens/revisao_partial_dependence4_detratores_XGBCentro-Oeste.png"
-                alt="PDP Detratores - 4">
-                
+                    alt="PDP Detratores - 4">
+
             </figure>
             <figure>
                 <figcaption id="title6">PDP Detratores - Centro-Oeste</figcaption>
                 <img id="Gráficos_PDP6" src="../imagens/revisao_partial_dependence5_detratores_XGBCentro-Oeste.png"
                     alt="PDP Detratores - 5">
-                
+
             </figure>
         </section>
 
@@ -168,7 +169,10 @@
                 pouco respondidas não sejam descartadas injustamente.
             </p>
 
-
+            <div class="chart-container" id="bora">
+                <h2>Taxa de resposta</h2>
+                <table id="tableee_perg"></table>
+            </div>
         </section>
 
         <section id="conclusao">
@@ -209,6 +213,8 @@
     </div>
 
     <script src="../js/script_doc.js"></script>
+    <script src="../js/table_perguntas.js"></script>
+
 </body>
 
 </html>

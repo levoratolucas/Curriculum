@@ -75,3 +75,32 @@ figure figcaption {
     font-size: 14px;
     color: #555;
 }
+
+/* Tabela */
+#tableee,
+#tableee_perg,
+#tabelanpsbrasil {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#tabelanpsbrasil th,
+#tableee_perg th,
+#tableee th,
+#tabelanpsbrasil td,
+#tableee_perg td,
+#tableee td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#tableee th,
+#tableee_perg th,
+#tabelanpsbrasil th {
+    background-color: #0078D7;
+    color: white;
+    font-weight: bold;
+}

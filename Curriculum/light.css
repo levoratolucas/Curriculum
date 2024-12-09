@@ -30,11 +30,11 @@ footer {
 }
 
 .contact-info a {
-    color: #333;
+    color: #1500ff;
 }
 
 .contact-info a:hover {
-    color: #007acc;
+    color: #cc0000;
 }
 
 .skills li::before,

@@ -89,7 +89,7 @@ section {
 
     background-color: #1f1f1f;
     border-radius: 10px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); */
 }
 
 .contact-info li {
@@ -172,7 +172,7 @@ section.sobre p {
         max-width: 100%;
         padding: 20px;
         border: solid 1px #333;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); */
         background-color: #1f1f1f;
     }
 
@@ -183,7 +183,7 @@ section.sobre p {
         padding: 30px 20px;
         background-color: #1f1f1f;
         border-radius: 10px;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); */
     }
 
     .contact-info a {

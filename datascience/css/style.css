@@ -57,7 +57,7 @@ h1 {
     max-width: 1200px;
     height: 50px;
     background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .seletor label {
@@ -86,7 +86,7 @@ h1 {
     border-radius: 30px;
     width: calc(95% - 20px);
     background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 /* Estilo de cada gráfico/tabela */
@@ -99,8 +99,8 @@ h1 {
     width: calc(45% - 20px);
     padding: 10px;
     background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    /* transition: transform 0.3s, box-shadow 0.3s; */
 }
 
 .chart-title {
@@ -112,8 +112,8 @@ h1 {
     width: calc(45% - 20px);
     padding: 10px;
     background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    /* transition: transform 0.3s, box-shadow 0.3s; */
 }
 
 
@@ -123,7 +123,7 @@ h1 {
 /* Hover interativo */
 .chart-container:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); */
 }
 
 /* Títulos dos gráficos */
@@ -179,7 +179,7 @@ canvas {
 
 #sap img {
     margin: 5px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    /* transition: transform 0.3s, box-shadow 0.3s; */
 }
 
 /* Primeira imagem maior */
@@ -202,7 +202,7 @@ canvas {
 /* Hover interativo para as imagens */
 #sap img:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); */
 }
 
 #bora {

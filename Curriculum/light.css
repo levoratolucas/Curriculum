@@ -17,12 +17,12 @@ footer {
 .lateral {
     background-color: #fff;
     border: solid 1px #ccc;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); */
 }
 
 .principal {
     background-color: #fff;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); */
 }
 
 .profile {

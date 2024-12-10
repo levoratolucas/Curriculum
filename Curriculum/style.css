@@ -1,0 +1,193 @@
+.sobre div {
+    min-height: 50px;
+}
+
+.Projetos div,
+.Educação div {
+    min-height: 100px;
+}
+
+.Profissional div {
+    min-height: 200px;
+}
+
+.toggle-container {
+    display: inline-block;
+}
+
+.toggle-radio {
+    display: none;
+}
+
+.toggle-label {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.toggle-radio:checked+.toggle-label {
+    background-color: transparent;
+
+}
+
+.solid-star::before {
+    content: "\2605";
+    color: rgb(255, 94, 0);
+    margin-right: 5px;
+}
+
+.hollow-star::before {
+    content: "\2606";
+    margin-right: 5px;
+}
+
+.star {
+    margin-right: 10px;
+}
+
+#skills li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media print {
+
+    @page {
+        margin: 0;
+    }
+    
+
+    .contact-info {
+        width: 90%;
+    }
+
+    #skills {
+        width: 110%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    header,
+    .toggle-container,
+    footer,
+    button {
+        display: none !important;
+    }
+
+    .principal {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: left;
+    }
+
+    .principal h2 {
+        text-align: left;
+    }
+
+    section {
+        margin-bottom: 20px;
+    }
+
+    main {
+        margin-top: -10px;
+        display: block;
+    }
+
+    .lateral {
+        margin-top: 5px;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .dados {
+        display: flex;
+    }
+
+    #starr {
+        order: 1;
+    }
+
+
+    .dados section {
+        width: 300px;
+        margin: auto;
+        margin-left: 10px;
+        margin-top: 10px;
+        text-align: left;
+    }
+
+    h2 {
+        text-align: left;
+        color: black;
+    }
+
+    .sobre div {
+        min-height: 50px;
+    }
+
+    .sobre {
+        margin-top: 100px;
+    }
+
+    * {
+        color: black;
+    }
+
+    .Profissional {
+        margin-top: 50px;
+    }
+
+    .ptojetos {
+        margin-top: 300px;
+    }
+
+    .Educação p {
+        margin-bottom: 3px;
+    }
+}
+
+p {
+    margin-bottom: 3px;
+}
+
+.topo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.print-button {
+    display: flex;
+    align-items: center;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    height: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+
+}
+
+.print-button:hover {
+    background-color: #a04545;
+}
+
+.print-button i {
+    margin-right: 5px;
+}
+
+.topo {
+    position: sticky;
+    top: 0;
+}

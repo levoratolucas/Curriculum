@@ -9,187 +9,7 @@
 
     <title>Meu Currículo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        .toggle-container {
-            display: inline-block;
-        }
-
-        .toggle-radio {
-            display: none;
-        }
-
-        .toggle-label {
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .toggle-radio:checked+.toggle-label {
-            background-color: transparent;
-
-        }
-
-        .solid-star::before {
-            content: "\2605";
-            color: rgb(255, 94, 0);
-            margin-right: 5px;
-        }
-
-        .hollow-star::before {
-            content: "\2606";
-            margin-right: 5px;
-        }
-
-        .star {
-            margin-right: 10px;
-        }
-
-        #skills li {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        @media print {
-
-            @page {
-                margin: 0;
-            }
-
-            .contact-info {
-                width: 90%;
-            }
-
-            #skills {
-                width: 110%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-            }
-
-            header,
-            .toggle-container,
-            footer,
-            button {
-                display: none !important;
-            }
-
-            .principal {
-                width: 100%;
-                margin: 0;
-                padding: 20px;
-                box-sizing: border-box;
-                text-align: center;
-            }
-
-            .principal h2 {
-                text-align: center;
-            }
-
-            section {
-                margin-bottom: 20px;
-            }
-
-            main {
-                margin-top: -10px;
-                display: block;
-            }
-
-            .lateral {
-                margin-top: 5px;
-                width: 100%;
-                max-width: 100%;
-                padding: 10px;
-            }
-
-            .dados {
-                display: flex;
-            }
-
-            #starr {
-                order: 1;
-            }
-
-
-            .dados section {
-                width: 300px;
-                margin: auto;
-                margin-left: 10px;
-                margin-top: 10px;
-                text-align: left;
-            }
-
-            h2 {
-                text-align: left;
-                color: black;
-            }
-
-            .sobre div {
-                min-height: 50px;
-            }
-
-            .sobre {
-                margin-top: 100px;
-            }
-
-            * {
-                color: black;
-            }
-
-            .Profissional {
-                margin-top: 50px;
-            }
-
-            .ptojetos {
-                margin-top: 300px;
-            }
-
-            .Educação p {
-                margin-bottom: 3px;
-            }
-        }
-
-        p {
-            margin-bottom: 3px;
-        }
-
-        .topo {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .print-button {
-            display: flex;
-            align-items: center;
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            height: 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 5px;
-
-        }
-
-        .print-button:hover {
-            background-color: #a04545;
-        }
-
-        .print-button i {
-            margin-right: 5px;
-        }
-
-        .topo {
-            position: sticky;
-            top: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="./Curriculum/style.css">
 </head>
 
 <body>
@@ -389,20 +209,7 @@
 </div>
 
 </div>
-<style>
-    .sobre div {
-        min-height: 50px;
-    }
 
-    .Projetos div,
-    .Educação div {
-        min-height: 100px;
-    }
-
-    .Profissional div {
-        min-height: 200px;
-    }
-</style>
 <div class="principal">
     <section class="educacao">
         <h2>Formação Acadêmica</h2>
@@ -435,9 +242,9 @@
     <section class="Profissional">
         <h2>Experiência Profissional</h2>
         <div>
-            <h3>Desenvolvedor full stack - Yoobe</h3>
-            <p>Desde 12 de janeiro 2024</p>
-            <p>Atuo como desenvolvedor e suporte para questões internas, contribuindo significativamente para a
+            <h3>Analista de dados e esenvolvedor full stack - Yoobe</h3>
+            <p>janeiro 2024 - novembro 2024</p>
+            <p class="full">Atuo como desenvolvedor e suporte para questões internas, contribuindo significativamente para a
                 eficiência e automação dos processos na empresa. Desenvolvi um dashboard abrangente que gerencia toda a
                 parte de envios e cobrança de frete, além de automação de processos. Dou treinamentos regulares para a
                 equipe de logística e cuido diariamente do banco de dados, garantindo que todas as operações funcionem
@@ -446,15 +253,16 @@
         <div>
             <h3>Instalador e Reparador de Linhas Aéreas (IRLA) - TLSV Engeharia</h3>
             <p>Janeiro de 2020 - Dezembro de 2022</p>
-            <p>Atuei como instalador e reparador de linhas aéreas, instalando fibra ótica e cuidando de redes internas,
+            <p class="full">Atuei como instalador e reparador de linhas aéreas, instalando fibra ótica e cuidando de redes internas,
                 roteadores e controladores. Utilizando uma metodologia ágil e diferenciada, minha produtividade era em
                 média 60% maior que a dos demais. A equipe em que estava inserido produzia mais, pois eu ensinava minhas
                 técnicas aos colegas. Identificava falhas antes mesmo de ocorrerem e potencializava os clientes que
                 precisavam de uma mão de obra mais qualificada.</p>
         </div>
+        <h2>Experiência acadêmica</h2>
         <div>
             <h3>Monitor de Turma - Universidade Positivo</h3>
-            <p>Ensinei disciplinas básicas de web, SQL e algoritmos. Mantive um grupo de ensino e um canal no YouTube
+            <p class="full">Ensinei disciplinas básicas de web, SQL e algoritmos. Mantive um grupo de ensino e um canal no YouTube
                 dedicado ao aprendizado dos colegas. Durante todos os períodos da faculdade, fui e sou representante de
                 turma, contribuindo para uma taxa de aprovação elevada em comparação com turmas anteriores.</p>
         </div>
@@ -475,6 +283,7 @@
 
             <ul>
                 <li>Aplicação de correlação de Spearman para identificar variáveis relevantes nas avaliações.</li>
+                <li>Aplicação de Graficos PDP, Graficos Shap, Graficos de area entre outros.</li>
                 <li>Agrupamento e categorização de dados usando Pandas (safra, região e grupo de produtos).</li>
                 <li>Criação de visualizações e relatórios para destacar desempenho e oportunidades de melhoria.</li>
             </ul>
@@ -505,8 +314,8 @@
             <p>
                 O painel oferece recursos avançados para monitoramento de envios, controle de estoque e análise de
                 desempenho de produtos.
-                Com uma camada de análise de dados inteligente, identifica padrões, sinaliza inconsistências e previne
-                incidentes recorrentes, proporcionando suporte proativo e decisões estratégicas mais assertivas.
+                Com uma camada de análise de dados inteligente, identifica padrões, sinaliza inconsistências antes não mapeadas e previne
+                incidentes recorrentes e inconsistências futuras, proporcionando suporte proativo e decisões estratégicas mais assertivas.
             </p>
         </div>
 

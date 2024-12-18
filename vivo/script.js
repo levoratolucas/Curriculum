@@ -671,7 +671,7 @@ set protocols memory-limit 100
 
 set protocols static route 0.0.0.0/0 next-hop ${wanIp1}.${wanIp2}.${wanIp3}.${newWanIp4}
 
-set system host-name ${name}-OS-${ord}
+set system host-name ${ord}_
 
 set system login user admin authentication plaintext-password admin
 

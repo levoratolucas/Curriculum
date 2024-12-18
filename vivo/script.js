@@ -673,7 +673,7 @@ set protocols static route 0.0.0.0/0 next-hop ${wanIp1}.${wanIp2}.${wanIp3}.${ne
 
 set system host-name ${ord}_
 
-set system login user admin authentication plaintext-password admin
+set system login user operador authentication plaintext-password cgedc
 
 commit
 

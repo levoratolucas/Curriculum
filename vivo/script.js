@@ -646,6 +646,11 @@ config apply
         const newLanMask = document.getElementById('lan-mask').value;
         const newWanIp4 = parseInt(document.getElementById('wan-ip4').value);
         const newWanMask = document.getElementById('wan-mask').value;
+        const loopMask = document.getElementById('loop-mask').value;
+        const loopback1 = document.getElementById('loop-ip1').value;
+        const loopback2 = document.getElementById('loop-ip2').value;
+        const loopback3 = document.getElementById('loop-ip3').value;
+        const loopback4 = document.getElementById('loop-ip4').value;
 
         // Monta o comando para GT6 GT4
         command = `
@@ -672,6 +677,8 @@ set protocols memory-limit 100
 set protocols static route 0.0.0.0/0 next-hop ${wanIp1}.${wanIp2}.${wanIp3}.${newWanIp4}
 
 set system host-name ${ord}_
+
+set interfaces loopback lo1 address ${loopback1}.${loopback2}.${loopback3}.${loopback4}/${loopMask}
 
 set system login user operador authentication plaintext-password cgedc
 

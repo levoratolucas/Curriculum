@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerar Contas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+    }
+    .output {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gerar Contas</h1>
+  <p>Insira os números no campo abaixo (um por linha) e clique em "Gerar Contas".</p>
+  <textarea id="inputText" placeholder="Insira os números aqui..."></textarea>
+  <button onclick="generateAccounts()">Gerar Contas</button>
+  <div class="output" id="outputAccounts"></div>
+
+  <script>
+    function generateAccounts() {
+      const inputText = document.getElementById("inputText").value;
+      const lines = inputText.split("\n");
+      const accounts = [];
+      let accountNumber = 1;
+
+      lines.forEach(line => {
+        const match = line.match(/NUMEROS413-281-(\d{4})/);
+        if (match) {
+          const number = `413281${match[1]}`;
+          accounts.push(`account ${accountNumber}   
+    user ${number} 
+    auth-user ${number} 
+    display-name ${number} 
+    contact ${number} 
+    no restricted-id  
+    allow-simult  
+    server 1  
+  !`);
+          accountNumber++;
+        }
+      });
+
+      document.getElementById("outputAccounts").innerText = accounts.join("\n\n");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.top-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.top-nav li {
+  margin: 0 15px;
+}
+
+.top-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.main-content {
+  width: 80%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.input-row {
+  margin-bottom: 20px;
+}
+
+.ratio {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+textarea {
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: monospace;
+  height: 100px;
+}
+
+.select-container {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.output {
+  background-color: #000;
+  color: #0f0;
+  font-family: "Courier New", Courier, monospace;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  overflow: auto;
+  max-height: 300px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.ip-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ip-group input[type="number"] {
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+  margin: 0 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ip-group span {
+  margin: 0 2px;
+}
+
+#lan-mask {
+  margin-left: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+#piloto-form{
+  width: 200px;
+}

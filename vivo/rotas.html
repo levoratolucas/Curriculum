@@ -45,12 +45,12 @@
       const inputText = document.getElementById("inputText").value.trim();
       const lines = inputText.split("\n");
       const redirections = [];
-      let pos = 1;
+      let pos = 0;
 
       lines.forEach(line => {
-        const match = line.match(/NUMEROS413-281-(\d{4})/);
+        const match = line.match(/NUMEROS413-125-(\d{4})/);
         if (match) {
-          const number = `413281${match[1]}`;
+          const number = `413125${match[1]}`;
           const redirection = `redirection pos ${pos} input e1 groups 0 from ${number} to * output voip-operator groups 0 from ${number} to {To}`;
           redirections.push(redirection);
           pos++;
@@ -66,3 +66,6 @@
   </script>
 </body>
 </html>
+
+
+

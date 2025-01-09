@@ -31,21 +31,27 @@
   <div class="output" id="outputAccounts"></div>
 
   <script>
+    function extractNumbersFromLine(line) {
+      const numbers = line.match(/\d+/g); // Extrai todos os grupos de números da linha
+      return numbers ? numbers.join('') : '';
+    }
+
     function generateAccounts() {
       const inputText = document.getElementById("inputText").value;
       const lines = inputText.split("\n");
       const accounts = [];
+      const processedNumbers = new Set(); // Armazena números já processados
       let accountNumber = 1;
 
       lines.forEach(line => {
-        const match = line.match(/NUMEROS413-281-(\d{4})/);
-        if (match) {
-          const number = `413281${match[1]}`;
+        const numbers = extractNumbersFromLine(line);
+        if (numbers.length >= 9 && !processedNumbers.has(numbers)) { // Verifica o comprimento e se o número já foi processado
+          processedNumbers.add(numbers); // Adiciona o número ao conjunto de números processados
           accounts.push(`account ${accountNumber}   
-    user ${number} 
-    auth-user ${number} 
-    display-name ${number} 
-    contact ${number} 
+    user ${numbers} 
+    auth-user ${numbers} 
+    display-name ${numbers} 
+    contact ${numbers} 
     no restricted-id  
     allow-simult  
     server 1  

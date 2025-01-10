@@ -45,12 +45,8 @@ function extractNumbersFromLine(line) {
     const lanIp3 = parseInt(document.getElementById('lan-ip3').value);
     const lanIp4 = parseInt(document.getElementById('lan-ip4').value);
     const piloto = document.getElementById('piloto-form').value
-    let scriptPiloto = `\nredirection input e1 groups 0 from * to * output voip-operator groups 0 from ${piloto} to {To}`;
-    const scriptType = document.querySelector('input[name="script-type"]:checked').value;
-    if(scriptType === 'ramal'){
-        scriptPiloto=''
-    }
-    const endred =  `redirection input voip-operator groups 0 from * to * output e1 groups 0 from {From} to {To}` + scriptPiloto + '\n\n';
+    let scriptPiloto = `\nredirection input e1 groups 0 from * to * output voip-operator groups 0 from ${piloto} to {To}`;    
+    const endred =  `redirection input voip-operator groups 0 from * to * output e1 groups 0 from {From:3} to {To:-4}\n\n`;
     const script = `digistar
 
 enable
@@ -152,7 +148,7 @@ no remote-codec
 no shutdown 
   
 exit\n`
-    const output = script + accounts + '\nexit\n\npbx\n\n' + redirections + endred;
+    const output = script + accounts + '\nexit\n\npbx\n\n'+ endred + redirections + scriptPiloto;
     document.getElementById("output").innerText = output;
     
     // Mostrar o botão de copiar
@@ -180,11 +176,12 @@ exit\n`
       const quantitySelect = document.getElementById("sinaliza");
   
       if (scriptType === 'ramal') {
-        pilotoForm.style.display = 'none';
+        pilotoForm.style.display = 'block';
         inputText.style.display = 'block';
         quantitySelect.style.display = 'block';
       } else {
-        inputText.style.display = 'none';
+        inputText.style.display = 'none';   
+        inputText.style.value = ''   
         quantitySelect.style.display = 'none';
         pilotoForm.style.display = 'block';
       }

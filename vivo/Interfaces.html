@@ -1,156 +1,202 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuração de Interfaces</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Levoratech - Automação de Processos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #007BFF;
+            padding: 15px 0;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            position: sticky;
+            top: 0;
+            z-index: -1;
+            background: url('./levoratech.png') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .main-content {
+            max-width: 100%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #fff;
+        }
+
+        #formContainer {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            width: 35%;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            position: sticky;
+            top: 0;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .ip-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .ip-group span {
+            margin: 0 5px;
+            font-size: 16px;
+        }
+
+        .output {
+            background-color: #000;
+            color: #0f0;
+            font-family: "Courier New", Courier, monospace;
+            padding: 15px;
+            border-radius: 5px;
+            max-height: 750px;
+            overflow: auto;
+            width: 60%;
+            min-height: 300px;
+            
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .workSpace{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .form_interativo{
+            width: 90%;
+            padding: 20px;
+        }
+        #inputText{
+            height: 150px;
+        }
+        @media (max-width: 768px) {
+            .workSpace{
+                display: block;
+            }
+            .output,#formContainer{
+                width: 80%;
+                margin: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1>Configuração de Interfaces</h1>
-        <nav>
-            <a href="#">Aligera</a>
-            <a href="digi/red.html">DIGISTAR</a>
-        </nav>
-    </header>
-
-    <div class="container">
-        <div class="input-row" id="ratio">
-            <div class="ratio">
-                <input type="radio" id="gt6gt4" name="script-type" value="gt6gt4" checked>
-                <label for="gt6gt4">GT6 GT4</label>
-            </div>
-            <div class="ratio">
-                <input type="radio" id="aligera-piloto" name="script-type" value="aligera-piloto">
-                <label for="aligera-piloto">Aligera/Piloto</label>
-            </div>
-            <div class="ratio">
-                <input type="radio" id="aligera-ramal" name="script-type" value="aligera-ramal">
-                <label for="aligera-ramal">Aligera/Ramal</label>
-            </div>
-            <div class="ratio">
-                <input type="radio" id="aligera-piloto-isdn" name="script-type" value="aligera-piloto-isdn">
-                <label for="aligera-piloto">Aligera/Piloto isdn</label>
-            </div>
-            <div class="ratio">
-                <input type="radio" id="aligera-ramal-isdn" name="script-type" value="aligera-ramal-isdn">
-                <label for="aligera-ramal-isdn">Aligera/Ramal isdn</label>
-            </div>
-            <div class="ratio">
-                <input type="radio" id="edd24_fust" name="script-type" value="edd24_fust">
-                <label for="aligera-ramal">EDD 2104 FUST</label>
-            </div>
-
-
-        </div>
-
-        <div id="gt6gt4-form">
-            <div id="input-container">
-                <div class="input-row" id="fust">
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" value="digite o nome aqui">
-                </div>
-                <div class="input-row" id="fust1">
-                    <label for="ord">Designador de Acesso:</label>
-                    <input type="text" id="ord" value="Designador aqui">
-                </div>
-                <div class="input-row" id="fust2">
-                    <label>LAN:</label>
-                    <div class="ip-group">
-                        <input required type="number" id="lan-ip1"  value="172">
-                        <span>.</span>
-                        <input required type="number" id="lan-ip2"  value="16">
-                        <span>.</span>
-                        <input required type="number" id="lan-ip3" value="10">
-                        <span>.</span>
-                        <input required type="number" id="lan-ip4" value="20">
-                        <span>/</span>
-                        <select id="lan-mask">
-                            <option value="27">27</option>
-                            <option value="28">28</option>
-                            <option value="29" selected>29</option>
-                            <option value="30">30</option>
-                            <option value="31">31</option>
-                            <option value="32">32</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="input-row">
-                    <label for="svlan">C-VLAN:</label>
-                    <input required type="text" id="svlan" >
-                </div>
-                <div class="input-row">
-                    <label>WAN:</label>
-                    <div class="ip-group">
-                        <input required type="number" id="wan-ip1"  value="172">
-                        <span>.</span>
-                        <input required type="number" id="wan-ip2"  value="16">
-                        <span>.</span>
-                        <input required type="number" id="wan-ip3"  value="30">
-                        <span>.</span>
-                        <input required type="number" id="wan-ip4"  value="40">
-                        <span>/</span>
-                        <select id="wan-mask">
-                            <option value="27">27</option>
-                            <option value="28">28</option>
-                            <option value="29">29</option>
-                            <option value="30" selected>30</option>
-                            <option value="31">31</option>
-                            <option value="32">32</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="input-row">
-                    <label>LOOPBACK:</label>
-                    <div class="ip-group">
-                        <input required type="number" id="loop-ip1"  value="172">
-                        <span>.</span>
-                        <input required type="number" id="loop-ip2"  value="16">
-                        <span>.</span>
-                        <input required type="number" id="loop-ip3"  value="50">
-                        <span>.</span>
-                        <input required type="number" id="loop-ip4"  value="60">
-                        <span>/</span>
-                        <select id="loop-mask">
-                            <option value="27">27</option>
-                            <option value="28">28</option>
-                            <option value="29">29</option>
-                            <option value="30" >30</option>
-                            <option value="31">31</option>
-                            <option value="32" selected>32</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Inputs para canais, inicialmente ocultos -->
-                <div id="channels-container" style="display: none;">
-                    <h3>Canais</h3>
-                    <div class="input-row channel-row">
-                        <label for="channel-1">Canal 1:</label>
-                        <input type="text" id="channel-1" >
-                    </div>
-                </div>
-
-                <button id="generate-command">Gerar Comando</button>
-                <button id="copy-command" style="margin-top: 10px; display: none;">Copiar Comando</button>
-            </div>
-            <h2>Comando Gerado:</h2>
-            <pre id="output"></pre>
-        </div>
-
-        <div id="maintenance-message" style="display: none; text-align: center; margin-top: 20px;">
-            <h2>EM MANUTENÇÃO</h2>
-        </div>
+    <div class="hero">
+        <h1><p>
+            LEVORATECH
+        </p>
+        <p>
+            Automação e Simplificação de Processos  para a sua Empresa</h1>
+        </p>
     </div>
 
-    <footer>
-        © 2024 Lucas Levorato. Todos os direitos reservados.
-    </footer>
+    <header class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Contato</a>
+        <a href="#">Vivo</a>
+        <a href="#">Sobre</a>
+        <a href="#">Cursos</a>
+    </header>
+    <main class="main-content">
+        <h1>Escolha o Equipamento</h1>
+        <select id="equipmentSelect" onchange="loadForm()">
+            <option value="">Selecione o equipamento</option>
+            <option value="form-gt4gt6sip.html">DataCom 4GT-6GT</option>
+            <option value="huaweiar611.html">Huawei AR611</option>
+            <option value="form-digistar.html">Digistar AG60</option>
+            <option value="aligera_isdn_piloto.html">Aligera piloto ISDN</option>
+            <option value="aligera_isdn_ramal.html">Aligera ramal ISDN</option>
+            <option value="aligera_r2_piloto.html">Aligera piloto R2</option>
+            <option value="aligera_r2_ramal.html">Aligera ramal R2</option>
+        </select>
+        <div class="workSpace" >
 
-    <script src="script.js"></script>
+            <div id="formContainer">
+                <!-- O formulário carregado dinamicamente será inserido aqui -->
+            </div>
+            <div class="output" id="output"></div>
+        </div>
+    </main>
 </body>
+
+<script defer src="scripts.js"></script>
+<script src="./formscript/digiStarAg60.js"></script>
+<script src="./formscript/gt4gt6.js"></script>
+<script src="./formscript/aligeraIsdn.js"></script>
+<script src="./formscript/aligeraR2.js"></script>
+<script src="./formscript/huawei.js"></script>
 
 </html>

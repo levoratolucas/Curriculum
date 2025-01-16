@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuração de Interfaces</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Configuração de Interfaces</h1>
+        <nav>
+            <a href="#">Aligera</a>
+            <a href="digi/red.html">DIGISTAR</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="input-row" id="ratio">
+            <div class="ratio">
+                <input type="radio" id="gt6gt4" name="script-type" value="gt6gt4" checked>
+                <label for="gt6gt4">GT6 GT4</label>
+            </div>
+            <div class="ratio">
+                <input type="radio" id="aligera-piloto" name="script-type" value="aligera-piloto">
+                <label for="aligera-piloto">Aligera/Piloto</label>
+            </div>
+            <div class="ratio">
+                <input type="radio" id="aligera-ramal" name="script-type" value="aligera-ramal">
+                <label for="aligera-ramal">Aligera/Ramal</label>
+            </div>
+            <div class="ratio">
+                <input type="radio" id="aligera-piloto-isdn" name="script-type" value="aligera-piloto-isdn">
+                <label for="aligera-piloto">Aligera/Piloto isdn</label>
+            </div>
+            <div class="ratio">
+                <input type="radio" id="aligera-ramal-isdn" name="script-type" value="aligera-ramal-isdn">
+                <label for="aligera-ramal-isdn">Aligera/Ramal isdn</label>
+            </div>
+            <div class="ratio">
+                <input type="radio" id="edd24_fust" name="script-type" value="edd24_fust">
+                <label for="aligera-ramal">EDD 2104 FUST</label>
+            </div>
+
+
+        </div>
+
+        <div id="gt6gt4-form">
+            <div id="input-container">
+                <div class="input-row" id="fust">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" value="digite o nome aqui">
+                </div>
+                <div class="input-row" id="fust1">
+                    <label for="ord">Designador de Acesso:</label>
+                    <input type="text" id="ord" value="Designador aqui">
+                </div>
+                <div class="input-row" id="fust2">
+                    <label>LAN:</label>
+                    <div class="ip-group">
+                        <input required type="number" id="lan-ip1"  value="172">
+                        <span>.</span>
+                        <input required type="number" id="lan-ip2"  value="16">
+                        <span>.</span>
+                        <input required type="number" id="lan-ip3" value="10">
+                        <span>.</span>
+                        <input required type="number" id="lan-ip4" value="20">
+                        <span>/</span>
+                        <select id="lan-mask">
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29" selected>29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <label for="svlan">C-VLAN:</label>
+                    <input required type="text" id="svlan" >
+                </div>
+                <div class="input-row">
+                    <label>WAN:</label>
+                    <div class="ip-group">
+                        <input required type="number" id="wan-ip1"  value="172">
+                        <span>.</span>
+                        <input required type="number" id="wan-ip2"  value="16">
+                        <span>.</span>
+                        <input required type="number" id="wan-ip3"  value="30">
+                        <span>.</span>
+                        <input required type="number" id="wan-ip4"  value="40">
+                        <span>/</span>
+                        <select id="wan-mask">
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30" selected>30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <label>LOOPBACK:</label>
+                    <div class="ip-group">
+                        <input required type="number" id="loop-ip1"  value="172">
+                        <span>.</span>
+                        <input required type="number" id="loop-ip2"  value="16">
+                        <span>.</span>
+                        <input required type="number" id="loop-ip3"  value="50">
+                        <span>.</span>
+                        <input required type="number" id="loop-ip4"  value="60">
+                        <span>/</span>
+                        <select id="loop-mask">
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30" >30</option>
+                            <option value="31">31</option>
+                            <option value="32" selected>32</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Inputs para canais, inicialmente ocultos -->
+                <div id="channels-container" style="display: none;">
+                    <h3>Canais</h3>
+                    <div class="input-row channel-row">
+                        <label for="channel-1">Canal 1:</label>
+                        <input type="text" id="channel-1" >
+                    </div>
+                </div>
+
+                <button id="generate-command">Gerar Comando</button>
+                <button id="copy-command" style="margin-top: 10px; display: none;">Copiar Comando</button>
+            </div>
+            <h2>Comando Gerado:</h2>
+            <pre id="output"></pre>
+        </div>
+
+        <div id="maintenance-message" style="display: none; text-align: center; margin-top: 20px;">
+            <h2>EM MANUTENÇÃO</h2>
+        </div>
+    </div>
+
+    <footer>
+        © 2024 Lucas Levorato. Todos os direitos reservados.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

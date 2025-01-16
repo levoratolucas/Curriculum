@@ -24,18 +24,21 @@ function extractNumbersFromLine(line) {
     const quantity = parseInt(document.getElementById("quantitySelect").value, 10);
     const lines = inputText.split("\n");
     const processedNumbers = new Set();
-    let accounts = '';
+    const piloto = document.getElementById('piloto-form').value
+    let accounts = generateAccountCommand(piloto,1);
     let redirections = '';
-    let accountNumber = 1;
+    let accountNumber = 2;
     let position = 0;
   
     lines.forEach(line => {
       const number = extractNumbersFromLine(line);
-      if (number.length >= 9 && !processedNumbers.has(number)) {
+      if (number.length >= 9   && !processedNumbers.has(number) ) {
         processedNumbers.add(number);
-        accounts += generateAccountCommand(number, accountNumber);
+        if(number !== piloto){
+          accounts += generateAccountCommand(number, accountNumber);
+          accountNumber++;
+        }
         redirections += generateRedirectionCommand(number, position, quantity) + '\n';
-        accountNumber++;
         position++;
       }
     });
@@ -44,7 +47,6 @@ function extractNumbersFromLine(line) {
     const lanIp2 = parseInt(document.getElementById('lan-ip2').value);
     const lanIp3 = parseInt(document.getElementById('lan-ip3').value);
     const lanIp4 = parseInt(document.getElementById('lan-ip4').value);
-    const piloto = document.getElementById('piloto-form').value
     let scriptPiloto = `\nredirection input e1 groups 0 from * to * output voip-operator groups 0 from ${piloto} to {To}`;    
     const endred =  `redirection input voip-operator groups 0 from * to * output e1 groups 0 from {From:3} to {To:-4}\n\n`;
     const script = `digistar

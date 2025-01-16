@@ -1,0 +1,40 @@
+<div class="form_interativo">
+
+    <div class="input-row" id="fust1">
+        <label for="desig">Designador de Acesso:</label>
+        <input type="text" id="desig" value="Designador aqui">
+    </div>
+    <div class="input-row">
+        <h3>Canais</h3>
+        <div class="input-row channel-row">
+            <label for="channel-1">Canais:</label>
+            <input type="text" id="channel-1" >
+        </div>
+    </div>
+    <div class="input-row" id="fust2">
+        <label>LAN:</label>
+        <div class="ip-group">
+            <input required type="number" id="lan-ip1" value="172">
+            <span>.</span>
+            <input required type="number" id="lan-ip2" value="16">
+            <span>.</span>
+            <input required type="number" id="lan-ip3" value="10">
+            <span>.</span>
+            <input required type="number" id="lan-ip4" value="20">
+            <span>/</span>
+            <select id="lan-mask">
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29" selected>29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+            </select>
+        </div>
+    </div>
+    <div id="channels-container">
+        
+    </div>
+    <button onclick="generateAligeraR2(true)">Gerar</button>
+    <button id="copyButton" style="display:none;" onclick="copyToClipboard()">Copiar</button>
+</div>

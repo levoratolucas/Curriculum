@@ -102,21 +102,10 @@ config dialplan rule sip_trunk1_default destination_peer tdm group1
 config dialplan rule sip_trunk1_default called_pattern X.
 config dialplan rule sip_trunk1_default callerid_pattern 
 config dialplan rule sip_trunk1_default outgoing_called {:-4}
-config dialplan rule sip_trunk1_default outgoing_callerid {}
+ config dialplan rule sip_trunk1_default outgoing_callerid {:1}
 config dialplan rule sip_trunk1_default answer_timeout 90
 config dialplan rule sip_trunk1_default sip_pas_info_sc yes
-config dialplan rule sip_trunk2_default source_peer tdm group1
-config dialplan rule sip_trunk2_default called_pattern X.
-config dialplan rule sip_trunk2_default callerid_pattern 
-config dialplan rule sip_trunk2_default outgoing_called {}
-config dialplan rule sip_trunk2_default outgoing_callerid {:1}
-config dialplan rule sip_trunk2_default answer_timeout 90
-config dialplan rule sip_trunk3_default source_peer tdm group1
-config dialplan rule sip_trunk3_default called_pattern X.
-config dialplan rule sip_trunk3_default callerid_pattern 
-config dialplan rule sip_trunk3_default outgoing_called {}
-config dialplan rule sip_trunk3_default outgoing_callerid {:1}
-config dialplan rule sip_trunk3_default answer_timeout 90
+ 
 config save
 config apply
 

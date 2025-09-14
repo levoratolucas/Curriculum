@@ -51,7 +51,7 @@ config network ip type static
 config network ip address ${lanMac}
 config network ip netmask 255.255.255.248
 config network ip defaultgw ${lanRoute}
-config network hostname ${desig}_
+config network hostname ${desig}.SIP.
 config network mtu 1400
 config network dns 
 

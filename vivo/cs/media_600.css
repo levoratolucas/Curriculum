@@ -1,0 +1,30 @@
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .workspace {
+    padding: 15px;
+  }
+
+  .formulario {
+    max-width: 100%;
+  }
+
+  .terminal {
+    height: 300px;
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 0.8em;
+    padding: 10px;
+  }
+}

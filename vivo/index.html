@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Levoratech Workspace</title>
+  <link rel="stylesheet" href="./cs/style.css">
+  <link rel="stylesheet" href="./cs/media_1024.css">
+  <link rel="stylesheet" href="./cs/media_600.css">
+</head>
+<body>
+  <header>
+    <h1>LEVORATECH</h1>
+    <nav>
+      <ul>
+        <li><a href="./pags/sip.html">SIP</a></li>
+        <li><a href="#">Conversor</a></li>
+        <li><a href="#">Router</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+      <h2>Painel</h2>
+      <button class="btn" onclick="loadContent('form')">Formulário</button>
+      <button class="btn" onclick="loadContent('terminal')">Terminal</button>
+      <button class="btn" onclick="loadContent('info')">Informações</button>
+    </aside>
+
+    <section class="workspace" id="workspace">
+      <div class="placeholder">
+        <h2>Bem-vindo</h2>
+        <p>Selecione uma opção no painel à esquerda para começar.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Levoratech - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

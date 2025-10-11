@@ -1,0 +1,30 @@
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #45a29e;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .sidebar .btn {
+    width: auto;
+    flex: 1;
+    margin: 5px;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .workspace {
+    padding: 20px;
+  }
+}

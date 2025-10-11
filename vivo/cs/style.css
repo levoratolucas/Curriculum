@@ -143,6 +143,34 @@ main {
   animation: fadeIn 0.5s ease-in;
 }
 
+/* SELECT CUSTOM */
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #45a29e;
+  background-color: #0b0c10;
+  color: #66fcf1;
+  font-size: 15px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  cursor: pointer;
+  transition: 0.3s;
+  appearance: none; /* remove a seta padrão em alguns navegadores */
+}
+
+select:focus {
+  outline: none;
+  border-color: #66fcf1;
+  box-shadow: 0 0 5px #66fcf1;
+}
+
+select option {
+  background-color: #1f2833;
+  color: #c5c6c7;
+  padding: 8px;
+}
+
+
 .formulario h2 {
   color: #66fcf1;
   margin-bottom: 20px;

@@ -493,6 +493,11 @@ config apply
 
 function canais(n) {
     n = parseInt(n);
+    if(n > 30){
+
+        alert("no maximo 30 canais se atente a isso")
+        return null
+    }
     if (n <= 15) {
         return `1-${n}`;
     } else {

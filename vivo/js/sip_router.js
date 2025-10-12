@@ -494,9 +494,8 @@ config apply
 function canais(n) {
     n = parseInt(n);
     if(n > 30){
-
-        alert("no maximo 30 canais se atente a isso")
-        return null
+        alert("no maximo 30 canais, foi re ajustado pra 30, caso seja mais que 30, entre em contato com seu gestor")
+        n = 30
     }
     if (n <= 15) {
         return `1-${n}`;

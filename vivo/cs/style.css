@@ -56,7 +56,6 @@ nav a:hover {
 main {
   display: flex;
   flex: 1;
-  height: 100%;
 }
 
 /* SIDEBAR */
@@ -66,6 +65,7 @@ main {
   border-right: 2px solid #45a29e;
   padding: 20px;
   box-shadow: inset -2px 0 5px rgba(0, 255, 255, 0.1);
+  overflow-x: auto;
 }
 
 .sidebar h2 {

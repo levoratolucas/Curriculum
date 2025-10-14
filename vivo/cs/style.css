@@ -244,3 +244,51 @@ footer {
 #output {
     white-space: pre-line;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tabela-container {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 20px;
+  border: 1px solid #45a29e;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(0,255,255,0.1);
+}
+
+.tabela-csv {
+  width: 100%;
+  border-collapse: collapse;
+  color: #c5c6c7;
+  font-size: 14px;
+}
+
+.tabela-csv th {
+  background-color: #1f2833;
+  color: #66fcf1;
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid #45a29e;
+  padding: 10px;
+  text-align: left;
+}
+
+.tabela-csv td {
+  border-bottom: 1px solid #45a29e33;
+  padding: 8px;
+}
+
+.tabela-csv tr:hover {
+  background-color: #162027;
+}

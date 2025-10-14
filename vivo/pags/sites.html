@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levoratech Workspace</title>
+    <link rel="stylesheet" href="../cs/media_600.css">
+    <link rel="stylesheet" href="../cs/style.css">
+    <link rel="stylesheet" href="../cs/media_1024.css">
+</head>
+
+<body>
+    <header>
+        <h1>LEVORATECH</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./conversor.html">Conversor</a></li>
+                <li><a href="./sip.html">Router</a></li>
+                <li><a href="./sites.html">Sites</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <h2>Painel</h2>
+            <button class="btn" onclick="loadContent('tabelaCsv')">Sites</button>
+        </aside>
+
+        <section class="workspace" id="workspace">
+            <div class="placeholder">
+                <div class="formulario">
+                    <h2>Sites Vivo</h2>
+                    <label>Pesquisar por Sigla:</label>
+                    <input type="text" id="searchSigla" placeholder="Digite a sigla">
+
+                    <div id="tableContainer" class="tabela-container">
+                        <table id="csvTable" class="tabela-csv"></table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+
+        fetch("sites.csv")
+            .then(response => response.text())
+            .then(csvText => {
+                // Divide o CSV em linhas e limpa espaços extras
+                const lines = csvText.split(/\r?\n/).map(l => l.trim()).filter(l => l);
+                if (lines.length === 0) {
+                    document.getElementById('tableContainer').innerHTML = `<p style="color:#f55;">CSV vazio</p>`;
+                    return;
+                }
+
+                // Divide cada linha por ";" e remove aspas/bom
+                const data = lines.map(line =>
+                    line.split(';').map(cell => cell.replace(/^\uFEFF/, '').trim().replace(/^"|"$/g, ''))
+                );
+
+                const table = document.getElementById('csvTable');
+                table.innerHTML = '';
+
+                // Cria thead (cabeçalho)
+                const thead = document.createElement('thead');
+                const headerRow = document.createElement('tr');
+                data[0].forEach(header => {
+                    const th = document.createElement('th');
+                    th.textContent = header;
+                    headerRow.appendChild(th);
+                });
+                thead.appendChild(headerRow);
+                table.appendChild(thead);
+
+                // Cria tbody (dados)
+                const tbody = document.createElement('tbody');
+                for (let i = 1; i < data.length; i++) {
+                    const row = document.createElement('tr');
+                    data[i].forEach(cell => {
+                        const td = document.createElement('td');
+                        td.textContent = cell;
+                        row.appendChild(td);
+                    });
+                    tbody.appendChild(row);
+                }
+                table.appendChild(tbody);
+
+                // Normaliza o nome dos cabeçalhos e encontra o índice da coluna "Sigla"
+                const normalizedHeaders = data[0].map(h => h.toLowerCase().normalize('NFKD').replace(/\s+/g, ''));
+                const siglaIndex = normalizedHeaders.findIndex(h => h.includes('sigla'));
+
+                if (siglaIndex === -1) {
+                    document.getElementById('tableContainer').insertAdjacentHTML(
+                        'afterbegin',
+                        `<p style="color:#f55;">Cabeçalho "Sigla" não encontrado. Cabeçalhos: ${data[0].join(', ')}</p>`
+                    );
+                    return;
+                }
+
+                // Filtro por sigla
+                const searchInput = document.getElementById('searchSigla');
+                searchInput.addEventListener('input', function () {
+                    const filter = this.value.toLowerCase();
+                    const rows = tbody.querySelectorAll('tr');
+
+                    rows.forEach(row => {
+                        const cell = row.children[siglaIndex];
+                        if (!cell) return;
+                        row.style.display = cell.textContent.toLowerCase().includes(filter) ? '' : 'none';
+                    });
+                });
+            })
+            .catch(error => {
+                document.getElementById('tableContainer').innerHTML =
+                    `<p style="color:#f55;">Erro ao carregar CSV: ${error}</p>`;
+            });
+    </script>
+
+
+    <footer>
+        <p>© 2025 Levoratech - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../js/sip_router.js"></script>
+</body>
+
+</html>

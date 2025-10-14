@@ -334,3 +334,19 @@ function canais(n) {
         return `${firstRange},${secondRange}`;
     }
 }
+
+function separarIP(ip, type) {
+    if (!validarIP(ip)) {
+        alert(`IP inválido para ${type}. Digite no formato ?.?.?.?/? com valores corretos`);
+        return null;
+    }
+
+    const [endereco, prefixo] = ip.split("/");
+    const octetos = endereco.split(".").map(oct => parseInt(oct));
+
+    return [...octetos, parseInt(prefixo)];
+}
+function validarIP(ip) {
+    const ipRegex = /^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\/([0-9]|[12][0-9]|3[0-2])$/;
+    return ipRegex.test(ip);
+}

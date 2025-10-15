@@ -134,7 +134,7 @@ main {
 
 /* FORMULÁRIO */
 .formulario {
-  max-width: 400px;
+  /* max-width: 400px; */
   background: #1f2833;
   padding: 25px;
   border-radius: 10px;

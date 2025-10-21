@@ -1,0 +1,242 @@
+[
+    {
+        "type": "ATIVAÇÃO UPGRADE",
+        "items": [
+            {
+                "name": "DE /100",
+                "descript": [
+                    "Para velocidades de barramento 100, não é necessário troca de equipamento.",
+                    "Precisa validar configuração de router existente no cliente.",
+                    "Coletar senha no CHATDANI."
+                ]
+            },
+            {
+                "name": "DE /100 PRA /1000",
+                "descript": [
+                    "Necessário verificar se o equipamento é compatível com /1000.",
+                    "Caso não seja, realizar a troca de equipamento.",
+                    "Caso seja, validar configurações e coletar senha no CHATDANI."
+                ]
+            },
+            {
+                "name": "DE /1000 PRA /1000",
+                "descript": [
+                    "Necessário validar configurações no equipamento.",
+                    "Coletar senha no CHATDANI."
+                ]
+            }
+        ]
+    },
+    {
+        "type": "ATIVAÇÃO LINK DEDICADO",
+        "items": [
+            {
+                "name": "ESTEIRA COMUM",
+                "descript": [
+                    "1- Associar ont via MAGICTOOL, caso de erro assionar suporte vivo.",
+                    "2- Configurar router via MAGICTOOL",
+                    "3- Coletar senha no CHATDANI."
+                ]
+            },
+            {
+                "name": "FENIX",
+                "descript": [
+                    "1- Associar ont via MAGICTOOL, caso de erro assionar suporte vivo.",
+                    "2- Configurar router via MAGICTOOL",
+                    "3- Adicionar equipamentos no inventário.",
+                    "4- Crtificar via MAGICTOOL."
+                ]
+            },
+            {
+                "name": "FENIX FTTH",
+                "descript": [
+                    "!!!!!!!!! ALIMENTAR FIBRA NO SITE OU ARD !!!!!!!!!",
+                    "1- Configurar EDD2104 via MAGICTOOL.",
+                    "2- Configurar router via MAGICTOOL",
+                    "3- Adicionar equipamentos no inventário.",
+                    "4- Crtificar via MAGICTOOL."
+                ]
+            },
+            {
+                "name": "MIGRAÇÃO ACESSO FTTH - GPON",
+                "descript": [
+                    "1- Associar ont via MAGICTOOL, caso de erro assionar suporte vivo.",
+                    "2- Alterar interface de acesso do SFP pra FTTH",
+                    "3- Fazer virada interface via CHATDANI.",
+                    "4- Coletar senha no CHATDANI."
+                ]
+            },
+            {
+                "name": "IP LIGHT",
+                "descript": [
+                    "IMPORTANTE ------- HGU 2741 ------- IMPORTANTE.",
+                    "1- Associar HGU via MAGICTOOL, caso de erro assionar suporte vivo.",
+                    "2- Conectar via wi-fi no HGU",
+                    "3- Configurar HGU via magic tool, em caso de erro, configurar manualmente",
+                    "4- Coletar senha no CHATDANI."
+                ]
+            },
+            {
+                "name": "VPN",
+                "descript": [
+                    "1- Associar ONT via MAGICTOOL, caso de erro assionar suporte vivo.",
+                    "2- Configurar router via MAGICTOOL. em caso de erro configurar manualmente, tanto rotas quanto interfaces",
+                    "3- Coletar senha no CHATDANI."
+                ]
+            }
+        ]
+    },
+    {
+        "type": "ATIVAÇÃO TELEFONIA",
+        "items": [
+            {
+                "name": "SIP",
+                "descript": [
+                    "1- Associar ont via MAGICTOOL, caso de erro assionar suporte vivo.",
+                    "2- Configurar router via MAGICTOOL, em caso de erro, configurar manualmente ",
+                    "3- Executar caderno de testes com monitoramento do wireshark",
+                    "4- Validar com CHATDANI"
+                ]
+            },
+            {
+                "name": "SIP COM CONVERSOR",
+                "descript": [
+                    "1- Associar ont via MAGICTOOL, caso de erro assionar suporte vivo.",
+                    "2- Configurar router via MAGICTOOL, em caso de erro, configurar manualmente ",
+                    "3- Executar caderno de testes com monitoramento do wireshark",
+                    "4- Configurar conversor e estender na PABX cliente, testar entrada e saida",
+                    "5- Validar com CHATDANI"
+                ]
+            },
+            {
+                "name": "Migração DDR PRA SIP",
+                "descript": [
+                    "1- Associar ont via MAGICTOOL, caso de erro assionar suporte vivo.",
+                    "2- Configurar router via MAGICTOOL, em caso de erro, configurar manualmente ",
+                    "3- Validar proxy 192.168.25.1 acessivel",
+                    "4- Fazer virada da piloto",
+                    "5- Executar caderno de testes com monitoramento do wireshark",
+                    "6- Configurar conversor e estender na PABX cliente, testar entrada e saida",
+                    "7- Fazer virada da range",
+                    "8- Validar com CHATDANI"
+                ]
+            },
+            {
+                "name": "Migração DDR PRA SIP FTTH",
+                "descript": [
+                    "!!!!!!!!! ALIMENTAR FIBRA NO SITE OU ARD !!!!!!!!!",
+                    "1- Configurar EDD2104 MAGICTOOL, caso de erro configurar manualmente.",
+                    "2- Configurar router via MAGICTOOL, em caso de erro, configurar manualmente ",
+                    "3- Validar proxy 192.168.25.1 acessivel",
+                    "4- Fazer virada da piloto",
+                    "5- Executar caderno de testes com monitoramento do wireshark",
+                    "6- Configurar conversor e estender na PABX cliente, testar entrada e saida",
+                    "7- Fazer virada da range",
+                    "8- Validar com CHATDANI"
+                ]
+            },
+            {
+                "name": "Migração PWE PRA VOIP",
+                "descript": [
+                    "1- Associar ont via MAGICTOOL, caso de erro assionar suporte vivo.",
+                    "2- Configurar router via MAGICTOOL, em caso de erro, configurar manualmente ",
+                    "3- Validar proxy acessivel (proxy do voip pode mudar, contate suporte)",
+                    "4- Fazer virada da piloto",
+                    "5- Executar caderno de testes com monitoramento do wireshark",
+                    "6- Configurar conversor e estender na PABX cliente, testar entrada e saida",
+                    "7- Fazer virada da range",
+                    "8- Validar com CHATDANI"
+                ]
+            },
+            {
+                "name": "Migração PWE PRA SIP",
+                "descript": [
+                    "1- Associar ont via MAGICTOOL, caso de erro assionar suporte vivo.",
+                    "2- Configurar router via MAGICTOOL, em caso de erro, configurar manualmente ",
+                    "3- Validar proxy 192.168.25.1 acessivel",
+                    "4- Fazer virada da piloto",
+                    "5- Executar caderno de testes com monitoramento do wireshark",
+                    "6- Configurar conversor e estender na PABX cliente, testar entrada e saida",
+                    "7- Fazer virada da range",
+                    "8- Validar com CHATDANI"
+                ]
+            },
+            {
+                "name": "Migração VOIP PRA SIP",
+                "descript": [
+                    "1- Associar ont via MAGICTOOL, caso de erro assionar suporte vivo.",
+                    "2- Configurar router via MAGICTOOL, em caso de erro, configurar manualmente ",
+                    "3- Validar proxy 192.168.25.1 acessivel",
+                    "4- Fazer virada da piloto",
+                    "5- Executar caderno de testes com monitoramento do wireshark",
+                    "6- Instruir mantenedor pra novas configurações de PABX",
+                    "7- Fazer virada da range",
+                    "8- Validar com CHATDANI"
+                ]
+            },
+            {
+                "name": "Migração VOIP PRA SIP PABX ASTERIKS",
+                "descript": [
+                    "1- Associar ont via MAGICTOOL, caso de erro assionar suporte vivo.",
+                    "2- Configurar router via MAGICTOOL, em caso de erro, configurar manualmente ",
+                    "3- Validar proxy 192.168.25.1 acessivel",
+                    "4- Fazer virada da piloto",
+                    "5- Executar caderno de testes com monitoramento do wireshark",
+                    "6- Instruir mantenedor pra novas configurações de PABX, garanta o caminho de voz e dados, nunca esqueça de tirar login e senha do CONTEXT",
+                    "7- Fazer virada da range",
+                    "8- Validar com CHATDANI"
+                ]
+            },
+            {
+                "name": "Migração ACESSO SIP FTTH - GPON",
+                "descript": [
+                    "1- Associar ont via MAGICTOOL, caso de erro assionar suporte vivo.",
+                    "2- Alterar interface de acesso do SFP pra FTTH",
+                    "3- Fazer virada interface via CHATDANI.",
+                    "4- Validar com CHATDANI."
+                ]
+            }
+        ]
+    },
+    {
+        "type": "REPARO DADOS",
+        "items": [
+            {
+                "name": "VPN",
+                "descript": "Verificar conectividade com as duas pontas de acesso"
+            },
+            {
+                "name": "FTTH",
+                "descript": "Verificar potencia FTTH entre -6 e -12."
+            },
+            {
+                "name": "IP LIGHT",
+                "descript": "Verificar potência, associação e configs."
+            },
+            {
+                "name": "SUBIR GERENCIA EDD2104",
+                "descript": "Obter ip e vlan novas pra Gerencia, configurar interface e rota."
+            }
+        ]
+    },
+    {
+        "type": "REPARO TELEFONIA",
+        "items": [
+            {
+                "name": "PWE",
+                "descript": "Verificar bundle, testar com PABX propria."
+            },
+            {
+                "name": "SIP",
+                "descript": "Executar caderno de testes e coletar wireshark."
+            },
+            {
+                "name": "SIP CONVERSOR",
+                "descript": [
+                    "Executar caderno de testes e coletar wireshark.",
+                    "Coletar debug do conversor"
+                ]
+            }
+        ]
+    }
+]

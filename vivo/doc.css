@@ -1,0 +1,106 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.documento-doc {
+    background: #ffffff;
+    color: #111111;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    font-family: "Segoe UI", Arial, sans-serif;
+    /* max-width: 900px; */
+    margin: 30px auto;
+}
+
+.documento-doc h1 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.documento-doc h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.documento-doc p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.objetivo-doc,
+.conclusao-doc {
+    background: #f0f0f0;
+    padding: 20px;
+    border-left: 4px solid #45a29e;
+    border-radius: 6px;
+    margin-bottom: 30px;
+}
+
+.lista-atividades-doc {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 15px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.card:hover {
+    background: #f5f5f5;
+}
+
+.card .type {
+    color: #222;
+    font-weight: bold;
+}
+
+.desc {
+    color: #333;
+    margin-top: 8px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.28s ease, padding 0.18s ease;
+    padding: 0;
+}
+
+.desc.open {
+    padding: 10px 0 0 0;
+    max-height: 240px;
+    
+}
+
+.actions-doc {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-doc {
+    text-decoration: none;
+    background: #45a29e;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-doc:hover {
+    background: #66fcf1;
+    color: #000;
+}
+
+.no-data-doc {
+    color: #c5c6c7;
+    text-align: center;
+    padding: 12px;
+}

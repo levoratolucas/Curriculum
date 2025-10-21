@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades - Modalidade Dinâmica</title>
+    <link rel="stylesheet" href="./cs/style.css">
+    <link rel="stylesheet" href="./cs/media_1024.css">
+    <link rel="stylesheet" href="./cs/media_600.css">
+    <link rel="stylesheet" href="./doc.css">
+</head>
+
+<body>
+    <header>
+        <h1>LEVORATECH</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="./pags/sip.html">SIP</a></li>
+                <li><a href="./pags/sites.html">SITES</a></li>
+                <li><a href="./pags/conversor.html">CONVERSOR</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="workspace" style="margin: auto;">
+            <article class="documento-doc" id="documento">
+                <h1>Atividades - Nova Modalidade (Interativo)</h1>
+                <p class="meta">Telas dinâmicas geradas a partir de um JSON embutido — clique em uma atividade para ver
+                    a descrição.</p>
+
+                <div class="objetivo-doc">
+                    <h2>Objetivo</h2>
+                    <p>Apresentar, de forma interativa, as atividades contempladas na nova modalidade de trabalho,
+                        permitindo acesso rápido às descrições detalhadas e facilitando a identificação do que é
+                        executado de forma autônoma ou que demanda apoio.</p>
+                </div>
+
+                <section class="atividades-doc">
+                    <h2>Atividades</h2>
+                    <div id="lista" class="lista-atividades-doc" aria-live="polite"></div>
+                    <div id="no-data" class="no-data-doc" style="display:none">Nenhuma atividade encontrada.</div>
+                </section>
+
+                <div class="conclusao-doc">
+                    <h2>Conclusão</h2>
+                    <p>As atividades acima permitem visualizar rapidamente as responsabilidades associadas à nova
+                        modalidade. Utilize este arquivo para editar o JSON de atividades e atualizar a tela sem
+                        necessidade de mexer na parte de renderização.</p>
+                </div>
+
+                <div class="actions-doc">
+                    <a class="btn-doc" href="index.html">Voltar ao site</a>
+                    <a class="btn-doc" href="#documento">Ir ao início</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Levoratech - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./doc.json" type="module"></script>
+    <script src="./scryptDoc.js"></script>
+</body>
+
+</html>

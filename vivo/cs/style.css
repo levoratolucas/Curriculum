@@ -192,6 +192,9 @@ select option {
   background: #0b0c10;
   color: #66fcf1;
 }
+.formulario textarea{
+  min-height: 150px;
+}
 
 .formulario input:focus,.formulario textarea:focus {
   outline: none;

@@ -36,7 +36,6 @@ function loadContent(type) {
             workspace.innerHTML = `
             <div class="formulario">
                 <h1>Adicionando números e redirecionamentos</h1>
-                <div class="input-row" id="ratio">
                     <div class="ratio">
                     <input type="radio" id="piloto" checked name="script-type" value="piloto">
                     <label for="piloto">Piloto</label>
@@ -45,15 +44,10 @@ function loadContent(type) {
                     <input type="radio" id="ramal" name="script-type" value="ramal">
                     <label for="ramal">Ramal</label>
                     </div>
-
-                </div>
-                <div class="input-row" id="fust2">
                     <div class="ip-group">
                     <input required type="number" id="piloto-form" placeholder="Piloto ex: 4132222222">
                     </div>
                     <input type="text" id="lan" placeholder="172.16.10.20/29">
-                </div>
-                <div class="select-container" id="sinaliza">
                     <p>Sinalização da central:</p>
                     <select id="quantitySelect">
                     <option value="3">3</option>
@@ -65,7 +59,6 @@ function loadContent(type) {
                     <option value="9">9</option>
                     <option value="10" selected>10</option>
                     </select>
-                </div>
                 <textarea id="inputText" placeholder="Insira os números no campo abaixo e clique em 'Gerar'.
 
                     NUMEROS413-125-9996

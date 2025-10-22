@@ -183,7 +183,7 @@ select option {
   color: #c5c6c7;
 }
 
-.formulario input {
+.formulario input,.formulario textarea {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
@@ -193,7 +193,7 @@ select option {
   color: #66fcf1;
 }
 
-.formulario input:focus {
+.formulario input:focus,.formulario textarea:focus {
   outline: none;
   border-color: #66fcf1;
   box-shadow: 0 0 5px #66fcf1;
@@ -291,4 +291,71 @@ footer {
 
 .tabela-csv tr:hover {
   background-color: #162027;
+}
+
+
+
+
+/* RADIO GROUP */
+#ratio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin: 25px 0;
+  background: #1f2833;
+  padding: 15px;
+  border: 1px solid #45a29e;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,255,255,0.1);
+}
+
+/* CONTAINER DE CADA OPÇÃO */
+.ratio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* RADIO BUTTON CUSTOM */
+.ratio input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #45a29e;
+  border-radius: 50%;
+  background-color: #0b0c10;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.ratio input[type="radio"]:checked {
+  border-color: #66fcf1;
+  box-shadow: 0 0 10px #45a29e;
+}
+
+.ratio input[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  background-color: #66fcf1;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #45a29e;
+}
+
+/* LABELS */
+.ratio label {
+  color: #c5c6c7;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.ratio label:hover {
+  color: #66fcf1;
+  text-shadow: 0 0 5px #45a29e;
 }

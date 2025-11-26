@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Levoratech Workspace</title>
+  <link rel="stylesheet" href="../cs/style.css">
+  <link rel="stylesheet" href="../cs/media_1024.css">
+  <link rel="stylesheet" href="../cs/media_600.css">
+</head>
+
+<body>
+  <header>
+    <h1>LEVORATECH</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="./conversor.html">CONVERSOR</a></li>
+        <li><a href="./sip.html">SIP</a></li>
+        <li><a href="./sites.html">SITES</a></li>
+        <li><a href="./carimbo.html">CARIMBOS</a></li>
+        <li><a href="https://levoratolucas.github.io/Curriculum/">CONTATO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+
+      <button class="btn" onclick="loadContent('reparoGpon')">REPARO GPON</button>
+      <button class="btn" onclick="loadContent('reparoFtth')">REPARO FTTH</button>
+    </aside>
+
+    <section class="workspace" id="workspace">
+      <div class="formulario">
+        <h2>GPON</h2>
+        <label>DESIGNADOR:</label>
+        <input type="text" id="designador" placeholder="Digite aqui">
+
+        <label>CLIENTE</label>
+        <input type="text" id="lan" placeholder="RS TELECOM LTDA">
+
+        <label for="">ENDEREÇO</label>
+        <textarea name="" id=""></textarea>
+
+        <label>NOME DO CONTATO:</label>
+        <input type="text" id="canais" placeholder="PEDRO">
+
+        <label>TELEFONE DO CONTATO:</label>
+        <input type="number" id="canais" placeholder="41999666333">
+        
+        <label>AÇÃO:</label>
+        <textarea name="" placeholder="digite oque foi executado" id=""></textarea>
+        
+        <label>OBSERVAÇÕES:</label>
+        <textarea name="" placeholder="CTO ENDEREÇO ERRADO, A LOCALIZAÇÃO CORRETA É..." id=""></textarea>
+
+        <label for="">MATERIAIS UTILIZADOS</label>
+        <label for="">FIBRA mts</label>
+        <input type="number" value="0" >
+        <label for="">CONECTOR</label>
+        <select name="" id="">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+
+        <label for="">CUNHA</label>
+        <input type="number" value="0" name="" id="">
+
+        <label for="">EMENDA</label>
+        <label for="">QTD</label>
+        <select name="" id="">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <label for="">LOCALIZAÇÃO</label>
+        <textarea name="" id="" placeholder="postelete do cliente"></textarea>
+
+
+        <button onclick="gerarComandoConversor()">Gerar</button>
+      </div>
+      <div class="terminal">
+        <p id="output">HUAWEI</p>
+      </div>
+    </section>
+  </main>
+
+
+
+  <footer>
+    <p>© 2025 Levoratech - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="../js/carimbo.js"></script>
+</body>
+
+</html>

@@ -56,6 +56,23 @@ function loadContent(type) {
             `;
             break;
 
+        case "4gt_6gt_ipv6":
+            workspace.innerHTML = `
+                <div class="formulario">
+                    <h2>4gt_6gt_ipv6</h2>
+                    
+                    <label>LOOPBACK IPV6:</label>
+                    <input type="text" id="loopback_ipv6" placeholder=":2001:12e0:f00f:ff80::bff/128">
+                    
+
+                    <button onclick="gerarComando('4gt_6gt_ipv6')">Gerar</button>
+                </div>
+                <div class="terminal">
+                    <p id="output">4gt_6gt_ipv6</p>
+                </div>
+            `;
+            break;
+
         case "aligera":
             workspace.innerHTML = `
                 <div class="formulario">
@@ -109,6 +126,10 @@ function gerarComando(type) {
 
         case "4gt_6gt":
             output.textContent = gerarScript4Gt6Gt(designador, cvlan, lan, wan, loopback);
+
+            break;
+        case "4gt_6gt_ipv6":
+            output.textContent = gerarScript4Gt6GtIpv6(loopback);
 
             break;
 
@@ -240,6 +261,35 @@ set system host-name ${designador}
 
 commit
 
+save
+        
+    `;
+}
+
+
+
+
+
+function gerarScript4Gt6GtIpv6(loopback) {
+    
+    const [loopbackParts, prefixo] = ip.split("/");
+
+    if (!lanParts || !wanParts || !loopbackParts) return "!!!!!!  REVISE SEUS DADOS  !!!!!!";
+
+    return `
+
+edit system login tacplus-server
+    set accounting
+    set authorization
+    set host 2001:12E0:800:FFFF::135 secret t3l3f0n!c4@
+    set host 2001:12E0:800:FFFF::136 secret t3l3f0n!c4@
+    set host 2001:12E0:800:FFFF::134 secret t3l3f0n!c4@
+    set host 2001:12E0:800:FFFF::135 source-address "loopbackParts"
+    set host 2001:12E0:800:FFFF::136 source-address "loopbackParts"
+    set host 2001:12E0:800:FFFF::134 source-address "loopbackParts"
+    dm2500# set interfaces loopback lo1 address ${loopback}
+    set interfaces loopback lo1 description GERENCIA_VIVO
+commit
 save
         
     `;

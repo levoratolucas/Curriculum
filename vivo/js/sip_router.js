@@ -283,9 +283,8 @@ edit system login tacplus-server
     set host 2001:12E0:800:FFFF::135 source-address ${loopbackParts}
     set host 2001:12E0:800:FFFF::136 source-address ${loopbackParts}
     set host 2001:12E0:800:FFFF::134 source-address ${loopbackParts}
-
+exit
 set interfaces loopback lo1 address ${loopback}
-set interfaces loopback lo1 description GERENCIA_VIVO
 
 commit
 save

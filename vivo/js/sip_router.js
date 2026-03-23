@@ -65,7 +65,7 @@ function loadContent(type) {
                     <input type="text" id="loopback_ipv6" placeholder=":2001:12e0:f00f:ff80::bff/128">
                     
 
-                    <button onclick="gerarComando('4gt_6gt_ipv6')">Gerar</button>
+                    <button onclick="gerarScript4Gt6GtIpv6()">Gerar</button>
                 </div>
                 <div class="terminal">
                     <p id="output">4gt_6gt_ipv6</p>
@@ -128,11 +128,6 @@ function gerarComando(type) {
             output.textContent = gerarScript4Gt6Gt(designador, cvlan, lan, wan, loopback);
 
             break;
-        case "4gt_6gt_ipv6":
-            output.textContent = gerarScript4Gt6GtIpv6(loopback);
-
-            break;
-
         default:
             break;
     }
@@ -270,13 +265,14 @@ save
 
 
 
-function gerarScript4Gt6GtIpv6(loopback) {
-    
-    const [loopbackParts, prefixo] = ip.split("/");
+function gerarScript4Gt6GtIpv6() {
+    const loopback = document.getElementById("loopback_ipv6").value;
 
-    if (!lanParts || !wanParts || !loopbackParts) return "!!!!!!  REVISE SEUS DADOS  !!!!!!";
+    const [loopbackParts, prefixo] = loopback.split("/");
 
-    return `
+    const output = document.getElementById("output");
+
+    output.textContent =  `
 
 edit system login tacplus-server
     set accounting
@@ -284,15 +280,16 @@ edit system login tacplus-server
     set host 2001:12E0:800:FFFF::135 secret t3l3f0n!c4@
     set host 2001:12E0:800:FFFF::136 secret t3l3f0n!c4@
     set host 2001:12E0:800:FFFF::134 secret t3l3f0n!c4@
-    set host 2001:12E0:800:FFFF::135 source-address "loopbackParts"
-    set host 2001:12E0:800:FFFF::136 source-address "loopbackParts"
-    set host 2001:12E0:800:FFFF::134 source-address "loopbackParts"
-    dm2500# set interfaces loopback lo1 address ${loopback}
-    set interfaces loopback lo1 description GERENCIA_VIVO
+    set host 2001:12E0:800:FFFF::135 source-address ${loopbackParts}
+    set host 2001:12E0:800:FFFF::136 source-address ${loopbackParts}
+    set host 2001:12E0:800:FFFF::134 source-address ${loopbackParts}
+
+set interfaces loopback lo1 address ${loopback}
+set interfaces loopback lo1 description GERENCIA_VIVO
+
 commit
 save
         
     `;
 }
-
 

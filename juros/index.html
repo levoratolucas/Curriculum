@@ -1,805 +1,835 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="theme-color" content="#2563eb">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Investimentos">
-<title>Comparador de Investimentos</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-    background:#f3f5f9;
-    color:#172033;
-    -webkit-tap-highlight-color:transparent;
-}
-button,input,select{font:inherit}
-button{cursor:pointer}
+    <meta charset="UTF-8">
 
-.app{
-    max-width:1180px;
-    margin:auto;
-    padding:24px;
-}
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-.header{
-    margin-bottom:20px;
-}
-.header h1{
-    margin:0;
-    font-size:30px;
-}
-.header p{
-    margin:7px 0 0;
-    color:#687386;
-}
+    <meta
+        name="theme-color"
+        content="#05080d"
+    >
 
-.card{
-    background:#fff;
-    border:1px solid #e7eaf0;
-    border-radius:16px;
-    padding:22px;
-    margin-bottom:18px;
-    box-shadow:0 5px 18px rgba(20,30,50,.06);
-}
-.card h2{
-    margin:0 0 6px;
-    font-size:21px;
-}
-.help{
-    color:#6b7280;
-    font-size:13px;
-    margin:0 0 18px;
-}
+    <meta
+        name="description"
+        content="Simulador de juros simples e compostos."
+    >
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-.grid-general{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-    max-width:760px;
-}
+    <title>Juros — Simulador Financeiro</title>
 
-.field label{
-    display:block;
-    font-size:13px;
-    font-weight:700;
-    margin-bottom:7px;
-}
-.field input,.field select{
-    width:100%;
-    height:46px;
-    border:1px solid #d5dae3;
-    border-radius:10px;
-    background:#fff;
-    padding:0 12px;
-    outline:none;
-    color:#172033;
-}
-.field input:focus,.field select:focus{
-    border-color:#2563eb;
-    box-shadow:0 0 0 3px rgba(37,99,235,.10);
-}
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
-.investments{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-}
-.investment{
-    border:1px solid #e1e5ec;
-    background:#fafbfc;
-    border-radius:14px;
-    padding:18px;
-}
-.investment-head{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    margin-bottom:16px;
-}
-.investment-title{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-.number{
-    width:32px;
-    height:32px;
-    display:grid;
-    place-items:center;
-    border-radius:9px;
-    background:#eaf1ff;
-    color:#2563eb;
-    font-weight:800;
-    font-size:13px;
-}
-.investment h3{
-    margin:0;
-    font-size:16px;
-}
+    <!-- Chart.js -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"
+        defer
+    ></script>
 
-.btn{
-    border:0;
-    border-radius:10px;
-    min-height:44px;
-    padding:0 17px;
-    font-weight:750;
-}
-.btn-add{
-    background:#16a34a;
-    color:#fff;
-    margin-top:16px;
-}
-.btn-add:hover{background:#15803d}
-.btn-remove{
-    background:#fee2e2;
-    color:#b91c1c;
-    min-height:38px;
-    padding:0 12px;
-    font-size:13px;
-}
-.btn-remove:hover{background:#fecaca}
-.btn-calc{
-    width:100%;
-    margin-top:12px;
-    background:#2563eb;
-    color:#fff;
-    font-size:16px;
-    min-height:50px;
-}
-.btn-calc:hover{background:#1d4ed8}
+    <script
+        src="script.js"
+        defer
+    ></script>
 
-.summary{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-}
-.summary-item{
-    border:1px solid #e4e8ef;
-    border-radius:12px;
-    padding:17px;
-    background:#fafbfc;
-}
-.summary-label{
-    color:#697386;
-    font-size:13px;
-    margin-bottom:7px;
-}
-.summary-value{
-    font-size:23px;
-    font-weight:800;
-}
-.blue{color:#2563eb}
-.green{color:#16a34a}
-
-.table-wrap{
-    overflow-x:auto;
-}
-table{
-    width:100%;
-    min-width:850px;
-    border-collapse:collapse;
-}
-th,td{
-    padding:12px 10px;
-    border-bottom:1px solid #e8ebf0;
-    text-align:right;
-    font-size:13px;
-}
-th{
-    background:#f8fafc;
-    font-size:12px;
-    color:#596579;
-}
-th:first-child,td:first-child{text-align:left}
-tfoot td{
-    font-weight:800;
-    background:#eef3ff;
-    border-top:2px solid #dbe4ff;
-}
-.juros,.final{color:#16a34a;font-weight:750}
-
-.chart-box{
-    position:relative;
-    height:410px;
-}
-
-.empty{
-    padding:30px 10px;
-    text-align:center;
-    color:#778195;
-}
-
-/* Mobile */
-@media(max-width:700px){
-    body{
-        background:#f4f6fa;
-        padding-bottom:82px;
-    }
-    .app{
-        padding:12px;
-        max-width:560px;
-    }
-    .header{
-        padding:7px 5px 10px;
-    }
-    .header h1{
-        font-size:24px;
-    }
-    .header p{
-        font-size:13px;
-    }
-    .card{
-        border-radius:15px;
-        padding:16px;
-        margin-bottom:12px;
-        box-shadow:0 3px 12px rgba(20,30,50,.05);
-    }
-    .card h2{
-        font-size:18px;
-    }
-    .grid,.grid-general{
-        grid-template-columns:1fr;
-        gap:12px;
-        max-width:none;
-    }
-    .field input,.field select{
-        height:48px;
-        font-size:16px;
-    }
-    .investment{
-        padding:14px;
-        border-radius:13px;
-    }
-    .investment .grid{
-        grid-template-columns:1fr 1fr;
-    }
-    .investment .field:first-child{
-        grid-column:1 / -1;
-    }
-    .investment-head{
-        margin-bottom:13px;
-    }
-    .btn-add{
-        width:100%;
-        min-height:48px;
-    }
-    .summary{
-        grid-template-columns:1fr;
-    }
-    .summary-item{
-        padding:14px;
-    }
-    .summary-value{
-        font-size:21px;
-    }
-    .table-wrap{
-        margin:0 -4px;
-    }
-    table{
-        min-width:760px;
-    }
-    .chart-box{
-        height:300px;
-    }
-
-    /* Barra inferior com aparência de app */
-    .mobile-bar{
-        position:fixed;
-        left:0;
-        right:0;
-        bottom:0;
-        z-index:50;
-        padding:9px 12px calc(9px + env(safe-area-inset-bottom));
-        background:rgba(255,255,255,.96);
-        backdrop-filter:blur(12px);
-        border-top:1px solid #dfe4ec;
-        box-shadow:0 -4px 15px rgba(20,30,50,.08);
-    }
-    .mobile-bar button{
-        width:100%;
-        min-height:52px;
-        border:0;
-        border-radius:13px;
-        background:#2563eb;
-        color:#fff;
-        font-size:16px;
-        font-weight:800;
-    }
-}
-
-/* Em telas muito pequenas, campos continuam confortáveis */
-@media(max-width:390px){
-    .investment .grid{
-        grid-template-columns:1fr;
-    }
-    .investment .field:first-child{
-        grid-column:auto;
-    }
-    .chart-box{
-        height:260px;
-    }
-}
-</style>
 </head>
+
 
 <body>
 
 <div class="app">
 
-    <header class="header">
-        <h1>Comparador de Investimentos</h1>
-        <p>Compare seus investimentos, aportes, juros e patrimônio.</p>
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="app-header">
+
+        <div class="header-content">
+
+            <a
+                href="#"
+                class="brand"
+                aria-label="Juros"
+            >
+
+                <div class="brand-icon">
+                    <span>J</span>
+                </div>
+
+                <div class="brand-info">
+
+                    <strong class="brand-title">
+                        JUROS
+                    </strong>
+
+                    <span class="brand-subtitle">
+                        Financial simulator
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <div class="header-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    SIMULADOR ONLINE
+                </span>
+
+            </div>
+
+        </div>
+
     </header>
 
-    <section class="card">
-        <h2>Configuração geral</h2>
-        <p class="help">Estas duas configurações valem para todos os investimentos.</p>
 
-        <div class="grid-general">
-            <div class="field">
-                <label for="tipoTaxaGlobal">Período da taxa</label>
-                <select id="tipoTaxaGlobal">
-                    <option value="mensal">Ao mês</option>
-                    <option value="anual">Ao ano</option>
-                </select>
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="app-main">
+
+
+        <!-- =================================================
+             HERO
+             ================================================= -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+
+                    <span class="hero-badge-dot"></span>
+
+                    <span>
+                        FINANCE / CALCULATOR
+                    </span>
+
+                </div>
+
+
+                <h1>
+
+                    Faça seu dinheiro
+                    <span>crescer.</span>
+
+                </h1>
+
+
+                <p>
+
+                    Simule investimentos, visualize a evolução
+                    do seu patrimônio e entenda o impacto dos
+                    juros ao longo do tempo.
+
+                </p>
+
             </div>
 
-            <div class="field">
-                <label for="tipoTempoGlobal">Unidade do período</label>
-                <select id="tipoTempoGlobal">
-                    <option value="anos">Anos</option>
-                    <option value="meses">Meses</option>
-                </select>
+        </section>
+
+
+
+        <!-- =================================================
+             CALCULADORA
+             ================================================= -->
+
+        <section
+            class="calculator-section"
+            id="calculadora"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        01 / SIMULAÇÃO
+                    </span>
+
+                    <h2>
+                        Configure seu investimento
+                    </h2>
+
+                </div>
+
             </div>
-        </div>
-    </section>
 
-    <section class="card">
-        <h2>Investimentos</h2>
-        <p class="help">Adicione quantos investimentos quiser. Cada um pode ter sua própria taxa e prazo.</p>
 
-        <div id="investimentos" class="investments"></div>
+            <div class="calculator-card">
 
-        <button class="btn btn-add" onclick="adicionarInvestimento()">+ Adicionar investimento</button>
-        <button class="btn btn-calc" onclick="calcular()">Calcular investimentos</button>
-    </section>
 
-    <section class="card">
-        <h2>Resultado geral</h2>
-        <div class="summary">
-            <div class="summary-item">
-                <div class="summary-label">Patrimônio total</div>
-                <div class="summary-value blue" id="valorFinal">R$ 0,00</div>
+                <!-- CAPITAL + APORTE -->
+
+                <div class="field-row">
+
+                    <div class="field-group">
+
+                        <label for="capitalInicial">
+                            Capital inicial
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-prefix">
+                                R$
+                            </span>
+
+                            <input
+                                id="capitalInicial"
+                                type="number"
+                                inputmode="decimal"
+                                min="0"
+                                step="0.01"
+                                placeholder="1.000,00"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                        <span class="field-help">
+                            Valor aplicado inicialmente.
+                        </span>
+
+                    </div>
+
+
+                    <div class="field-group">
+
+                        <label for="aporteMensal">
+                            Aporte mensal
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-prefix">
+                                R$
+                            </span>
+
+                            <input
+                                id="aporteMensal"
+                                type="number"
+                                inputmode="decimal"
+                                min="0"
+                                step="0.01"
+                                placeholder="300,00"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                        <span class="field-help">
+                            Quanto você adicionará por mês.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TAXA + PERÍODO -->
+
+                <div class="field-row">
+
+                    <div class="field-group">
+
+                        <label for="taxaJuros">
+                            Taxa de juros
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <input
+                                id="taxaJuros"
+                                type="number"
+                                inputmode="decimal"
+                                min="0"
+                                step="0.01"
+                                placeholder="1,00"
+                                autocomplete="off"
+                            >
+
+                            <span class="input-suffix">
+                                % a.m.
+                            </span>
+
+                        </div>
+
+                        <span class="field-help">
+                            Taxa aplicada mensalmente.
+                        </span>
+
+                    </div>
+
+
+                    <div class="field-group">
+
+                        <label for="periodo">
+                            Período
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <input
+                                id="periodo"
+                                type="number"
+                                inputmode="numeric"
+                                min="1"
+                                step="1"
+                                placeholder="24"
+                                autocomplete="off"
+                            >
+
+                            <span class="input-suffix">
+                                meses
+                            </span>
+
+                        </div>
+
+                        <span class="field-help">
+                            Tempo total da simulação.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TIPO -->
+
+                <div class="field-group">
+
+                    <label for="tipoJuros">
+                        Modelo de juros
+                    </label>
+
+                    <div class="select-wrapper">
+
+                        <select id="tipoJuros">
+
+                            <option value="compostos">
+                                Juros compostos
+                            </option>
+
+                            <option value="simples">
+                                Juros simples
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MENSAGEM DE ERRO -->
+
+                <div
+                    class="form-message"
+                    id="formMessage"
+                    role="alert"
+                    aria-live="polite"
+                ></div>
+
+
+
+                <!-- ACTIONS -->
+
+                <div class="calculator-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="btnCalcular"
+                    >
+
+                        <span class="btn-spinner"></span>
+
+                        <span class="btn-icon">
+                            →
+                        </span>
+
+                        <span class="btn-text">
+                            Calcular simulação
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="btnLimpar"
+                    >
+
+                        Limpar
+
+                    </button>
+
+                </div>
+
             </div>
-            <div class="summary-item">
-                <div class="summary-label">Total investido</div>
-                <div class="summary-value" id="totalInvestido">R$ 0,00</div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESULTADOS
+             ================================================= -->
+
+        <section
+            class="results-section is-hidden"
+            id="resultados"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        02 / RESULTADO
+                    </span>
+
+                    <h2>
+                        Seu patrimônio projetado
+                    </h2>
+
+                </div>
+
             </div>
-            <div class="summary-item">
-                <div class="summary-label">Total em juros</div>
-                <div class="summary-value green" id="totalJuros">R$ 0,00</div>
+
+
+
+            <!-- METRICS -->
+
+            <div class="metrics-grid">
+
+
+                <article class="metric-card">
+
+                    <div class="metric-header">
+
+                        <span class="metric-label">
+                            Total investido
+                        </span>
+
+                        <span class="metric-icon">
+                            $
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="metric-value"
+                        id="totalInvestido"
+                    >
+                        R$ 0,00
+                    </div>
+
+                    <div class="metric-description">
+                        Capital + aportes
+                    </div>
+
+                </article>
+
+
+
+                <article class="metric-card metric-highlight">
+
+                    <div class="metric-header">
+
+                        <span class="metric-label">
+                            Juros acumulados
+                        </span>
+
+                        <span class="metric-icon">
+                            %
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="metric-value"
+                        id="totalJuros"
+                    >
+                        R$ 0,00
+                    </div>
+
+                    <div class="metric-description">
+                        Ganho gerado pelos juros
+                    </div>
+
+                </article>
+
+
+
+                <article class="metric-card metric-total">
+
+                    <div class="metric-header">
+
+                        <span class="metric-label">
+                            Patrimônio final
+                        </span>
+
+                        <span class="metric-icon">
+                            ↗
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="metric-value"
+                        id="valorFinal"
+                    >
+                        R$ 0,00
+                    </div>
+
+                    <div class="metric-description">
+                        Valor projetado ao final
+                    </div>
+
+                </article>
+
             </div>
-        </div>
-    </section>
 
-    <section class="card">
-        <h2>Resumo por investimento</h2>
-        <p class="help">Aportes e juros separados por fonte de investimento.</p>
 
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Investimento</th>
-                        <th>Inicial</th>
-                        <th>Aportes</th>
-                        <th>Total investido</th>
-                        <th>Juros</th>
-                        <th>Final</th>
-                    </tr>
-                </thead>
-                <tbody id="tabelaResumo"></tbody>
-                <tfoot>
-                    <tr>
-                        <td>TOTAL</td>
-                        <td id="totalInicialTabela">R$ 0,00</td>
-                        <td id="totalAportesTabela">R$ 0,00</td>
-                        <td id="totalInvestidoTabela">R$ 0,00</td>
-                        <td id="totalJurosTabela" class="juros">R$ 0,00</td>
-                        <td id="totalFinalTabela" class="final">R$ 0,00</td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-    </section>
 
-    <section class="card">
-        <h2>Patrimônio total</h2>
-        <p class="help">Evolução do patrimônio consolidado e do dinheiro efetivamente investido.</p>
-        <div class="chart-box">
-            <canvas id="graficoTotal"></canvas>
-        </div>
-    </section>
+            <!-- GROWTH -->
 
-    <section class="card">
-        <h2>Fontes de investimento</h2>
-        <p class="help">Compare a evolução de cada investimento individualmente.</p>
-        <div class="chart-box">
-            <canvas id="graficoIndividual"></canvas>
+            <div class="growth-card">
+
+                <div class="growth-header">
+
+                    <div>
+
+                        <span class="growth-label">
+                            Crescimento sobre o capital investido
+                        </span>
+
+                        <h3>
+                            Potencial de crescimento
+                        </h3>
+
+                    </div>
+
+                    <strong
+                        class="growth-percentage"
+                        id="percentualCrescimento"
+                    >
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="growth-bar">
+
+                    <div
+                        class="growth-bar-fill"
+                        id="barraCrescimento"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GRÁFICO
+             ================================================= -->
+
+        <section
+            class="chart-section is-hidden"
+            id="secaoGrafico"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        03 / EVOLUÇÃO
+                    </span>
+
+                    <h2>
+                        Crescimento do patrimônio
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+
+                    <div>
+
+                        <span class="chart-title">
+                            Patrimônio ao longo do tempo
+                        </span>
+
+                        <span class="chart-description">
+                            Comparação entre patrimônio e capital investido.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas id="graficoTotal"></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             JUROS
+             ================================================= -->
+
+        <section
+            class="chart-section is-hidden"
+            id="secaoJuros"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        04 / JUROS
+                    </span>
+
+                    <h2>
+                        Efeito dos juros
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+
+                    <div>
+
+                        <span class="chart-title">
+                            Juros acumulados
+                        </span>
+
+                        <span class="chart-description">
+                            Quanto o rendimento representa ao longo do período.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas id="graficoIndividual"></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             TABELA
+             ================================================= -->
+
+        <section
+            class="table-section is-hidden"
+            id="secaoTabela"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        05 / DETALHAMENTO
+                    </span>
+
+                    <h2>
+                        Evolução mensal
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Período
+                                </th>
+
+                                <th>
+                                    Aporte
+                                </th>
+
+                                <th>
+                                    Juros
+                                </th>
+
+                                <th>
+                                    Investido
+                                </th>
+
+                                <th>
+                                    Patrimônio
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="tabelaResumo">
+
+                            <tr>
+
+                                <td colspan="5">
+
+                                    <div class="table-empty">
+                                        Faça uma simulação para visualizar os dados.
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INFO
+             ================================================= -->
+
+        <section
+            class="info-section is-hidden"
+            id="secaoInfo"
+        >
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    i
+                </div>
+
+                <div class="info-content">
+
+                    <h3>
+                        Sobre esta simulação
+                    </h3>
+
+                    <p id="infoTexto">
+
+                        Os valores apresentados são projeções matemáticas
+                        baseadas nos parâmetros informados. Rentabilidade
+                        real pode variar e investimentos estão sujeitos a
+                        riscos.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="app-footer">
+
+        <div class="footer-content">
+
+            <span class="footer-brand">
+                JUROS
+            </span>
+
+            <span class="footer-divider"></span>
+
+            <span class="footer-text">
+                Simulador financeiro
+            </span>
+
         </div>
-    </section>
+
+
+        <div class="footer-tech">
+
+            <span></span>
+
+            DARK / TECH
+
+        </div>
+
+    </footer>
+
 
 </div>
-
-<div class="mobile-bar">
-    <button onclick="calcular()">Calcular patrimônio</button>
-</div>
-
-<script>
-let contador = 0;
-let graficoTotal = null;
-let graficoIndividual = null;
-
-function moeda(valor){
-    return Number(valor).toLocaleString("pt-BR",{
-        style:"currency",
-        currency:"BRL"
-    });
-}
-
-function escapeHtml(text){
-    const div=document.createElement("div");
-    div.textContent=text;
-    return div.innerHTML;
-}
-
-function adicionarInvestimento(){
-    contador++;
-    const id=contador;
-
-    const div=document.createElement("div");
-    div.className="investment";
-    div.dataset.id=id;
-
-    div.innerHTML=`
-        <div class="investment-head">
-            <div class="investment-title">
-                <div class="number">${id}</div>
-                <h3>Investimento ${id}</h3>
-            </div>
-            <button class="btn btn-remove" onclick="removerInvestimento(${id})">Remover</button>
-        </div>
-
-        <div class="grid">
-            <div class="field">
-                <label>Nome do investimento</label>
-                <input type="text" class="nome" value="Investimento ${id}" placeholder="Ex: CDB, Entrada, Balão">
-            </div>
-
-            <div class="field">
-                <label>Valor inicial (R$)</label>
-                <input type="number" class="valorInicial" value="1000" min="0" step="0.01">
-            </div>
-
-            <div class="field">
-                <label>Aporte mensal (R$)</label>
-                <input type="number" class="aporte" value="0" min="0" step="0.01">
-            </div>
-
-            <div class="field">
-                <label>Taxa de juros (%)</label>
-                <input type="number" class="taxa" value="1" min="0" step="0.01">
-            </div>
-
-            <div class="field">
-                <label>Período</label>
-                <input type="number" class="tempo" value="10" min="1" step="1">
-            </div>
-        </div>
-    `;
-
-    document.getElementById("investimentos").appendChild(div);
-    calcular();
-}
-
-function removerInvestimento(id){
-    const elemento=document.querySelector(`.investment[data-id="${id}"]`);
-    if(elemento) elemento.remove();
-    calcular();
-}
-
-function calcularInvestimento(elemento){
-    const tipoTaxa=document.getElementById("tipoTaxaGlobal").value;
-    const tipoTempo=document.getElementById("tipoTempoGlobal").value;
-
-    const nome=elemento.querySelector(".nome").value.trim() || "Investimento";
-    const valorInicial=parseFloat(elemento.querySelector(".valorInicial").value)||0;
-    const aporte=parseFloat(elemento.querySelector(".aporte").value)||0;
-    const taxa=parseFloat(elemento.querySelector(".taxa").value)||0;
-    const tempo=parseInt(elemento.querySelector(".tempo").value)||0;
-
-    const meses=tipoTempo==="anos" ? tempo*12 : tempo;
-
-    let taxaMensal;
-
-    if(tipoTaxa==="anual"){
-        taxaMensal=Math.pow(1+taxa/100,1/12)-1;
-    }else{
-        taxaMensal=taxa/100;
-    }
-
-    let saldo=valorInicial;
-    let totalAportes=0;
-    const valores=[saldo];
-    const investidos=[valorInicial];
-
-    for(let mes=1;mes<=meses;mes++){
-        saldo += saldo*taxaMensal;
-        saldo += aporte;
-        totalAportes += aporte;
-
-        valores.push(saldo);
-        investidos.push(valorInicial+totalAportes);
-    }
-
-    const totalInvestido=valorInicial+totalAportes;
-    const jurosTotal=saldo-totalInvestido;
-
-    return {
-        nome,
-        valorInicial,
-        aporte,
-        totalAportes,
-        totalInvestido,
-        jurosTotal,
-        saldo,
-        meses,
-        valores,
-        investidos
-    };
-}
-
-function calcular(){
-    const elementos=document.querySelectorAll(".investment");
-
-    if(elementos.length===0){
-        limparResultados();
-        return;
-    }
-
-    const investimentos=[...elementos].map(calcularInvestimento);
-
-    let patrimonioTotal=0;
-    let totalInicial=0;
-    let totalAportes=0;
-    let totalInvestido=0;
-    let totalJuros=0;
-
-    investimentos.forEach(i=>{
-        patrimonioTotal += i.saldo;
-        totalInicial += i.valorInicial;
-        totalAportes += i.totalAportes;
-        totalInvestido += i.totalInvestido;
-        totalJuros += i.jurosTotal;
-    });
-
-    document.getElementById("valorFinal").textContent=moeda(patrimonioTotal);
-    document.getElementById("totalInvestido").textContent=moeda(totalInvestido);
-    document.getElementById("totalJuros").textContent=moeda(totalJuros);
-
-    criarTabelaResumo(
-        investimentos,
-        totalInicial,
-        totalAportes,
-        totalInvestido,
-        totalJuros,
-        patrimonioTotal
-    );
-
-    criarGraficoTotal(investimentos);
-    criarGraficoIndividual(investimentos);
-}
-
-function criarTabelaResumo(investimentos,totalInicial,totalAportes,totalInvestido,totalJuros,patrimonioTotal){
-    const tabela=document.getElementById("tabelaResumo");
-    tabela.innerHTML="";
-
-    investimentos.forEach(i=>{
-        const tr=document.createElement("tr");
-        tr.innerHTML=`
-            <td><strong>${escapeHtml(i.nome)}</strong></td>
-            <td>${moeda(i.valorInicial)}</td>
-            <td>${moeda(i.totalAportes)}</td>
-            <td>${moeda(i.totalInvestido)}</td>
-            <td class="juros">${moeda(i.jurosTotal)}</td>
-            <td class="final">${moeda(i.saldo)}</td>
-        `;
-        tabela.appendChild(tr);
-    });
-
-    document.getElementById("totalInicialTabela").textContent=moeda(totalInicial);
-    document.getElementById("totalAportesTabela").textContent=moeda(totalAportes);
-    document.getElementById("totalInvestidoTabela").textContent=moeda(totalInvestido);
-    document.getElementById("totalJurosTabela").textContent=moeda(totalJuros);
-    document.getElementById("totalFinalTabela").textContent=moeda(patrimonioTotal);
-}
-
-function criarGraficoTotal(investimentos){
-    if(graficoTotal) graficoTotal.destroy();
-
-    const maiorPeriodo=Math.max(...investimentos.map(i=>i.meses));
-    const labels=[];
-    const patrimonio=[];
-    const dinheiroInvestido=[];
-
-    for(let mes=0;mes<=maiorPeriodo;mes++){
-        labels.push(mes===0 ? "Inicial" : "Mês "+mes);
-
-        let total=0;
-        let investido=0;
-
-        investimentos.forEach(i=>{
-            if(mes<=i.meses){
-                total += i.valores[mes];
-                investido += i.investidos[mes];
-            }else{
-                total += i.saldo;
-                investido += i.totalInvestido;
-            }
-        });
-
-        patrimonio.push(total);
-        dinheiroInvestido.push(investido);
-    }
-
-    const ctx=document.getElementById("graficoTotal").getContext("2d");
-
-    graficoTotal=new Chart(ctx,{
-        type:"line",
-        data:{
-            labels,
-            datasets:[
-                {
-                    label:"Patrimônio total",
-                    data:patrimonio,
-                    tension:.3,
-                    fill:false
-                },
-                {
-                    label:"Total investido",
-                    data:dinheiroInvestido,
-                    tension:.3,
-                    fill:false
-                }
-            ]
-        },
-        options:{
-            responsive:true,
-            maintainAspectRatio:false,
-            interaction:{intersect:false,mode:"index"},
-            scales:{
-                y:{
-                    beginAtZero:true,
-                    ticks:{
-                        callback:value=>moeda(value)
-                    }
-                },
-                x:{
-                    ticks:{
-                        maxTicksLimit:8
-                    }
-                }
-            },
-            plugins:{
-                tooltip:{
-                    callbacks:{
-                        label:context=>context.dataset.label+": "+moeda(context.raw)
-                    }
-                }
-            }
-        }
-    });
-}
-
-function criarGraficoIndividual(investimentos){
-    if(graficoIndividual) graficoIndividual.destroy();
-
-    const maiorPeriodo=Math.max(...investimentos.map(i=>i.meses));
-    const labels=[];
-
-    for(let mes=0;mes<=maiorPeriodo;mes++){
-        labels.push(mes===0 ? "Inicial" : "Mês "+mes);
-    }
-
-    const datasets=investimentos.map(i=>{
-        const dados=[];
-
-        for(let mes=0;mes<=maiorPeriodo;mes++){
-            dados.push(mes<=i.meses ? i.valores[mes] : i.saldo);
-        }
-
-        return {
-            label:i.nome,
-            data:dados,
-            tension:.3,
-            fill:false
-        };
-    });
-
-    const ctx=document.getElementById("graficoIndividual").getContext("2d");
-
-    graficoIndividual=new Chart(ctx,{
-        type:"line",
-        data:{labels,datasets},
-        options:{
-            responsive:true,
-            maintainAspectRatio:false,
-            interaction:{intersect:false,mode:"index"},
-            scales:{
-                y:{
-                    beginAtZero:true,
-                    ticks:{
-                        callback:value=>moeda(value)
-                    }
-                },
-                x:{
-                    ticks:{
-                        maxTicksLimit:8
-                    }
-                }
-            },
-            plugins:{
-                tooltip:{
-                    callbacks:{
-                        label:context=>context.dataset.label+": "+moeda(context.raw)
-                    }
-                }
-            }
-        }
-    });
-}
-
-function limparResultados(){
-    document.getElementById("valorFinal").textContent=moeda(0);
-    document.getElementById("totalInvestido").textContent=moeda(0);
-    document.getElementById("totalJuros").textContent=moeda(0);
-    document.getElementById("tabelaResumo").innerHTML="";
-    document.getElementById("totalInicialTabela").textContent=moeda(0);
-    document.getElementById("totalAportesTabela").textContent=moeda(0);
-    document.getElementById("totalInvestidoTabela").textContent=moeda(0);
-    document.getElementById("totalJurosTabela").textContent=moeda(0);
-    document.getElementById("totalFinalTabela").textContent=moeda(0);
-
-    if(graficoTotal){
-        graficoTotal.destroy();
-        graficoTotal=null;
-    }
-
-    if(graficoIndividual){
-        graficoIndividual.destroy();
-        graficoIndividual=null;
-    }
-}
-
-document.getElementById("tipoTaxaGlobal").addEventListener("change",calcular);
-document.getElementById("tipoTempoGlobal").addEventListener("change",calcular);
-
-adicionarInvestimento();
-</script>
 
 </body>
+
 </html>

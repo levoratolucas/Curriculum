@@ -1,6 +1,6 @@
 /* =========================================================
-   JUROS — FINANCIAL APP
-   script.js
+   LEVORATECH — JUROS
+   FINANCIAL SIMULATOR
    ========================================================= */
 
 
@@ -156,14 +156,18 @@ function formatarNumero(valor) {
 function obterNumero(elemento) {
 
     if (!elemento) {
+
         return 0;
+
     }
+
 
     const valor =
         Number(
             String(elemento.value)
                 .replace(",", ".")
         );
+
 
     return Number.isFinite(valor)
         ? valor
@@ -202,10 +206,15 @@ function esconderMensagem() {
 function limparErros() {
 
     [
+
         elements.capitalInicial,
+
         elements.aporteMensal,
+
         elements.taxaJuros,
+
         elements.periodo
+
     ].forEach(elemento => {
 
         elemento
@@ -474,54 +483,34 @@ function calcularSimples(
          */
         const jurosCapital =
             capital *
-            taxaDecimal *
-            mes;
+            taxaDecimal;
 
 
         /*
-         * Cada aporte permanece
-         * investido pelo tempo restante.
+         * Cada aporte realizado em um
+         * determinado mês permanece
+         * investido nos meses seguintes.
+         *
+         * Para o mês atual, os aportes
+         * anteriores geram juros simples.
          */
-        let jurosAportes = 0;
-
-
-        for (
-            let i = 1;
-            i < mes;
-            i++
-        ) {
-
-            jurosAportes +=
-                aporte *
-                taxaDecimal *
-                i;
-
-        }
+        const jurosAportes =
+            aporte *
+            taxaDecimal *
+            (mes - 1);
 
 
         const juros =
-            (
-                capital *
-                taxaDecimal
-            )
-            +
-            (
-                aporte *
-                taxaDecimal *
-                (mes - 1)
-            );
-
-
-        /*
-         * Mantemos o cálculo mensal
-         * simples e acumulativo.
-         */
-        totalInvestido =
-            capital +
-            (aporte * mes);
+            jurosCapital +
+            jurosAportes;
 
 
         totalJuros += juros;
+
+
+        totalInvestido =
+            capital +
+            (aporte * mes);
 
 
         const saldo =
@@ -568,7 +557,7 @@ function calcularSimples(
 
 
 /* =========================================================
-   SIMULAÇÃO
+   CRIAR SIMULAÇÃO
    ========================================================= */
 
 function criarSimulacao() {
@@ -676,9 +665,6 @@ function animarNumero(
             );
 
 
-        /*
-         * Ease out cubic.
-         */
         const easing =
             1 -
             Math.pow(
@@ -819,6 +805,11 @@ function atualizarIndicadores(
     );
 
 
+    /*
+     * A barra representa visualmente
+     * o crescimento. Limitamos em 100%
+     * para não estourar a interface.
+     */
     const progresso =
         Math.min(
             100,
@@ -840,13 +831,15 @@ function atualizarIndicadores(
 
 
 /* =========================================================
-   REVELAR RESULTADOS
+   REVELAR SEÇÃO
    ========================================================= */
 
 function revelarSecao(elemento) {
 
     if (!elemento) {
+
         return;
+
     }
 
 
@@ -855,9 +848,6 @@ function revelarSecao(elemento) {
     );
 
 
-    /*
-     * Reinicia a animação.
-     */
     elemento.classList.remove(
         "reveal"
     );
@@ -909,9 +899,9 @@ function atualizarTabela(
 
 
     /*
-     * Em períodos muito grandes,
-     * mostramos somente os últimos
-     * 120 meses para manter a interface
+     * Se a simulação tiver muitos anos,
+     * limitamos a quantidade de linhas
+     * exibidas para manter a interface
      * leve.
      */
     const dadosExibidos =
@@ -965,7 +955,7 @@ function atualizarTabela(
 
 
 /* =========================================================
-   CHART CONFIG
+   CONFIGURAÇÕES DO CHART
    ========================================================= */
 
 function opcoesGrafico() {
@@ -1007,7 +997,9 @@ function opcoesGrafico() {
                     padding: 18,
 
                     font: {
+
                         size: 10
+
                     }
 
                 }
@@ -1064,7 +1056,9 @@ function opcoesGrafico() {
                     color: "#536174",
 
                     font: {
+
                         size: 9
+
                     },
 
                     maxTicksLimit: 10
@@ -1091,7 +1085,9 @@ function opcoesGrafico() {
                     color: "#536174",
 
                     font: {
+
                         size: 9
+
                     },
 
                     callback(valor) {
@@ -1269,6 +1265,7 @@ function atualizarGraficoTotal(
                     opcoesGrafico()
 
             }
+
         );
 
 }
@@ -1393,6 +1390,7 @@ function atualizarGraficoJuros(
                     opcoesGrafico()
 
             }
+
         );
 
 }
@@ -1421,10 +1419,6 @@ async function atualizarInterface(
     );
 
 
-    /*
-     * Pequeno intervalo para que a
-     * entrada das seções fique natural.
-     */
     await esperar(80);
 
 
@@ -1471,7 +1465,7 @@ async function atualizarInterface(
 
 
 /* =========================================================
-   HELPER DELAY
+   DELAY
    ========================================================= */
 
 function esperar(ms) {
@@ -1517,8 +1511,8 @@ async function executarCalculo() {
 
 
     /*
-     * Pequeno delay proposital para
-     * deixar a interação mais natural.
+     * Pequeno delay para proporcionar
+     * feedback visual ao usuário.
      */
     await esperar(220);
 
@@ -1554,7 +1548,7 @@ async function executarCalculo() {
 
     /*
      * No celular, leva o usuário
-     * suavemente aos resultados.
+     * suavemente até os resultados.
      */
     if (
         window.innerWidth <= 700
@@ -1564,8 +1558,11 @@ async function executarCalculo() {
 
 
         elements.resultados.scrollIntoView({
+
             behavior: "smooth",
+
             block: "start"
+
         });
 
     }
@@ -1574,7 +1571,7 @@ async function executarCalculo() {
 
 
 /* =========================================================
-   RESET
+   LIMPAR SIMULAÇÃO
    ========================================================= */
 
 function limparSimulacao() {
@@ -1596,34 +1593,41 @@ function limparSimulacao() {
     esconderMensagem();
 
 
-    /*
-     * Valores padrão.
-     */
     elements.totalInvestido.textContent =
         "R$ 0,00";
+
 
     elements.totalJuros.textContent =
         "R$ 0,00";
 
+
     elements.valorFinal.textContent =
         "R$ 0,00";
 
+
     elements.percentualCrescimento.textContent =
         "0%";
+
 
     elements.barraCrescimento.style.width =
         "0%";
 
 
     /*
-     * Esconde resultados.
+     * Esconde os resultados.
      */
     [
+
         elements.resultados,
+
         elements.secaoGrafico,
+
         elements.secaoJuros,
+
         elements.secaoTabela,
+
         elements.secaoInfo
+
     ].forEach(elemento => {
 
         elemento.classList.add(
@@ -1638,7 +1642,7 @@ function limparSimulacao() {
 
 
     /*
-     * Destrói gráficos.
+     * Destrói os gráficos.
      */
     if (graficoTotal) {
 
@@ -1684,7 +1688,7 @@ function limparSimulacao() {
 
 
 /* =========================================================
-   ENTER
+   ENTER PARA CALCULAR
    ========================================================= */
 
 function configurarEnter() {
@@ -1727,7 +1731,7 @@ function configurarEnter() {
 
 
 /* =========================================================
-   INPUT FEEDBACK
+   FEEDBACK DOS INPUTS
    ========================================================= */
 
 function configurarInputs() {
@@ -1788,17 +1792,19 @@ function inicializar() {
 
 
     /*
-     * Valores iniciais para tornar
-     * o app mais convidativo.
+     * Valores iniciais.
      */
     elements.capitalInicial.value =
         "1000";
 
+
     elements.aporteMensal.value =
         "300";
 
+
     elements.taxaJuros.value =
         "1";
+
 
     elements.periodo.value =
         "24";
@@ -1808,6 +1814,9 @@ function inicializar() {
         "compostos";
 
 
+    /*
+     * Eventos.
+     */
     elements.btnCalcular.addEventListener(
         "click",
         executarCalculo

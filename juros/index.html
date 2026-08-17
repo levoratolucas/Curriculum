@@ -2,29 +2,67 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
     <meta
         name="theme-color"
-        content="#05080d"
+        content="#080b12"
     >
 
     <meta
         name="description"
-        content="Juros — simulador financeiro da LevoraTech."
+        content="Simulador financeiro de juros da LevoraTech."
+    >
+
+    <!-- PWA -->
+    <link
+        rel="manifest"
+        href="./manifest.json"
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    >
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="LevoraTech"
+    >
+
+    <!-- Ícone -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="./icons/icon-192.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="./icons/icon-192.png"
     >
 
     <title>Juros — LevoraTech</title>
 
+    <!-- CSS -->
     <link
         rel="stylesheet"
-        href="style.css"
+        href="./style.css"
     >
 
     <!-- Chart.js -->
@@ -33,811 +71,736 @@
         defer
     ></script>
 
+    <!-- Aplicação -->
     <script
-        src="script.js"
+        src="./script.js"
         defer
     ></script>
-
 </head>
-
 
 <body>
 
-<div class="app">
+    <div class="app">
 
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
+        <header class="app-header">
 
-    <header class="app-header">
+            <div class="header-content">
 
-        <div class="header-content">
+                <a
+                    href="#"
+                    class="brand"
+                    aria-label="LevoraTech — Juros"
+                >
 
-            <a
-                href="#"
-                class="brand"
-                aria-label="LevoraTech — Juros"
-            >
+                    <div class="brand-icon">
+                        <span>L</span>
+                    </div>
 
-                <div class="brand-icon">
-                    <span>L</span>
-                </div>
+                    <div class="brand-info">
 
-                <div class="brand-info">
+                        <strong class="brand-company">
+                            LEVORA<span>TECH</span>
+                        </strong>
 
-                    <strong class="brand-company">
-                        LEVORA<span>TECH</span>
-                    </strong>
+                        <div class="brand-product">
 
-                    <div class="brand-product">
+                            <span class="brand-product-name">
+                                JUROS
+                            </span>
 
-                        <span class="brand-product-name">
-                            JUROS
-                        </span>
+                            <span class="brand-separator">
+                                /
+                            </span>
 
-                        <span class="brand-separator">
-                            /
-                        </span>
+                            <span class="brand-subtitle">
+                                Financial Simulator
+                            </span>
 
-                        <span class="brand-subtitle">
-                            Financial Simulator
-                        </span>
+                        </div>
 
                     </div>
 
-                </div>
+                </a>
 
-            </a>
+                <div class="header-status">
 
-
-            <div class="header-status">
-
-                <span class="status-dot"></span>
-
-                <span>
-                    SIMULADOR ONLINE
-                </span>
-
-            </div>
-
-        </div>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         MAIN
-         ===================================================== -->
-
-    <main class="app-main">
-
-
-        <!-- =================================================
-             HERO
-             ================================================= -->
-
-        <section class="hero">
-
-            <div class="hero-content">
-
-                <div class="hero-badge">
-
-                    <span class="hero-badge-dot"></span>
+                    <span class="status-dot"></span>
 
                     <span>
-                        LEVORATECH / FINANCE
+                        SIMULADOR ONLINE
                     </span>
 
                 </div>
 
-
-                <h1>
-
-                    Faça seu dinheiro
-                    <span>crescer.</span>
-
-                </h1>
-
-
-                <p>
-
-                    Simule investimentos, visualize a evolução
-                    do seu patrimônio e entenda o impacto dos
-                    juros ao longo do tempo.
-
-                </p>
-
             </div>
 
-        </section>
+        </header>
 
 
+        <!-- =====================================================
+             MAIN
+        ====================================================== -->
 
-        <!-- =================================================
-             CALCULADORA
-             ================================================= -->
+        <main class="app-main">
 
-        <section
-            class="calculator-section"
-            id="calculadora"
-        >
+            <!-- HERO -->
 
-            <div class="section-header">
+            <section class="hero">
 
-                <div>
+                <div class="hero-content">
 
-                    <span class="section-label">
-                        01 / SIMULAÇÃO
-                    </span>
+                    <div class="hero-badge">
 
-                    <h2>
-                        Configure seu investimento
-                    </h2>
+                        <span class="hero-badge-dot"></span>
 
-                </div>
-
-            </div>
-
-
-            <div class="calculator-card">
-
-
-                <!-- CAPITAL + APORTE -->
-
-                <div class="field-row">
-
-                    <div class="field-group">
-
-                        <label for="capitalInicial">
-                            Capital inicial
-                        </label>
-
-                        <div class="input-wrapper">
-
-                            <span class="input-prefix">
-                                R$
-                            </span>
-
-                            <input
-                                id="capitalInicial"
-                                type="number"
-                                inputmode="decimal"
-                                min="0"
-                                step="0.01"
-                                placeholder="1.000,00"
-                                autocomplete="off"
-                            >
-
-                        </div>
-
-                        <span class="field-help">
-                            Valor aplicado inicialmente.
+                        <span>
+                            LEVORATECH / FINANCE
                         </span>
 
                     </div>
 
-
-                    <div class="field-group">
-
-                        <label for="aporteMensal">
-                            Aporte mensal
-                        </label>
-
-                        <div class="input-wrapper">
-
-                            <span class="input-prefix">
-                                R$
-                            </span>
-
-                            <input
-                                id="aporteMensal"
-                                type="number"
-                                inputmode="decimal"
-                                min="0"
-                                step="0.01"
-                                placeholder="300,00"
-                                autocomplete="off"
-                            >
-
-                        </div>
-
-                        <span class="field-help">
-                            Quanto você adicionará por mês.
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- TAXA + PERÍODO -->
-
-                <div class="field-row">
-
-                    <div class="field-group">
-
-                        <label for="taxaJuros">
-                            Taxa de juros
-                        </label>
-
-                        <div class="input-wrapper">
-
-                            <input
-                                id="taxaJuros"
-                                type="number"
-                                inputmode="decimal"
-                                min="0"
-                                step="0.01"
-                                placeholder="1,00"
-                                autocomplete="off"
-                            >
-
-                            <span class="input-suffix">
-                                % a.m.
-                            </span>
-
-                        </div>
-
-                        <span class="field-help">
-                            Taxa aplicada mensalmente.
-                        </span>
-
-                    </div>
-
-
-                    <div class="field-group">
-
-                        <label for="periodo">
-                            Período
-                        </label>
-
-                        <div class="input-wrapper">
-
-                            <input
-                                id="periodo"
-                                type="number"
-                                inputmode="numeric"
-                                min="1"
-                                step="1"
-                                placeholder="24"
-                                autocomplete="off"
-                            >
-
-                            <span class="input-suffix">
-                                meses
-                            </span>
-
-                        </div>
-
-                        <span class="field-help">
-                            Tempo total da simulação.
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- TIPO DE JUROS -->
-
-                <div class="field-group">
-
-                    <label for="tipoJuros">
-                        Modelo de juros
-                    </label>
-
-                    <div class="select-wrapper">
-
-                        <select id="tipoJuros">
-
-                            <option value="compostos">
-                                Juros compostos
-                            </option>
-
-                            <option value="simples">
-                                Juros simples
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- MENSAGEM -->
-
-                <div
-                    class="form-message"
-                    id="formMessage"
-                    role="alert"
-                    aria-live="polite"
-                ></div>
-
-
-
-                <!-- ACTIONS -->
-
-                <div class="calculator-actions">
-
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        id="btnCalcular"
-                    >
-
-                        <span class="btn-spinner"></span>
-
-                        <span class="btn-icon">
-                            →
-                        </span>
-
-                        <span class="btn-text">
-                            Calcular simulação
-                        </span>
-
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="btn btn-secondary"
-                        id="btnLimpar"
-                    >
-                        Limpar
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             RESULTADOS
-             ================================================= -->
-
-        <section
-            class="results-section is-hidden"
-            id="resultados"
-        >
-
-            <div class="section-header">
-
-                <div>
-
-                    <span class="section-label">
-                        02 / RESULTADO
-                    </span>
-
-                    <h2>
-                        Seu patrimônio projetado
-                    </h2>
-
-                </div>
-
-            </div>
-
-
-            <!-- METRICS -->
-
-            <div class="metrics-grid">
-
-
-                <article class="metric-card">
-
-                    <div class="metric-header">
-
-                        <span class="metric-label">
-                            Total investido
-                        </span>
-
-                        <span class="metric-icon">
-                            $
-                        </span>
-
-                    </div>
-
-                    <div
-                        class="metric-value"
-                        id="totalInvestido"
-                    >
-                        R$ 0,00
-                    </div>
-
-                    <div class="metric-description">
-                        Capital + aportes
-                    </div>
-
-                </article>
-
-
-
-                <article class="metric-card metric-highlight">
-
-                    <div class="metric-header">
-
-                        <span class="metric-label">
-                            Juros acumulados
-                        </span>
-
-                        <span class="metric-icon">
-                            %
-                        </span>
-
-                    </div>
-
-                    <div
-                        class="metric-value"
-                        id="totalJuros"
-                    >
-                        R$ 0,00
-                    </div>
-
-                    <div class="metric-description">
-                        Ganho gerado pelos juros
-                    </div>
-
-                </article>
-
-
-
-                <article class="metric-card metric-total">
-
-                    <div class="metric-header">
-
-                        <span class="metric-label">
-                            Patrimônio final
-                        </span>
-
-                        <span class="metric-icon">
-                            ↗
-                        </span>
-
-                    </div>
-
-                    <div
-                        class="metric-value"
-                        id="valorFinal"
-                    >
-                        R$ 0,00
-                    </div>
-
-                    <div class="metric-description">
-                        Valor projetado ao final
-                    </div>
-
-                </article>
-
-            </div>
-
-
-
-            <!-- CRESCIMENTO -->
-
-            <div class="growth-card">
-
-                <div class="growth-header">
-
-                    <div>
-
-                        <span class="growth-label">
-                            Crescimento sobre o capital investido
-                        </span>
-
-                        <h3>
-                            Potencial de crescimento
-                        </h3>
-
-                    </div>
-
-                    <strong
-                        class="growth-percentage"
-                        id="percentualCrescimento"
-                    >
-                        0%
-                    </strong>
-
-                </div>
-
-
-                <div class="growth-bar">
-
-                    <div
-                        class="growth-bar-fill"
-                        id="barraCrescimento"
-                    ></div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             GRÁFICO PRINCIPAL
-             ================================================= -->
-
-        <section
-            class="chart-section is-hidden"
-            id="secaoGrafico"
-        >
-
-            <div class="section-header">
-
-                <div>
-
-                    <span class="section-label">
-                        03 / EVOLUÇÃO
-                    </span>
-
-                    <h2>
-                        Crescimento do patrimônio
-                    </h2>
-
-                </div>
-
-            </div>
-
-
-            <div class="chart-card">
-
-                <div class="chart-header">
-
-                    <div>
-
-                        <span class="chart-title">
-                            Patrimônio ao longo do tempo
-                        </span>
-
-                        <span class="chart-description">
-                            Comparação entre patrimônio e capital investido.
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="chart-container">
-
-                    <canvas id="graficoTotal"></canvas>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             GRÁFICO DE JUROS
-             ================================================= -->
-
-        <section
-            class="chart-section is-hidden"
-            id="secaoJuros"
-        >
-
-            <div class="section-header">
-
-                <div>
-
-                    <span class="section-label">
-                        04 / JUROS
-                    </span>
-
-                    <h2>
-                        Efeito dos juros
-                    </h2>
-
-                </div>
-
-            </div>
-
-
-            <div class="chart-card">
-
-                <div class="chart-header">
-
-                    <div>
-
-                        <span class="chart-title">
-                            Juros acumulados
-                        </span>
-
-                        <span class="chart-description">
-                            Quanto o rendimento representa ao longo do período.
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="chart-container">
-
-                    <canvas id="graficoIndividual"></canvas>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             TABELA
-             ================================================= -->
-
-        <section
-            class="table-section is-hidden"
-            id="secaoTabela"
-        >
-
-            <div class="section-header">
-
-                <div>
-
-                    <span class="section-label">
-                        05 / DETALHAMENTO
-                    </span>
-
-                    <h2>
-                        Evolução mensal
-                    </h2>
-
-                </div>
-
-            </div>
-
-
-            <div class="table-card">
-
-                <div class="table-wrapper">
-
-                    <table>
-
-                        <thead>
-
-                            <tr>
-
-                                <th>
-                                    Período
-                                </th>
-
-                                <th>
-                                    Aporte
-                                </th>
-
-                                <th>
-                                    Juros
-                                </th>
-
-                                <th>
-                                    Investido
-                                </th>
-
-                                <th>
-                                    Patrimônio
-                                </th>
-
-                            </tr>
-
-                        </thead>
-
-
-                        <tbody id="tabelaResumo">
-
-                            <tr>
-
-                                <td colspan="5">
-
-                                    <div class="table-empty">
-                                        Faça uma simulação para visualizar os dados.
-                                    </div>
-
-                                </td>
-
-                            </tr>
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             INFORMAÇÕES
-             ================================================= -->
-
-        <section
-            class="info-section is-hidden"
-            id="secaoInfo"
-        >
-
-            <div class="info-card">
-
-                <div class="info-icon">
-                    i
-                </div>
-
-                <div class="info-content">
-
-                    <h3>
-                        Sobre esta simulação
-                    </h3>
-
-                    <p id="infoTexto">
-
-                        Os valores apresentados são projeções matemáticas
-                        baseadas nos parâmetros informados. Rentabilidade
-                        real pode variar e investimentos estão sujeitos a
-                        riscos.
-
+                    <h1>
+                        Faça seu dinheiro
+                        <span>crescer.</span>
+                    </h1>
+
+                    <p>
+                        Simule investimentos, visualize a evolução
+                        do seu patrimônio e entenda o impacto dos
+                        juros ao longo do tempo.
                     </p>
 
                 </div>
 
+            </section>
+
+
+            <!-- CALCULADORA -->
+
+            <section
+                class="calculator-section"
+                id="calculadora"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            01 / SIMULAÇÃO
+                        </span>
+
+                        <h2>
+                            Configure seu investimento
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="calculator-card">
+
+                    <!-- CAPITAL + APORTE -->
+
+                    <div class="field-row">
+
+                        <div class="field-group">
+
+                            <label for="capitalInicial">
+                                Capital inicial
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-prefix">
+                                    R$
+                                </span>
+
+                                <input
+                                    id="capitalInicial"
+                                    type="number"
+                                    inputmode="decimal"
+                                    min="0"
+                                    step="0.01"
+                                    placeholder="1.000,00"
+                                    autocomplete="off"
+                                >
+
+                            </div>
+
+                            <span class="field-help">
+                                Valor aplicado inicialmente.
+                            </span>
+
+                        </div>
+
+
+                        <div class="field-group">
+
+                            <label for="aporteMensal">
+                                Aporte mensal
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-prefix">
+                                    R$
+                                </span>
+
+                                <input
+                                    id="aporteMensal"
+                                    type="number"
+                                    inputmode="decimal"
+                                    min="0"
+                                    step="0.01"
+                                    placeholder="300,00"
+                                    autocomplete="off"
+                                >
+
+                            </div>
+
+                            <span class="field-help">
+                                Quanto você adicionará por mês.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TAXA + PERÍODO -->
+
+                    <div class="field-row">
+
+                        <div class="field-group">
+
+                            <label for="taxaJuros">
+                                Taxa de juros
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    id="taxaJuros"
+                                    type="number"
+                                    inputmode="decimal"
+                                    min="0"
+                                    step="0.01"
+                                    placeholder="1,00"
+                                    autocomplete="off"
+                                >
+
+                                <span class="input-suffix">
+                                    % a.m.
+                                </span>
+
+                            </div>
+
+                            <span class="field-help">
+                                Taxa aplicada mensalmente.
+                            </span>
+
+                        </div>
+
+
+                        <div class="field-group">
+
+                            <label for="periodo">
+                                Período
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    id="periodo"
+                                    type="number"
+                                    inputmode="numeric"
+                                    min="1"
+                                    step="1"
+                                    placeholder="24"
+                                    autocomplete="off"
+                                >
+
+                                <span class="input-suffix">
+                                    meses
+                                </span>
+
+                            </div>
+
+                            <span class="field-help">
+                                Tempo total da simulação.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TIPO DE JUROS -->
+
+                    <div class="field-group">
+
+                        <label for="tipoJuros">
+                            Modelo de juros
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <select id="tipoJuros">
+
+                                <option value="compostos">
+                                    Juros compostos
+                                </option>
+
+                                <option value="simples">
+                                    Juros simples
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MENSAGEM -->
+
+                    <div
+                        class="form-message"
+                        id="formMessage"
+                        role="alert"
+                        aria-live="polite"
+                    ></div>
+
+
+                    <!-- ACTIONS -->
+
+                    <div class="calculator-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="btnCalcular"
+                        >
+
+                            <span class="btn-spinner"></span>
+
+                            <span class="btn-icon">
+                                →
+                            </span>
+
+                            <span class="btn-text">
+                                Calcular simulação
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="btnLimpar"
+                        >
+                            Limpar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESULTADOS -->
+
+            <section
+                class="results-section is-hidden"
+                id="resultados"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            02 / RESULTADO
+                        </span>
+
+                        <h2>
+                            Seu patrimônio projetado
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="metrics-grid">
+
+                    <article class="metric-card">
+
+                        <div class="metric-header">
+
+                            <span class="metric-label">
+                                Total investido
+                            </span>
+
+                            <span class="metric-icon">
+                                $
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="metric-value"
+                            id="totalInvestido"
+                        >
+                            R$ 0,00
+                        </div>
+
+                        <div class="metric-description">
+                            Capital + aportes
+                        </div>
+
+                    </article>
+
+
+                    <article class="metric-card metric-highlight">
+
+                        <div class="metric-header">
+
+                            <span class="metric-label">
+                                Juros acumulados
+                            </span>
+
+                            <span class="metric-icon">
+                                %
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="metric-value"
+                            id="totalJuros"
+                        >
+                            R$ 0,00
+                        </div>
+
+                        <div class="metric-description">
+                            Ganho gerado pelos juros
+                        </div>
+
+                    </article>
+
+
+                    <article class="metric-card metric-total">
+
+                        <div class="metric-header">
+
+                            <span class="metric-label">
+                                Patrimônio final
+                            </span>
+
+                            <span class="metric-icon">
+                                ↗
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="metric-value"
+                            id="valorFinal"
+                        >
+                            R$ 0,00
+                        </div>
+
+                        <div class="metric-description">
+                            Valor projetado ao final
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- CRESCIMENTO -->
+
+                <div class="growth-card">
+
+                    <div class="growth-header">
+
+                        <div>
+
+                            <span class="growth-label">
+                                Crescimento sobre o capital investido
+                            </span>
+
+                            <h3>
+                                Potencial de crescimento
+                            </h3>
+
+                        </div>
+
+                        <strong
+                            class="growth-percentage"
+                            id="percentualCrescimento"
+                        >
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="growth-bar">
+                        <div
+                            class="growth-bar-fill"
+                            id="barraCrescimento"
+                        ></div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- GRÁFICO PRINCIPAL -->
+
+            <section
+                class="chart-section is-hidden"
+                id="secaoGrafico"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            03 / EVOLUÇÃO
+                        </span>
+
+                        <h2>
+                            Crescimento do patrimônio
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <div>
+
+                            <span class="chart-title">
+                                Patrimônio ao longo do tempo
+                            </span>
+
+                            <span class="chart-description">
+                                Comparação entre patrimônio e capital investido.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-container">
+
+                        <canvas id="graficoTotal"></canvas>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- GRÁFICO DE JUROS -->
+
+            <section
+                class="chart-section is-hidden"
+                id="secaoJuros"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            04 / JUROS
+                        </span>
+
+                        <h2>
+                            Efeito dos juros
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <div>
+
+                            <span class="chart-title">
+                                Juros acumulados
+                            </span>
+
+                            <span class="chart-description">
+                                Quanto o rendimento representa ao longo do período.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-container">
+
+                        <canvas id="graficoIndividual"></canvas>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- TABELA -->
+
+            <section
+                class="table-section is-hidden"
+                id="secaoTabela"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            05 / DETALHAMENTO
+                        </span>
+
+                        <h2>
+                            Evolução mensal
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-card">
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Período</th>
+                                    <th>Aporte</th>
+                                    <th>Juros</th>
+                                    <th>Investido</th>
+                                    <th>Patrimônio</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="tabelaResumo">
+
+                                <tr>
+
+                                    <td colspan="5">
+
+                                        <div class="table-empty">
+                                            Faça uma simulação para visualizar os dados.
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- INFORMAÇÕES -->
+
+            <section
+                class="info-section is-hidden"
+                id="secaoInfo"
+            >
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        i
+                    </div>
+
+                    <div class="info-content">
+
+                        <h3>
+                            Sobre esta simulação
+                        </h3>
+
+                        <p id="infoTexto">
+                            Os valores apresentados são projeções matemáticas
+                            baseadas nos parâmetros informados. Rentabilidade
+                            real pode variar e investimentos estão sujeitos a
+                            riscos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer class="app-footer">
+
+            <div class="footer-content">
+
+                <span class="footer-brand">
+                    LEVORA<span>TECH</span>
+                </span>
+
+                <span class="footer-divider"></span>
+
+                <span class="footer-text">
+                    JUROS · Financial Simulator
+                </span>
+
             </div>
 
-        </section>
+            <div class="footer-tech">
+                <span></span>
+                BUILT BY LEVORATECH
+            </div>
 
+        </footer>
 
-    </main>
-
-
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
-    <footer class="app-footer">
-
-        <div class="footer-content">
-
-            <span class="footer-brand">
-                LEVORA<span>TECH</span>
-            </span>
-
-            <span class="footer-divider"></span>
-
-            <span class="footer-text">
-                JUROS · Financial Simulator
-            </span>
-
-        </div>
-
-
-        <div class="footer-tech">
-
-            <span></span>
-
-            BUILT BY LEVORATECH
-
-        </div>
-
-    </footer>
-
-
-</div>
+    </div>
 
 </body>
 

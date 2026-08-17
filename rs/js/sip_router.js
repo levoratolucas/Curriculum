@@ -58,19 +58,37 @@ function loadContent(type) {
 
         case "4gt_6gt_ipv6":
             workspace.innerHTML = `
-                <div class="formulario">
-                    <h2>4gt_6gt_ipv6</h2>
-                    
-                    <label>LOOPBACK IPV6:</label>
-                    <input type="text" id="loopback_ipv6" placeholder=":2001:12e0:f00f:ff80::bff/128">
-                    
+        <div class="formulario">
+            <h2>4gt_6gt_ipv6</h2>
 
-                    <button onclick="gerarScript4Gt6GtIpv6()">Gerar</button>
-                </div>
-                <div class="terminal">
-                    <p id="output">4gt_6gt_ipv6</p>
-                </div>
-            `;
+            <label>LOOPBACK IPV6:</label>
+            <input 
+                type="text" 
+                id="loopback_ipv6" 
+                placeholder="2001:12e0:f00f:ff80::bff/128"
+            >
+
+            <label>WAN IPV6:</label>
+            <input 
+                type="text" 
+                id="wan_ipv6" 
+                placeholder="2001:12e0:f00f:ff00::191f/127"
+            >
+
+            <label>VLAN:</label>
+            <input 
+                type="text" 
+                id="vlan_ipv6" 
+                placeholder="2422"
+            >
+
+            <button onclick="gerarScript4Gt6GtIpv6()">Gerar</button>
+        </div>
+
+        <div class="terminal">
+            <p id="output">4gt_6gt_ipv6</p>
+        </div>
+    `;
             break;
 
         case "aligera":
@@ -263,32 +281,179 @@ save
 
 
 
-
-
 function gerarScript4Gt6GtIpv6() {
-    const loopback = document.getElementById("loopback_ipv6").value;
 
-    const [loopbackParts, prefixo] = loopback.split("/");
+    const loopback = document.getElementById("loopback_ipv6").value.trim();
+    const wan_ipv6 = document.getElementById("wan_ipv6").value.trim();
+    const vlan = document.getElementById("vlan_ipv6").value.trim();
 
+    // Validação
+    if (!loopback || !wan_ipv6 || !vlan) {
+        alert("Preencha a Loopback IPv6, WAN IPv6 e VLAN.");
+        return;
+    }
+
+    // Separa IP e prefixo
+    const [loopbackAddress, prefixoLoopback] = loopback.split("/");
+    const [wanAddress, prefixoWan] = wan_ipv6.split("/");
+
+    if (!prefixoLoopback || !prefixoWan) {
+        alert("Informe os IPv6 com prefixo. Exemplo: 2001:12e0:f00f:ff00::191f/127");
+        return;
+    }
+
+    /*
+     * Converte IPv6 para BigInt
+     */
+    function ipv6ToBigInt(ip) {
+
+        let partes = ip.split("::");
+
+        let esquerda = partes[0] ? partes[0].split(":") : [];
+        let direita = partes[1] ? partes[1].split(":") : [];
+
+        // IPv6 completo possui 8 blocos
+        const faltantes = 8 - esquerda.length - direita.length;
+
+        const blocos = [
+            ...esquerda,
+            ...Array(faltantes).fill("0"),
+            ...direita
+        ];
+
+        if (blocos.length !== 8) {
+            throw new Error("IPv6 inválido.");
+        }
+
+        let resultado = 0n;
+
+        for (const bloco of blocos) {
+            resultado = (resultado << 16n) + BigInt(parseInt(bloco || "0", 16));
+        }
+
+        return resultado;
+    }
+
+    /*
+     * Converte BigInt para IPv6
+     */
+    function bigIntToIpv6(valor) {
+
+        const blocos = [];
+
+        for (let i = 0; i < 8; i++) {
+            blocos.unshift(
+                Number(valor & 0xffffn).toString(16)
+            );
+
+            valor >>= 16n;
+        }
+
+        // Comprimi a maior sequência de zeros
+        let melhorInicio = -1;
+        let melhorTamanho = 0;
+
+        let inicioAtual = -1;
+        let tamanhoAtual = 0;
+
+        for (let i = 0; i <= 8; i++) {
+
+            if (i < 8 && blocos[i] === "0") {
+
+                if (inicioAtual === -1) {
+                    inicioAtual = i;
+                    tamanhoAtual = 1;
+                } else {
+                    tamanhoAtual++;
+                }
+
+            } else {
+
+                if (tamanhoAtual > melhorTamanho) {
+                    melhorInicio = inicioAtual;
+                    melhorTamanho = tamanhoAtual;
+                }
+
+                inicioAtual = -1;
+                tamanhoAtual = 0;
+            }
+        }
+
+        if (melhorTamanho >= 2) {
+
+            const antes = blocos.slice(0, melhorInicio).join(":");
+            const depois = blocos
+                .slice(melhorInicio + melhorTamanho)
+                .join(":");
+
+            if (antes && depois) {
+                return `${antes}::${depois}`;
+            }
+
+            if (antes) {
+                return `${antes}::`;
+            }
+
+            if (depois) {
+                return `::${depois}`;
+            }
+
+            return "::";
+        }
+
+        return blocos.join(":");
+    }
+
+    /*
+     * WAN informada = NEXT-HOP
+     *
+     * Exemplo:
+     *
+     * WAN:
+     * 2001:12e0:f00f:ff00::191f/127
+     *
+     * Interface:
+     * 2001:12e0:f00f:ff00::1920/127
+     */
+
+    let wanBigInt;
+
+    try {
+        wanBigInt = ipv6ToBigInt(wanAddress);
+    } catch (erro) {
+        alert("WAN IPv6 inválida.");
+        return;
+    }
+
+    // Próximo IPv6
+    const interfaceBigInt = wanBigInt + 1n;
+
+    const interfaceAddress = bigIntToIpv6(interfaceBigInt);
+
+    // Gera configuração
     const output = document.getElementById("output");
 
-    output.textContent =  `
-
+    output.textContent = `
 edit system login tacplus-server
     set accounting
     set authorization
     set host 2001:12E0:800:FFFF::135 secret t3l3f0n!c4@
     set host 2001:12E0:800:FFFF::136 secret t3l3f0n!c4@
     set host 2001:12E0:800:FFFF::134 secret t3l3f0n!c4@
-    set host 2001:12E0:800:FFFF::135 source-address ${loopbackParts}
-    set host 2001:12E0:800:FFFF::136 source-address ${loopbackParts}
-    set host 2001:12E0:800:FFFF::134 source-address ${loopbackParts}
+    set host 2001:12E0:800:FFFF::135 source-address ${loopbackAddress}
+    set host 2001:12E0:800:FFFF::136 source-address ${loopbackAddress}
+    set host 2001:12E0:800:FFFF::134 source-address ${loopbackAddress}
 exit
+
 set interfaces loopback lo1 address ${loopback}
+
+set interfaces ethernet eth1 vif ${vlan} address '${interfaceAddress}/${prefixoWan}'
+
+set protocols static route6 ::/0 next-hop '${wanAddress}'
 
 commit
 save
-        
-    `;
+    `.trim();
 }
+
 

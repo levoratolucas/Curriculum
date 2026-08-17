@@ -1,77 +1,45 @@
 /* =========================================================
    LEVORATECH — JUROS
    FINANCIAL SIMULATOR
-   ========================================================= */
+========================================================= */
 
 
 /* =========================================================
    CONFIG
-   ========================================================= */
+========================================================= */
 
 const CONFIG = {
-
     locale: "pt-BR",
-
     currency: "BRL",
-
     animationDuration: 750
-
 };
 
 
 /* =========================================================
    DOM
-   ========================================================= */
+========================================================= */
 
 const elements = {
+    capitalInicial: document.getElementById("capitalInicial"),
+    aporteMensal: document.getElementById("aporteMensal"),
+    taxaJuros: document.getElementById("taxaJuros"),
+    periodo: document.getElementById("periodo"),
+    tipoJuros: document.getElementById("tipoJuros"),
 
-    capitalInicial:
-        document.getElementById("capitalInicial"),
+    btnCalcular: document.getElementById("btnCalcular"),
+    btnLimpar: document.getElementById("btnLimpar"),
 
-    aporteMensal:
-        document.getElementById("aporteMensal"),
+    formMessage: document.getElementById("formMessage"),
 
-    taxaJuros:
-        document.getElementById("taxaJuros"),
+    resultados: document.getElementById("resultados"),
+    secaoGrafico: document.getElementById("secaoGrafico"),
+    secaoJuros: document.getElementById("secaoJuros"),
+    secaoTabela: document.getElementById("secaoTabela"),
+    secaoInfo: document.getElementById("secaoInfo"),
 
-    periodo:
-        document.getElementById("periodo"),
-
-    tipoJuros:
-        document.getElementById("tipoJuros"),
-
-    btnCalcular:
-        document.getElementById("btnCalcular"),
-
-    btnLimpar:
-        document.getElementById("btnLimpar"),
-
-    formMessage:
-        document.getElementById("formMessage"),
-
-    resultados:
-        document.getElementById("resultados"),
-
-    secaoGrafico:
-        document.getElementById("secaoGrafico"),
-
-    secaoJuros:
-        document.getElementById("secaoJuros"),
-
-    secaoTabela:
-        document.getElementById("secaoTabela"),
-
-    secaoInfo:
-        document.getElementById("secaoInfo"),
-
-    totalInvestido:
-        document.getElementById("totalInvestido"),
-
-    totalJuros:
-        document.getElementById("totalJuros"),
-
-    valorFinal:
-        document.getElementById("valorFinal"),
+    totalInvestido: document.getElementById("totalInvestido"),
+    totalJuros: document.getElementById("totalJuros"),
+    valorFinal: document.getElementById("valorFinal"),
 
     percentualCrescimento:
         document.getElementById("percentualCrescimento"),
@@ -90,24 +58,21 @@ const elements = {
 
     infoTexto:
         document.getElementById("infoTexto")
-
 };
 
 
 /* =========================================================
    STATE
-   ========================================================= */
+========================================================= */
 
 let graficoTotal = null;
-
 let graficoIndividual = null;
-
 let ultimaSimulacao = null;
 
 
 /* =========================================================
    FORMATTERS
-   ========================================================= */
+========================================================= */
 
 const moeda = new Intl.NumberFormat(
     CONFIG.locale,
@@ -127,68 +92,62 @@ const numero = new Intl.NumberFormat(
 );
 
 
-/* =========================================================
-   UTILITÁRIOS
-   ========================================================= */
-
 function formatarMoeda(valor) {
-
     return moeda.format(
         Number.isFinite(valor)
             ? valor
             : 0
     );
-
 }
 
 
 function formatarNumero(valor) {
-
     return numero.format(
         Number.isFinite(valor)
             ? valor
             : 0
     );
-
-}
-
-
-function obterNumero(elemento) {
-
-    if (!elemento) {
-
-        return 0;
-
-    }
-
-
-    const valor =
-        Number(
-            String(elemento.value)
-                .replace(",", ".")
-        );
-
-
-    return Number.isFinite(valor)
-        ? valor
-        : 0;
-
 }
 
 
 /* =========================================================
-   FORM MESSAGE
-   ========================================================= */
+   UTILITÁRIOS
+========================================================= */
+
+function obterNumero(elemento) {
+
+    if (!elemento) {
+        return 0;
+    }
+
+    const valor = Number(
+        String(elemento.value)
+            .replace(",", ".")
+    );
+
+    return Number.isFinite(valor)
+        ? valor
+        : 0;
+}
+
+
+function esperar(ms) {
+    return new Promise(resolve => {
+        setTimeout(resolve, ms);
+    });
+}
+
+
+/* =========================================================
+   MENSAGENS
+========================================================= */
 
 function mostrarMensagem(mensagem) {
 
     elements.formMessage.textContent =
         mensagem;
 
-    elements.formMessage.classList.add(
-        "show"
-    );
-
+    elements.formMessage.classList.add("show");
 }
 
 
@@ -196,25 +155,21 @@ function esconderMensagem() {
 
     elements.formMessage.textContent = "";
 
-    elements.formMessage.classList.remove(
-        "show"
-    );
-
+    elements.formMessage.classList.remove("show");
 }
 
+
+/* =========================================================
+   ERROS
+========================================================= */
 
 function limparErros() {
 
     [
-
         elements.capitalInicial,
-
         elements.aporteMensal,
-
         elements.taxaJuros,
-
         elements.periodo
-
     ].forEach(elemento => {
 
         elemento
@@ -222,78 +177,59 @@ function limparErros() {
             ?.classList.remove("error");
 
     });
-
 }
 
 
 /* =========================================================
    PARÂMETROS
-   ========================================================= */
+========================================================= */
 
 function obterParametros() {
 
     return {
 
-        capital:
-            Math.max(
-                0,
-                obterNumero(
-                    elements.capitalInicial
-                )
-            ),
+        capital: Math.max(
+            0,
+            obterNumero(elements.capitalInicial)
+        ),
 
-        aporte:
-            Math.max(
-                0,
-                obterNumero(
-                    elements.aporteMensal
-                )
-            ),
+        aporte: Math.max(
+            0,
+            obterNumero(elements.aporteMensal)
+        ),
 
-        taxa:
-            Math.max(
-                0,
-                obterNumero(
-                    elements.taxaJuros
-                )
-            ),
+        taxa: Math.max(
+            0,
+            obterNumero(elements.taxaJuros)
+        ),
 
-        periodo:
-            Math.max(
-                1,
-                Math.floor(
-                    obterNumero(
-                        elements.periodo
-                    )
-                )
-            ),
+        periodo: Math.max(
+            1,
+            Math.floor(
+                obterNumero(elements.periodo)
+            )
+        ),
 
-        tipo:
-            elements.tipoJuros.value
+        tipo: elements.tipoJuros.value
 
     };
-
 }
 
 
 /* =========================================================
    VALIDAÇÃO
-   ========================================================= */
+========================================================= */
 
 function validar(parametros) {
 
     limparErros();
-
     esconderMensagem();
 
-
     const {
-
         capital,
         aporte,
         taxa,
         periodo
-
     } = parametros;
 
 
@@ -317,7 +253,6 @@ function validar(parametros) {
         elements.capitalInicial.focus();
 
         return false;
-
     }
 
 
@@ -334,7 +269,6 @@ function validar(parametros) {
         elements.taxaJuros.focus();
 
         return false;
-
     }
 
 
@@ -351,18 +285,16 @@ function validar(parametros) {
         elements.periodo.focus();
 
         return false;
-
     }
 
 
     return true;
-
 }
 
 
 /* =========================================================
    JUROS COMPOSTOS
-   ========================================================= */
+========================================================= */
 
 function calcularCompostos(
     capital,
@@ -371,21 +303,11 @@ function calcularCompostos(
     periodo
 ) {
 
-    const taxaDecimal =
-        taxa / 100;
+    const taxaDecimal = taxa / 100;
 
-
-    let saldo =
-        capital;
-
-
-    let totalInvestido =
-        capital;
-
-
-    let totalJuros =
-        0;
-
+    let saldo = capital;
+    let totalInvestido = capital;
+    let totalJuros = 0;
 
     const dados = [];
 
@@ -399,56 +321,40 @@ function calcularCompostos(
         const juros =
             saldo * taxaDecimal;
 
-
         saldo += juros;
-
         saldo += aporte;
 
-
         totalJuros += juros;
-
         totalInvestido += aporte;
 
 
         dados.push({
 
             periodo: mes,
-
             aporte,
-
             juros,
-
             totalInvestido,
-
             saldo,
-
-            jurosAcumulados:
-                totalJuros
+            jurosAcumulados: totalJuros
 
         });
-
     }
 
 
     return {
 
-        saldoFinal:
-            saldo,
-
+        saldoFinal: saldo,
         totalInvestido,
-
         totalJuros,
-
         dados
 
     };
-
 }
 
 
 /* =========================================================
    JUROS SIMPLES
-   ========================================================= */
+========================================================= */
 
 function calcularSimples(
     capital,
@@ -457,17 +363,10 @@ function calcularSimples(
     periodo
 ) {
 
-    const taxaDecimal =
-        taxa / 100;
+    const taxaDecimal = taxa / 100;
 
-
-    let totalInvestido =
-        capital;
-
-
-    let totalJuros =
-        0;
-
+    let totalInvestido = capital;
+    let totalJuros = 0;
 
     const dados = [];
 
@@ -478,22 +377,10 @@ function calcularSimples(
         mes++
     ) {
 
-        /*
-         * Juros do capital inicial.
-         */
         const jurosCapital =
-            capital *
-            taxaDecimal;
+            capital * taxaDecimal;
 
 
-        /*
-         * Cada aporte realizado em um
-         * determinado mês permanece
-         * investido nos meses seguintes.
-         *
-         * Para o mês atual, os aportes
-         * anteriores geram juros simples.
-         */
         const jurosAportes =
             aporte *
             taxaDecimal *
@@ -521,20 +408,13 @@ function calcularSimples(
         dados.push({
 
             periodo: mes,
-
             aporte,
-
             juros,
-
             totalInvestido,
-
             saldo,
-
-            jurosAcumulados:
-                totalJuros
+            jurosAcumulados: totalJuros
 
         });
-
     }
 
 
@@ -546,19 +426,16 @@ function calcularSimples(
                 : capital,
 
         totalInvestido,
-
         totalJuros,
-
         dados
 
     };
-
 }
 
 
 /* =========================================================
    CRIAR SIMULAÇÃO
-   ========================================================= */
+========================================================= */
 
 function criarSimulacao() {
 
@@ -566,81 +443,58 @@ function criarSimulacao() {
         obterParametros();
 
 
-    if (
-        !validar(parametros)
-    ) {
-
+    if (!validar(parametros)) {
         return null;
-
     }
 
 
     const {
-
         capital,
         aporte,
         taxa,
         periodo,
         tipo
-
     } = parametros;
 
 
-    let resultado;
-
-
-    if (
+    const resultado =
         tipo === "simples"
-    ) {
-
-        resultado =
-            calcularSimples(
+            ? calcularSimples(
+                capital,
+                aporte,
+                taxa,
+                periodo
+            )
+            : calcularCompostos(
                 capital,
                 aporte,
                 taxa,
                 periodo
             );
-
-    } else {
-
-        resultado =
-            calcularCompostos(
-                capital,
-                aporte,
-                taxa,
-                periodo
-            );
-
-    }
 
 
     const crescimento =
         resultado.totalInvestido > 0
-
             ? (
                 resultado.totalJuros /
                 resultado.totalInvestido
             ) * 100
-
             : 0;
 
 
     return {
 
         ...resultado,
-
         parametros,
-
         crescimento
 
     };
-
 }
 
 
 /* =========================================================
    ANIMAÇÃO DE NÚMEROS
-   ========================================================= */
+========================================================= */
 
 function animarNumero(
     elemento,
@@ -676,7 +530,8 @@ function animarNumero(
         const valor =
             inicio +
             (
-                fim - inicio
+                fim -
+                inicio
             ) * easing;
 
 
@@ -684,29 +539,25 @@ function animarNumero(
             formatarMoeda(valor);
 
 
-        if (
-            progresso < 1
-        ) {
+        if (progresso < 1) {
 
             requestAnimationFrame(
                 atualizar
             );
 
         }
-
     }
 
 
     requestAnimationFrame(
         atualizar
     );
-
 }
 
 
 /* =========================================================
-   ANIMAÇÃO DE PERCENTUAL
-   ========================================================= */
+   ANIMAÇÃO PERCENTUAL
+========================================================= */
 
 function animarPercentual(
     elemento,
@@ -741,7 +592,8 @@ function animarPercentual(
         const valor =
             inicio +
             (
-                fim - inicio
+                fim -
+                inicio
             ) * easing;
 
 
@@ -749,33 +601,26 @@ function animarPercentual(
             `+${formatarNumero(valor)}%`;
 
 
-        if (
-            progresso < 1
-        ) {
+        if (progresso < 1) {
 
             requestAnimationFrame(
                 atualizar
             );
-
         }
-
     }
 
 
     requestAnimationFrame(
         atualizar
     );
-
 }
 
 
 /* =========================================================
    INDICADORES
-   ========================================================= */
+========================================================= */
 
-function atualizarIndicadores(
-    resultado
-) {
+function atualizarIndicadores(resultado) {
 
     animarNumero(
         elements.totalInvestido,
@@ -805,11 +650,6 @@ function atualizarIndicadores(
     );
 
 
-    /*
-     * A barra representa visualmente
-     * o crescimento. Limitamos em 100%
-     * para não estourar a interface.
-     */
     const progresso =
         Math.min(
             100,
@@ -826,20 +666,17 @@ function atualizarIndicadores(
             `${progresso}%`;
 
     });
-
 }
 
 
 /* =========================================================
    REVELAR SEÇÃO
-   ========================================================= */
+========================================================= */
 
 function revelarSecao(elemento) {
 
     if (!elemento) {
-
         return;
-
     }
 
 
@@ -859,17 +696,14 @@ function revelarSecao(elemento) {
     elemento.classList.add(
         "reveal"
     );
-
 }
 
 
 /* =========================================================
    TABELA
-   ========================================================= */
+========================================================= */
 
-function atualizarTabela(
-    resultado
-) {
+function atualizarTabela(resultado) {
 
     const dados =
         resultado.dados;
@@ -878,37 +712,22 @@ function atualizarTabela(
     if (!dados.length) {
 
         elements.tabelaResumo.innerHTML = `
-
             <tr>
-
                 <td colspan="5">
-
                     <div class="table-empty">
                         Nenhum dado disponível.
                     </div>
-
                 </td>
-
             </tr>
-
         `;
 
         return;
-
     }
 
 
-    /*
-     * Se a simulação tiver muitos anos,
-     * limitamos a quantidade de linhas
-     * exibidas para manter a interface
-     * leve.
-     */
     const dadosExibidos =
         dados.length > 120
-
             ? dados.slice(-120)
-
             : dados;
 
 
@@ -923,40 +742,31 @@ function atualizarTabela(
                     </td>
 
                     <td>
-                        ${formatarMoeda(
-                            item.aporte
-                        )}
+                        ${formatarMoeda(item.aporte)}
                     </td>
 
                     <td>
-                        ${formatarMoeda(
-                            item.juros
-                        )}
+                        ${formatarMoeda(item.juros)}
                     </td>
 
                     <td>
-                        ${formatarMoeda(
-                            item.totalInvestido
-                        )}
+                        ${formatarMoeda(item.totalInvestido)}
                     </td>
 
                     <td>
-                        ${formatarMoeda(
-                            item.saldo
-                        )}
+                        ${formatarMoeda(item.saldo)}
                     </td>
 
                 </tr>
 
             `)
             .join("");
-
 }
 
 
 /* =========================================================
-   CONFIGURAÇÕES DO CHART
-   ========================================================= */
+   CHART OPTIONS
+========================================================= */
 
 function opcoesGrafico() {
 
@@ -967,19 +777,13 @@ function opcoesGrafico() {
         maintainAspectRatio: false,
 
         interaction: {
-
             mode: "index",
-
             intersect: false
-
         },
 
         animation: {
-
             duration: 900,
-
             easing: "easeOutQuart"
-
         },
 
         plugins: {
@@ -997,14 +801,13 @@ function opcoesGrafico() {
                     padding: 18,
 
                     font: {
-
                         size: 10
-
                     }
 
                 }
 
             },
+
 
             tooltip: {
 
@@ -1026,9 +829,10 @@ function opcoesGrafico() {
 
                     label(context) {
 
-                        return ` ${context.dataset.label}: ${formatarMoeda(
-                            context.parsed.y
-                        )}`;
+                        return `
+                            ${context.dataset.label}:
+                            ${formatarMoeda(context.parsed.y)}
+                        `;
 
                     }
 
@@ -1038,17 +842,15 @@ function opcoesGrafico() {
 
         },
 
+
         scales: {
 
             x: {
 
                 grid: {
-
                     color:
                         "rgba(148,163,184,.06)",
-
                     drawBorder: false
-
                 },
 
                 ticks: {
@@ -1056,9 +858,7 @@ function opcoesGrafico() {
                     color: "#536174",
 
                     font: {
-
                         size: 9
-
                     },
 
                     maxTicksLimit: 10
@@ -1066,6 +866,7 @@ function opcoesGrafico() {
                 }
 
             },
+
 
             y: {
 
@@ -1085,17 +886,11 @@ function opcoesGrafico() {
                     color: "#536174",
 
                     font: {
-
                         size: 9
-
                     },
 
                     callback(valor) {
-
-                        return formatarMoeda(
-                            valor
-                        );
-
+                        return formatarMoeda(valor);
                     }
 
                 }
@@ -1105,17 +900,14 @@ function opcoesGrafico() {
         }
 
     };
-
 }
 
 
 /* =========================================================
    GRÁFICO PRINCIPAL
-   ========================================================= */
+========================================================= */
 
-function atualizarGraficoTotal(
-    resultado
-) {
+function atualizarGraficoTotal(resultado) {
 
     if (
         typeof Chart === "undefined"
@@ -1126,41 +918,34 @@ function atualizarGraficoTotal(
         );
 
         return;
-
     }
 
 
     if (graficoTotal) {
-
         graficoTotal.destroy();
-
     }
 
 
     const labels =
         resultado.dados.map(
-            item =>
-                `${item.periodo}º`
+            item => `${item.periodo}º`
         );
 
 
     const patrimonio =
         resultado.dados.map(
-            item =>
-                item.saldo
+            item => item.saldo
         );
 
 
     const investido =
         resultado.dados.map(
-            item =>
-                item.totalInvestido
+            item => item.totalInvestido
         );
 
 
     const contexto =
-        elements.graficoTotal
-            .getContext("2d");
+        elements.graficoTotal.getContext("2d");
 
 
     const gradiente =
@@ -1231,6 +1016,7 @@ function atualizarGraficoTotal(
 
                         },
 
+
                         {
 
                             label:
@@ -1244,10 +1030,7 @@ function atualizarGraficoTotal(
 
                             borderWidth: 1.5,
 
-                            borderDash: [
-                                5,
-                                5
-                            ],
+                            borderDash: [5, 5],
 
                             fill: false,
 
@@ -1265,53 +1048,42 @@ function atualizarGraficoTotal(
                     opcoesGrafico()
 
             }
-
         );
-
 }
 
 
 /* =========================================================
    GRÁFICO DE JUROS
-   ========================================================= */
+========================================================= */
 
-function atualizarGraficoJuros(
-    resultado
-) {
+function atualizarGraficoJuros(resultado) {
 
     if (
         typeof Chart === "undefined"
     ) {
-
         return;
-
     }
 
 
     if (graficoIndividual) {
-
         graficoIndividual.destroy();
-
     }
 
 
     const labels =
         resultado.dados.map(
-            item =>
-                `${item.periodo}º`
+            item => `${item.periodo}º`
         );
 
 
     const juros =
         resultado.dados.map(
-            item =>
-                item.jurosAcumulados
+            item => item.jurosAcumulados
         );
 
 
     const contexto =
-        elements.graficoIndividual
-            .getContext("2d");
+        elements.graficoIndividual.getContext("2d");
 
 
     const gradiente =
@@ -1390,19 +1162,15 @@ function atualizarGraficoJuros(
                     opcoesGrafico()
 
             }
-
         );
-
 }
 
 
 /* =========================================================
-   ATUALIZAR INTERFACE
-   ========================================================= */
+   INTERFACE
+========================================================= */
 
-async function atualizarInterface(
-    resultado
-) {
+async function atualizarInterface(resultado) {
 
     atualizarIndicadores(
         resultado
@@ -1460,30 +1228,12 @@ async function atualizarInterface(
 
     ultimaSimulacao =
         resultado;
-
-}
-
-
-/* =========================================================
-   DELAY
-   ========================================================= */
-
-function esperar(ms) {
-
-    return new Promise(
-        resolve =>
-            setTimeout(
-                resolve,
-                ms
-            )
-    );
-
 }
 
 
 /* =========================================================
    EXECUTAR CÁLCULO
-   ========================================================= */
+========================================================= */
 
 async function executarCalculo() {
 
@@ -1491,12 +1241,8 @@ async function executarCalculo() {
         elements.btnCalcular;
 
 
-    if (
-        botao.disabled
-    ) {
-
+    if (botao.disabled) {
         return;
-
     }
 
 
@@ -1510,10 +1256,6 @@ async function executarCalculo() {
     esconderMensagem();
 
 
-    /*
-     * Pequeno delay para proporcionar
-     * feedback visual ao usuário.
-     */
     await esperar(220);
 
 
@@ -1530,7 +1272,6 @@ async function executarCalculo() {
         );
 
         return;
-
     }
 
 
@@ -1546,10 +1287,6 @@ async function executarCalculo() {
     );
 
 
-    /*
-     * No celular, leva o usuário
-     * suavemente até os resultados.
-     */
     if (
         window.innerWidth <= 700
     ) {
@@ -1558,30 +1295,23 @@ async function executarCalculo() {
 
 
         elements.resultados.scrollIntoView({
-
             behavior: "smooth",
-
             block: "start"
-
         });
 
     }
-
 }
 
 
 /* =========================================================
-   LIMPAR SIMULAÇÃO
-   ========================================================= */
+   LIMPAR
+========================================================= */
 
 function limparSimulacao() {
 
     elements.capitalInicial.value = "";
-
     elements.aporteMensal.value = "";
-
     elements.taxaJuros.value = "";
-
     elements.periodo.value = "";
 
     elements.tipoJuros.value =
@@ -1589,7 +1319,6 @@ function limparSimulacao() {
 
 
     limparErros();
-
     esconderMensagem();
 
 
@@ -1613,21 +1342,12 @@ function limparSimulacao() {
         "0%";
 
 
-    /*
-     * Esconde os resultados.
-     */
     [
-
         elements.resultados,
-
         elements.secaoGrafico,
-
         elements.secaoJuros,
-
         elements.secaoTabela,
-
         elements.secaoInfo
-
     ].forEach(elemento => {
 
         elemento.classList.add(
@@ -1641,15 +1361,11 @@ function limparSimulacao() {
     });
 
 
-    /*
-     * Destrói os gráficos.
-     */
     if (graficoTotal) {
 
         graficoTotal.destroy();
 
         graficoTotal = null;
-
     }
 
 
@@ -1658,24 +1374,17 @@ function limparSimulacao() {
         graficoIndividual.destroy();
 
         graficoIndividual = null;
-
     }
 
 
     elements.tabelaResumo.innerHTML = `
-
         <tr>
-
             <td colspan="5">
-
                 <div class="table-empty">
                     Faça uma simulação para visualizar os dados.
                 </div>
-
             </td>
-
         </tr>
-
     `;
 
 
@@ -1683,24 +1392,20 @@ function limparSimulacao() {
 
 
     elements.capitalInicial.focus();
-
 }
 
 
 /* =========================================================
-   ENTER PARA CALCULAR
-   ========================================================= */
+   ENTER
+========================================================= */
 
 function configurarEnter() {
 
     const campos = [
 
         elements.capitalInicial,
-
         elements.aporteMensal,
-
         elements.taxaJuros,
-
         elements.periodo
 
     ];
@@ -1719,31 +1424,26 @@ function configurarEnter() {
                     event.preventDefault();
 
                     executarCalculo();
-
                 }
 
             }
         );
 
     });
-
 }
 
 
 /* =========================================================
-   FEEDBACK DOS INPUTS
-   ========================================================= */
+   INPUTS
+========================================================= */
 
 function configurarInputs() {
 
     const campos = [
 
         elements.capitalInicial,
-
         elements.aporteMensal,
-
         elements.taxaJuros,
-
         elements.periodo
 
     ];
@@ -1757,9 +1457,7 @@ function configurarInputs() {
 
                 campo
                     .closest(".input-wrapper")
-                    ?.classList.remove(
-                        "error"
-                    );
+                    ?.classList.remove("error");
 
 
                 if (
@@ -1769,31 +1467,70 @@ function configurarInputs() {
                 ) {
 
                     esconderMensagem();
-
                 }
 
             }
         );
 
     });
+}
 
+
+/* =========================================================
+   SERVICE WORKER
+========================================================= */
+
+function registrarServiceWorker() {
+
+    if (
+        !("serviceWorker" in navigator)
+    ) {
+        return;
+    }
+
+
+    window.addEventListener(
+        "load",
+        async () => {
+
+            try {
+
+                await navigator.serviceWorker.register(
+                    "./service-worker.js",
+                    {
+                        scope: "./"
+                    }
+                );
+
+
+                console.log(
+                    "LevoraTech PWA: Service Worker ativo."
+                );
+
+            } catch (error) {
+
+                console.error(
+                    "Erro ao registrar Service Worker:",
+                    error
+                );
+
+            }
+
+        }
+    );
 }
 
 
 /* =========================================================
    INICIALIZAÇÃO
-   ========================================================= */
+========================================================= */
 
 function inicializar() {
 
     configurarEnter();
-
     configurarInputs();
 
 
-    /*
-     * Valores iniciais.
-     */
     elements.capitalInicial.value =
         "1000";
 
@@ -1814,9 +1551,6 @@ function inicializar() {
         "compostos";
 
 
-    /*
-     * Eventos.
-     */
     elements.btnCalcular.addEventListener(
         "click",
         executarCalculo
@@ -1828,12 +1562,14 @@ function inicializar() {
         limparSimulacao
     );
 
+
+    registrarServiceWorker();
 }
 
 
 /* =========================================================
    START
-   ========================================================= */
+========================================================= */
 
 if (
     document.readyState === "loading"

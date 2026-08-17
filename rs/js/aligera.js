@@ -2,6 +2,42 @@ function loadContent(type) {
     const workspace = document.getElementById("workspace");
     switch (type) {
 
+        case "desvio":
+            workspace.innerHTML = `
+        <div class="formulario">
+            <h2>GERADOR DE DESVIOS</h2>
+
+            <label>LISTA DE NÚMEROS:</label>
+
+            <textarea 
+                id="lista_desvios" 
+                placeholder="Digite um número por linha:
+
+4130201012
+4130201013
+4130201014
+4130201015"
+            ></textarea>
+
+            <label>NÚMERO DE DESTINO:</label>
+
+            <input 
+                type="text" 
+                id="destino_desvio" 
+                placeholder="Ex: 4130201040"
+            >
+
+            <button onclick="gerarDesvios()">Gerar</button>
+            
+        </div>
+
+        <div class="terminal">
+            <p id="output">DESVIOS</p>
+        </div>
+    `;
+
+            break;
+
         case "aligera":
             workspace.innerHTML = `
             <div class="formulario">
@@ -588,3 +624,110 @@ document.addEventListener("DOMContentLoaded", function () {
     // Chama a função uma vez para definir o estado inicial correto
     updateVisibility();
 });
+
+
+function gerarDesvios() {
+
+    const lista = document.getElementById("lista_desvios").value.trim();
+    const destino = document.getElementById("destino_desvio").value.trim();
+    const output = document.getElementById("output");
+
+    if (!lista) {
+        alert("Informe a lista de números.");
+        return;
+    }
+
+    if (!destino) {
+        alert("Informe o número de destino.");
+        return;
+    }
+
+    // Separa os números por linha
+    const numeros = lista
+        .split(/\r?\n/)
+        .map(numero => numero.replace(/\D/g, ""))
+        .filter(numero => numero.length > 0);
+
+    if (numeros.length === 0) {
+        alert("Nenhum número válido foi encontrado.");
+        return;
+    }
+
+    let script = "";
+
+    numeros.forEach((numero, index) => {
+
+        const numeroDesvio = index + 1;
+
+        script += `config dialplan rule sip_trunk1_desvio${numeroDesvio} source_peer sip vivo1
+config dialplan rule sip_trunk1_desvio${numeroDesvio} destination_peer tdm group1
+config dialplan rule sip_trunk1_desvio${numeroDesvio} called_pattern ${numero}
+config dialplan rule sip_trunk1_desvio${numeroDesvio} callerid_pattern 
+config dialplan rule sip_trunk1_desvio${numeroDesvio} outgoing_called ${destino}
+config dialplan rule sip_trunk1_desvio${numeroDesvio} outgoing_callerid {:3}
+config dialplan rule sip_trunk1_desvio${numeroDesvio} answer_timeout 90
+config save
+config apply
+
+`;
+    });
+
+    output.textContent = script.trim();
+}
+
+
+function copiarOutput() {
+
+    const output = document.getElementById("output");
+
+    if (!output) {
+        alert("Nenhum código disponível.");
+        return;
+    }
+
+    const texto = output.textContent.trim();
+
+    if (!texto) {
+        alert("Gere o código primeiro.");
+        return;
+    }
+
+    navigator.clipboard.writeText(texto)
+        .then(() => {
+            const botao = document.getElementById("copy-button");
+
+            if (botao) {
+                const textoOriginal = botao.textContent;
+
+                botao.textContent = "Copiado!";
+
+                setTimeout(() => {
+                    botao.textContent = textoOriginal;
+                }, 1500);
+            }
+        })
+        .catch(() => {
+
+            const textarea = document.createElement("textarea");
+
+            textarea.value = texto;
+            document.body.appendChild(textarea);
+
+            textarea.select();
+            document.execCommand("copy");
+
+            document.body.removeChild(textarea);
+
+            const botao = document.getElementById("copy-button");
+
+            if (botao) {
+                const textoOriginal = botao.textContent;
+
+                botao.textContent = "Copiado!";
+
+                setTimeout(() => {
+                    botao.textContent = textoOriginal;
+                }, 1500);
+            }
+        });
+}

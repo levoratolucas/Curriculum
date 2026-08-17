@@ -457,3 +457,59 @@ save
 }
 
 
+function copiarOutput() {
+
+    const output = document.getElementById("output");
+
+    if (!output) {
+        alert("Nenhum código disponível.");
+        return;
+    }
+
+    const texto = output.textContent.trim();
+
+    if (!texto) {
+        alert("Gere o código primeiro.");
+        return;
+    }
+
+    navigator.clipboard.writeText(texto)
+        .then(() => {
+            const botao = document.getElementById("copy-button");
+
+            if (botao) {
+                const textoOriginal = botao.textContent;
+
+                botao.textContent = "Copiado!";
+
+                setTimeout(() => {
+                    botao.textContent = textoOriginal;
+                }, 1500);
+            }
+        })
+        .catch(() => {
+
+            const textarea = document.createElement("textarea");
+
+            textarea.value = texto;
+            document.body.appendChild(textarea);
+
+            textarea.select();
+            document.execCommand("copy");
+
+            document.body.removeChild(textarea);
+
+            const botao = document.getElementById("copy-button");
+
+            if (botao) {
+                const textoOriginal = botao.textContent;
+
+                botao.textContent = "Copiado!";
+
+                setTimeout(() => {
+                    botao.textContent = textoOriginal;
+                }, 1500);
+            }
+        });
+}
+

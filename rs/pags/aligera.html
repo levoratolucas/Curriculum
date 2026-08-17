@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="../cs/media_1024.css">
   <link rel="stylesheet" href="../cs/media_600.css">
 </head>
+
 <body>
   <header>
     <h1>LEVORATECH</h1>
@@ -17,8 +19,7 @@
         <li><a href="./conversor.html">CONVERSOR</a></li>
         <li><a href="./aligera.html">ALIGERA</a></li>
         <li><a href="./sip.html">SIP</a></li>
-        <li><a href="./sites.html">SITES</a></li>
-        <li><a href="./carimbo.html">CARIMBOS</a></li>
+          
         <li><a href="https://levoratolucas.github.io/Curriculum/">CONTATO</a></li>
       </ul>
     </nav>
@@ -26,9 +27,12 @@
 
   <main>
     <aside class="sidebar">
-       
+
       <button class="btn" onclick="loadContent('R2')">R2</button>
       <button class="btn" onclick="loadContent('ISDN')">ISDN</button>
+      <button id="copy-button" class="btn" onclick="copiarOutput()">
+        COPIAR
+      </button>
     </aside>
 
     <section class="workspace" id="workspace">
@@ -39,7 +43,7 @@
     </section>
   </main>
 
-  
+
 
   <footer>
     <p>© 2025 Levoratech - Todos os direitos reservados.</p>
@@ -47,4 +51,5 @@
 
   <script src="../js/consersor_e1.js"></script>
 </body>
+
 </html>

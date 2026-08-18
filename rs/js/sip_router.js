@@ -21,6 +21,7 @@ function loadContent(type) {
                     <input type="text" id="wan" placeholder="172.16.30.40/30">
 
                     <button onclick="gerarComando('4gt_6gt')">Gerar</button>
+                    <button id="copy-button"  onclick="copiarOutput()">Copiar</button>
 
                 </div>
                 <div class="terminal">
@@ -49,6 +50,7 @@ function loadContent(type) {
                     <input type="text" id="wan" placeholder="172.16.30.40/30">
 
                     <button onclick="gerarComando('huawei')">Gerar</button>
+                    <button id="copy-button"  onclick="copiarOutput()">Copiar</button>
                 </div>
                 <div class="terminal">
                     <p id="output">HUAWEI</p>
@@ -83,6 +85,7 @@ function loadContent(type) {
             >
 
             <button onclick="gerarScript4Gt6GtIpv6()">Gerar</button>
+            <button id="copy-button"  onclick="copiarOutput()">Copiar</button>
         </div>
 
         <div class="terminal">
@@ -113,6 +116,7 @@ function loadContent(type) {
                     <input type="text" id="lan" placeholder="172.16.10.20/29">
 
                     <button onclick="gerarComandoConversor()">Gerar</button>
+                    <button id="copy-button"  onclick="copiarOutput()">Copiar</button>
                 </div>
                 <div class="terminal">
                     <p id="output">HUAWEI</p>

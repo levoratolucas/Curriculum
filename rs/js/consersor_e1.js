@@ -11,6 +11,7 @@ function loadContent(type) {
                     <input type="number" id="PILOTO" placeholder="4130100250">
                     
                     <button onclick="gerarComando('${type}')">Gerar</button>
+                    <button id="copy-button"  onclick="copiarOutput()">Copiar</button>
                 </div>
 
                 <div class="terminal">
@@ -27,6 +28,7 @@ function loadContent(type) {
                     <input type="number" id="PILOTO" placeholder="4130100250">
                     
                     <button onclick="gerarComando('${type}')">Gerar</button>
+                    <button id="copy-button"  onclick="copiarOutput()">Copiar</button>
                 </div>
 
                 <div class="terminal">

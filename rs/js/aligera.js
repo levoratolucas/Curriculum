@@ -60,6 +60,7 @@ function loadContent(type) {
                     <input type="text" id="lan" placeholder="172.16.10.20/29">
                     
                     <button onclick="gerarComandoConversor()">Gerar</button>
+                    <button id="copy-button"  onclick="copiarOutput()">Copiar</button>
                     </div>
                 <div class="terminal">
                 <p id="output">HUAWEI</p>
@@ -103,7 +104,7 @@ function loadContent(type) {
                     NUMEROS413-125-9999"></textarea>
                 <br>
                 <button onclick="generateDigistar()">Gerar</button>
-                <button id="copyButton" style="display:none;" onclick="copyToClipboard()">Copiar</button>
+                <button id="copy-button"  onclick="copiarOutput()">Copiar</button>
                 </main>
                 <div class="terminal" id="output"></div>
                 </div>
